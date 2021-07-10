@@ -1,6 +1,6 @@
 # SigniFlow.Connect.Api.PortfoliosApi
 
-All URIs are relative to *https://client-signiflow-com/API/SignFlowAPIServiceRest.svc*
+All URIs are relative to *https://server-url/API/SignFlowAPIServiceRest.svc*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -35,7 +35,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new PortfoliosApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var createPortfolioRequest = new CreatePortfolioRequest(); // CreatePortfolioRequest | ##### Create Portfolio Request Model (optional) 
@@ -108,7 +108,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new PortfoliosApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var downloadPortfolioRequest = new DownloadPortfolioRequest(); // DownloadPortfolioRequest | ##### Download Portfolio Request Model (optional) 
@@ -181,7 +181,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new PortfoliosApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var linkToPortfolioRequest = new LinkToPortfolioRequest(); // LinkToPortfolioRequest | ##### Link To Portfolio Request Model (optional) 
@@ -254,7 +254,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new PortfoliosApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var setDocumentOrderRequest = new SetDocumentOrderRequest(); // SetDocumentOrderRequest | ##### Set Document Order Request Model (optional) 
@@ -327,7 +327,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new PortfoliosApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var sharePortfolioRequest = new SharePortfolioRequest(); // SharePortfolioRequest | ##### Share Portfolio Request Model (optional) 
@@ -400,7 +400,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new PortfoliosApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var sharePortfolioNoEmailRequest = new SharePortfolioNoEmailRequest(); // SharePortfolioNoEmailRequest | ##### Share Portfolio No Email Request Model (optional) 

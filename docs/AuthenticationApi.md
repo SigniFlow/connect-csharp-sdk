@@ -1,6 +1,6 @@
 # SigniFlow.Connect.Api.AuthenticationApi
 
-All URIs are relative to *https://client-signiflow-com/API/SignFlowAPIServiceRest.svc*
+All URIs are relative to *https://server-url/API/SignFlowAPIServiceRest.svc*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -33,7 +33,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new AuthenticationApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var loginRequest = new LoginRequest(); // LoginRequest | ##### Login Request Model
@@ -106,7 +106,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new AuthenticationApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var logoutRequest = new LogoutRequest(); // LogoutRequest | ##### Logout Request Model (optional) 
@@ -179,7 +179,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new AuthenticationApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var tokenExtendRequest = new TokenExtendRequest(); // TokenExtendRequest | ##### Token Extend Request Model (optional) 
@@ -252,7 +252,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new AuthenticationApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var tokenValidateRequest = new TokenValidateRequest(); // TokenValidateRequest | ##### Token Validate Request Model (optional) 

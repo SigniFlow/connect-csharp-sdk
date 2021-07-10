@@ -1,6 +1,6 @@
 # SigniFlow.Connect.Api.SigningCeremonyApi
 
-All URIs are relative to *https://client-signiflow-com/API/SignFlowAPIServiceRest.svc*
+All URIs are relative to *https://server-url/API/SignFlowAPIServiceRest.svc*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new SigningCeremonyApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var multipleSignersSigningCeremonyRequest = new MultipleSignersSigningCeremonyRequest(); // MultipleSignersSigningCeremonyRequest | ##### Multiple Signers Signing Ceremony Request Model (optional) 
@@ -104,7 +104,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new SigningCeremonyApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var signingCeremonyV2Request = new SigningCeremonyV2Request(); // SigningCeremonyV2Request | ##### Signing Ceremony V2 Request Model (optional) 

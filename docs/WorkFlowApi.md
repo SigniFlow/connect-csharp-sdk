@@ -1,6 +1,6 @@
 # SigniFlow.Connect.Api.WorkFlowApi
 
-All URIs are relative to *https://client-signiflow-com/API/SignFlowAPIServiceRest.svc*
+All URIs are relative to *https://server-url/API/SignFlowAPIServiceRest.svc*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -42,7 +42,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var createWorkflowRequest = new CreateWorkflowRequest(); // CreateWorkflowRequest | ##### Create Workflow Request Model
@@ -115,7 +115,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var getDocumentRequest = new GetDocumentRequest(); // GetDocumentRequest | ##### Get Document Request Model (optional) 
@@ -188,7 +188,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var addWorkflowStepV2Request = new AddWorkflowStepV2Request(); // AddWorkflowStepV2Request | ##### Add A Workflow Step Request Model (optional) 
@@ -261,7 +261,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var cancelFlowRequest = new CancelFlowRequest(); // CancelFlowRequest | ##### Cancel Flow Request Model (optional) 
@@ -334,7 +334,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var deleteDocRequest = new DeleteDocRequest(); // DeleteDocRequest | ##### Delete Document Request Model (optional) 
@@ -407,7 +407,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var docPrepperAddFieldsFlowIDRequest = new DocPrepperAddFieldsFlowIDRequest(); // DocPrepperAddFieldsFlowIDRequest | ##### Document Prepper Add Fields Request Model (optional) 
@@ -480,7 +480,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var docPrepperAddAdvancedFieldsRequest = new DocPrepperAddAdvancedFieldsRequest(); // DocPrepperAddAdvancedFieldsRequest | ##### Document Prepper Add Advanced Fields Request Model (optional) 
@@ -553,7 +553,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var fullWorkflowRequest = new FullWorkflowRequest(); // FullWorkflowRequest | ##### FullWorkflow Request Model (optional) 
@@ -626,7 +626,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var getDocStatusRequest = new GetDocStatusRequest(); // GetDocStatusRequest | ##### Get Document Status Request Model (optional) 
@@ -699,7 +699,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var initiateFlowRequest = new InitiateFlowRequest(); // InitiateFlowRequest | ##### Initiate Flow Request Model (optional) 
@@ -772,7 +772,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var initiateFlowNoEmailRequest = new InitiateFlowNoEmailRequest(); // InitiateFlowNoEmailRequest | ##### Initiate Flow No Email Request Model (optional) 
@@ -845,7 +845,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var initiateFlowNoInitialEmailRequest = new InitiateFlowNoInitialEmailRequest(); // InitiateFlowNoInitialEmailRequest | ##### Initiate Flow No Initial Email Request Model (optional) 
@@ -918,7 +918,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var workflowSignRequest = new WorkflowSignRequest(); // WorkflowSignRequest | ##### Workflow Sign Request Model (optional) 

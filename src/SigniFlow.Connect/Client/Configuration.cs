@@ -103,7 +103,7 @@ namespace SigniFlow.Connect.Client
         {
             Proxy = null;
             UserAgent = "SigniFlow-Connect-CSharp/1.20211120.0";
-            BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -181,7 +181,7 @@ namespace SigniFlow.Connect.Client
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc") : this()
+            string basePath = "https://server-url/API/SignFlowAPIServiceRest.svc") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");
