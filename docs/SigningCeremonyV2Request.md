@@ -1,5 +1,5 @@
-
 # SigniFlow.Connect.Model.SigningCeremonyV2Request
+#### The request sent to start the signing process of a document.
 
 ## Properties
 
@@ -32,7 +32,5 @@ Name | Type | Description | Notes
 **SignerTrustReferenceField** | **string** |  | 
 **TextFieldsListField** | **List&lt;Object&gt;** |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

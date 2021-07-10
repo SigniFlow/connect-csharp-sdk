@@ -1,6 +1,6 @@
 # SigniFlow.Connect.Api.WorkFlowApi
 
-All URIs are relative to *https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc*
+All URIs are relative to *https://client-signiflow-com/API/SignFlowAPIServiceRest.svc*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,9 +19,8 @@ Method | HTTP request | Description
 [**PostWorkflowSign**](WorkFlowApi.md#postworkflowsign) | **POST** /WorkflowSign | Workflow Sign
 
 
-
-## CreateWorkflow
-
+<a name="createworkflow"></a>
+# **CreateWorkflow**
 > CreateWorkflowResponse CreateWorkflow (string contentType, CreateWorkflowRequest createWorkflowRequest)
 
 Create Workflow
@@ -29,7 +28,6 @@ Create Workflow
 #### Used to start a new workflow by passing a Base64 encoded document to SigniFlow
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -43,8 +41,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new WorkFlowApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var createWorkflowRequest = new CreateWorkflowRequest(); // CreateWorkflowRequest | ##### Create Workflow Request Model
 
@@ -54,7 +53,7 @@ namespace Example
                 CreateWorkflowResponse result = apiInstance.CreateWorkflow(contentType, createWorkflowRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling WorkFlowApi.CreateWorkflow: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -66,7 +65,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -83,8 +81,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -92,14 +90,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Create Workflow Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## GetDocument
-
+<a name="getdocument"></a>
+# **GetDocument**
 > GetDocumentResponse GetDocument (string contentType, GetDocumentRequest getDocumentRequest = null)
 
 Get Document
@@ -107,7 +101,6 @@ Get Document
 #### Used to download a document from SigniFlow.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -121,8 +114,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new WorkFlowApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var getDocumentRequest = new GetDocumentRequest(); // GetDocumentRequest | ##### Get Document Request Model (optional) 
 
@@ -132,7 +126,7 @@ namespace Example
                 GetDocumentResponse result = apiInstance.GetDocument(contentType, getDocumentRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling WorkFlowApi.GetDocument: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -144,7 +138,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -161,8 +154,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -170,14 +163,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Get Document Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostAddWorkflowStep
-
+<a name="postaddworkflowstep"></a>
+# **PostAddWorkflowStep**
 > AddWokflowStepV2Response PostAddWorkflowStep (string contentType, AddWorkflowStepV2Request addWorkflowStepV2Request = null)
 
 Add a Workflow step
@@ -185,7 +174,6 @@ Add a Workflow step
 #### Used to add a step to a document Workflow process.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -199,8 +187,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new WorkFlowApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var addWorkflowStepV2Request = new AddWorkflowStepV2Request(); // AddWorkflowStepV2Request | ##### Add A Workflow Step Request Model (optional) 
 
@@ -210,7 +199,7 @@ namespace Example
                 AddWokflowStepV2Response result = apiInstance.PostAddWorkflowStep(contentType, addWorkflowStepV2Request);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling WorkFlowApi.PostAddWorkflowStep: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -222,7 +211,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -239,8 +227,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -248,14 +236,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Add A Workflow Step Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostCancelFlow
-
+<a name="postcancelflow"></a>
+# **PostCancelFlow**
 > CancelFlowResponse PostCancelFlow (string contentType, CancelFlowRequest cancelFlowRequest = null)
 
 Cancel Flow
@@ -263,7 +247,6 @@ Cancel Flow
 #### Used to cancel a document workflow.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -277,8 +260,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new WorkFlowApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var cancelFlowRequest = new CancelFlowRequest(); // CancelFlowRequest | ##### Cancel Flow Request Model (optional) 
 
@@ -288,7 +272,7 @@ namespace Example
                 CancelFlowResponse result = apiInstance.PostCancelFlow(contentType, cancelFlowRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling WorkFlowApi.PostCancelFlow: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -300,7 +284,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -317,8 +300,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -326,14 +309,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Cancel Flow Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostDeleteDoc
-
+<a name="postdeletedoc"></a>
+# **PostDeleteDoc**
 > DeleteDocResponse PostDeleteDoc (string contentType, DeleteDocRequest deleteDocRequest = null)
 
 Delete Document
@@ -341,7 +320,6 @@ Delete Document
 #### This is used to delete a document.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -355,8 +333,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new WorkFlowApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var deleteDocRequest = new DeleteDocRequest(); // DeleteDocRequest | ##### Delete Document Request Model (optional) 
 
@@ -366,7 +345,7 @@ namespace Example
                 DeleteDocResponse result = apiInstance.PostDeleteDoc(contentType, deleteDocRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling WorkFlowApi.PostDeleteDoc: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -378,7 +357,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -395,8 +373,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -404,14 +382,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Delete Document Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostDocPrepperAddField
-
+<a name="postdocprepperaddfield"></a>
+# **PostDocPrepperAddField**
 > DocPrepperAddFieldsFlowIDResponse PostDocPrepperAddField (string contentType, DocPrepperAddFieldsFlowIDRequest docPrepperAddFieldsFlowIDRequest = null)
 
 Document Prepper Add Fields
@@ -419,7 +393,6 @@ Document Prepper Add Fields
 #### Used to add fields to a document using the user's FlowID.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -433,8 +406,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new WorkFlowApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var docPrepperAddFieldsFlowIDRequest = new DocPrepperAddFieldsFlowIDRequest(); // DocPrepperAddFieldsFlowIDRequest | ##### Document Prepper Add Fields Request Model (optional) 
 
@@ -444,7 +418,7 @@ namespace Example
                 DocPrepperAddFieldsFlowIDResponse result = apiInstance.PostDocPrepperAddField(contentType, docPrepperAddFieldsFlowIDRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling WorkFlowApi.PostDocPrepperAddField: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -456,7 +430,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -473,8 +446,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -482,14 +455,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Document Prepper Add Fields Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostDocPrepperAdvancedFields
-
+<a name="postdocprepperadvancedfields"></a>
+# **PostDocPrepperAdvancedFields**
 > DocPrepperAddAdvancedFieldsResponse PostDocPrepperAdvancedFields (string contentType, DocPrepperAddAdvancedFieldsRequest docPrepperAddAdvancedFieldsRequest = null)
 
 Document Prepper Add Advanced Fields
@@ -497,7 +466,6 @@ Document Prepper Add Advanced Fields
 #### Used to add advanced fields to a document.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -511,8 +479,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new WorkFlowApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var docPrepperAddAdvancedFieldsRequest = new DocPrepperAddAdvancedFieldsRequest(); // DocPrepperAddAdvancedFieldsRequest | ##### Document Prepper Add Advanced Fields Request Model (optional) 
 
@@ -522,7 +491,7 @@ namespace Example
                 DocPrepperAddAdvancedFieldsResponse result = apiInstance.PostDocPrepperAdvancedFields(contentType, docPrepperAddAdvancedFieldsRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling WorkFlowApi.PostDocPrepperAdvancedFields: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -534,7 +503,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -551,8 +519,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -560,14 +528,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Document Prepper Add Advanced Fields Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostFullWorkflow
-
+<a name="postfullworkflow"></a>
+# **PostFullWorkflow**
 > FullWorkflowResponse PostFullWorkflow (string contentType, FullWorkflowRequest fullWorkflowRequest = null)
 
 FullWorkflow
@@ -575,7 +539,6 @@ FullWorkflow
 #### Used to create a fullworkflow for a document.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -589,8 +552,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new WorkFlowApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var fullWorkflowRequest = new FullWorkflowRequest(); // FullWorkflowRequest | ##### FullWorkflow Request Model (optional) 
 
@@ -600,7 +564,7 @@ namespace Example
                 FullWorkflowResponse result = apiInstance.PostFullWorkflow(contentType, fullWorkflowRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling WorkFlowApi.PostFullWorkflow: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -612,7 +576,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -629,8 +592,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -638,14 +601,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### FullWorkflow Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostGetDocStatus
-
+<a name="postgetdocstatus"></a>
+# **PostGetDocStatus**
 > GetDocStatusResponse PostGetDocStatus (string contentType, GetDocStatusRequest getDocStatusRequest = null)
 
 Get Document Status
@@ -653,7 +612,6 @@ Get Document Status
 #### Used to get the status of the document ex. pending/completed/rejected.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -667,8 +625,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new WorkFlowApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var getDocStatusRequest = new GetDocStatusRequest(); // GetDocStatusRequest | ##### Get Document Status Request Model (optional) 
 
@@ -678,7 +637,7 @@ namespace Example
                 GetDocStatusResponse result = apiInstance.PostGetDocStatus(contentType, getDocStatusRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling WorkFlowApi.PostGetDocStatus: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -690,7 +649,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -707,8 +665,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -716,14 +674,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Get Document Status Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostInitiateFlow
-
+<a name="postinitiateflow"></a>
+# **PostInitiateFlow**
 > InitiateFlowResponse PostInitiateFlow (string contentType, InitiateFlowRequest initiateFlowRequest = null)
 
 Initiate Flow
@@ -731,7 +685,6 @@ Initiate Flow
 #### Used to initiate aworkflow of a document.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -745,8 +698,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new WorkFlowApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var initiateFlowRequest = new InitiateFlowRequest(); // InitiateFlowRequest | ##### Initiate Flow Request Model (optional) 
 
@@ -756,7 +710,7 @@ namespace Example
                 InitiateFlowResponse result = apiInstance.PostInitiateFlow(contentType, initiateFlowRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling WorkFlowApi.PostInitiateFlow: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -768,7 +722,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -785,8 +738,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -794,14 +747,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Initiate Flow Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostInitiateFlowNoEmail
-
+<a name="postinitiateflownoemail"></a>
+# **PostInitiateFlowNoEmail**
 > InitiateFlowNoEmailResponse PostInitiateFlowNoEmail (string contentType, InitiateFlowNoEmailRequest initiateFlowNoEmailRequest = null)
 
 Initiate Flow No Email
@@ -809,7 +758,6 @@ Initiate Flow No Email
 #### Used to initiate a workflow without sending out emails.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -823,8 +771,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new WorkFlowApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var initiateFlowNoEmailRequest = new InitiateFlowNoEmailRequest(); // InitiateFlowNoEmailRequest | ##### Initiate Flow No Email Request Model (optional) 
 
@@ -834,7 +783,7 @@ namespace Example
                 InitiateFlowNoEmailResponse result = apiInstance.PostInitiateFlowNoEmail(contentType, initiateFlowNoEmailRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling WorkFlowApi.PostInitiateFlowNoEmail: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -846,7 +795,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -863,8 +811,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -872,14 +820,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Initiate Flow No Email Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostInitiateFlowNoInitialEmail
-
+<a name="postinitiateflownoinitialemail"></a>
+# **PostInitiateFlowNoInitialEmail**
 > InitiateFlowNoInitialEmailResponse PostInitiateFlowNoInitialEmail (string contentType, InitiateFlowNoInitialEmailRequest initiateFlowNoInitialEmailRequest = null)
 
 Initiate Flow No Initial Email
@@ -887,7 +831,6 @@ Initiate Flow No Initial Email
 #### Used to initiate a document workflow without an initial email being sent to the user.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -901,8 +844,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new WorkFlowApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var initiateFlowNoInitialEmailRequest = new InitiateFlowNoInitialEmailRequest(); // InitiateFlowNoInitialEmailRequest | ##### Initiate Flow No Initial Email Request Model (optional) 
 
@@ -912,7 +856,7 @@ namespace Example
                 InitiateFlowNoInitialEmailResponse result = apiInstance.PostInitiateFlowNoInitialEmail(contentType, initiateFlowNoInitialEmailRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling WorkFlowApi.PostInitiateFlowNoInitialEmail: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -924,7 +868,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -941,8 +884,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -950,14 +893,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Initiate Flow No Initial Email Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostWorkflowSign
-
+<a name="postworkflowsign"></a>
+# **PostWorkflowSign**
 > WorkflowSignResponse PostWorkflowSign (string contentType, WorkflowSignRequest workflowSignRequest = null)
 
 Workflow Sign
@@ -965,7 +904,6 @@ Workflow Sign
 #### Used to send a request to a user to sign a document workflow.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -979,8 +917,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://preprod.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new WorkFlowApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://client-signiflow-com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new WorkFlowApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var workflowSignRequest = new WorkflowSignRequest(); // WorkflowSignRequest | ##### Workflow Sign Request Model (optional) 
 
@@ -990,7 +929,7 @@ namespace Example
                 WorkflowSignResponse result = apiInstance.PostWorkflowSign(contentType, workflowSignRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling WorkFlowApi.PostWorkflowSign: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -1002,7 +941,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -1019,8 +957,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -1028,8 +966,5 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Workflow Sign Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,4 +1,3 @@
-
 # SigniFlow.Connect.Model.GetPrepperTemplateResponsePrepperTemplateValuesField
 
 ## Properties
@@ -18,7 +17,5 @@ Name | Type | Description | Notes
 **XCoordinateField** | **decimal** | The x coordinates of the fields. | 
 **YCoordinateField** | **decimal** | The y coordinates of the fields | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,5 +1,5 @@
-
 # SigniFlow.Connect.Model.CreateWorkflowRequest
+#### The request sent to create a document workflow.
 
 ## Properties
 
@@ -17,7 +17,5 @@ Name | Type | Description | Notes
 **SLAField** | **int** | Deprecated field, Pass 0 | [default to 0]
 **TokenField** | [**TokenField**](TokenField.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

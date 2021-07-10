@@ -1,4 +1,3 @@
-
 # SigniFlow.Connect.Model.GetDocumentAuditResponseActivityField
 
 ## Properties
@@ -17,7 +16,5 @@ Name | Type | Description | Notes
 **PageField** | **string** |  | 
 **UserFullNameField** | **string** | User&#39;s full name. | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

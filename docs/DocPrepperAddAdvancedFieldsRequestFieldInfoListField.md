@@ -1,4 +1,3 @@
-
 # SigniFlow.Connect.Model.DocPrepperAddAdvancedFieldsRequestFieldInfoListField
 
 ## Properties
@@ -22,7 +21,5 @@ Name | Type | Description | Notes
 **XCoordinateField** | **string** | X-coordinates of field on the page | 
 **YCoordinateField** | **string** | Y-coordinates of field on the page | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

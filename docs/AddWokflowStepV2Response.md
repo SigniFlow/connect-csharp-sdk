@@ -1,5 +1,5 @@
-
 # SigniFlow.Connect.Model.AddWokflowStepV2Response
+#### Add a step to a Workflow response.
 
 ## Properties
 
@@ -10,7 +10,5 @@ Name | Type | Description | Notes
 **FlowStepsField** | [**List&lt;AddWokflowStepV2ResponseFlowStepsField&gt;**](AddWokflowStepV2ResponseFlowStepsField.md) |  | 
 **ResultField** | **string** | Displays the result of the call. | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
