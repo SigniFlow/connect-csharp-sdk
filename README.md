@@ -1,3 +1,5 @@
+![SigniFlow logo]
+
 # SigniFlow.Connect - the C# library for the SigniFlow OpenAPI Spec v1
 
 ## SigniFlow API used to automate esignature workflow creation and management.
