@@ -254,4 +254,4 @@ limitations under the License.
 ```
 
 [//]: # "Link anchor definitions"
-[SigniFlow Logo]: https://docs.connect.SigniFlowup.com/images/github/github-SigniFlow-logo.svg
+[SigniFlow Logo]: https://www.signiflow.com/wp-content/uploads/2020/12/WEB-GENERIC-LOGO-REGISTERED-1024x256-1-300x75.png
