@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "DocPrepperAddAdvancedFieldsRequest_FieldOptionsListField")]
     public partial class DocPrepperAddAdvancedFieldsRequestFieldOptionsListField : IEquatable<DocPrepperAddAdvancedFieldsRequestFieldOptionsListField>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DocPrepperAddAdvancedFieldsRequestFieldOptionsListField" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected DocPrepperAddAdvancedFieldsRequestFieldOptionsListField() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="DocPrepperAddAdvancedFieldsRequestFieldOptionsListField" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected DocPrepperAddAdvancedFieldsRequestFieldOptionsListField() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="DocPrepperAddAdvancedFieldsRequestFieldOptionsListField" /> class.
         /// </summary>

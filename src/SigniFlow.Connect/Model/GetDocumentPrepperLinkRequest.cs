@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "GetDocumentPrepperLinkRequest")]
     public partial class GetDocumentPrepperLinkRequest : IEquatable<GetDocumentPrepperLinkRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GetDocumentPrepperLinkRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected GetDocumentPrepperLinkRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="GetDocumentPrepperLinkRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected GetDocumentPrepperLinkRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentPrepperLinkRequest" /> class.
         /// </summary>

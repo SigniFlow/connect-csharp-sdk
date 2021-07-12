@@ -32,20 +32,24 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "LoginResponse")]
     public partial class LoginResponse : IEquatable<LoginResponse>, IValidatableObject
     {
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="LoginResponse" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected LoginResponse() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="LoginResponse" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected LoginResponse() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LoginResponse" /> class.
-        /// </summary>
-        /// <param name="resultField">Displays the result of the call. (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
-        public LoginResponse(string resultField = default(string), TokenField tokenField = default(TokenField))
+        public LoginResponse(TokenField tokenField = default(TokenField))
         {
-            // to ensure "resultField" is required (not null)
-            this.ResultField = resultField ?? throw new ArgumentNullException("resultField is a required property for LoginResponse and cannot be null");
             // to ensure "tokenField" is required (not null)
             this.TokenField = tokenField ?? throw new ArgumentNullException("tokenField is a required property for LoginResponse and cannot be null");
         }
@@ -55,7 +59,16 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         /// <value>Displays the result of the call.</value>
         [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = false)]
-        public string ResultField { get; set; }
+        public string ResultField { get; private set; }
+
+        /// <summary>
+        /// Returns false as ResultField should not be serialized given that it's read-only.
+        /// </summary>
+        /// <returns>false (boolean)</returns>
+        public bool ShouldSerializeResultField()
+        {
+            return false;
+        }
 
         /// <summary>
         /// Gets or Sets TokenField

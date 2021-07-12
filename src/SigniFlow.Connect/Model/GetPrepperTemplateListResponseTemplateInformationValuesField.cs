@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "GetPrepperTemplateListResponse_TemplateInformationValuesField")]
     public partial class GetPrepperTemplateListResponseTemplateInformationValuesField : IEquatable<GetPrepperTemplateListResponseTemplateInformationValuesField>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GetPrepperTemplateListResponseTemplateInformationValuesField" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected GetPrepperTemplateListResponseTemplateInformationValuesField() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="GetPrepperTemplateListResponseTemplateInformationValuesField" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected GetPrepperTemplateListResponseTemplateInformationValuesField() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="GetPrepperTemplateListResponseTemplateInformationValuesField" /> class.
         /// </summary>

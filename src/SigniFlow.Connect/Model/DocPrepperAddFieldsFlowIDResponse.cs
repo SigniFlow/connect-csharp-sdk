@@ -37,11 +37,18 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         [DataMember(Name = "FieldTypeField", IsRequired = true, EmitDefaultValue = false)]
         public FieldType FieldTypeField { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DocPrepperAddFieldsFlowIDResponse" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected DocPrepperAddFieldsFlowIDResponse() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="DocPrepperAddFieldsFlowIDResponse" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected DocPrepperAddFieldsFlowIDResponse() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="DocPrepperAddFieldsFlowIDResponse" /> class.
         /// </summary>

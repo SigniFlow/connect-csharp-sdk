@@ -1,7 +1,8 @@
 ![SigniFlow Logo]
 ---
 
-[![Build Status](https://travis-ci.org/SigniFlow/connect-csharp-sdk.svg?branch=master)](https://travis-ci.org/SigniFlow/connect-csharp-sdk)
+[![Build status](https://ci.appveyor.com/api/projects/status/7pwdgm3vwl1pd04f?svg=true)](https://ci.appveyor.com/project/SigniFlow/connect-csharp-sdk)
+[![Build status](https://ci.appveyor.com/api/projects/status/7pwdgm3vwl1pd04f/branch/main?svg=true)](https://ci.appveyor.com/project/SigniFlow/connect-csharp-sdk/branch/main)
 [![NuGet version](https://badge.fury.io/nu/SigniFlow.Connect.svg)](https://badge.fury.io/nu/SigniFlow.Connect)
 [![Apache-2 license](https://img.shields.io/badge/license-Apache2-brightgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 

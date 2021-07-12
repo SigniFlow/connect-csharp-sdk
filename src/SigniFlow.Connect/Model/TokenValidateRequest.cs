@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "TokenValidateRequest")]
     public partial class TokenValidateRequest : IEquatable<TokenValidateRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TokenValidateRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected TokenValidateRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="TokenValidateRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected TokenValidateRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenValidateRequest" /> class.
         /// </summary>

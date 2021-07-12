@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "SharePortfolio_No_EmailResponse")]
     public partial class SharePortfolioNoEmailResponse : IEquatable<SharePortfolioNoEmailResponse>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SharePortfolioNoEmailResponse" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected SharePortfolioNoEmailResponse() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="SharePortfolioNoEmailResponse" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected SharePortfolioNoEmailResponse() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="SharePortfolioNoEmailResponse" /> class.
         /// </summary>

@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "GetDocumentTagFieldBoxPositionRequest")]
     public partial class GetDocumentTagFieldBoxPositionRequest : IEquatable<GetDocumentTagFieldBoxPositionRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GetDocumentTagFieldBoxPositionRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected GetDocumentTagFieldBoxPositionRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="GetDocumentTagFieldBoxPositionRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected GetDocumentTagFieldBoxPositionRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentTagFieldBoxPositionRequest" /> class.
         /// </summary>

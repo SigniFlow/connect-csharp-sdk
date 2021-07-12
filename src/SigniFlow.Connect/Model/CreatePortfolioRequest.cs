@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "CreatePortfolioRequest")]
     public partial class CreatePortfolioRequest : IEquatable<CreatePortfolioRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CreatePortfolioRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected CreatePortfolioRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="CreatePortfolioRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected CreatePortfolioRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="CreatePortfolioRequest" /> class.
         /// </summary>

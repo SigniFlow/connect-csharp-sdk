@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "DeleteDocRequest")]
     public partial class DeleteDocRequest : IEquatable<DeleteDocRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeleteDocRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected DeleteDocRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="DeleteDocRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected DeleteDocRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteDocRequest" /> class.
         /// </summary>

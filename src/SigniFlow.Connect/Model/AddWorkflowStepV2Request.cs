@@ -42,11 +42,18 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         [DataMember(Name = "ProxyAllowedField", IsRequired = true, EmitDefaultValue = false)]
         public ProxyAllowedField ProxyAllowedField { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AddWorkflowStepV2Request" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected AddWorkflowStepV2Request() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="AddWorkflowStepV2Request" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected AddWorkflowStepV2Request() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="AddWorkflowStepV2Request" /> class.
         /// </summary>

@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "FullWorkflowRequest_PortfolioInformationField")]
     public partial class FullWorkflowRequestPortfolioInformationField : IEquatable<FullWorkflowRequestPortfolioInformationField>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FullWorkflowRequestPortfolioInformationField" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected FullWorkflowRequestPortfolioInformationField() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="FullWorkflowRequestPortfolioInformationField" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected FullWorkflowRequestPortfolioInformationField() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowRequestPortfolioInformationField" /> class.
         /// </summary>

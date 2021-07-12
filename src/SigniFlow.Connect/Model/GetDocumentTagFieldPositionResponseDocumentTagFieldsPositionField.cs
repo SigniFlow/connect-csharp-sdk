@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "GetDocumentTagFieldPositionResponse_DocumentTagFieldsPositionField")]
     public partial class GetDocumentTagFieldPositionResponseDocumentTagFieldsPositionField : IEquatable<GetDocumentTagFieldPositionResponseDocumentTagFieldsPositionField>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GetDocumentTagFieldPositionResponseDocumentTagFieldsPositionField" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected GetDocumentTagFieldPositionResponseDocumentTagFieldsPositionField() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="GetDocumentTagFieldPositionResponseDocumentTagFieldsPositionField" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected GetDocumentTagFieldPositionResponseDocumentTagFieldsPositionField() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentTagFieldPositionResponseDocumentTagFieldsPositionField" /> class.
         /// </summary>

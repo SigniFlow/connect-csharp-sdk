@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "MultipleSignersSigningCeremonyRequest_SignerListField")]
     public partial class MultipleSignersSigningCeremonyRequestSignerListField : IEquatable<MultipleSignersSigningCeremonyRequestSignerListField>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MultipleSignersSigningCeremonyRequestSignerListField" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected MultipleSignersSigningCeremonyRequestSignerListField() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="MultipleSignersSigningCeremonyRequestSignerListField" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected MultipleSignersSigningCeremonyRequestSignerListField() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="MultipleSignersSigningCeremonyRequestSignerListField" /> class.
         /// </summary>

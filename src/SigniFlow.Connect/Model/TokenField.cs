@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "TokenField")]
     public partial class TokenField : IEquatable<TokenField>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TokenField" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected TokenField() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="TokenField" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected TokenField() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenField" /> class.
         /// </summary>

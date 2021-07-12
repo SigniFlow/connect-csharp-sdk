@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "CreateWorkflowResponse")]
     public partial class CreateWorkflowResponse : IEquatable<CreateWorkflowResponse>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CreateWorkflowResponse" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected CreateWorkflowResponse() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="CreateWorkflowResponse" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected CreateWorkflowResponse() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateWorkflowResponse" /> class.
         /// </summary>

@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "DocPrepperAddAdvancedFieldsResponse")]
     public partial class DocPrepperAddAdvancedFieldsResponse : IEquatable<DocPrepperAddAdvancedFieldsResponse>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DocPrepperAddAdvancedFieldsResponse" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected DocPrepperAddAdvancedFieldsResponse() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="DocPrepperAddAdvancedFieldsResponse" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected DocPrepperAddAdvancedFieldsResponse() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="DocPrepperAddAdvancedFieldsResponse" /> class.
         /// </summary>

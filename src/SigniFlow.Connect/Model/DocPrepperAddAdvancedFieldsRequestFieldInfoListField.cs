@@ -37,11 +37,18 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         [DataMember(Name = "AdvancedFieldTypeField", IsRequired = true, EmitDefaultValue = false)]
         public AdvancedFieldType AdvancedFieldTypeField { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DocPrepperAddAdvancedFieldsRequestFieldInfoListField" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected DocPrepperAddAdvancedFieldsRequestFieldInfoListField() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="DocPrepperAddAdvancedFieldsRequestFieldInfoListField" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected DocPrepperAddAdvancedFieldsRequestFieldInfoListField() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="DocPrepperAddAdvancedFieldsRequestFieldInfoListField" /> class.
         /// </summary>

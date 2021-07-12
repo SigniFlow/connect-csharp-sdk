@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "InitiateFlowRequest")]
     public partial class InitiateFlowRequest : IEquatable<InitiateFlowRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InitiateFlowRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected InitiateFlowRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="InitiateFlowRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected InitiateFlowRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="InitiateFlowRequest" /> class.
         /// </summary>

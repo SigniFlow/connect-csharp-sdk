@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "LinkToPortfolioResponse")]
     public partial class LinkToPortfolioResponse : IEquatable<LinkToPortfolioResponse>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LinkToPortfolioResponse" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected LinkToPortfolioResponse() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="LinkToPortfolioResponse" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected LinkToPortfolioResponse() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkToPortfolioResponse" /> class.
         /// </summary>

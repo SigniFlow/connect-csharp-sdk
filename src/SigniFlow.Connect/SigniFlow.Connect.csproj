@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>SigniFlow.Connect</AssemblyName>
     <PackageId>SigniFlow.Connect</PackageId>
     <OutputType>Library</OutputType>
-    <Authors>OpenAPI</Authors>
-    <Company>OpenAPI</Company>
-    <AssemblyTitle>OpenAPI Library</AssemblyTitle>
+    <Authors>SigniFlow</Authors>
+    <Company>SigniFlow</Company>
+    <AssemblyTitle>SigniFlow.Connect</AssemblyTitle>
     <Description>A library generated from a OpenAPI doc</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>SigniFlow.Connect</RootNamespace>

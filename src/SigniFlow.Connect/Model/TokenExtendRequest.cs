@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "TokenExtendRequest")]
     public partial class TokenExtendRequest : IEquatable<TokenExtendRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TokenExtendRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected TokenExtendRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="TokenExtendRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected TokenExtendRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenExtendRequest" /> class.
         /// </summary>

@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "ApplyPrepperTemplateRequest")]
     public partial class ApplyPrepperTemplateRequest : IEquatable<ApplyPrepperTemplateRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ApplyPrepperTemplateRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected ApplyPrepperTemplateRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="ApplyPrepperTemplateRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected ApplyPrepperTemplateRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplyPrepperTemplateRequest" /> class.
         /// </summary>

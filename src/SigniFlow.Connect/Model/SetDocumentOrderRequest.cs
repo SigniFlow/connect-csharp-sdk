@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "SetDocumentOrderRequest")]
     public partial class SetDocumentOrderRequest : IEquatable<SetDocumentOrderRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SetDocumentOrderRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected SetDocumentOrderRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="SetDocumentOrderRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected SetDocumentOrderRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="SetDocumentOrderRequest" /> class.
         /// </summary>

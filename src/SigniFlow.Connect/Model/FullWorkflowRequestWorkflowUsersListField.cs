@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "FullWorkflowRequest_WorkflowUsersListField")]
     public partial class FullWorkflowRequestWorkflowUsersListField : IEquatable<FullWorkflowRequestWorkflowUsersListField>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FullWorkflowRequestWorkflowUsersListField" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected FullWorkflowRequestWorkflowUsersListField() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="FullWorkflowRequestWorkflowUsersListField" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected FullWorkflowRequestWorkflowUsersListField() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowRequestWorkflowUsersListField" /> class.
         /// </summary>

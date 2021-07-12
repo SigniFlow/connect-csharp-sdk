@@ -37,11 +37,18 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         [DataMember(Name = "ActionField", IsRequired = true, EmitDefaultValue = false)]
         public ActionField ActionField { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AddWokflowStepV2ResponseFlowStepsField" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected AddWokflowStepV2ResponseFlowStepsField() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="AddWokflowStepV2ResponseFlowStepsField" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected AddWokflowStepV2ResponseFlowStepsField() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="AddWokflowStepV2ResponseFlowStepsField" /> class.
         /// </summary>

@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "GetDocumentAuditResponse_ActivityField")]
     public partial class GetDocumentAuditResponseActivityField : IEquatable<GetDocumentAuditResponseActivityField>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GetDocumentAuditResponseActivityField" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected GetDocumentAuditResponseActivityField() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="GetDocumentAuditResponseActivityField" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected GetDocumentAuditResponseActivityField() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentAuditResponseActivityField" /> class.
         /// </summary>

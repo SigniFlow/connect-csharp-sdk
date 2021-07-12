@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "CancelFlowResponse")]
     public partial class CancelFlowResponse : IEquatable<CancelFlowResponse>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CancelFlowResponse" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected CancelFlowResponse() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="CancelFlowResponse" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected CancelFlowResponse() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="CancelFlowResponse" /> class.
         /// </summary>

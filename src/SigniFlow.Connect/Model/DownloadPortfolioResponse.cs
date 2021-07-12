@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "DownloadPortfolioResponse")]
     public partial class DownloadPortfolioResponse : IEquatable<DownloadPortfolioResponse>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DownloadPortfolioResponse" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected DownloadPortfolioResponse() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="DownloadPortfolioResponse" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected DownloadPortfolioResponse() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="DownloadPortfolioResponse" /> class.
         /// </summary>

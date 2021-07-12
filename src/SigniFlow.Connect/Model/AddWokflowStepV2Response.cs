@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "AddWokflowStepV2Response")]
     public partial class AddWokflowStepV2Response : IEquatable<AddWokflowStepV2Response>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AddWokflowStepV2Response" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected AddWokflowStepV2Response() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="AddWokflowStepV2Response" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected AddWokflowStepV2Response() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="AddWokflowStepV2Response" /> class.
         /// </summary>

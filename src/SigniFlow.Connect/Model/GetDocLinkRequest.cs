@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "GetDocLinkRequest")]
     public partial class GetDocLinkRequest : IEquatable<GetDocLinkRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GetDocLinkRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected GetDocLinkRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="GetDocLinkRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected GetDocLinkRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocLinkRequest" /> class.
         /// </summary>

@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "InitiateFlow_No_EmailRequest")]
     public partial class InitiateFlowNoEmailRequest : IEquatable<InitiateFlowNoEmailRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InitiateFlowNoEmailRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected InitiateFlowNoEmailRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="InitiateFlowNoEmailRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected InitiateFlowNoEmailRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="InitiateFlowNoEmailRequest" /> class.
         /// </summary>

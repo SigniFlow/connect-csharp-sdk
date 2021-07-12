@@ -42,11 +42,18 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         [DataMember(Name = "ExtensionField", IsRequired = true, EmitDefaultValue = false)]
         public DocExtension ExtensionField { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FullWorkflowRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected FullWorkflowRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="FullWorkflowRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected FullWorkflowRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowRequest" /> class.
         /// </summary>

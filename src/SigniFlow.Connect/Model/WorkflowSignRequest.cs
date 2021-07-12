@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "WorkflowSignRequest")]
     public partial class WorkflowSignRequest : IEquatable<WorkflowSignRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkflowSignRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected WorkflowSignRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="WorkflowSignRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected WorkflowSignRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowSignRequest" /> class.
         /// </summary>

@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "LoginRequest")]
     public partial class LoginRequest : IEquatable<LoginRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LoginRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected LoginRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="LoginRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected LoginRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="LoginRequest" /> class.
         /// </summary>

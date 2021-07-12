@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "GetDocumentAuditRequest")]
     public partial class GetDocumentAuditRequest : IEquatable<GetDocumentAuditRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GetDocumentAuditRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected GetDocumentAuditRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="GetDocumentAuditRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected GetDocumentAuditRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentAuditRequest" /> class.
         /// </summary>

@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "LogoutRequest")]
     public partial class LogoutRequest : IEquatable<LogoutRequest>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LogoutRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected LogoutRequest() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="LogoutRequest" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected LogoutRequest() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="LogoutRequest" /> class.
         /// </summary>

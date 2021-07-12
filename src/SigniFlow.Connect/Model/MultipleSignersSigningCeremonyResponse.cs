@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "MultipleSignersSigningCeremonyResponse")]
     public partial class MultipleSignersSigningCeremonyResponse : IEquatable<MultipleSignersSigningCeremonyResponse>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MultipleSignersSigningCeremonyResponse" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected MultipleSignersSigningCeremonyResponse() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="MultipleSignersSigningCeremonyResponse" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected MultipleSignersSigningCeremonyResponse() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="MultipleSignersSigningCeremonyResponse" /> class.
         /// </summary>

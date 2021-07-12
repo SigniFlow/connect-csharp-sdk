@@ -32,11 +32,18 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "FullWorkflowRequest_GroupStepField_GroupMembersField")]
     public partial class FullWorkflowRequestGroupStepFieldGroupMembersField : IEquatable<FullWorkflowRequestGroupStepFieldGroupMembersField>, IValidatableObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FullWorkflowRequestGroupStepFieldGroupMembersField" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected FullWorkflowRequestGroupStepFieldGroupMembersField() { }
+//    
+//    
+//        /// <summary>
+//        /// Initializes a new instance of the <see cref="FullWorkflowRequestGroupStepFieldGroupMembersField" /> class.
+//        /// </summary>
+//        [JsonConstructorAttribute]
+//        
+//        protected FullWorkflowRequestGroupStepFieldGroupMembersField() { }
+//        
+//        
+//    
+//    
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowRequestGroupStepFieldGroupMembersField" /> class.
         /// </summary>
