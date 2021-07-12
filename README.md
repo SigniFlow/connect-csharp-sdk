@@ -233,7 +233,7 @@ All endpoints do not require authorization.
 ## Contributing
 
 Send bug reports, feature requests, and code contributions to the [API
-specifications repository](https://github.com/SigniFlow/connect-api-specification),
+specifications repository](https://github.com/SigniFlow/OpenAPI-Specifications),
 as this repository contains only the generated SDK code.
 
 ## License
