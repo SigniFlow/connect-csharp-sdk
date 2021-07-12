@@ -7,4 +7,3 @@ build_script:
 - dotnet test -c Release
 after_build:
 - dotnet pack .\src\SigniFlow.Connect\SigniFlow.Connect.csproj -o ../../output -c Release --no-build
-- nuget push C:\output\SigniFlow.Connect.1.0.0.nupkg -ApiKey <your-api-key> -Source https://api.nuget.org/v3/index.json
