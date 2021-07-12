@@ -12,11 +12,11 @@
     <Description>A library generated from a OpenAPI doc</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>SigniFlow.Connect</RootNamespace>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\SigniFlow.Connect.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/SigniFlow/connect-csharp-sdk.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Minor update</PackageReleaseNotes>
+    <PackageReleaseNotes>SigniFlow.Connect - the C# library for the SigniFlow OpenAPI Spec v1</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
