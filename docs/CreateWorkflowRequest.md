@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **AutoRemindField** | **AutoRemind** |  | 
 **DocField** | **string** | Base64 Encoded String of document | 
 **DocNameField** | **string** | Name of document to display in SigniFlow | 
-**DueDateField** | **DateTime** | Due date for the document, use in conjunction with Auto Expire. | [optional] 
+**DueDateField** | **DateTime?** | Due date for the document, use in conjunction with Auto Expire. | [optional] 
 **ExtensionField** | **DocExtension** |  | 
 **MessageField** | **string** | Custom message to display to participants | 
 **PriorityField** | **Priority** |  | 

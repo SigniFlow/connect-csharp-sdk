@@ -32,7 +32,7 @@ namespace SigniFlow.Connect.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.0.2";
+        public const string Version = "1.0.3";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -102,7 +102,7 @@ namespace SigniFlow.Connect.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = "SigniFlow-Connect-CSharp/1.20211120.0";
+            UserAgent = "SigniFlow-Connect-CSharp/1.20210712.0";
             BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -499,7 +499,7 @@ namespace SigniFlow.Connect.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 1.0\n";
-            report += "    SDK Package Version: 1.0.2\n";
+            report += "    SDK Package Version: 1.0.3\n";
 
             return report;
         }

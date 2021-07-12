@@ -78,7 +78,7 @@ namespace SigniFlow.Connect.Model
         /// <param name="priorityField">priorityField (required).</param>
         /// <param name="sLAField">Deprecated field, Pass 0 (required) (default to 0).</param>
         /// <param name="tokenField">tokenField (required).</param>
-        public CreateWorkflowRequest(string additionalDataField = default(string), AutoExpire autoExpireField = default(AutoExpire), AutoRemind autoRemindField = default(AutoRemind), string docField = default(string), string docNameField = default(string), DateTime dueDateField = default(DateTime), DocExtension extensionField = default(DocExtension), string messageField = default(string), Priority priorityField = default(Priority), int sLAField = 0, TokenField tokenField = default(TokenField))
+        public CreateWorkflowRequest(string additionalDataField = default(string), AutoExpire autoExpireField = default(AutoExpire), AutoRemind autoRemindField = default(AutoRemind), string docField = default(string), string docNameField = default(string), DateTime? dueDateField = default(DateTime?), DocExtension extensionField = default(DocExtension), string messageField = default(string), Priority priorityField = default(Priority), int sLAField = 0, TokenField tokenField = default(TokenField))
         {
             // to ensure "additionalDataField" is required (not null)
             this.AdditionalDataField = additionalDataField ?? throw new ArgumentNullException("additionalDataField is a required property for CreateWorkflowRequest and cannot be null");
@@ -123,8 +123,8 @@ namespace SigniFlow.Connect.Model
         /// Due date for the document, use in conjunction with Auto Expire.
         /// </summary>
         /// <value>Due date for the document, use in conjunction with Auto Expire.</value>
-        [DataMember(Name = "DueDateField", EmitDefaultValue = false)]
-        public DateTime DueDateField { get; set; }
+        [DataMember(Name = "DueDateField", EmitDefaultValue = true)]
+        public DateTime? DueDateField { get; set; }
 
         /// <summary>
         /// Custom message to display to participants
