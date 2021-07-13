@@ -102,7 +102,7 @@ namespace SigniFlow.Connect.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = "SigniFlow-Connect-CSharp/1.20210712.0";
+            UserAgent = "SigniFlow-Connect-CSharp/1.0.3";
             BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
