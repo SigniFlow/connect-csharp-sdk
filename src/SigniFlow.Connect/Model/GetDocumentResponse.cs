@@ -67,28 +67,28 @@ namespace SigniFlow.Connect.Model
         /// Returns a base64 string as the document.
         /// </summary>
         /// <value>Returns a base64 string as the document.</value>
-        [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = true)]
         public string DocField { get; set; }
 
         /// <summary>
         /// Document field name.
         /// </summary>
         /// <value>Document field name.</value>
-        [DataMember(Name = "DocNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocNameField", IsRequired = true, EmitDefaultValue = true)]
         public string DocNameField { get; set; }
 
         /// <summary>
         /// Document extension field.
         /// </summary>
         /// <value>Document extension field.</value>
-        [DataMember(Name = "ExtensionField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ExtensionField", IsRequired = true, EmitDefaultValue = true)]
         public string ExtensionField { get; set; }
 
         /// <summary>
         /// Displays the result of the call.
         /// </summary>
         /// <value>Displays the result of the call.</value>
-        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = true)]
         public string ResultField { get; set; }
 
         /// <summary>

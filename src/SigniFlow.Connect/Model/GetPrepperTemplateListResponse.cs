@@ -61,13 +61,13 @@ namespace SigniFlow.Connect.Model
         /// Displays the result of the call.
         /// </summary>
         /// <value>Displays the result of the call.</value>
-        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = true)]
         public string ResultField { get; set; }
 
         /// <summary>
         /// Gets or Sets TemplateInformationValuesField
         /// </summary>
-        [DataMember(Name = "TemplateInformationValuesField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TemplateInformationValuesField", IsRequired = true, EmitDefaultValue = true)]
         public List<GetPrepperTemplateListResponseTemplateInformationValuesField> TemplateInformationValuesField { get; set; }
 
         /// <summary>

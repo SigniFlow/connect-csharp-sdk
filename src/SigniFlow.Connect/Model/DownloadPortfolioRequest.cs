@@ -60,13 +60,13 @@ namespace SigniFlow.Connect.Model
         /// Portfolio ID.
         /// </summary>
         /// <value>Portfolio ID.</value>
-        [DataMember(Name = "PortfolioIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PortfolioIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PortfolioIDField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
         /// </summary>
-        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
         public TokenField TokenField { get; set; }
 
         /// <summary>

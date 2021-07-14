@@ -63,20 +63,20 @@ namespace SigniFlow.Connect.Model
         /// Document ID field.
         /// </summary>
         /// <value>Document ID field.</value>
-        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal DocIDField { get; set; }
 
         /// <summary>
         /// Portfolio name displayed in SigniFlow
         /// </summary>
         /// <value>Portfolio name displayed in SigniFlow</value>
-        [DataMember(Name = "PortfolioNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PortfolioNameField", IsRequired = true, EmitDefaultValue = true)]
         public string PortfolioNameField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenIDField
         /// </summary>
-        [DataMember(Name = "TokenIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenIDField", IsRequired = true, EmitDefaultValue = true)]
         public TokenField TokenIDField { get; set; }
 
         /// <summary>

@@ -62,20 +62,20 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets NameField
         /// </summary>
-        [DataMember(Name = "NameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "NameField", IsRequired = true, EmitDefaultValue = true)]
         public string NameField { get; set; }
 
         /// <summary>
         /// Gets or Sets PrepperTemplateIDField
         /// </summary>
-        [DataMember(Name = "PrepperTemplateIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PrepperTemplateIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PrepperTemplateIDField { get; set; }
 
         /// <summary>
         /// Template description.
         /// </summary>
         /// <value>Template description.</value>
-        [DataMember(Name = "TemplateDescriptionField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TemplateDescriptionField", IsRequired = true, EmitDefaultValue = true)]
         public string TemplateDescriptionField { get; set; }
 
         /// <summary>

@@ -59,13 +59,13 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets TokenField
         /// </summary>
-        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
         public TokenField TokenField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenValidityField
         /// </summary>
-        [DataMember(Name = "TokenValidityField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenValidityField", IsRequired = true, EmitDefaultValue = true)]
         public decimal TokenValidityField { get; set; }
 
         /// <summary>

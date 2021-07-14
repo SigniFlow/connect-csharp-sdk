@@ -122,157 +122,157 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets CheckboxFieldsListField
         /// </summary>
-        [DataMember(Name = "CheckboxFieldsListField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "CheckboxFieldsListField", IsRequired = true, EmitDefaultValue = true)]
         public List<Object> CheckboxFieldsListField { get; set; }
 
         /// <summary>
         /// Gets or Sets DocField
         /// </summary>
-        [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = true)]
         public string DocField { get; set; }
 
         /// <summary>
         /// Gets or Sets DocNameField
         /// </summary>
-        [DataMember(Name = "DocNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocNameField", IsRequired = true, EmitDefaultValue = true)]
         public string DocNameField { get; set; }
 
         /// <summary>
         /// Gets or Sets InitialFieldsListField
         /// </summary>
-        [DataMember(Name = "InitialFieldsListField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "InitialFieldsListField", IsRequired = true, EmitDefaultValue = true)]
         public List<Object> InitialFieldsListField { get; set; }
 
         /// <summary>
         /// Gets or Sets LoginPasswordField
         /// </summary>
-        [DataMember(Name = "LoginPasswordField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LoginPasswordField", IsRequired = true, EmitDefaultValue = true)]
         public string LoginPasswordField { get; set; }
 
         /// <summary>
         /// Gets or Sets LoginUserNameField
         /// </summary>
-        [DataMember(Name = "LoginUserNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LoginUserNameField", IsRequired = true, EmitDefaultValue = true)]
         public string LoginUserNameField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignatureHField
         /// </summary>
-        [DataMember(Name = "SignatureHField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignatureHField", IsRequired = true, EmitDefaultValue = true)]
         public decimal SignatureHField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignatureImageField
         /// </summary>
-        [DataMember(Name = "SignatureImageField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignatureImageField", IsRequired = true, EmitDefaultValue = true)]
         public string SignatureImageField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignatureImageIncludeBorderField
         /// </summary>
-        [DataMember(Name = "SignatureImageIncludeBorderField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignatureImageIncludeBorderField", IsRequired = true, EmitDefaultValue = true)]
         public bool SignatureImageIncludeBorderField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignatureImageIncludeReasonField
         /// </summary>
-        [DataMember(Name = "SignatureImageIncludeReasonField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignatureImageIncludeReasonField", IsRequired = true, EmitDefaultValue = true)]
         public bool SignatureImageIncludeReasonField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignatureImageIncludeSignedByField
         /// </summary>
-        [DataMember(Name = "SignatureImageIncludeSignedByField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignatureImageIncludeSignedByField", IsRequired = true, EmitDefaultValue = true)]
         public bool SignatureImageIncludeSignedByField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignatureImageIncludeSignedDateField
         /// </summary>
-        [DataMember(Name = "SignatureImageIncludeSignedDateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignatureImageIncludeSignedDateField", IsRequired = true, EmitDefaultValue = true)]
         public bool SignatureImageIncludeSignedDateField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignatureImageTypeField
         /// </summary>
-        [DataMember(Name = "SignatureImageTypeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignatureImageTypeField", IsRequired = true, EmitDefaultValue = true)]
         public decimal SignatureImageTypeField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignaturePageField
         /// </summary>
-        [DataMember(Name = "SignaturePageField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignaturePageField", IsRequired = true, EmitDefaultValue = true)]
         public decimal SignaturePageField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignatureWField
         /// </summary>
-        [DataMember(Name = "SignatureWField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignatureWField", IsRequired = true, EmitDefaultValue = true)]
         public decimal SignatureWField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignatureXField
         /// </summary>
-        [DataMember(Name = "SignatureXField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignatureXField", IsRequired = true, EmitDefaultValue = true)]
         public decimal SignatureXField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignatureYField
         /// </summary>
-        [DataMember(Name = "SignatureYField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignatureYField", IsRequired = true, EmitDefaultValue = true)]
         public decimal SignatureYField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignerEmailField
         /// </summary>
-        [DataMember(Name = "SignerEmailField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignerEmailField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerEmailField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignerFullNameField
         /// </summary>
-        [DataMember(Name = "SignerFullNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignerFullNameField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerFullNameField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignerIdentificationNumberField
         /// </summary>
-        [DataMember(Name = "SignerIdentificationNumberField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignerIdentificationNumberField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerIdentificationNumberField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignerLocationField
         /// </summary>
-        [DataMember(Name = "SignerLocationField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignerLocationField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerLocationField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignerMobileNumberField
         /// </summary>
-        [DataMember(Name = "SignerMobileNumberField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignerMobileNumberField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerMobileNumberField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignerReasonField
         /// </summary>
-        [DataMember(Name = "SignerReasonField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignerReasonField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerReasonField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignerTrustOriginField
         /// </summary>
-        [DataMember(Name = "SignerTrustOriginField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignerTrustOriginField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerTrustOriginField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignerTrustReferenceField
         /// </summary>
-        [DataMember(Name = "SignerTrustReferenceField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignerTrustReferenceField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerTrustReferenceField { get; set; }
 
         /// <summary>
         /// Gets or Sets TextFieldsListField
         /// </summary>
-        [DataMember(Name = "TextFieldsListField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TextFieldsListField", IsRequired = true, EmitDefaultValue = true)]
         public List<Object> TextFieldsListField { get; set; }
 
         /// <summary>

@@ -67,32 +67,32 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets DocField
         /// </summary>
-        [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = true)]
         public string DocField { get; set; }
 
         /// <summary>
         /// Gets or Sets DocIDField
         /// </summary>
-        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal DocIDField { get; set; }
 
         /// <summary>
         /// Gets or Sets PortfolioIDField
         /// </summary>
-        [DataMember(Name = "PortfolioIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PortfolioIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PortfolioIDField { get; set; }
 
         /// <summary>
         /// Displays the result of the call.
         /// </summary>
         /// <value>Displays the result of the call.</value>
-        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = true)]
         public string ResultField { get; set; }
 
         /// <summary>
         /// Gets or Sets StatusField
         /// </summary>
-        [DataMember(Name = "StatusField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "StatusField", IsRequired = true, EmitDefaultValue = true)]
         public string StatusField { get; set; }
 
         /// <summary>

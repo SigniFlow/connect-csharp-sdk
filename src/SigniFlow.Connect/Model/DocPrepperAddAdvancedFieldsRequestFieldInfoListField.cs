@@ -35,7 +35,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets AdvancedFieldTypeField
         /// </summary>
-        [DataMember(Name = "AdvancedFieldTypeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "AdvancedFieldTypeField", IsRequired = true, EmitDefaultValue = true)]
         public AdvancedFieldType AdvancedFieldTypeField { get; set; }
 //    
 //    
@@ -60,12 +60,12 @@ namespace SigniFlow.Connect.Model
         /// <param name="fontSizeField">Font size of the text in the field (required).</param>
         /// <param name="heightField">Field height (required).</param>
         /// <param name="widthField">Field Width (required).</param>
-        /// <param name="linkToField">linkToField (required).</param>
-        /// <param name="nameField">nameField (required).</param>
+        /// <param name="linkToField">This field is used to link fields together and allow users to fill in specific portions of the document based on a checkbox with the same LinkedTo Value. (required).</param>
+        /// <param name="nameField">This field is used when you need to define the field embedded in the document with a unique name that can be referenced later. (required).</param>
         /// <param name="pageNumberField">Field page number. (required).</param>
         /// <param name="searchableField">searchableField (required).</param>
         /// <param name="userEmailField">User email address. (required).</param>
-        /// <param name="valueField">valueField (required).</param>
+        /// <param name="valueField">If you would like to fill in a predefined value that will appear on the document - you can fill it in here - this can be editted by the end user. (required).</param>
         /// <param name="xCoordinateField">X-coordinates of field on the page (required).</param>
         /// <param name="yCoordinateField">Y-coordinates of field on the page (required).</param>
         public DocPrepperAddAdvancedFieldsRequestFieldInfoListField(AdvancedFieldType advancedFieldTypeField = default(AdvancedFieldType), decimal docIDField = default(decimal), List<DocPrepperAddAdvancedFieldsRequestFieldOptionsListField> fieldOptionsListField = default(List<DocPrepperAddAdvancedFieldsRequestFieldOptionsListField>), decimal flowIDField = default(decimal), string fontFamilyField = default(string), decimal fontSizeField = default(decimal), string heightField = default(string), string widthField = default(string), string linkToField = default(string), string nameField = default(string), decimal pageNumberField = default(decimal), bool searchableField = default(bool), string userEmailField = default(string), string valueField = default(string), string xCoordinateField = default(string), string yCoordinateField = default(string))
@@ -101,100 +101,103 @@ namespace SigniFlow.Connect.Model
         /// Document ID field.
         /// </summary>
         /// <value>Document ID field.</value>
-        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal DocIDField { get; set; }
 
         /// <summary>
         /// Gets or Sets FieldOptionsListField
         /// </summary>
-        [DataMember(Name = "FieldOptionsListField", EmitDefaultValue = false)]
+        [DataMember(Name = "FieldOptionsListField", EmitDefaultValue = true)]
         public List<DocPrepperAddAdvancedFieldsRequestFieldOptionsListField> FieldOptionsListField { get; set; }
 
         /// <summary>
         /// Document Flow ID field.
         /// </summary>
         /// <value>Document Flow ID field.</value>
-        [DataMember(Name = "FlowIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FlowIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal FlowIDField { get; set; }
 
         /// <summary>
         /// Font family of the text in the field
         /// </summary>
         /// <value>Font family of the text in the field</value>
-        [DataMember(Name = "FontFamilyField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FontFamilyField", IsRequired = true, EmitDefaultValue = true)]
         public string FontFamilyField { get; set; }
 
         /// <summary>
         /// Font size of the text in the field
         /// </summary>
         /// <value>Font size of the text in the field</value>
-        [DataMember(Name = "FontSizeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FontSizeField", IsRequired = true, EmitDefaultValue = true)]
         public decimal FontSizeField { get; set; }
 
         /// <summary>
         /// Field height
         /// </summary>
         /// <value>Field height</value>
-        [DataMember(Name = "HeightField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "HeightField", IsRequired = true, EmitDefaultValue = true)]
         public string HeightField { get; set; }
 
         /// <summary>
         /// Field Width
         /// </summary>
         /// <value>Field Width</value>
-        [DataMember(Name = "WidthField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "WidthField", IsRequired = true, EmitDefaultValue = true)]
         public string WidthField { get; set; }
 
         /// <summary>
-        /// Gets or Sets LinkToField
+        /// This field is used to link fields together and allow users to fill in specific portions of the document based on a checkbox with the same LinkedTo Value.
         /// </summary>
-        [DataMember(Name = "LinkToField", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>This field is used to link fields together and allow users to fill in specific portions of the document based on a checkbox with the same LinkedTo Value.</value>
+        [DataMember(Name = "LinkToField", IsRequired = true, EmitDefaultValue = true)]
         public string LinkToField { get; set; }
 
         /// <summary>
-        /// Gets or Sets NameField
+        /// This field is used when you need to define the field embedded in the document with a unique name that can be referenced later.
         /// </summary>
-        [DataMember(Name = "NameField", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>This field is used when you need to define the field embedded in the document with a unique name that can be referenced later.</value>
+        [DataMember(Name = "NameField", IsRequired = true, EmitDefaultValue = true)]
         public string NameField { get; set; }
 
         /// <summary>
         /// Field page number.
         /// </summary>
         /// <value>Field page number.</value>
-        [DataMember(Name = "PageNumberField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PageNumberField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PageNumberField { get; set; }
 
         /// <summary>
         /// Gets or Sets SearchableField
         /// </summary>
-        [DataMember(Name = "SearchableField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SearchableField", IsRequired = true, EmitDefaultValue = true)]
         public bool SearchableField { get; set; }
 
         /// <summary>
         /// User email address.
         /// </summary>
         /// <value>User email address.</value>
-        [DataMember(Name = "UserEmailField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "UserEmailField", IsRequired = true, EmitDefaultValue = true)]
         public string UserEmailField { get; set; }
 
         /// <summary>
-        /// Gets or Sets ValueField
+        /// If you would like to fill in a predefined value that will appear on the document - you can fill it in here - this can be editted by the end user.
         /// </summary>
-        [DataMember(Name = "ValueField", IsRequired = true, EmitDefaultValue = false)]
+        /// <value>If you would like to fill in a predefined value that will appear on the document - you can fill it in here - this can be editted by the end user.</value>
+        [DataMember(Name = "ValueField", IsRequired = true, EmitDefaultValue = true)]
         public string ValueField { get; set; }
 
         /// <summary>
         /// X-coordinates of field on the page
         /// </summary>
         /// <value>X-coordinates of field on the page</value>
-        [DataMember(Name = "XCoordinateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "XCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public string XCoordinateField { get; set; }
 
         /// <summary>
         /// Y-coordinates of field on the page
         /// </summary>
         /// <value>Y-coordinates of field on the page</value>
-        [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public string YCoordinateField { get; set; }
 
         /// <summary>

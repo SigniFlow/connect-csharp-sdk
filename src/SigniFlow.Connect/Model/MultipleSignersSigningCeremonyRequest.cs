@@ -69,33 +69,33 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets DocField
         /// </summary>
-        [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = true)]
         public string DocField { get; set; }
 
         /// <summary>
         /// Gets or Sets DocNameField
         /// </summary>
-        [DataMember(Name = "DocNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocNameField", IsRequired = true, EmitDefaultValue = true)]
         public string DocNameField { get; set; }
 
         /// <summary>
         /// User&#39;s password.
         /// </summary>
         /// <value>User&#39;s password.</value>
-        [DataMember(Name = "LoginPasswordField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LoginPasswordField", IsRequired = true, EmitDefaultValue = true)]
         public string LoginPasswordField { get; set; }
 
         /// <summary>
         /// User&#39;s username.
         /// </summary>
         /// <value>User&#39;s username.</value>
-        [DataMember(Name = "LoginUserNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LoginUserNameField", IsRequired = true, EmitDefaultValue = true)]
         public string LoginUserNameField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignerListField
         /// </summary>
-        [DataMember(Name = "SignerListField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignerListField", IsRequired = true, EmitDefaultValue = true)]
         public List<MultipleSignersSigningCeremonyRequestSignerListField> SignerListField { get; set; }
 
         /// <summary>

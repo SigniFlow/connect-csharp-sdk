@@ -35,7 +35,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets FieldTypeField
         /// </summary>
-        [DataMember(Name = "FieldTypeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FieldTypeField", IsRequired = true, EmitDefaultValue = true)]
         public FieldType FieldTypeField { get; set; }
 //    
 //    
@@ -85,63 +85,63 @@ namespace SigniFlow.Connect.Model
         /// Document ID.
         /// </summary>
         /// <value>Document ID.</value>
-        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal DocIDField { get; set; }
 
         /// <summary>
         /// The height of the field.
         /// </summary>
         /// <value>The height of the field.</value>
-        [DataMember(Name = "HeightField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "HeightField", IsRequired = true, EmitDefaultValue = true)]
         public string HeightField { get; set; }
 
         /// <summary>
         /// Field page number.
         /// </summary>
         /// <value>Field page number.</value>
-        [DataMember(Name = "PageNumberField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PageNumberField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PageNumberField { get; set; }
 
         /// <summary>
         /// Document prepper field ID.
         /// </summary>
         /// <value>Document prepper field ID.</value>
-        [DataMember(Name = "PrepperFieldIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PrepperFieldIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PrepperFieldIDField { get; set; }
 
         /// <summary>
         /// Displays the result of the call.
         /// </summary>
         /// <value>Displays the result of the call.</value>
-        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = true)]
         public string ResultField { get; set; }
 
         /// <summary>
         /// SigniFlow User ID
         /// </summary>
         /// <value>SigniFlow User ID</value>
-        [DataMember(Name = "UserIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "UserIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal UserIDField { get; set; }
 
         /// <summary>
         /// The width of the field.
         /// </summary>
         /// <value>The width of the field.</value>
-        [DataMember(Name = "WidthField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "WidthField", IsRequired = true, EmitDefaultValue = true)]
         public string WidthField { get; set; }
 
         /// <summary>
         /// X-coordinates of the field.
         /// </summary>
         /// <value>X-coordinates of the field.</value>
-        [DataMember(Name = "XCoordinateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "XCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public string XCoordinateField { get; set; }
 
         /// <summary>
         /// Y-coordinates of the field.
         /// </summary>
         /// <value>Y-coordinates of the field.</value>
-        [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public string YCoordinateField { get; set; }
 
         /// <summary>

@@ -60,14 +60,14 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets AuditDocumentField
         /// </summary>
-        [DataMember(Name = "AuditDocumentField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "AuditDocumentField", IsRequired = true, EmitDefaultValue = true)]
         public string AuditDocumentField { get; set; }
 
         /// <summary>
         /// Displays the result of the call.
         /// </summary>
         /// <value>Displays the result of the call.</value>
-        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = true)]
         public string ResultField { get; set; }
 
         /// <summary>

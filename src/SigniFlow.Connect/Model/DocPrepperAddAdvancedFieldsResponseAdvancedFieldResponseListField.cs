@@ -60,14 +60,14 @@ namespace SigniFlow.Connect.Model
         /// Document field ID.
         /// </summary>
         /// <value>Document field ID.</value>
-        [DataMember(Name = "DocFieldIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocFieldIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal DocFieldIDField { get; set; }
 
         /// <summary>
         /// Displays the result of the call.
         /// </summary>
         /// <value>Displays the result of the call.</value>
-        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = true)]
         public string ResultField { get; set; }
 
         /// <summary>

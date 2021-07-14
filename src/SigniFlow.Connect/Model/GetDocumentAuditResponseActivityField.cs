@@ -87,69 +87,69 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets ActionOrderField
         /// </summary>
-        [DataMember(Name = "ActionOrderField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ActionOrderField", IsRequired = true, EmitDefaultValue = true)]
         public string ActionOrderField { get; set; }
 
         /// <summary>
         /// Gets or Sets AdditionalField
         /// </summary>
-        [DataMember(Name = "AdditionalField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "AdditionalField", IsRequired = true, EmitDefaultValue = true)]
         public string AdditionalField { get; set; }
 
         /// <summary>
         /// Gets or Sets DocIDField
         /// </summary>
-        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocIDField { get; set; }
 
         /// <summary>
         /// The user&#39;s email.
         /// </summary>
         /// <value>The user&#39;s email.</value>
-        [DataMember(Name = "EmailField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "EmailField", IsRequired = true, EmitDefaultValue = true)]
         public string EmailField { get; set; }
 
         /// <summary>
         /// Gets or Sets EventDateField
         /// </summary>
-        [DataMember(Name = "EventDateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "EventDateField", IsRequired = true, EmitDefaultValue = true)]
         public string EventDateField { get; set; }
 
         /// <summary>
         /// Gets or Sets EventField
         /// </summary>
-        [DataMember(Name = "EventField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "EventField", IsRequired = true, EmitDefaultValue = true)]
         public string EventField { get; set; }
 
         /// <summary>
         /// Gets or Sets EventStatusField
         /// </summary>
-        [DataMember(Name = "EventStatusField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "EventStatusField", IsRequired = true, EmitDefaultValue = true)]
         public string EventStatusField { get; set; }
 
         /// <summary>
         /// Gets or Sets LocationField
         /// </summary>
-        [DataMember(Name = "LocationField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LocationField", IsRequired = true, EmitDefaultValue = true)]
         public string LocationField { get; set; }
 
         /// <summary>
         /// Gets or Sets OrderDateField
         /// </summary>
-        [DataMember(Name = "OrderDateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "OrderDateField", IsRequired = true, EmitDefaultValue = true)]
         public string OrderDateField { get; set; }
 
         /// <summary>
         /// Gets or Sets PageField
         /// </summary>
-        [DataMember(Name = "PageField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PageField", IsRequired = true, EmitDefaultValue = true)]
         public string PageField { get; set; }
 
         /// <summary>
         /// User&#39;s full name.
         /// </summary>
         /// <value>User&#39;s full name.</value>
-        [DataMember(Name = "UserFullNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "UserFullNameField", IsRequired = true, EmitDefaultValue = true)]
         public string UserFullNameField { get; set; }
 
         /// <summary>

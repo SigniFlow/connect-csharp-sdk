@@ -57,7 +57,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets _0
         /// </summary>
-        [DataMember(Name = "0", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "0", IsRequired = true, EmitDefaultValue = true)]
         public string _0 { get; set; }
 
         /// <summary>

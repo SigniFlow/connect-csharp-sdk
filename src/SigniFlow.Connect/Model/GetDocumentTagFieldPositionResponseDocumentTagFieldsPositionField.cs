@@ -63,21 +63,21 @@ namespace SigniFlow.Connect.Model
         /// The page number where the field is.
         /// </summary>
         /// <value>The page number where the field is.</value>
-        [DataMember(Name = "PageNumberField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PageNumberField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PageNumberField { get; set; }
 
         /// <summary>
         /// The y coordinates of the field.
         /// </summary>
         /// <value>The y coordinates of the field.</value>
-        [DataMember(Name = "XCoordinateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "XCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public string XCoordinateField { get; set; }
 
         /// <summary>
         /// The x coordinates of the field.
         /// </summary>
         /// <value>The x coordinates of the field.</value>
-        [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public string YCoordinateField { get; set; }
 
         /// <summary>

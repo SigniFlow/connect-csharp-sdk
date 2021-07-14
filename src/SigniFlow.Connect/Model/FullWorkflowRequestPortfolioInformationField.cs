@@ -64,28 +64,28 @@ namespace SigniFlow.Connect.Model
         /// Create portfolio.
         /// </summary>
         /// <value>Create portfolio.</value>
-        [DataMember(Name = "CreatePortfolioField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "CreatePortfolioField", IsRequired = true, EmitDefaultValue = true)]
         public bool CreatePortfolioField { get; set; }
 
         /// <summary>
         /// Portfolio link.
         /// </summary>
         /// <value>Portfolio link.</value>
-        [DataMember(Name = "LinkToPortfolioField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LinkToPortfolioField", IsRequired = true, EmitDefaultValue = true)]
         public bool LinkToPortfolioField { get; set; }
 
         /// <summary>
         /// Portfolio ID.
         /// </summary>
         /// <value>Portfolio ID.</value>
-        [DataMember(Name = "PortfolioIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PortfolioIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PortfolioIDField { get; set; }
 
         /// <summary>
         /// Portfolio name.
         /// </summary>
         /// <value>Portfolio name.</value>
-        [DataMember(Name = "PortfolioNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PortfolioNameField", IsRequired = true, EmitDefaultValue = true)]
         public string PortfolioNameField { get; set; }
 
         /// <summary>

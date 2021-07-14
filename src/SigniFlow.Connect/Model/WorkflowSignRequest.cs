@@ -77,49 +77,49 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets DocIDField
         /// </summary>
-        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocIDField { get; set; }
 
         /// <summary>
         /// Gets or Sets LatitudeField
         /// </summary>
-        [DataMember(Name = "LatitudeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LatitudeField", IsRequired = true, EmitDefaultValue = true)]
         public string LatitudeField { get; set; }
 
         /// <summary>
         /// Gets or Sets LoginPasswordField
         /// </summary>
-        [DataMember(Name = "LoginPasswordField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LoginPasswordField", IsRequired = true, EmitDefaultValue = true)]
         public string LoginPasswordField { get; set; }
 
         /// <summary>
         /// Gets or Sets LoginUserNameField
         /// </summary>
-        [DataMember(Name = "LoginUserNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LoginUserNameField", IsRequired = true, EmitDefaultValue = true)]
         public string LoginUserNameField { get; set; }
 
         /// <summary>
         /// Gets or Sets LongitudeField
         /// </summary>
-        [DataMember(Name = "LongitudeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LongitudeField", IsRequired = true, EmitDefaultValue = true)]
         public string LongitudeField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignReasonField
         /// </summary>
-        [DataMember(Name = "SignReasonField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignReasonField", IsRequired = true, EmitDefaultValue = true)]
         public string SignReasonField { get; set; }
 
         /// <summary>
         /// Gets or Sets TimeZoneOffsetField
         /// </summary>
-        [DataMember(Name = "TimeZoneOffsetField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TimeZoneOffsetField", IsRequired = true, EmitDefaultValue = true)]
         public decimal TimeZoneOffsetField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
         /// </summary>
-        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
         public TokenField TokenField { get; set; }
 
         /// <summary>

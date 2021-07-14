@@ -35,12 +35,12 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets AutoRemindField
         /// </summary>
-        [DataMember(Name = "AutoRemindField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "AutoRemindField", IsRequired = true, EmitDefaultValue = true)]
         public AutoRemind AutoRemindField { get; set; }
         /// <summary>
         /// Gets or Sets ExtensionField
         /// </summary>
-        [DataMember(Name = "ExtensionField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ExtensionField", IsRequired = true, EmitDefaultValue = true)]
         public DocExtension ExtensionField { get; set; }
 //    
 //    
@@ -109,110 +109,110 @@ namespace SigniFlow.Connect.Model
         /// Additional data.
         /// </summary>
         /// <value>Additional data.</value>
-        [DataMember(Name = "AdditionalDataField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "AdditionalDataField", IsRequired = true, EmitDefaultValue = true)]
         public string AdditionalDataField { get; set; }
 
         /// <summary>
         /// Custom message.
         /// </summary>
         /// <value>Custom message.</value>
-        [DataMember(Name = "CustomMessageField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "CustomMessageField", IsRequired = true, EmitDefaultValue = true)]
         public string CustomMessageField { get; set; }
 
         /// <summary>
         /// Document field.
         /// </summary>
         /// <value>Document field.</value>
-        [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = true)]
         public string DocField { get; set; }
 
         /// <summary>
         /// Document name.
         /// </summary>
         /// <value>Document name.</value>
-        [DataMember(Name = "DocNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocNameField", IsRequired = true, EmitDefaultValue = true)]
         public string DocNameField { get; set; }
 
         /// <summary>
         /// Document due date.
         /// </summary>
         /// <value>Document due date.</value>
-        [DataMember(Name = "DueDateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DueDateField", IsRequired = true, EmitDefaultValue = true)]
         public string DueDateField { get; set; }
 
         /// <summary>
         /// Flatten document.
         /// </summary>
         /// <value>Flatten document.</value>
-        [DataMember(Name = "FlattenDocumentField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FlattenDocumentField", IsRequired = true, EmitDefaultValue = true)]
         public bool FlattenDocumentField { get; set; }
 
         /// <summary>
         /// Keep content security.
         /// </summary>
         /// <value>Keep content security.</value>
-        [DataMember(Name = "KeepContentSecurityField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "KeepContentSecurityField", IsRequired = true, EmitDefaultValue = true)]
         public bool KeepContentSecurityField { get; set; }
 
         /// <summary>
         /// Keep custom properties.
         /// </summary>
         /// <value>Keep custom properties.</value>
-        [DataMember(Name = "KeepCustomPropertiesField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "KeepCustomPropertiesField", IsRequired = true, EmitDefaultValue = true)]
         public bool KeepCustomPropertiesField { get; set; }
 
         /// <summary>
         /// Keep XMP meta data.
         /// </summary>
         /// <value>Keep XMP meta data.</value>
-        [DataMember(Name = "KeepXMPMetadataField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "KeepXMPMetadataField", IsRequired = true, EmitDefaultValue = true)]
         public bool KeepXMPMetadataField { get; set; }
 
         /// <summary>
         /// Gets or Sets PortfolioInformationField
         /// </summary>
-        [DataMember(Name = "PortfolioInformationField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PortfolioInformationField", IsRequired = true, EmitDefaultValue = true)]
         public FullWorkflowRequestPortfolioInformationField PortfolioInformationField { get; set; }
 
         /// <summary>
         /// Document priority.
         /// </summary>
         /// <value>Document priority.</value>
-        [DataMember(Name = "PriorityField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PriorityField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PriorityField { get; set; }
 
         /// <summary>
         /// SLA
         /// </summary>
         /// <value>SLA</value>
-        [DataMember(Name = "SLAField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SLAField", IsRequired = true, EmitDefaultValue = true)]
         public decimal SLAField { get; set; }
 
         /// <summary>
         /// Confirm first user email notification will or will not be sent.
         /// </summary>
         /// <value>Confirm first user email notification will or will not be sent.</value>
-        [DataMember(Name = "SendFirstEmailField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SendFirstEmailField", IsRequired = true, EmitDefaultValue = true)]
         public bool SendFirstEmailField { get; set; }
 
         /// <summary>
         /// Confirm that workflow emails will or will not be sent.
         /// </summary>
         /// <value>Confirm that workflow emails will or will not be sent.</value>
-        [DataMember(Name = "SendWorkflowEmailsField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SendWorkflowEmailsField", IsRequired = true, EmitDefaultValue = true)]
         public bool SendWorkflowEmailsField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
         /// </summary>
-        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
         public TokenField TokenField { get; set; }
 
         /// <summary>
         /// List of users in the workflow.
         /// </summary>
         /// <value>List of users in the workflow.</value>
-        [DataMember(Name = "WorkflowUsersListField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "WorkflowUsersListField", IsRequired = true, EmitDefaultValue = true)]
         public List<FullWorkflowRequestWorkflowUsersListField> WorkflowUsersListField { get; set; }
 
         /// <summary>

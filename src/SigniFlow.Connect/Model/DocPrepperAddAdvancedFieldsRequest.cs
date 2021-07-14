@@ -61,13 +61,13 @@ namespace SigniFlow.Connect.Model
         /// Field information list field.
         /// </summary>
         /// <value>Field information list field.</value>
-        [DataMember(Name = "FieldInfoListField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FieldInfoListField", IsRequired = true, EmitDefaultValue = true)]
         public List<DocPrepperAddAdvancedFieldsRequestFieldInfoListField> FieldInfoListField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
         /// </summary>
-        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
         public TokenField TokenField { get; set; }
 
         /// <summary>

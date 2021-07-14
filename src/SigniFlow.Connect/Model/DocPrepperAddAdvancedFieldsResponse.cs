@@ -60,14 +60,14 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets AdvancedFieldResponseListField
         /// </summary>
-        [DataMember(Name = "AdvancedFieldResponseListField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "AdvancedFieldResponseListField", IsRequired = true, EmitDefaultValue = true)]
         public List<DocPrepperAddAdvancedFieldsResponseAdvancedFieldResponseListField> AdvancedFieldResponseListField { get; set; }
 
         /// <summary>
         /// Displays the result of the call.
         /// </summary>
         /// <value>Displays the result of the call.</value>
-        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = true)]
         public string ResultField { get; set; }
 
         /// <summary>

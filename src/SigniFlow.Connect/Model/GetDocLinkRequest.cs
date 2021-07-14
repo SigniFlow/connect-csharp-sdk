@@ -66,25 +66,25 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets DocIDField
         /// </summary>
-        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocIDField { get; set; }
 
         /// <summary>
         /// Gets or Sets EmailField
         /// </summary>
-        [DataMember(Name = "EmailField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "EmailField", IsRequired = true, EmitDefaultValue = true)]
         public string EmailField { get; set; }
 
         /// <summary>
         /// Gets or Sets ReturnURLField
         /// </summary>
-        [DataMember(Name = "ReturnURLField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ReturnURLField", IsRequired = true, EmitDefaultValue = true)]
         public string ReturnURLField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
         /// </summary>
-        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
         public TokenField TokenField { get; set; }
 
         /// <summary>

@@ -60,14 +60,14 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets ActivityField
         /// </summary>
-        [DataMember(Name = "ActivityField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ActivityField", IsRequired = true, EmitDefaultValue = true)]
         public List<GetDocumentAuditResponseActivityField> ActivityField { get; set; }
 
         /// <summary>
         /// Displays the result of the call.
         /// </summary>
         /// <value>Displays the result of the call.</value>
-        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = true)]
         public string ResultField { get; set; }
 
         /// <summary>

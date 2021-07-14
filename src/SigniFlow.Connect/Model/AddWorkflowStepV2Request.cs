@@ -35,12 +35,12 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets ActionField
         /// </summary>
-        [DataMember(Name = "ActionField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ActionField", IsRequired = true, EmitDefaultValue = true)]
         public ActionField ActionField { get; set; }
         /// <summary>
         /// Gets or Sets ProxyAllowedField
         /// </summary>
-        [DataMember(Name = "ProxyAllowedField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ProxyAllowedField", IsRequired = true, EmitDefaultValue = true)]
         public ProxyAllowedField ProxyAllowedField { get; set; }
 //    
 //    
@@ -62,7 +62,7 @@ namespace SigniFlow.Connect.Model
         /// <param name="docIDField">Document ID field. (required).</param>
         /// <param name="emailField">Participant email address. (required).</param>
         /// <param name="firstNameField">Participant firstname. (required).</param>
-        /// <param name="languageCodeField">Participant 2 Digit ISO Language Code &#x60;en &#x3D; English es &#x3D; Spanish fr &#x3D; French ect&#x60; (required).</param>
+        /// <param name="languageCodeField">Participant 2 Digit ISO Language Code &#x60;en &#x3D; English es &#x3D; Spanish fr &#x3D; French ect&#x60;.</param>
         /// <param name="lastNameField">Participant last name. (required).</param>
         /// <param name="proxyAllowedField">proxyAllowedField (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
@@ -77,61 +77,60 @@ namespace SigniFlow.Connect.Model
             this.EmailField = emailField ?? throw new ArgumentNullException("emailField is a required property for AddWorkflowStepV2Request and cannot be null");
             // to ensure "firstNameField" is required (not null)
             this.FirstNameField = firstNameField ?? throw new ArgumentNullException("firstNameField is a required property for AddWorkflowStepV2Request and cannot be null");
-            // to ensure "languageCodeField" is required (not null)
-            this.LanguageCodeField = languageCodeField ?? throw new ArgumentNullException("languageCodeField is a required property for AddWorkflowStepV2Request and cannot be null");
             // to ensure "lastNameField" is required (not null)
             this.LastNameField = lastNameField ?? throw new ArgumentNullException("lastNameField is a required property for AddWorkflowStepV2Request and cannot be null");
             this.ProxyAllowedField = proxyAllowedField;
             // to ensure "tokenField" is required (not null)
             this.TokenField = tokenField ?? throw new ArgumentNullException("tokenField is a required property for AddWorkflowStepV2Request and cannot be null");
+            this.LanguageCodeField = languageCodeField;
         }
 
         /// <summary>
         /// Mobile number of participant
         /// </summary>
         /// <value>Mobile number of participant</value>
-        [DataMember(Name = "CellField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "CellField", IsRequired = true, EmitDefaultValue = true)]
         public string CellField { get; set; }
 
         /// <summary>
         /// Document ID field.
         /// </summary>
         /// <value>Document ID field.</value>
-        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocIDField { get; set; }
 
         /// <summary>
         /// Participant email address.
         /// </summary>
         /// <value>Participant email address.</value>
-        [DataMember(Name = "EmailField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "EmailField", IsRequired = true, EmitDefaultValue = true)]
         public string EmailField { get; set; }
 
         /// <summary>
         /// Participant firstname.
         /// </summary>
         /// <value>Participant firstname.</value>
-        [DataMember(Name = "FirstNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FirstNameField", IsRequired = true, EmitDefaultValue = true)]
         public string FirstNameField { get; set; }
 
         /// <summary>
         /// Participant 2 Digit ISO Language Code &#x60;en &#x3D; English es &#x3D; Spanish fr &#x3D; French ect&#x60;
         /// </summary>
         /// <value>Participant 2 Digit ISO Language Code &#x60;en &#x3D; English es &#x3D; Spanish fr &#x3D; French ect&#x60;</value>
-        [DataMember(Name = "LanguageCodeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LanguageCodeField", EmitDefaultValue = true)]
         public string LanguageCodeField { get; set; }
 
         /// <summary>
         /// Participant last name.
         /// </summary>
         /// <value>Participant last name.</value>
-        [DataMember(Name = "LastNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LastNameField", IsRequired = true, EmitDefaultValue = true)]
         public string LastNameField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
         /// </summary>
-        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
         public TokenField TokenField { get; set; }
 
         /// <summary>

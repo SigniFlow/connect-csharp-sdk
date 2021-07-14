@@ -63,21 +63,21 @@ namespace SigniFlow.Connect.Model
         /// The list of users in a group in the workflow.
         /// </summary>
         /// <value>The list of users in a group in the workflow.</value>
-        [DataMember(Name = "GroupMembersField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "GroupMembersField", IsRequired = true, EmitDefaultValue = true)]
         public List<FullWorkflowRequestGroupStepFieldGroupMembersField> GroupMembersField { get; set; }
 
         /// <summary>
         /// Group name.
         /// </summary>
         /// <value>Group name.</value>
-        [DataMember(Name = "GroupNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "GroupNameField", IsRequired = true, EmitDefaultValue = true)]
         public string GroupNameField { get; set; }
 
         /// <summary>
         /// Required number of signatures in the group.
         /// </summary>
         /// <value>Required number of signatures in the group.</value>
-        [DataMember(Name = "RequiredNumberOfSignaturesField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "RequiredNumberOfSignaturesField", IsRequired = true, EmitDefaultValue = true)]
         public decimal RequiredNumberOfSignaturesField { get; set; }
 
         /// <summary>

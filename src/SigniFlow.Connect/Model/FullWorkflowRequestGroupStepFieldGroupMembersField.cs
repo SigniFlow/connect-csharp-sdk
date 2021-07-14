@@ -66,25 +66,25 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets LanguageCodeField
         /// </summary>
-        [DataMember(Name = "LanguageCodeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LanguageCodeField", IsRequired = true, EmitDefaultValue = true)]
         public string LanguageCodeField { get; set; }
 
         /// <summary>
         /// Gets or Sets UserEmailField
         /// </summary>
-        [DataMember(Name = "UserEmailField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "UserEmailField", IsRequired = true, EmitDefaultValue = true)]
         public string UserEmailField { get; set; }
 
         /// <summary>
         /// Gets or Sets UserFullNameField
         /// </summary>
-        [DataMember(Name = "UserFullNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "UserFullNameField", IsRequired = true, EmitDefaultValue = true)]
         public string UserFullNameField { get; set; }
 
         /// <summary>
         /// Gets or Sets UserMobileNumberField
         /// </summary>
-        [DataMember(Name = "UserMobileNumberField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "UserMobileNumberField", IsRequired = true, EmitDefaultValue = true)]
         public string UserMobileNumberField { get; set; }
 
         /// <summary>

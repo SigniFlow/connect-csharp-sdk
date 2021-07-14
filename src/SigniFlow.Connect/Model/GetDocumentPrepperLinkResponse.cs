@@ -61,14 +61,14 @@ namespace SigniFlow.Connect.Model
         /// Displays the result of the call.
         /// </summary>
         /// <value>Displays the result of the call.</value>
-        [DataMember(Name = "Result", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "Result", IsRequired = true, EmitDefaultValue = true)]
         public string Result { get; set; }
 
         /// <summary>
         /// Url
         /// </summary>
         /// <value>Url</value>
-        [DataMember(Name = "URL", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "URL", IsRequired = true, EmitDefaultValue = true)]
         public string URL { get; set; }
 
         /// <summary>

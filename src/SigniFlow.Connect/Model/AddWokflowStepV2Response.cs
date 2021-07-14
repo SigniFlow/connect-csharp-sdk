@@ -49,43 +49,42 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         /// <param name="docIDField">Document ID field. (required).</param>
         /// <param name="flowIDField">Document flow ID field (required).</param>
-        /// <param name="flowStepsField">flowStepsField (required).</param>
+        /// <param name="flowStepsField">flowStepsField.</param>
         /// <param name="resultField">Displays the result of the call. (required).</param>
         public AddWokflowStepV2Response(decimal docIDField = default(decimal), decimal flowIDField = default(decimal), List<AddWokflowStepV2ResponseFlowStepsField> flowStepsField = default(List<AddWokflowStepV2ResponseFlowStepsField>), string resultField = default(string))
         {
             this.DocIDField = docIDField;
             this.FlowIDField = flowIDField;
-            // to ensure "flowStepsField" is required (not null)
-            this.FlowStepsField = flowStepsField ?? throw new ArgumentNullException("flowStepsField is a required property for AddWokflowStepV2Response and cannot be null");
             // to ensure "resultField" is required (not null)
             this.ResultField = resultField ?? throw new ArgumentNullException("resultField is a required property for AddWokflowStepV2Response and cannot be null");
+            this.FlowStepsField = flowStepsField;
         }
 
         /// <summary>
         /// Document ID field.
         /// </summary>
         /// <value>Document ID field.</value>
-        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal DocIDField { get; set; }
 
         /// <summary>
         /// Document flow ID field
         /// </summary>
         /// <value>Document flow ID field</value>
-        [DataMember(Name = "FlowIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FlowIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal FlowIDField { get; set; }
 
         /// <summary>
         /// Gets or Sets FlowStepsField
         /// </summary>
-        [DataMember(Name = "FlowStepsField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FlowStepsField", EmitDefaultValue = true)]
         public List<AddWokflowStepV2ResponseFlowStepsField> FlowStepsField { get; set; }
 
         /// <summary>
         /// Displays the result of the call.
         /// </summary>
         /// <value>Displays the result of the call.</value>
-        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = true)]
         public string ResultField { get; set; }
 
         /// <summary>

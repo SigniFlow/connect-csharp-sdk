@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 **FlowIDField** | **decimal** | Document Flow ID. | 
 **HeightField** | **string** | Field height. | 
 **WidthField** | **string** | Field width. | 
-**IsInvisibleField** | **bool** | Is the field invisible. | 
-**LinkToField** | **string** | Document link. | 
+**IsInvisibleField** | **bool** | Is the field invisible. | [optional] 
+**LinkToField** | **string** | Document link. | [optional] 
 **PageNumberField** | **decimal** | Field page number. | 
-**NameField** | **string** | Field name field. | 
+**NameField** | **string** | Field name field. | [optional] 
 **UserEmailField** | **string** | User email address field. | 
 **XCoordinateField** | **string** | Document field x-coordinates. | 
 **YCoordinateField** | **string** | Document field y-coordinates. | 

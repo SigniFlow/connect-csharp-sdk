@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AdditionalDataField** | **string** | Sets additional data to be embedded in PDF Meta. | 
-**AutoExpireField** | **AutoExpire** |  | 
+**AdditionalDataField** | **string** | Sets additional data to be embedded in PDF Meta. | [optional] 
+**AutoExpireField** | **AutoExpire** |  | [optional] 
 **AutoRemindField** | **AutoRemind** |  | 
 **DocField** | **string** | Base64 Encoded String of document | 
 **DocNameField** | **string** | Name of document to display in SigniFlow | 

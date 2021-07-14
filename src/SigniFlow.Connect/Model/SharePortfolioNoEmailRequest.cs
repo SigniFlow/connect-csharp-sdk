@@ -67,31 +67,31 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets AccessLevelField
         /// </summary>
-        [DataMember(Name = "AccessLevelField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "AccessLevelField", IsRequired = true, EmitDefaultValue = true)]
         public decimal AccessLevelField { get; set; }
 
         /// <summary>
         /// Gets or Sets PortfolioIDField
         /// </summary>
-        [DataMember(Name = "PortfolioIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PortfolioIDField", IsRequired = true, EmitDefaultValue = true)]
         public string PortfolioIDField { get; set; }
 
         /// <summary>
         /// Gets or Sets ShareOptionField
         /// </summary>
-        [DataMember(Name = "ShareOptionField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ShareOptionField", IsRequired = true, EmitDefaultValue = true)]
         public decimal ShareOptionField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
         /// </summary>
-        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
         public TokenField TokenField { get; set; }
 
         /// <summary>
         /// Gets or Sets UniqueIDField
         /// </summary>
-        [DataMember(Name = "UniqueIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "UniqueIDField", IsRequired = true, EmitDefaultValue = true)]
         public string UniqueIDField { get; set; }
 
         /// <summary>

@@ -97,111 +97,111 @@ namespace SigniFlow.Connect.Model
         /// Refers to the order of signatures from the users.
         /// </summary>
         /// <value>Refers to the order of signatures from the users.</value>
-        [DataMember(Name = "ActionField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ActionField", IsRequired = true, EmitDefaultValue = true)]
         public decimal ActionField { get; set; }
 
         /// <summary>
         /// Allow proxy confirmation field.
         /// </summary>
         /// <value>Allow proxy confirmation field.</value>
-        [DataMember(Name = "AllowProxyField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "AllowProxyField", IsRequired = true, EmitDefaultValue = true)]
         public decimal AllowProxyField { get; set; }
 
         /// <summary>
         /// ### Enable auto sign.  &#x60;True &#x3D; Signature will be applied automaticly False &#x3D; User will need to login and Sign&#x60; 
         /// </summary>
         /// <value>### Enable auto sign.  &#x60;True &#x3D; Signature will be applied automaticly False &#x3D; User will need to login and Sign&#x60; </value>
-        [DataMember(Name = "AutoSignField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "AutoSignField", IsRequired = true, EmitDefaultValue = true)]
         public bool AutoSignField { get; set; }
 
         /// <summary>
         /// Workflow user&#39;s email addresses.
         /// </summary>
         /// <value>Workflow user&#39;s email addresses.</value>
-        [DataMember(Name = "EmailAddressField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "EmailAddressField", IsRequired = true, EmitDefaultValue = true)]
         public string EmailAddressField { get; set; }
 
         /// <summary>
         /// Gets or Sets GroupStepField
         /// </summary>
-        [DataMember(Name = "GroupStepField", EmitDefaultValue = false)]
+        [DataMember(Name = "GroupStepField", EmitDefaultValue = true)]
         public FullWorkflowRequestGroupStepField GroupStepField { get; set; }
 
         /// <summary>
         /// #### Sets the display language for the user ##### ISO 2 Digit Code  &#x60;en &#x3D; English es &#x3D; Spanish fr &#x3D; French&#x60; 
         /// </summary>
         /// <value>#### Sets the display language for the user ##### ISO 2 Digit Code  &#x60;en &#x3D; English es &#x3D; Spanish fr &#x3D; French&#x60; </value>
-        [DataMember(Name = "LanguageCodeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LanguageCodeField", IsRequired = true, EmitDefaultValue = true)]
         public string LanguageCodeField { get; set; }
 
         /// <summary>
         /// Location latitude.
         /// </summary>
         /// <value>Location latitude.</value>
-        [DataMember(Name = "LatitudeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LatitudeField", IsRequired = true, EmitDefaultValue = true)]
         public string LatitudeField { get; set; }
 
         /// <summary>
         /// Location longtitude.
         /// </summary>
         /// <value>Location longtitude.</value>
-        [DataMember(Name = "LongitudeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LongitudeField", IsRequired = true, EmitDefaultValue = true)]
         public string LongitudeField { get; set; }
 
         /// <summary>
         /// Group user&#39;s mobile number.
         /// </summary>
         /// <value>Group user&#39;s mobile number.</value>
-        [DataMember(Name = "MobileNumberField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "MobileNumberField", IsRequired = true, EmitDefaultValue = true)]
         public string MobileNumberField { get; set; }
 
         /// <summary>
         /// Preloaded user&#39;s who will be using the face to face signature field.
         /// </summary>
         /// <value>Preloaded user&#39;s who will be using the face to face signature field.</value>
-        [DataMember(Name = "PreloadedFaceToFaceSignersField", EmitDefaultValue = false)]
+        [DataMember(Name = "PreloadedFaceToFaceSignersField", EmitDefaultValue = true)]
         public List<Object> PreloadedFaceToFaceSignersField { get; set; }
 
         /// <summary>
         /// Reason for signature.
         /// </summary>
         /// <value>Reason for signature.</value>
-        [DataMember(Name = "SignReasonField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignReasonField", IsRequired = true, EmitDefaultValue = true)]
         public string SignReasonField { get; set; }
 
         /// <summary>
         /// Face to face user&#39;s password.
         /// </summary>
         /// <value>Face to face user&#39;s password.</value>
-        [DataMember(Name = "SignerPasswordField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignerPasswordField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerPasswordField { get; set; }
 
         /// <summary>
         /// Face to face user&#39;s first name.
         /// </summary>
         /// <value>Face to face user&#39;s first name.</value>
-        [DataMember(Name = "UserFirstNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "UserFirstNameField", IsRequired = true, EmitDefaultValue = true)]
         public string UserFirstNameField { get; set; }
 
         /// <summary>
         /// Face to face user&#39;s full name.
         /// </summary>
         /// <value>Face to face user&#39;s full name.</value>
-        [DataMember(Name = "UserFullNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "UserFullNameField", IsRequired = true, EmitDefaultValue = true)]
         public string UserFullNameField { get; set; }
 
         /// <summary>
         /// Face to face user&#39;s last name.
         /// </summary>
         /// <value>Face to face user&#39;s last name.</value>
-        [DataMember(Name = "UserLastNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "UserLastNameField", IsRequired = true, EmitDefaultValue = true)]
         public string UserLastNameField { get; set; }
 
         /// <summary>
         /// The list of the workflowed documents field.
         /// </summary>
         /// <value>The list of the workflowed documents field.</value>
-        [DataMember(Name = "WorkflowUserFieldsField", EmitDefaultValue = false)]
+        [DataMember(Name = "WorkflowUserFieldsField", EmitDefaultValue = true)]
         public List<FullWorkflowRequestWorkflowUserFieldsField> WorkflowUserFieldsField { get; set; }
 
         /// <summary>

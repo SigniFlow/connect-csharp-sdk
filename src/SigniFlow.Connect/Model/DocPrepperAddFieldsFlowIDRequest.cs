@@ -35,7 +35,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets DocFieldTypeField
         /// </summary>
-        [DataMember(Name = "DocFieldTypeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocFieldTypeField", IsRequired = true, EmitDefaultValue = true)]
         public FieldType DocFieldTypeField { get; set; }
 //    
 //    
@@ -57,10 +57,10 @@ namespace SigniFlow.Connect.Model
         /// <param name="flowIDField">Document Flow ID. (required).</param>
         /// <param name="heightField">Field height. (required).</param>
         /// <param name="widthField">Field width. (required).</param>
-        /// <param name="isInvisibleField">Is the field invisible. (required).</param>
-        /// <param name="linkToField">Document link. (required).</param>
+        /// <param name="isInvisibleField">Is the field invisible..</param>
+        /// <param name="linkToField">Document link..</param>
         /// <param name="pageNumberField">Field page number. (required).</param>
-        /// <param name="nameField">Field name field. (required).</param>
+        /// <param name="nameField">Field name field..</param>
         /// <param name="userEmailField">User email address field. (required).</param>
         /// <param name="xCoordinateField">Document field x-coordinates. (required).</param>
         /// <param name="yCoordinateField">Document field y-coordinates. (required).</param>
@@ -74,12 +74,7 @@ namespace SigniFlow.Connect.Model
             this.HeightField = heightField ?? throw new ArgumentNullException("heightField is a required property for DocPrepperAddFieldsFlowIDRequest and cannot be null");
             // to ensure "widthField" is required (not null)
             this.WidthField = widthField ?? throw new ArgumentNullException("widthField is a required property for DocPrepperAddFieldsFlowIDRequest and cannot be null");
-            this.IsInvisibleField = isInvisibleField;
-            // to ensure "linkToField" is required (not null)
-            this.LinkToField = linkToField ?? throw new ArgumentNullException("linkToField is a required property for DocPrepperAddFieldsFlowIDRequest and cannot be null");
             this.PageNumberField = pageNumberField;
-            // to ensure "nameField" is required (not null)
-            this.NameField = nameField ?? throw new ArgumentNullException("nameField is a required property for DocPrepperAddFieldsFlowIDRequest and cannot be null");
             // to ensure "userEmailField" is required (not null)
             this.UserEmailField = userEmailField ?? throw new ArgumentNullException("userEmailField is a required property for DocPrepperAddFieldsFlowIDRequest and cannot be null");
             // to ensure "xCoordinateField" is required (not null)
@@ -88,89 +83,92 @@ namespace SigniFlow.Connect.Model
             this.YCoordinateField = yCoordinateField ?? throw new ArgumentNullException("yCoordinateField is a required property for DocPrepperAddFieldsFlowIDRequest and cannot be null");
             // to ensure "tokenField" is required (not null)
             this.TokenField = tokenField ?? throw new ArgumentNullException("tokenField is a required property for DocPrepperAddFieldsFlowIDRequest and cannot be null");
+            this.IsInvisibleField = isInvisibleField;
+            this.LinkToField = linkToField;
+            this.NameField = nameField;
         }
 
         /// <summary>
         /// Document ID.
         /// </summary>
         /// <value>Document ID.</value>
-        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal DocIDField { get; set; }
 
         /// <summary>
         /// Document Flow ID.
         /// </summary>
         /// <value>Document Flow ID.</value>
-        [DataMember(Name = "FlowIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FlowIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal FlowIDField { get; set; }
 
         /// <summary>
         /// Field height.
         /// </summary>
         /// <value>Field height.</value>
-        [DataMember(Name = "HeightField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "HeightField", IsRequired = true, EmitDefaultValue = true)]
         public string HeightField { get; set; }
 
         /// <summary>
         /// Field width.
         /// </summary>
         /// <value>Field width.</value>
-        [DataMember(Name = "WidthField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "WidthField", IsRequired = true, EmitDefaultValue = true)]
         public string WidthField { get; set; }
 
         /// <summary>
         /// Is the field invisible.
         /// </summary>
         /// <value>Is the field invisible.</value>
-        [DataMember(Name = "IsInvisibleField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "IsInvisibleField", EmitDefaultValue = true)]
         public bool IsInvisibleField { get; set; }
 
         /// <summary>
         /// Document link.
         /// </summary>
         /// <value>Document link.</value>
-        [DataMember(Name = "LinkToField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LinkToField", EmitDefaultValue = true)]
         public string LinkToField { get; set; }
 
         /// <summary>
         /// Field page number.
         /// </summary>
         /// <value>Field page number.</value>
-        [DataMember(Name = "PageNumberField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PageNumberField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PageNumberField { get; set; }
 
         /// <summary>
         /// Field name field.
         /// </summary>
         /// <value>Field name field.</value>
-        [DataMember(Name = "NameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "NameField", EmitDefaultValue = true)]
         public string NameField { get; set; }
 
         /// <summary>
         /// User email address field.
         /// </summary>
         /// <value>User email address field.</value>
-        [DataMember(Name = "UserEmailField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "UserEmailField", IsRequired = true, EmitDefaultValue = true)]
         public string UserEmailField { get; set; }
 
         /// <summary>
         /// Document field x-coordinates.
         /// </summary>
         /// <value>Document field x-coordinates.</value>
-        [DataMember(Name = "XCoordinateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "XCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public string XCoordinateField { get; set; }
 
         /// <summary>
         /// Document field y-coordinates.
         /// </summary>
         /// <value>Document field y-coordinates.</value>
-        [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public string YCoordinateField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
         /// </summary>
-        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
         public TokenField TokenField { get; set; }
 
         /// <summary>

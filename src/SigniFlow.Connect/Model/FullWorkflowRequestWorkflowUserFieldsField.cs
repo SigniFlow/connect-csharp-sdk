@@ -90,98 +90,98 @@ namespace SigniFlow.Connect.Model
         /// Field type.
         /// </summary>
         /// <value>Field type.</value>
-        [DataMember(Name = "FieldTypeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FieldTypeField", IsRequired = true, EmitDefaultValue = true)]
         public decimal FieldTypeField { get; set; }
 
         /// <summary>
         /// The font family of the fields text.
         /// </summary>
         /// <value>The font family of the fields text.</value>
-        [DataMember(Name = "FontFamilyField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FontFamilyField", IsRequired = true, EmitDefaultValue = true)]
         public string FontFamilyField { get; set; }
 
         /// <summary>
         /// The font size of the fields text.
         /// </summary>
         /// <value>The font size of the fields text.</value>
-        [DataMember(Name = "FontSizeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FontSizeField", IsRequired = true, EmitDefaultValue = true)]
         public decimal FontSizeField { get; set; }
 
         /// <summary>
         /// The users in the group&#39;s user number.
         /// </summary>
         /// <value>The users in the group&#39;s user number.</value>
-        [DataMember(Name = "GroupUserNumberField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "GroupUserNumberField", IsRequired = true, EmitDefaultValue = true)]
         public decimal GroupUserNumberField { get; set; }
 
         /// <summary>
         /// Field height.
         /// </summary>
         /// <value>Field height.</value>
-        [DataMember(Name = "HeightField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "HeightField", IsRequired = true, EmitDefaultValue = true)]
         public string HeightField { get; set; }
 
         /// <summary>
         /// Is the field visible.
         /// </summary>
         /// <value>Is the field visible.</value>
-        [DataMember(Name = "IsInvisibleField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "IsInvisibleField", IsRequired = true, EmitDefaultValue = true)]
         public bool IsInvisibleField { get; set; }
 
         /// <summary>
         /// Field page number.
         /// </summary>
         /// <value>Field page number.</value>
-        [DataMember(Name = "PageNumberField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PageNumberField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PageNumberField { get; set; }
 
         /// <summary>
         /// Field tag name.
         /// </summary>
         /// <value>Field tag name.</value>
-        [DataMember(Name = "TagNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TagNameField", IsRequired = true, EmitDefaultValue = true)]
         public string TagNameField { get; set; }
 
         /// <summary>
         /// Field value.
         /// </summary>
         /// <value>Field value.</value>
-        [DataMember(Name = "ValueField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ValueField", IsRequired = true, EmitDefaultValue = true)]
         public string ValueField { get; set; }
 
         /// <summary>
         /// Field width.
         /// </summary>
         /// <value>Field width.</value>
-        [DataMember(Name = "WidthField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "WidthField", IsRequired = true, EmitDefaultValue = true)]
         public string WidthField { get; set; }
 
         /// <summary>
         /// The fields x-coordinates.
         /// </summary>
         /// <value>The fields x-coordinates.</value>
-        [DataMember(Name = "XCoordinateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "XCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public string XCoordinateField { get; set; }
 
         /// <summary>
         /// The fields x-coordinates offset.
         /// </summary>
         /// <value>The fields x-coordinates offset.</value>
-        [DataMember(Name = "XOffsetField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "XOffsetField", IsRequired = true, EmitDefaultValue = true)]
         public decimal XOffsetField { get; set; }
 
         /// <summary>
         /// The fields y-coordinates.
         /// </summary>
         /// <value>The fields y-coordinates.</value>
-        [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public string YCoordinateField { get; set; }
 
         /// <summary>
         /// The fields y-coordinates offset.
         /// </summary>
         /// <value>The fields y-coordinates offset.</value>
-        [DataMember(Name = "YOffsetField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "YOffsetField", IsRequired = true, EmitDefaultValue = true)]
         public decimal YOffsetField { get; set; }
 
         /// <summary>

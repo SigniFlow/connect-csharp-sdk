@@ -59,13 +59,13 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets TemplateFolderField
         /// </summary>
-        [DataMember(Name = "TemplateFolderField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TemplateFolderField", IsRequired = true, EmitDefaultValue = true)]
         public decimal TemplateFolderField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
         /// </summary>
-        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
         public TokenField TokenField { get; set; }
 
         /// <summary>

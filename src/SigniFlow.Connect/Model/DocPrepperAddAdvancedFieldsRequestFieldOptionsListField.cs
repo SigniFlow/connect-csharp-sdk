@@ -64,27 +64,27 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets LinkedValueField
         /// </summary>
-        [DataMember(Name = "LinkedValueField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "LinkedValueField", IsRequired = true, EmitDefaultValue = true)]
         public string LinkedValueField { get; set; }
 
         /// <summary>
         /// Max amount field.
         /// </summary>
         /// <value>Max amount field.</value>
-        [DataMember(Name = "MaxField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "MaxField", IsRequired = true, EmitDefaultValue = true)]
         public decimal MaxField { get; set; }
 
         /// <summary>
         /// Min amount field
         /// </summary>
         /// <value>Min amount field</value>
-        [DataMember(Name = "MinField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "MinField", IsRequired = true, EmitDefaultValue = true)]
         public decimal MinField { get; set; }
 
         /// <summary>
         /// Gets or Sets ValueField
         /// </summary>
-        [DataMember(Name = "ValueField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ValueField", IsRequired = true, EmitDefaultValue = true)]
         public string ValueField { get; set; }
 
         /// <summary>

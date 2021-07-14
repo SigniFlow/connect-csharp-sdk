@@ -61,14 +61,14 @@ namespace SigniFlow.Connect.Model
         /// Email address of the user generating a Token
         /// </summary>
         /// <value>Email address of the user generating a Token</value>
-        [DataMember(Name = "UserNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "UserNameField", IsRequired = true, EmitDefaultValue = true)]
         public string UserNameField { get; set; }
 
         /// <summary>
         /// SigniFlow user password
         /// </summary>
         /// <value>SigniFlow user password</value>
-        [DataMember(Name = "PasswordField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PasswordField", IsRequired = true, EmitDefaultValue = true)]
         public string PasswordField { get; set; }
 
         /// <summary>

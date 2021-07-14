@@ -62,20 +62,20 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets CeremonyIDField
         /// </summary>
-        [DataMember(Name = "CeremonyIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "CeremonyIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal CeremonyIDField { get; set; }
 
         /// <summary>
         /// Displays the result of the call.
         /// </summary>
         /// <value>Displays the result of the call.</value>
-        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = true)]
         public string ResultField { get; set; }
 
         /// <summary>
         /// Gets or Sets SignedDocumentField
         /// </summary>
-        [DataMember(Name = "SignedDocumentField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SignedDocumentField", IsRequired = true, EmitDefaultValue = true)]
         public string SignedDocumentField { get; set; }
 
         /// <summary>

@@ -60,14 +60,14 @@ namespace SigniFlow.Connect.Model
         /// Expiry date of Token
         /// </summary>
         /// <value>Expiry date of Token</value>
-        [DataMember(Name = "TokenExpiryField", EmitDefaultValue = false)]
+        [DataMember(Name = "TokenExpiryField", EmitDefaultValue = true)]
         public DateTime TokenExpiryField { get; set; }
 
         /// <summary>
         /// User API Token
         /// </summary>
         /// <value>User API Token</value>
-        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
         public string _TokenField { get; set; }
 
         /// <summary>

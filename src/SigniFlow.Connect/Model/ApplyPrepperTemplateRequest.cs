@@ -62,20 +62,20 @@ namespace SigniFlow.Connect.Model
         /// Document ID field.
         /// </summary>
         /// <value>Document ID field.</value>
-        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal DocIDField { get; set; }
 
         /// <summary>
         /// Document prepper template ID field.
         /// </summary>
         /// <value>Document prepper template ID field.</value>
-        [DataMember(Name = "PrepperTemplateIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PrepperTemplateIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PrepperTemplateIDField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
         /// </summary>
-        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
         public TokenField TokenField { get; set; }
 
         /// <summary>

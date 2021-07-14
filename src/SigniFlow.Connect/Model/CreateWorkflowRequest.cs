@@ -35,22 +35,22 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets AutoExpireField
         /// </summary>
-        [DataMember(Name = "AutoExpireField", IsRequired = true, EmitDefaultValue = false)]
-        public AutoExpire AutoExpireField { get; set; }
+        [DataMember(Name = "AutoExpireField", EmitDefaultValue = true)]
+        public AutoExpire? AutoExpireField { get; set; }
         /// <summary>
         /// Gets or Sets AutoRemindField
         /// </summary>
-        [DataMember(Name = "AutoRemindField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "AutoRemindField", IsRequired = true, EmitDefaultValue = true)]
         public AutoRemind AutoRemindField { get; set; }
         /// <summary>
         /// Gets or Sets ExtensionField
         /// </summary>
-        [DataMember(Name = "ExtensionField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ExtensionField", IsRequired = true, EmitDefaultValue = true)]
         public DocExtension ExtensionField { get; set; }
         /// <summary>
         /// Gets or Sets PriorityField
         /// </summary>
-        [DataMember(Name = "PriorityField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PriorityField", IsRequired = true, EmitDefaultValue = true)]
         public Priority PriorityField { get; set; }
 //    
 //    
@@ -67,8 +67,8 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateWorkflowRequest" /> class.
         /// </summary>
-        /// <param name="additionalDataField">Sets additional data to be embedded in PDF Meta. (required).</param>
-        /// <param name="autoExpireField">autoExpireField (required).</param>
+        /// <param name="additionalDataField">Sets additional data to be embedded in PDF Meta..</param>
+        /// <param name="autoExpireField">autoExpireField.</param>
         /// <param name="autoRemindField">autoRemindField (required).</param>
         /// <param name="docField">Base64 Encoded String of document (required).</param>
         /// <param name="docNameField">Name of document to display in SigniFlow (required).</param>
@@ -78,11 +78,8 @@ namespace SigniFlow.Connect.Model
         /// <param name="priorityField">priorityField (required).</param>
         /// <param name="sLAField">Deprecated field, Pass 0 (required) (default to 0).</param>
         /// <param name="tokenField">tokenField (required).</param>
-        public CreateWorkflowRequest(string additionalDataField = default(string), AutoExpire autoExpireField = default(AutoExpire), AutoRemind autoRemindField = default(AutoRemind), string docField = default(string), string docNameField = default(string), DateTime? dueDateField = default(DateTime?), DocExtension extensionField = default(DocExtension), string messageField = default(string), Priority priorityField = default(Priority), int sLAField = 0, TokenField tokenField = default(TokenField))
+        public CreateWorkflowRequest(string additionalDataField = default(string), AutoExpire? autoExpireField = default(AutoExpire?), AutoRemind autoRemindField = default(AutoRemind), string docField = default(string), string docNameField = default(string), DateTime? dueDateField = default(DateTime?), DocExtension extensionField = default(DocExtension), string messageField = default(string), Priority priorityField = default(Priority), int sLAField = 0, TokenField tokenField = default(TokenField))
         {
-            // to ensure "additionalDataField" is required (not null)
-            this.AdditionalDataField = additionalDataField ?? throw new ArgumentNullException("additionalDataField is a required property for CreateWorkflowRequest and cannot be null");
-            this.AutoExpireField = autoExpireField;
             this.AutoRemindField = autoRemindField;
             // to ensure "docField" is required (not null)
             this.DocField = docField ?? throw new ArgumentNullException("docField is a required property for CreateWorkflowRequest and cannot be null");
@@ -95,6 +92,8 @@ namespace SigniFlow.Connect.Model
             this.SLAField = sLAField;
             // to ensure "tokenField" is required (not null)
             this.TokenField = tokenField ?? throw new ArgumentNullException("tokenField is a required property for CreateWorkflowRequest and cannot be null");
+            this.AdditionalDataField = additionalDataField;
+            this.AutoExpireField = autoExpireField;
             this.DueDateField = dueDateField;
         }
 
@@ -102,21 +101,21 @@ namespace SigniFlow.Connect.Model
         /// Sets additional data to be embedded in PDF Meta.
         /// </summary>
         /// <value>Sets additional data to be embedded in PDF Meta.</value>
-        [DataMember(Name = "AdditionalDataField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "AdditionalDataField", EmitDefaultValue = true)]
         public string AdditionalDataField { get; set; }
 
         /// <summary>
         /// Base64 Encoded String of document
         /// </summary>
         /// <value>Base64 Encoded String of document</value>
-        [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = true)]
         public string DocField { get; set; }
 
         /// <summary>
         /// Name of document to display in SigniFlow
         /// </summary>
         /// <value>Name of document to display in SigniFlow</value>
-        [DataMember(Name = "DocNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocNameField", IsRequired = true, EmitDefaultValue = true)]
         public string DocNameField { get; set; }
 
         /// <summary>
@@ -130,20 +129,20 @@ namespace SigniFlow.Connect.Model
         /// Custom message to display to participants
         /// </summary>
         /// <value>Custom message to display to participants</value>
-        [DataMember(Name = "MessageField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "MessageField", IsRequired = true, EmitDefaultValue = true)]
         public string MessageField { get; set; }
 
         /// <summary>
         /// Deprecated field, Pass 0
         /// </summary>
         /// <value>Deprecated field, Pass 0</value>
-        [DataMember(Name = "SLAField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "SLAField", IsRequired = true, EmitDefaultValue = true)]
         public int SLAField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
         /// </summary>
-        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
         public TokenField TokenField { get; set; }
 
         /// <summary>

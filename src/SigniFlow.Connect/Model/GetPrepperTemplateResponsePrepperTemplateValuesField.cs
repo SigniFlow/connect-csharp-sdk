@@ -83,79 +83,79 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets ColorField
         /// </summary>
-        [DataMember(Name = "ColorField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ColorField", IsRequired = true, EmitDefaultValue = true)]
         public string ColorField { get; set; }
 
         /// <summary>
         /// Gets or Sets DocFieldIDField
         /// </summary>
-        [DataMember(Name = "DocFieldIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocFieldIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocFieldIDField { get; set; }
 
         /// <summary>
         /// Gets or Sets DocIDField
         /// </summary>
-        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal DocIDField { get; set; }
 
         /// <summary>
         /// Gets or Sets FieldTypeField
         /// </summary>
-        [DataMember(Name = "FieldTypeField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FieldTypeField", IsRequired = true, EmitDefaultValue = true)]
         public string FieldTypeField { get; set; }
 
         /// <summary>
         /// Field height.
         /// </summary>
         /// <value>Field height.</value>
-        [DataMember(Name = "HeightField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "HeightField", IsRequired = true, EmitDefaultValue = true)]
         public decimal HeightField { get; set; }
 
         /// <summary>
         /// Gets or Sets PageNumberField
         /// </summary>
-        [DataMember(Name = "PageNumberField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "PageNumberField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PageNumberField { get; set; }
 
         /// <summary>
         /// The user&#39;s full name.
         /// </summary>
         /// <value>The user&#39;s full name.</value>
-        [DataMember(Name = "UserFullNameField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "UserFullNameField", IsRequired = true, EmitDefaultValue = true)]
         public string UserFullNameField { get; set; }
 
         /// <summary>
         /// The user&#39;s ID.
         /// </summary>
         /// <value>The user&#39;s ID.</value>
-        [DataMember(Name = "UserIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "UserIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal UserIDField { get; set; }
 
         /// <summary>
         /// Gets or Sets ValueField
         /// </summary>
-        [DataMember(Name = "ValueField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ValueField", IsRequired = true, EmitDefaultValue = true)]
         public string ValueField { get; set; }
 
         /// <summary>
         /// Field width.
         /// </summary>
         /// <value>Field width.</value>
-        [DataMember(Name = "WidthField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "WidthField", IsRequired = true, EmitDefaultValue = true)]
         public decimal WidthField { get; set; }
 
         /// <summary>
         /// The x coordinates of the fields.
         /// </summary>
         /// <value>The x coordinates of the fields.</value>
-        [DataMember(Name = "XCoordinateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "XCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public decimal XCoordinateField { get; set; }
 
         /// <summary>
         /// The y coordinates of the fields
         /// </summary>
         /// <value>The y coordinates of the fields</value>
-        [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public decimal YCoordinateField { get; set; }
 
         /// <summary>

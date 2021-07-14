@@ -35,7 +35,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or Sets ActionField
         /// </summary>
-        [DataMember(Name = "ActionField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "ActionField", IsRequired = true, EmitDefaultValue = true)]
         public ActionField ActionField { get; set; }
 //    
 //    
@@ -67,14 +67,14 @@ namespace SigniFlow.Connect.Model
         /// Participant email address field.
         /// </summary>
         /// <value>Participant email address field.</value>
-        [DataMember(Name = "EmailField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "EmailField", IsRequired = true, EmitDefaultValue = true)]
         public string EmailField { get; set; }
 
         /// <summary>
         /// Document Flow ID field.
         /// </summary>
         /// <value>Document Flow ID field.</value>
-        [DataMember(Name = "FlowIDField", IsRequired = true, EmitDefaultValue = false)]
+        [DataMember(Name = "FlowIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal FlowIDField { get; set; }
 
         /// <summary>
