@@ -47,7 +47,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetAuditDocumentResponse" /> class.
         /// </summary>
-        /// <param name="auditDocumentField">auditDocumentField (required).</param>
+        /// <param name="auditDocumentField">A pdf of the audit as a base64 encoded string. (required).</param>
         /// <param name="resultField">Displays the result of the call. (required).</param>
         public GetAuditDocumentResponse(string auditDocumentField = default(string), string resultField = default(string))
         {
@@ -58,8 +58,9 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets AuditDocumentField
+        /// A pdf of the audit as a base64 encoded string.
         /// </summary>
+        /// <value>A pdf of the audit as a base64 encoded string.</value>
         [DataMember(Name = "AuditDocumentField", IsRequired = true, EmitDefaultValue = true)]
         public string AuditDocumentField { get; set; }
 

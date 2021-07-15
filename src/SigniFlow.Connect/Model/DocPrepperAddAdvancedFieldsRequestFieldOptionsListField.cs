@@ -47,7 +47,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DocPrepperAddAdvancedFieldsRequestFieldOptionsListField" /> class.
         /// </summary>
-        /// <param name="linkedValueField">linkedValueField (required).</param>
+        /// <param name="linkedValueField">Used to indicate to which value the current option is linked to in the linked field. (required).</param>
         /// <param name="maxField">Max amount field. (required).</param>
         /// <param name="minField">Min amount field (required).</param>
         /// <param name="valueField">valueField (required).</param>
@@ -62,8 +62,9 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets LinkedValueField
+        /// Used to indicate to which value the current option is linked to in the linked field.
         /// </summary>
+        /// <value>Used to indicate to which value the current option is linked to in the linked field.</value>
         [DataMember(Name = "LinkedValueField", IsRequired = true, EmitDefaultValue = true)]
         public string LinkedValueField { get; set; }
 

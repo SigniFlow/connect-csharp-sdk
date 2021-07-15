@@ -47,12 +47,12 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowSignRequest" /> class.
         /// </summary>
-        /// <param name="docIDField">docIDField (required).</param>
+        /// <param name="docIDField">Document ID (required).</param>
         /// <param name="latitudeField">latitudeField (required).</param>
         /// <param name="loginPasswordField">loginPasswordField (required).</param>
         /// <param name="loginUserNameField">loginUserNameField (required).</param>
         /// <param name="longitudeField">longitudeField (required).</param>
-        /// <param name="signReasonField">signReasonField (required).</param>
+        /// <param name="signReasonField">Reason for signature. (required).</param>
         /// <param name="timeZoneOffsetField">timeZoneOffsetField (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
         public WorkflowSignRequest(string docIDField = default(string), string latitudeField = default(string), string loginPasswordField = default(string), string loginUserNameField = default(string), string longitudeField = default(string), string signReasonField = default(string), decimal timeZoneOffsetField = default(decimal), TokenField tokenField = default(TokenField))
@@ -75,8 +75,9 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets DocIDField
+        /// Document ID
         /// </summary>
+        /// <value>Document ID</value>
         [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocIDField { get; set; }
 
@@ -105,8 +106,9 @@ namespace SigniFlow.Connect.Model
         public string LongitudeField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignReasonField
+        /// Reason for signature.
         /// </summary>
+        /// <value>Reason for signature.</value>
         [DataMember(Name = "SignReasonField", IsRequired = true, EmitDefaultValue = true)]
         public string SignReasonField { get; set; }
 

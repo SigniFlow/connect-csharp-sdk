@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CeremonyIDField** | **decimal** |  | 
+**CeremonyIDField** | **decimal** | Signing ceremony ID | 
 **ResultField** | **string** | Displays the result of the call. | 
 **SignedDocumentField** | **string** |  | 
 

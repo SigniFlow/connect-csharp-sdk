@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DocIDField** | **string** |  | 
+**DocIDField** | **string** | Document ID | 
 **LatitudeField** | **string** |  | 
 **LoginPasswordField** | **string** |  | 
 **LoginUserNameField** | **string** |  | 
 **LongitudeField** | **string** |  | 
-**SignReasonField** | **string** |  | 
+**SignReasonField** | **string** | Reason for signature. | 
 **TimeZoneOffsetField** | **decimal** |  | 
 **TokenField** | [**TokenField**](TokenField.md) |  | 
 

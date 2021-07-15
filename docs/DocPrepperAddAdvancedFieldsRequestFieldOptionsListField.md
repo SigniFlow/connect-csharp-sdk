@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LinkedValueField** | **string** |  | 
+**LinkedValueField** | **string** | Used to indicate to which value the current option is linked to in the linked field. | 
 **MaxField** | **decimal** | Max amount field. | 
 **MinField** | **decimal** | Min amount field | 
 **ValueField** | **string** |  | 

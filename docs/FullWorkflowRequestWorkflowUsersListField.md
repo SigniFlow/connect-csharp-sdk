@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ActionField** | **decimal** | Refers to the order of signatures from the users. | 
-**AllowProxyField** | **decimal** | Allow proxy confirmation field. | 
+**ActionField** | **ActionField** |  | 
+**AllowProxyField** | **ProxyAllowedField** |  | 
 **AutoSignField** | **bool** | ### Enable auto sign.  &#x60;True &#x3D; Signature will be applied automaticly False &#x3D; User will need to login and Sign&#x60;  | 
 **EmailAddressField** | **string** | Workflow user&#39;s email addresses. | 
 **GroupStepField** | [**FullWorkflowRequestGroupStepField**](FullWorkflowRequestGroupStepField.md) |  | [optional] 
 **LanguageCodeField** | **string** | #### Sets the display language for the user ##### ISO 2 Digit Code  &#x60;en &#x3D; English es &#x3D; Spanish fr &#x3D; French&#x60;  | 
-**LatitudeField** | **string** | Location latitude. | 
-**LongitudeField** | **string** | Location longtitude. | 
+**LatitudeField** | **string** | GPS location latitude. | 
+**LongitudeField** | **string** | GPS location longtitude. | 
 **MobileNumberField** | **string** | Group user&#39;s mobile number. | 
 **PreloadedFaceToFaceSignersField** | **List&lt;Object&gt;** | Preloaded user&#39;s who will be using the face to face signature field. | [optional] 
 **SignReasonField** | **string** | Reason for signature. | 

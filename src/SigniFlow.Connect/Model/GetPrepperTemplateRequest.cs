@@ -47,8 +47,8 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetPrepperTemplateRequest" /> class.
         /// </summary>
-        /// <param name="docIDField">docIDField (required).</param>
-        /// <param name="prepperTemplateIDField">prepperTemplateIDField (required).</param>
+        /// <param name="docIDField">Document ID (required).</param>
+        /// <param name="prepperTemplateIDField">The template ID. (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
         public GetPrepperTemplateRequest(decimal docIDField = default(decimal), decimal prepperTemplateIDField = default(decimal), TokenField tokenField = default(TokenField))
         {
@@ -59,14 +59,16 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets DocIDField
+        /// Document ID
         /// </summary>
+        /// <value>Document ID</value>
         [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal DocIDField { get; set; }
 
         /// <summary>
-        /// Gets or Sets PrepperTemplateIDField
+        /// The template ID.
         /// </summary>
+        /// <value>The template ID.</value>
         [DataMember(Name = "PrepperTemplateIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PrepperTemplateIDField { get; set; }
 

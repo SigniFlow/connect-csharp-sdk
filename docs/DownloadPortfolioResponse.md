@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PortfolioDataField** | **string** | Portfolio data field. | 
+**PortfolioDataField** | **string** | The portfolio document as a base64 encoded string. | 
 **PortfolioIDField** | **decimal** | Portfolio ID. | 
 **PortfolioNameField** | **string** | Portfolio name. | 
 **ResultField** | **string** | Displays the result of the call. | 

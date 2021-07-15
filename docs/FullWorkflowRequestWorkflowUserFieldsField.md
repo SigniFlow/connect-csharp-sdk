@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FieldTypeField** | **decimal** | Field type. | 
+**FieldTypeField** | **FieldType** |  | 
 **FontFamilyField** | **string** | The font family of the fields text. | 
 **FontSizeField** | **decimal** | The font size of the fields text. | 
 **GroupUserNumberField** | **decimal** | The users in the group&#39;s user number. | 

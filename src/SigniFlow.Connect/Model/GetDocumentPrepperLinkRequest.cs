@@ -47,9 +47,9 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentPrepperLinkRequest" /> class.
         /// </summary>
-        /// <param name="docIDField">docIDField (required).</param>
-        /// <param name="emailSettingField">emailSettingField (required).</param>
-        /// <param name="returnURLField">returnURLField (required).</param>
+        /// <param name="docIDField">Document ID (required).</param>
+        /// <param name="emailSettingField">Emails on the workflow should:  &#x60;0 &#x3D; SendAll 1 &#x3D; SkipAll 2 &#x3D; SkipFirst&#x60; (required).</param>
+        /// <param name="returnURLField">The return url. (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
         public GetDocumentPrepperLinkRequest(string docIDField = default(string), decimal emailSettingField = default(decimal), string returnURLField = default(string), TokenField tokenField = default(TokenField))
         {
@@ -63,20 +63,23 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets DocIDField
+        /// Document ID
         /// </summary>
+        /// <value>Document ID</value>
         [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocIDField { get; set; }
 
         /// <summary>
-        /// Gets or Sets EmailSettingField
+        /// Emails on the workflow should:  &#x60;0 &#x3D; SendAll 1 &#x3D; SkipAll 2 &#x3D; SkipFirst&#x60;
         /// </summary>
+        /// <value>Emails on the workflow should:  &#x60;0 &#x3D; SendAll 1 &#x3D; SkipAll 2 &#x3D; SkipFirst&#x60;</value>
         [DataMember(Name = "EmailSettingField", IsRequired = true, EmitDefaultValue = true)]
         public decimal EmailSettingField { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReturnURLField
+        /// The return url.
         /// </summary>
+        /// <value>The return url.</value>
         [DataMember(Name = "ReturnURLField", IsRequired = true, EmitDefaultValue = true)]
         public string ReturnURLField { get; set; }
 

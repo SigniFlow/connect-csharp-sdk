@@ -47,7 +47,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MultipleSignersSigningCeremonyResponse" /> class.
         /// </summary>
-        /// <param name="ceremonyIDField">ceremonyIDField (required).</param>
+        /// <param name="ceremonyIDField">Signing ceremony ID (required).</param>
         /// <param name="resultField">Displays the result of the call. (required).</param>
         /// <param name="signedDocumentField">signedDocumentField (required).</param>
         public MultipleSignersSigningCeremonyResponse(decimal ceremonyIDField = default(decimal), string resultField = default(string), string signedDocumentField = default(string))
@@ -60,8 +60,9 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets CeremonyIDField
+        /// Signing ceremony ID
         /// </summary>
+        /// <value>Signing ceremony ID</value>
         [DataMember(Name = "CeremonyIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal CeremonyIDField { get; set; }
 

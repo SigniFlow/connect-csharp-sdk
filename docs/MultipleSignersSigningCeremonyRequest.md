@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DocField** | **string** |  | 
-**DocNameField** | **string** |  | 
+**DocField** | **string** | Document field | 
+**DocNameField** | **string** | Document name | 
 **LoginPasswordField** | **string** | User&#39;s password. | 
 **LoginUserNameField** | **string** | User&#39;s username. | 
 **SignerListField** | [**List&lt;MultipleSignersSigningCeremonyRequestSignerListField&gt;**](MultipleSignersSigningCeremonyRequestSignerListField.md) |  | 

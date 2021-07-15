@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **KeepCustomPropertiesField** | **bool** | Keep custom properties. | 
 **KeepXMPMetadataField** | **bool** | Keep XMP meta data. | 
 **PortfolioInformationField** | [**FullWorkflowRequestPortfolioInformationField**](FullWorkflowRequestPortfolioInformationField.md) |  | 
-**PriorityField** | **decimal** | Document priority. | 
+**PriorityField** | **Priority** |  | 
 **SLAField** | **decimal** | SLA | 
 **SendFirstEmailField** | **bool** | Confirm first user email notification will or will not be sent. | 
 **SendWorkflowEmailsField** | **bool** | Confirm that workflow emails will or will not be sent. | 

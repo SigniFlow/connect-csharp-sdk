@@ -47,16 +47,16 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocumentAuditResponseActivityField" /> class.
         /// </summary>
-        /// <param name="actionOrderField">actionOrderField (required).</param>
+        /// <param name="actionOrderField">The order in which action will be taken. (required).</param>
         /// <param name="additionalField">additionalField (required).</param>
-        /// <param name="docIDField">docIDField (required).</param>
-        /// <param name="emailField">The user&#39;s email. (required).</param>
-        /// <param name="eventDateField">eventDateField (required).</param>
-        /// <param name="eventField">eventField (required).</param>
-        /// <param name="eventStatusField">eventStatusField (required).</param>
-        /// <param name="locationField">locationField (required).</param>
-        /// <param name="orderDateField">orderDateField (required).</param>
-        /// <param name="pageField">pageField (required).</param>
+        /// <param name="docIDField">Document ID (required).</param>
+        /// <param name="emailField">The user&#39;s email address. (required).</param>
+        /// <param name="eventDateField">The date of the event. (required).</param>
+        /// <param name="eventField">The type of the event that took place. (required).</param>
+        /// <param name="eventStatusField">Status of the event (required).</param>
+        /// <param name="locationField">GPS location (required).</param>
+        /// <param name="orderDateField">The date when the event took place. (required).</param>
+        /// <param name="pageField">What page of the document an event took place on - this is not always populated as some events don&#39;t take place on the document. (required).</param>
         /// <param name="userFullNameField">User&#39;s full name. (required).</param>
         public GetDocumentAuditResponseActivityField(string actionOrderField = default(string), string additionalField = default(string), string docIDField = default(string), string emailField = default(string), string eventDateField = default(string), string eventField = default(string), string eventStatusField = default(string), string locationField = default(string), string orderDateField = default(string), string pageField = default(string), string userFullNameField = default(string))
         {
@@ -85,8 +85,9 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets ActionOrderField
+        /// The order in which action will be taken.
         /// </summary>
+        /// <value>The order in which action will be taken.</value>
         [DataMember(Name = "ActionOrderField", IsRequired = true, EmitDefaultValue = true)]
         public string ActionOrderField { get; set; }
 
@@ -97,51 +98,58 @@ namespace SigniFlow.Connect.Model
         public string AdditionalField { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocIDField
+        /// Document ID
         /// </summary>
+        /// <value>Document ID</value>
         [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocIDField { get; set; }
 
         /// <summary>
-        /// The user&#39;s email.
+        /// The user&#39;s email address.
         /// </summary>
-        /// <value>The user&#39;s email.</value>
+        /// <value>The user&#39;s email address.</value>
         [DataMember(Name = "EmailField", IsRequired = true, EmitDefaultValue = true)]
         public string EmailField { get; set; }
 
         /// <summary>
-        /// Gets or Sets EventDateField
+        /// The date of the event.
         /// </summary>
+        /// <value>The date of the event.</value>
         [DataMember(Name = "EventDateField", IsRequired = true, EmitDefaultValue = true)]
         public string EventDateField { get; set; }
 
         /// <summary>
-        /// Gets or Sets EventField
+        /// The type of the event that took place.
         /// </summary>
+        /// <value>The type of the event that took place.</value>
         [DataMember(Name = "EventField", IsRequired = true, EmitDefaultValue = true)]
         public string EventField { get; set; }
 
         /// <summary>
-        /// Gets or Sets EventStatusField
+        /// Status of the event
         /// </summary>
+        /// <value>Status of the event</value>
         [DataMember(Name = "EventStatusField", IsRequired = true, EmitDefaultValue = true)]
         public string EventStatusField { get; set; }
 
         /// <summary>
-        /// Gets or Sets LocationField
+        /// GPS location
         /// </summary>
+        /// <value>GPS location</value>
         [DataMember(Name = "LocationField", IsRequired = true, EmitDefaultValue = true)]
         public string LocationField { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrderDateField
+        /// The date when the event took place.
         /// </summary>
+        /// <value>The date when the event took place.</value>
         [DataMember(Name = "OrderDateField", IsRequired = true, EmitDefaultValue = true)]
         public string OrderDateField { get; set; }
 
         /// <summary>
-        /// Gets or Sets PageField
+        /// What page of the document an event took place on - this is not always populated as some events don&#39;t take place on the document.
         /// </summary>
+        /// <value>What page of the document an event took place on - this is not always populated as some events don&#39;t take place on the document.</value>
         [DataMember(Name = "PageField", IsRequired = true, EmitDefaultValue = true)]
         public string PageField { get; set; }
 

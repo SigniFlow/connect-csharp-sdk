@@ -47,7 +47,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetPrepperTemplateListRequest" /> class.
         /// </summary>
-        /// <param name="templateFolderField">templateFolderField (required).</param>
+        /// <param name="templateFolderField">The category that the template list falls under. (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
         public GetPrepperTemplateListRequest(decimal templateFolderField = default(decimal), TokenField tokenField = default(TokenField))
         {
@@ -57,8 +57,9 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets TemplateFolderField
+        /// The category that the template list falls under.
         /// </summary>
+        /// <value>The category that the template list falls under.</value>
         [DataMember(Name = "TemplateFolderField", IsRequired = true, EmitDefaultValue = true)]
         public decimal TemplateFolderField { get; set; }
 

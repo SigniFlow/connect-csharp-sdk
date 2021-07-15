@@ -47,30 +47,31 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowRequestPortfolioInformationField" /> class.
         /// </summary>
-        /// <param name="createPortfolioField">Create portfolio. (required).</param>
-        /// <param name="linkToPortfolioField">Portfolio link. (required).</param>
+        /// <param name="createPortfolioField">Create a new portfolio. (required).</param>
+        /// <param name="linkToPortfolioField">Link document to Portfolio link. (required).</param>
         /// <param name="portfolioIDField">Portfolio ID. (required).</param>
         /// <param name="portfolioNameField">Portfolio name. (required).</param>
-        public FullWorkflowRequestPortfolioInformationField(bool createPortfolioField = default(bool), bool linkToPortfolioField = default(bool), decimal portfolioIDField = default(decimal), string portfolioNameField = default(string))
+        public FullWorkflowRequestPortfolioInformationField(bool createPortfolioField = default(bool), bool linkToPortfolioField = default(bool), decimal? portfolioIDField = default(decimal?), string portfolioNameField = default(string))
         {
             this.CreatePortfolioField = createPortfolioField;
             this.LinkToPortfolioField = linkToPortfolioField;
-            this.PortfolioIDField = portfolioIDField;
+            // to ensure "portfolioIDField" is required (not null)
+            this.PortfolioIDField = portfolioIDField ?? throw new ArgumentNullException("portfolioIDField is a required property for FullWorkflowRequestPortfolioInformationField and cannot be null");
             // to ensure "portfolioNameField" is required (not null)
             this.PortfolioNameField = portfolioNameField ?? throw new ArgumentNullException("portfolioNameField is a required property for FullWorkflowRequestPortfolioInformationField and cannot be null");
         }
 
         /// <summary>
-        /// Create portfolio.
+        /// Create a new portfolio.
         /// </summary>
-        /// <value>Create portfolio.</value>
+        /// <value>Create a new portfolio.</value>
         [DataMember(Name = "CreatePortfolioField", IsRequired = true, EmitDefaultValue = true)]
         public bool CreatePortfolioField { get; set; }
 
         /// <summary>
-        /// Portfolio link.
+        /// Link document to Portfolio link.
         /// </summary>
-        /// <value>Portfolio link.</value>
+        /// <value>Link document to Portfolio link.</value>
         [DataMember(Name = "LinkToPortfolioField", IsRequired = true, EmitDefaultValue = true)]
         public bool LinkToPortfolioField { get; set; }
 
@@ -79,7 +80,7 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         /// <value>Portfolio ID.</value>
         [DataMember(Name = "PortfolioIDField", IsRequired = true, EmitDefaultValue = true)]
-        public decimal PortfolioIDField { get; set; }
+        public decimal? PortfolioIDField { get; set; }
 
         /// <summary>
         /// Portfolio name.
@@ -144,7 +145,8 @@ namespace SigniFlow.Connect.Model
                 ) && 
                 (
                     this.PortfolioIDField == input.PortfolioIDField ||
-                    this.PortfolioIDField.Equals(input.PortfolioIDField)
+                    (this.PortfolioIDField != null &&
+                    this.PortfolioIDField.Equals(input.PortfolioIDField))
                 ) && 
                 (
                     this.PortfolioNameField == input.PortfolioNameField ||
@@ -164,7 +166,8 @@ namespace SigniFlow.Connect.Model
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.CreatePortfolioField.GetHashCode();
                 hashCode = hashCode * 59 + this.LinkToPortfolioField.GetHashCode();
-                hashCode = hashCode * 59 + this.PortfolioIDField.GetHashCode();
+                if (this.PortfolioIDField != null)
+                    hashCode = hashCode * 59 + this.PortfolioIDField.GetHashCode();
                 if (this.PortfolioNameField != null)
                     hashCode = hashCode * 59 + this.PortfolioNameField.GetHashCode();
                 return hashCode;

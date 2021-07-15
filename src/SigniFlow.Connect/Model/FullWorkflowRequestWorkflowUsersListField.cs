@@ -32,6 +32,16 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "FullWorkflowRequest_WorkflowUsersListField")]
     public partial class FullWorkflowRequestWorkflowUsersListField : IEquatable<FullWorkflowRequestWorkflowUsersListField>, IValidatableObject
     {
+        /// <summary>
+        /// Gets or Sets ActionField
+        /// </summary>
+        [DataMember(Name = "ActionField", IsRequired = true, EmitDefaultValue = true)]
+        public ActionField ActionField { get; set; }
+        /// <summary>
+        /// Gets or Sets AllowProxyField
+        /// </summary>
+        [DataMember(Name = "AllowProxyField", IsRequired = true, EmitDefaultValue = true)]
+        public ProxyAllowedField AllowProxyField { get; set; }
 //    
 //    
 //        /// <summary>
@@ -47,14 +57,14 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowRequestWorkflowUsersListField" /> class.
         /// </summary>
-        /// <param name="actionField">Refers to the order of signatures from the users. (required).</param>
-        /// <param name="allowProxyField">Allow proxy confirmation field. (required).</param>
+        /// <param name="actionField">actionField (required).</param>
+        /// <param name="allowProxyField">allowProxyField (required).</param>
         /// <param name="autoSignField">### Enable auto sign.  &#x60;True &#x3D; Signature will be applied automaticly False &#x3D; User will need to login and Sign&#x60;  (required).</param>
         /// <param name="emailAddressField">Workflow user&#39;s email addresses. (required).</param>
         /// <param name="groupStepField">groupStepField.</param>
         /// <param name="languageCodeField">#### Sets the display language for the user ##### ISO 2 Digit Code  &#x60;en &#x3D; English es &#x3D; Spanish fr &#x3D; French&#x60;  (required).</param>
-        /// <param name="latitudeField">Location latitude. (required).</param>
-        /// <param name="longitudeField">Location longtitude. (required).</param>
+        /// <param name="latitudeField">GPS location latitude. (required).</param>
+        /// <param name="longitudeField">GPS location longtitude. (required).</param>
         /// <param name="mobileNumberField">Group user&#39;s mobile number. (required).</param>
         /// <param name="preloadedFaceToFaceSignersField">Preloaded user&#39;s who will be using the face to face signature field..</param>
         /// <param name="signReasonField">Reason for signature. (required).</param>
@@ -63,7 +73,7 @@ namespace SigniFlow.Connect.Model
         /// <param name="userFullNameField">Face to face user&#39;s full name. (required).</param>
         /// <param name="userLastNameField">Face to face user&#39;s last name. (required).</param>
         /// <param name="workflowUserFieldsField">The list of the workflowed documents field..</param>
-        public FullWorkflowRequestWorkflowUsersListField(decimal actionField = default(decimal), decimal allowProxyField = default(decimal), bool autoSignField = default(bool), string emailAddressField = default(string), FullWorkflowRequestGroupStepField groupStepField = default(FullWorkflowRequestGroupStepField), string languageCodeField = default(string), string latitudeField = default(string), string longitudeField = default(string), string mobileNumberField = default(string), List<Object> preloadedFaceToFaceSignersField = default(List<Object>), string signReasonField = default(string), string signerPasswordField = default(string), string userFirstNameField = default(string), string userFullNameField = default(string), string userLastNameField = default(string), List<FullWorkflowRequestWorkflowUserFieldsField> workflowUserFieldsField = default(List<FullWorkflowRequestWorkflowUserFieldsField>))
+        public FullWorkflowRequestWorkflowUsersListField(ActionField actionField = default(ActionField), ProxyAllowedField allowProxyField = default(ProxyAllowedField), bool autoSignField = default(bool), string emailAddressField = default(string), FullWorkflowRequestGroupStepField groupStepField = default(FullWorkflowRequestGroupStepField), string languageCodeField = default(string), string latitudeField = default(string), string longitudeField = default(string), string mobileNumberField = default(string), List<Object> preloadedFaceToFaceSignersField = default(List<Object>), string signReasonField = default(string), string signerPasswordField = default(string), string userFirstNameField = default(string), string userFullNameField = default(string), string userLastNameField = default(string), List<FullWorkflowRequestWorkflowUserFieldsField> workflowUserFieldsField = default(List<FullWorkflowRequestWorkflowUserFieldsField>))
         {
             this.ActionField = actionField;
             this.AllowProxyField = allowProxyField;
@@ -94,20 +104,6 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Refers to the order of signatures from the users.
-        /// </summary>
-        /// <value>Refers to the order of signatures from the users.</value>
-        [DataMember(Name = "ActionField", IsRequired = true, EmitDefaultValue = true)]
-        public decimal ActionField { get; set; }
-
-        /// <summary>
-        /// Allow proxy confirmation field.
-        /// </summary>
-        /// <value>Allow proxy confirmation field.</value>
-        [DataMember(Name = "AllowProxyField", IsRequired = true, EmitDefaultValue = true)]
-        public decimal AllowProxyField { get; set; }
-
-        /// <summary>
         /// ### Enable auto sign.  &#x60;True &#x3D; Signature will be applied automaticly False &#x3D; User will need to login and Sign&#x60; 
         /// </summary>
         /// <value>### Enable auto sign.  &#x60;True &#x3D; Signature will be applied automaticly False &#x3D; User will need to login and Sign&#x60; </value>
@@ -135,16 +131,16 @@ namespace SigniFlow.Connect.Model
         public string LanguageCodeField { get; set; }
 
         /// <summary>
-        /// Location latitude.
+        /// GPS location latitude.
         /// </summary>
-        /// <value>Location latitude.</value>
+        /// <value>GPS location latitude.</value>
         [DataMember(Name = "LatitudeField", IsRequired = true, EmitDefaultValue = true)]
         public string LatitudeField { get; set; }
 
         /// <summary>
-        /// Location longtitude.
+        /// GPS location longtitude.
         /// </summary>
-        /// <value>Location longtitude.</value>
+        /// <value>GPS location longtitude.</value>
         [DataMember(Name = "LongitudeField", IsRequired = true, EmitDefaultValue = true)]
         public string LongitudeField { get; set; }
 

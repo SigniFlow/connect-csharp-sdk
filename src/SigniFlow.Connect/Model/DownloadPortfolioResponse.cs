@@ -47,7 +47,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DownloadPortfolioResponse" /> class.
         /// </summary>
-        /// <param name="portfolioDataField">Portfolio data field. (required).</param>
+        /// <param name="portfolioDataField">The portfolio document as a base64 encoded string. (required).</param>
         /// <param name="portfolioIDField">Portfolio ID. (required).</param>
         /// <param name="portfolioNameField">Portfolio name. (required).</param>
         /// <param name="resultField">Displays the result of the call. (required).</param>
@@ -63,9 +63,9 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Portfolio data field.
+        /// The portfolio document as a base64 encoded string.
         /// </summary>
-        /// <value>Portfolio data field.</value>
+        /// <value>The portfolio document as a base64 encoded string.</value>
         [DataMember(Name = "PortfolioDataField", IsRequired = true, EmitDefaultValue = true)]
         public string PortfolioDataField { get; set; }
 

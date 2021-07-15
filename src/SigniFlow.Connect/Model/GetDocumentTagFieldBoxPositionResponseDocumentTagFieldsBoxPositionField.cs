@@ -49,7 +49,7 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         /// <param name="heightField">The height of the field. (required).</param>
         /// <param name="pageNumberField">The page number where the field is. (required).</param>
-        /// <param name="widthField">widthField (required).</param>
+        /// <param name="widthField">The width of the field. (required).</param>
         /// <param name="xCoordinateField">The x coordinates of the field. (required).</param>
         /// <param name="yCoordinateField">The y coordinates of the field (required).</param>
         public GetDocumentTagFieldBoxPositionResponseDocumentTagFieldsBoxPositionField(string heightField = default(string), decimal pageNumberField = default(decimal), string widthField = default(string), string xCoordinateField = default(string), string yCoordinateField = default(string))
@@ -80,8 +80,9 @@ namespace SigniFlow.Connect.Model
         public decimal PageNumberField { get; set; }
 
         /// <summary>
-        /// Gets or Sets WidthField
+        /// The width of the field.
         /// </summary>
+        /// <value>The width of the field.</value>
         [DataMember(Name = "WidthField", IsRequired = true, EmitDefaultValue = true)]
         public string WidthField { get; set; }
 

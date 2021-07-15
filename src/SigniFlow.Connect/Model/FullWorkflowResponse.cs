@@ -47,11 +47,11 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowResponse" /> class.
         /// </summary>
-        /// <param name="docField">docField (required).</param>
-        /// <param name="docIDField">docIDField (required).</param>
-        /// <param name="portfolioIDField">portfolioIDField (required).</param>
+        /// <param name="docField">The document that has completed the workflow process. (required).</param>
+        /// <param name="docIDField">Document ID (required).</param>
+        /// <param name="portfolioIDField">Portfolio ID (required).</param>
         /// <param name="resultField">Displays the result of the call. (required).</param>
-        /// <param name="statusField">statusField (required).</param>
+        /// <param name="statusField">Document status that gets returned. (required).</param>
         public FullWorkflowResponse(string docField = default(string), decimal docIDField = default(decimal), decimal portfolioIDField = default(decimal), string resultField = default(string), string statusField = default(string))
         {
             // to ensure "docField" is required (not null)
@@ -65,20 +65,23 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets DocField
+        /// The document that has completed the workflow process.
         /// </summary>
+        /// <value>The document that has completed the workflow process.</value>
         [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = true)]
         public string DocField { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocIDField
+        /// Document ID
         /// </summary>
+        /// <value>Document ID</value>
         [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal DocIDField { get; set; }
 
         /// <summary>
-        /// Gets or Sets PortfolioIDField
+        /// Portfolio ID
         /// </summary>
+        /// <value>Portfolio ID</value>
         [DataMember(Name = "PortfolioIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PortfolioIDField { get; set; }
 
@@ -90,8 +93,9 @@ namespace SigniFlow.Connect.Model
         public string ResultField { get; set; }
 
         /// <summary>
-        /// Gets or Sets StatusField
+        /// Document status that gets returned.
         /// </summary>
+        /// <value>Document status that gets returned.</value>
         [DataMember(Name = "StatusField", IsRequired = true, EmitDefaultValue = true)]
         public string StatusField { get; set; }
 

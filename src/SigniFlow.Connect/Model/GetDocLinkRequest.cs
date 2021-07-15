@@ -47,9 +47,9 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetDocLinkRequest" /> class.
         /// </summary>
-        /// <param name="docIDField">docIDField (required).</param>
-        /// <param name="emailField">emailField (required).</param>
-        /// <param name="returnURLField">returnURLField (required).</param>
+        /// <param name="docIDField">Document ID (required).</param>
+        /// <param name="emailField">User&#39;s email address. (required).</param>
+        /// <param name="returnURLField">The return url. (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
         public GetDocLinkRequest(string docIDField = default(string), string emailField = default(string), string returnURLField = default(string), TokenField tokenField = default(TokenField))
         {
@@ -64,20 +64,23 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets DocIDField
+        /// Document ID
         /// </summary>
+        /// <value>Document ID</value>
         [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocIDField { get; set; }
 
         /// <summary>
-        /// Gets or Sets EmailField
+        /// User&#39;s email address.
         /// </summary>
+        /// <value>User&#39;s email address.</value>
         [DataMember(Name = "EmailField", IsRequired = true, EmitDefaultValue = true)]
         public string EmailField { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReturnURLField
+        /// The return url.
         /// </summary>
+        /// <value>The return url.</value>
         [DataMember(Name = "ReturnURLField", IsRequired = true, EmitDefaultValue = true)]
         public string ReturnURLField { get; set; }
 

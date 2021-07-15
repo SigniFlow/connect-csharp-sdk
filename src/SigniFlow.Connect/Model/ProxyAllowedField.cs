@@ -27,9 +27,9 @@ using OpenAPIDateConverter = SigniFlow.Connect.Client.OpenAPIDateConverter;
 namespace SigniFlow.Connect.Model
 {
     /// <summary>
-    /// #### Determines whether or not the signer can nominate someone else to sign on their behalf.  &#x60;0 &#x3D; No 1 &#x3D; Yes&#x60;
+    /// #### Determines whether or not the signer can nominate someone else to signon their behalf.  &#x60;0 &#x3D; No 1 &#x3D; Yes&#x60;
     /// </summary>
-    /// <value>#### Determines whether or not the signer can nominate someone else to sign on their behalf.  &#x60;0 &#x3D; No 1 &#x3D; Yes&#x60;</value>
+    /// <value>#### Determines whether or not the signer can nominate someone else to signon their behalf.  &#x60;0 &#x3D; No 1 &#x3D; Yes&#x60;</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

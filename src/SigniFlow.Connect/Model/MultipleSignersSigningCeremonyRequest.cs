@@ -47,8 +47,8 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MultipleSignersSigningCeremonyRequest" /> class.
         /// </summary>
-        /// <param name="docField">docField (required).</param>
-        /// <param name="docNameField">docNameField (required).</param>
+        /// <param name="docField">Document field (required).</param>
+        /// <param name="docNameField">Document name (required).</param>
         /// <param name="loginPasswordField">User&#39;s password. (required).</param>
         /// <param name="loginUserNameField">User&#39;s username. (required).</param>
         /// <param name="signerListField">signerListField (required).</param>
@@ -67,14 +67,16 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets DocField
+        /// Document field
         /// </summary>
+        /// <value>Document field</value>
         [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = true)]
         public string DocField { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocNameField
+        /// Document name
         /// </summary>
+        /// <value>Document name</value>
         [DataMember(Name = "DocNameField", IsRequired = true, EmitDefaultValue = true)]
         public string DocNameField { get; set; }
 

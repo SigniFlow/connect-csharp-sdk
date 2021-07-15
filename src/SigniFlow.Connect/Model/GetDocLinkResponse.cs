@@ -48,7 +48,7 @@ namespace SigniFlow.Connect.Model
         /// Initializes a new instance of the <see cref="GetDocLinkResponse" /> class.
         /// </summary>
         /// <param name="result">Displays the result of the call. (required).</param>
-        /// <param name="url">URL (required).</param>
+        /// <param name="url">URL link (required).</param>
         public GetDocLinkResponse(string result = default(string), string url = default(string))
         {
             // to ensure "result" is required (not null)
@@ -65,9 +65,9 @@ namespace SigniFlow.Connect.Model
         public string Result { get; set; }
 
         /// <summary>
-        /// URL
+        /// URL link
         /// </summary>
-        /// <value>URL</value>
+        /// <value>URL link</value>
         [DataMember(Name = "Url", IsRequired = true, EmitDefaultValue = true)]
         public string Url { get; set; }
 

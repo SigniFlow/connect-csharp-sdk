@@ -32,6 +32,11 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "GetPrepperTemplateResponse_PrepperTemplateValuesField")]
     public partial class GetPrepperTemplateResponsePrepperTemplateValuesField : IEquatable<GetPrepperTemplateResponsePrepperTemplateValuesField>, IValidatableObject
     {
+        /// <summary>
+        /// Gets or Sets FieldTypeField
+        /// </summary>
+        [DataMember(Name = "FieldTypeField", IsRequired = true, EmitDefaultValue = true)]
+        public FieldType FieldTypeField { get; set; }
 //    
 //    
 //        /// <summary>
@@ -47,27 +52,26 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetPrepperTemplateResponsePrepperTemplateValuesField" /> class.
         /// </summary>
-        /// <param name="colorField">colorField (required).</param>
-        /// <param name="docFieldIDField">docFieldIDField (required).</param>
-        /// <param name="docIDField">docIDField (required).</param>
+        /// <param name="colorField">The color assigned to the fields of each user, each user has a predefined color. (required).</param>
+        /// <param name="docFieldIDField">Document field ID (required).</param>
+        /// <param name="docIDField">Document ID (required).</param>
         /// <param name="fieldTypeField">fieldTypeField (required).</param>
-        /// <param name="heightField">Field height. (required).</param>
-        /// <param name="pageNumberField">pageNumberField (required).</param>
+        /// <param name="heightField">The height of the field. (required).</param>
+        /// <param name="pageNumberField">Field page number. (required).</param>
         /// <param name="userFullNameField">The user&#39;s full name. (required).</param>
         /// <param name="userIDField">The user&#39;s ID. (required).</param>
-        /// <param name="valueField">valueField (required).</param>
-        /// <param name="widthField">Field width. (required).</param>
-        /// <param name="xCoordinateField">The x coordinates of the fields. (required).</param>
-        /// <param name="yCoordinateField">The y coordinates of the fields (required).</param>
-        public GetPrepperTemplateResponsePrepperTemplateValuesField(string colorField = default(string), string docFieldIDField = default(string), decimal docIDField = default(decimal), string fieldTypeField = default(string), decimal heightField = default(decimal), decimal pageNumberField = default(decimal), string userFullNameField = default(string), decimal userIDField = default(decimal), string valueField = default(string), decimal widthField = default(decimal), decimal xCoordinateField = default(decimal), decimal yCoordinateField = default(decimal))
+        /// <param name="valueField">If you would like to fill in a predefined value that will appear on the document - you can fill it in here - this can be editted by the end user. (required).</param>
+        /// <param name="widthField">The width of the field. (required).</param>
+        /// <param name="xCoordinateField">The x-coordinates of the fields. (required).</param>
+        /// <param name="yCoordinateField">The y-coordinates of the fields (required).</param>
+        public GetPrepperTemplateResponsePrepperTemplateValuesField(string colorField = default(string), string docFieldIDField = default(string), decimal docIDField = default(decimal), FieldType fieldTypeField = default(FieldType), decimal heightField = default(decimal), decimal pageNumberField = default(decimal), string userFullNameField = default(string), decimal userIDField = default(decimal), string valueField = default(string), decimal widthField = default(decimal), decimal xCoordinateField = default(decimal), decimal yCoordinateField = default(decimal))
         {
             // to ensure "colorField" is required (not null)
             this.ColorField = colorField ?? throw new ArgumentNullException("colorField is a required property for GetPrepperTemplateResponsePrepperTemplateValuesField and cannot be null");
             // to ensure "docFieldIDField" is required (not null)
             this.DocFieldIDField = docFieldIDField ?? throw new ArgumentNullException("docFieldIDField is a required property for GetPrepperTemplateResponsePrepperTemplateValuesField and cannot be null");
             this.DocIDField = docIDField;
-            // to ensure "fieldTypeField" is required (not null)
-            this.FieldTypeField = fieldTypeField ?? throw new ArgumentNullException("fieldTypeField is a required property for GetPrepperTemplateResponsePrepperTemplateValuesField and cannot be null");
+            this.FieldTypeField = fieldTypeField;
             this.HeightField = heightField;
             this.PageNumberField = pageNumberField;
             // to ensure "userFullNameField" is required (not null)
@@ -81,39 +85,37 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets ColorField
+        /// The color assigned to the fields of each user, each user has a predefined color.
         /// </summary>
+        /// <value>The color assigned to the fields of each user, each user has a predefined color.</value>
         [DataMember(Name = "ColorField", IsRequired = true, EmitDefaultValue = true)]
         public string ColorField { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocFieldIDField
+        /// Document field ID
         /// </summary>
+        /// <value>Document field ID</value>
         [DataMember(Name = "DocFieldIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocFieldIDField { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocIDField
+        /// Document ID
         /// </summary>
+        /// <value>Document ID</value>
         [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal DocIDField { get; set; }
 
         /// <summary>
-        /// Gets or Sets FieldTypeField
+        /// The height of the field.
         /// </summary>
-        [DataMember(Name = "FieldTypeField", IsRequired = true, EmitDefaultValue = true)]
-        public string FieldTypeField { get; set; }
-
-        /// <summary>
-        /// Field height.
-        /// </summary>
-        /// <value>Field height.</value>
+        /// <value>The height of the field.</value>
         [DataMember(Name = "HeightField", IsRequired = true, EmitDefaultValue = true)]
         public decimal HeightField { get; set; }
 
         /// <summary>
-        /// Gets or Sets PageNumberField
+        /// Field page number.
         /// </summary>
+        /// <value>Field page number.</value>
         [DataMember(Name = "PageNumberField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PageNumberField { get; set; }
 
@@ -132,29 +134,30 @@ namespace SigniFlow.Connect.Model
         public decimal UserIDField { get; set; }
 
         /// <summary>
-        /// Gets or Sets ValueField
+        /// If you would like to fill in a predefined value that will appear on the document - you can fill it in here - this can be editted by the end user.
         /// </summary>
+        /// <value>If you would like to fill in a predefined value that will appear on the document - you can fill it in here - this can be editted by the end user.</value>
         [DataMember(Name = "ValueField", IsRequired = true, EmitDefaultValue = true)]
         public string ValueField { get; set; }
 
         /// <summary>
-        /// Field width.
+        /// The width of the field.
         /// </summary>
-        /// <value>Field width.</value>
+        /// <value>The width of the field.</value>
         [DataMember(Name = "WidthField", IsRequired = true, EmitDefaultValue = true)]
         public decimal WidthField { get; set; }
 
         /// <summary>
-        /// The x coordinates of the fields.
+        /// The x-coordinates of the fields.
         /// </summary>
-        /// <value>The x coordinates of the fields.</value>
+        /// <value>The x-coordinates of the fields.</value>
         [DataMember(Name = "XCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public decimal XCoordinateField { get; set; }
 
         /// <summary>
-        /// The y coordinates of the fields
+        /// The y-coordinates of the fields
         /// </summary>
-        /// <value>The y coordinates of the fields</value>
+        /// <value>The y-coordinates of the fields</value>
         [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public decimal YCoordinateField { get; set; }
 
@@ -228,8 +231,7 @@ namespace SigniFlow.Connect.Model
                 ) && 
                 (
                     this.FieldTypeField == input.FieldTypeField ||
-                    (this.FieldTypeField != null &&
-                    this.FieldTypeField.Equals(input.FieldTypeField))
+                    this.FieldTypeField.Equals(input.FieldTypeField)
                 ) && 
                 (
                     this.HeightField == input.HeightField ||
@@ -281,8 +283,7 @@ namespace SigniFlow.Connect.Model
                 if (this.DocFieldIDField != null)
                     hashCode = hashCode * 59 + this.DocFieldIDField.GetHashCode();
                 hashCode = hashCode * 59 + this.DocIDField.GetHashCode();
-                if (this.FieldTypeField != null)
-                    hashCode = hashCode * 59 + this.FieldTypeField.GetHashCode();
+                hashCode = hashCode * 59 + this.FieldTypeField.GetHashCode();
                 hashCode = hashCode * 59 + this.HeightField.GetHashCode();
                 hashCode = hashCode * 59 + this.PageNumberField.GetHashCode();
                 if (this.UserFullNameField != null)
@@ -314,12 +315,6 @@ namespace SigniFlow.Connect.Model
             if(this.DocFieldIDField != null && this.DocFieldIDField.Length < 1)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DocFieldIDField, length must be greater than 1.", new [] { "DocFieldIDField" });
-            }
-
-            // FieldTypeField (string) minLength
-            if(this.FieldTypeField != null && this.FieldTypeField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FieldTypeField, length must be greater than 1.", new [] { "FieldTypeField" });
             }
 
             // UserFullNameField (string) minLength

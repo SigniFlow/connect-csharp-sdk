@@ -60,10 +60,10 @@ namespace SigniFlow.Connect.Model
         /// <param name="fontSizeField">Font size of the text in the field (required).</param>
         /// <param name="heightField">Field height (required).</param>
         /// <param name="widthField">Field Width (required).</param>
-        /// <param name="linkToField">This field is used to link fields together and allow users to fill in specific portions of the document based on a checkbox with the same LinkedTo Value. (required).</param>
+        /// <param name="linkToField">This field is used to link fields together and allow users to fill in specific portions of the document based on a checkbox with the same NameField. (required).</param>
         /// <param name="nameField">This field is used when you need to define the field embedded in the document with a unique name that can be referenced later. (required).</param>
         /// <param name="pageNumberField">Field page number. (required).</param>
-        /// <param name="searchableField">searchableField (required).</param>
+        /// <param name="searchableField">Used to indicate whether a dropdown field should contain a search option. (required).</param>
         /// <param name="userEmailField">User email address. (required).</param>
         /// <param name="valueField">If you would like to fill in a predefined value that will appear on the document - you can fill it in here - this can be editted by the end user. (required).</param>
         /// <param name="xCoordinateField">X-coordinates of field on the page (required).</param>
@@ -146,9 +146,9 @@ namespace SigniFlow.Connect.Model
         public string WidthField { get; set; }
 
         /// <summary>
-        /// This field is used to link fields together and allow users to fill in specific portions of the document based on a checkbox with the same LinkedTo Value.
+        /// This field is used to link fields together and allow users to fill in specific portions of the document based on a checkbox with the same NameField.
         /// </summary>
-        /// <value>This field is used to link fields together and allow users to fill in specific portions of the document based on a checkbox with the same LinkedTo Value.</value>
+        /// <value>This field is used to link fields together and allow users to fill in specific portions of the document based on a checkbox with the same NameField.</value>
         [DataMember(Name = "LinkToField", IsRequired = true, EmitDefaultValue = true)]
         public string LinkToField { get; set; }
 
@@ -167,8 +167,9 @@ namespace SigniFlow.Connect.Model
         public decimal PageNumberField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SearchableField
+        /// Used to indicate whether a dropdown field should contain a search option.
         /// </summary>
+        /// <value>Used to indicate whether a dropdown field should contain a search option.</value>
         [DataMember(Name = "SearchableField", IsRequired = true, EmitDefaultValue = true)]
         public bool SearchableField { get; set; }
 

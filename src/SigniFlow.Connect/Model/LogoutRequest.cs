@@ -48,7 +48,7 @@ namespace SigniFlow.Connect.Model
         /// Initializes a new instance of the <see cref="LogoutRequest" /> class.
         /// </summary>
         /// <param name="tokenField">tokenField (required).</param>
-        public LogoutRequest(string tokenField = default(string))
+        public LogoutRequest(TokenField tokenField = default(TokenField))
         {
             // to ensure "tokenField" is required (not null)
             this.TokenField = tokenField ?? throw new ArgumentNullException("tokenField is a required property for LogoutRequest and cannot be null");
@@ -58,7 +58,7 @@ namespace SigniFlow.Connect.Model
         /// Gets or Sets TokenField
         /// </summary>
         [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
-        public string TokenField { get; set; }
+        public TokenField TokenField { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -132,12 +132,6 @@ namespace SigniFlow.Connect.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // TokenField (string) minLength
-            if(this.TokenField != null && this.TokenField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TokenField, length must be greater than 1.", new [] { "TokenField" });
-            }
-
             yield break;
         }
     }

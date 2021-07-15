@@ -47,8 +47,8 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetPrepperTemplateListResponseTemplateInformationValuesField" /> class.
         /// </summary>
-        /// <param name="nameField">nameField (required).</param>
-        /// <param name="prepperTemplateIDField">prepperTemplateIDField (required).</param>
+        /// <param name="nameField">Template name. (required).</param>
+        /// <param name="prepperTemplateIDField">Template ID (required).</param>
         /// <param name="templateDescriptionField">Template description. (required).</param>
         public GetPrepperTemplateListResponseTemplateInformationValuesField(string nameField = default(string), decimal prepperTemplateIDField = default(decimal), string templateDescriptionField = default(string))
         {
@@ -60,14 +60,16 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets NameField
+        /// Template name.
         /// </summary>
+        /// <value>Template name.</value>
         [DataMember(Name = "NameField", IsRequired = true, EmitDefaultValue = true)]
         public string NameField { get; set; }
 
         /// <summary>
-        /// Gets or Sets PrepperTemplateIDField
+        /// Template ID
         /// </summary>
+        /// <value>Template ID</value>
         [DataMember(Name = "PrepperTemplateIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal PrepperTemplateIDField { get; set; }
 

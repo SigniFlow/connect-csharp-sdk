@@ -47,7 +47,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetAuditDocumentRequest" /> class.
         /// </summary>
-        /// <param name="docIDField">docIDField (required).</param>
+        /// <param name="docIDField">Document ID (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
         public GetAuditDocumentRequest(string docIDField = default(string), TokenField tokenField = default(TokenField))
         {
@@ -58,8 +58,9 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets DocIDField
+        /// Document ID
         /// </summary>
+        /// <value>Document ID</value>
         [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocIDField { get; set; }
 

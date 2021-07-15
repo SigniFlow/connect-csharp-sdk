@@ -32,6 +32,11 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "FullWorkflowRequest_WorkflowUserFieldsField")]
     public partial class FullWorkflowRequestWorkflowUserFieldsField : IEquatable<FullWorkflowRequestWorkflowUserFieldsField>, IValidatableObject
     {
+        /// <summary>
+        /// Gets or Sets FieldTypeField
+        /// </summary>
+        [DataMember(Name = "FieldTypeField", IsRequired = true, EmitDefaultValue = true)]
+        public FieldType FieldTypeField { get; set; }
 //    
 //    
 //        /// <summary>
@@ -47,7 +52,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowRequestWorkflowUserFieldsField" /> class.
         /// </summary>
-        /// <param name="fieldTypeField">Field type. (required).</param>
+        /// <param name="fieldTypeField">fieldTypeField (required).</param>
         /// <param name="fontFamilyField">The font family of the fields text. (required).</param>
         /// <param name="fontSizeField">The font size of the fields text. (required).</param>
         /// <param name="groupUserNumberField">The users in the group&#39;s user number. (required).</param>
@@ -61,7 +66,7 @@ namespace SigniFlow.Connect.Model
         /// <param name="xOffsetField">The fields x-coordinates offset. (required).</param>
         /// <param name="yCoordinateField">The fields y-coordinates. (required).</param>
         /// <param name="yOffsetField">The fields y-coordinates offset. (required).</param>
-        public FullWorkflowRequestWorkflowUserFieldsField(decimal fieldTypeField = default(decimal), string fontFamilyField = default(string), decimal fontSizeField = default(decimal), decimal groupUserNumberField = default(decimal), string heightField = default(string), bool isInvisibleField = default(bool), decimal pageNumberField = default(decimal), string tagNameField = default(string), string valueField = default(string), string widthField = default(string), string xCoordinateField = default(string), decimal xOffsetField = default(decimal), string yCoordinateField = default(string), decimal yOffsetField = default(decimal))
+        public FullWorkflowRequestWorkflowUserFieldsField(FieldType fieldTypeField = default(FieldType), string fontFamilyField = default(string), decimal fontSizeField = default(decimal), decimal groupUserNumberField = default(decimal), string heightField = default(string), bool isInvisibleField = default(bool), decimal pageNumberField = default(decimal), string tagNameField = default(string), string valueField = default(string), string widthField = default(string), string xCoordinateField = default(string), decimal xOffsetField = default(decimal), string yCoordinateField = default(string), decimal yOffsetField = default(decimal))
         {
             this.FieldTypeField = fieldTypeField;
             // to ensure "fontFamilyField" is required (not null)
@@ -85,13 +90,6 @@ namespace SigniFlow.Connect.Model
             this.YCoordinateField = yCoordinateField ?? throw new ArgumentNullException("yCoordinateField is a required property for FullWorkflowRequestWorkflowUserFieldsField and cannot be null");
             this.YOffsetField = yOffsetField;
         }
-
-        /// <summary>
-        /// Field type.
-        /// </summary>
-        /// <value>Field type.</value>
-        [DataMember(Name = "FieldTypeField", IsRequired = true, EmitDefaultValue = true)]
-        public decimal FieldTypeField { get; set; }
 
         /// <summary>
         /// The font family of the fields text.
