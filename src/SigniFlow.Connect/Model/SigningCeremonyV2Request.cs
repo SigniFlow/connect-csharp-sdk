@@ -47,33 +47,33 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SigningCeremonyV2Request" /> class.
         /// </summary>
-        /// <param name="checkboxFieldsListField">checkboxFieldsListField (required).</param>
+        /// <param name="checkboxFieldsListField">The list of checkbox fields. (required).</param>
         /// <param name="docField">docField (required).</param>
-        /// <param name="docNameField">docNameField (required).</param>
-        /// <param name="initialFieldsListField">initialFieldsListField (required).</param>
-        /// <param name="loginPasswordField">loginPasswordField (required).</param>
-        /// <param name="loginUserNameField">loginUserNameField (required).</param>
-        /// <param name="signatureHField">signatureHField (required).</param>
-        /// <param name="signatureImageField">signatureImageField (required).</param>
-        /// <param name="signatureImageIncludeBorderField">signatureImageIncludeBorderField (required).</param>
-        /// <param name="signatureImageIncludeReasonField">signatureImageIncludeReasonField (required).</param>
-        /// <param name="signatureImageIncludeSignedByField">signatureImageIncludeSignedByField (required).</param>
-        /// <param name="signatureImageIncludeSignedDateField">signatureImageIncludeSignedDateField (required).</param>
-        /// <param name="signatureImageTypeField">signatureImageTypeField (required).</param>
-        /// <param name="signaturePageField">signaturePageField (required).</param>
-        /// <param name="signatureWField">signatureWField (required).</param>
-        /// <param name="signatureXField">signatureXField (required).</param>
-        /// <param name="signatureYField">signatureYField (required).</param>
-        /// <param name="signerEmailField">signerEmailField (required).</param>
-        /// <param name="signerFullNameField">signerFullNameField (required).</param>
-        /// <param name="signerIdentificationNumberField">signerIdentificationNumberField (required).</param>
-        /// <param name="signerLocationField">signerLocationField (required).</param>
-        /// <param name="signerMobileNumberField">signerMobileNumberField (required).</param>
-        /// <param name="signerReasonField">signerReasonField (required).</param>
-        /// <param name="signerTrustOriginField">signerTrustOriginField (required).</param>
-        /// <param name="signerTrustReferenceField">signerTrustReferenceField (required).</param>
-        /// <param name="textFieldsListField">textFieldsListField (required).</param>
-        public SigningCeremonyV2Request(List<Object> checkboxFieldsListField = default(List<Object>), string docField = default(string), string docNameField = default(string), List<Object> initialFieldsListField = default(List<Object>), string loginPasswordField = default(string), string loginUserNameField = default(string), decimal signatureHField = default(decimal), string signatureImageField = default(string), bool signatureImageIncludeBorderField = default(bool), bool signatureImageIncludeReasonField = default(bool), bool signatureImageIncludeSignedByField = default(bool), bool signatureImageIncludeSignedDateField = default(bool), decimal signatureImageTypeField = default(decimal), decimal signaturePageField = default(decimal), decimal signatureWField = default(decimal), decimal signatureXField = default(decimal), decimal signatureYField = default(decimal), string signerEmailField = default(string), string signerFullNameField = default(string), string signerIdentificationNumberField = default(string), string signerLocationField = default(string), string signerMobileNumberField = default(string), string signerReasonField = default(string), string signerTrustOriginField = default(string), string signerTrustReferenceField = default(string), List<Object> textFieldsListField = default(List<Object>))
+        /// <param name="docNameField">Document name. (required).</param>
+        /// <param name="initialFieldsListField">The list of initial fields. (required).</param>
+        /// <param name="loginPasswordField">User password. (required).</param>
+        /// <param name="loginUserNameField">User&#39;s username. (required).</param>
+        /// <param name="signatureHField">Signature field height. (required).</param>
+        /// <param name="signatureImageField">Signature field image. (required).</param>
+        /// <param name="signatureImageIncludeBorderField">Include signature border. (required).</param>
+        /// <param name="signatureImageIncludeReasonField">Include signature reason. (required).</param>
+        /// <param name="signatureImageIncludeSignedByField">Include signature signed by information. (required).</param>
+        /// <param name="signatureImageIncludeSignedDateField">Include signature date. (required).</param>
+        /// <param name="signatureImageTypeField">Signature image type. (required).</param>
+        /// <param name="signaturePageField">The page on which the signature is on. (required).</param>
+        /// <param name="signatureWField">Signature field width. (required).</param>
+        /// <param name="signatureXField">Signature field x-coordinates. (required).</param>
+        /// <param name="signatureYField">Signature field y-coordinates. (required).</param>
+        /// <param name="signerEmailField">The signer&#39;s email. (required).</param>
+        /// <param name="signerFullNameField">The signer&#39;s full name. (required).</param>
+        /// <param name="signerIdentificationNumberField">The signer&#39;s ID number. (required).</param>
+        /// <param name="signerLocationField">The signer&#39;s GPS location. (required).</param>
+        /// <param name="signerMobileNumberField">The signer&#39;s mobile number. (required).</param>
+        /// <param name="signerReasonField">The signer&#39;s reason for signing. (required).</param>
+        /// <param name="signerTrustOriginField">This field is used to define the source of the Audit keep by the user calling the Signing Ceremony. (required).</param>
+        /// <param name="signerTrustReferenceField">A unique identifier that links back to an audit stored by the user calling the Signing Ceremony. (required).</param>
+        /// <param name="textFieldsListField">The list of text fields. (required).</param>
+        public SigningCeremonyV2Request(List<SigningCeremonyV2RequestCheckboxFieldsListField> checkboxFieldsListField = default(List<SigningCeremonyV2RequestCheckboxFieldsListField>), string docField = default(string), string docNameField = default(string), List<SigningCeremonyV2RequestInitialFieldsListField> initialFieldsListField = default(List<SigningCeremonyV2RequestInitialFieldsListField>), string loginPasswordField = default(string), string loginUserNameField = default(string), decimal signatureHField = default(decimal), string signatureImageField = default(string), bool signatureImageIncludeBorderField = default(bool), bool signatureImageIncludeReasonField = default(bool), bool signatureImageIncludeSignedByField = default(bool), bool signatureImageIncludeSignedDateField = default(bool), decimal signatureImageTypeField = default(decimal), decimal signaturePageField = default(decimal), decimal signatureWField = default(decimal), decimal signatureXField = default(decimal), decimal signatureYField = default(decimal), string signerEmailField = default(string), string signerFullNameField = default(string), string signerIdentificationNumberField = default(string), string signerLocationField = default(string), string signerMobileNumberField = default(string), string signerReasonField = default(string), string signerTrustOriginField = default(string), string signerTrustReferenceField = default(string), List<SigningCeremonyV2RequestTextFieldsListField> textFieldsListField = default(List<SigningCeremonyV2RequestTextFieldsListField>))
         {
             // to ensure "checkboxFieldsListField" is required (not null)
             this.CheckboxFieldsListField = checkboxFieldsListField ?? throw new ArgumentNullException("checkboxFieldsListField is a required property for SigningCeremonyV2Request and cannot be null");
@@ -120,10 +120,11 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets CheckboxFieldsListField
+        /// The list of checkbox fields.
         /// </summary>
+        /// <value>The list of checkbox fields.</value>
         [DataMember(Name = "CheckboxFieldsListField", IsRequired = true, EmitDefaultValue = true)]
-        public List<Object> CheckboxFieldsListField { get; set; }
+        public List<SigningCeremonyV2RequestCheckboxFieldsListField> CheckboxFieldsListField { get; set; }
 
         /// <summary>
         /// Gets or Sets DocField
@@ -132,148 +133,172 @@ namespace SigniFlow.Connect.Model
         public string DocField { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocNameField
+        /// Document name.
         /// </summary>
+        /// <value>Document name.</value>
         [DataMember(Name = "DocNameField", IsRequired = true, EmitDefaultValue = true)]
         public string DocNameField { get; set; }
 
         /// <summary>
-        /// Gets or Sets InitialFieldsListField
+        /// The list of initial fields.
         /// </summary>
+        /// <value>The list of initial fields.</value>
         [DataMember(Name = "InitialFieldsListField", IsRequired = true, EmitDefaultValue = true)]
-        public List<Object> InitialFieldsListField { get; set; }
+        public List<SigningCeremonyV2RequestInitialFieldsListField> InitialFieldsListField { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoginPasswordField
+        /// User password.
         /// </summary>
+        /// <value>User password.</value>
         [DataMember(Name = "LoginPasswordField", IsRequired = true, EmitDefaultValue = true)]
         public string LoginPasswordField { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoginUserNameField
+        /// User&#39;s username.
         /// </summary>
+        /// <value>User&#39;s username.</value>
         [DataMember(Name = "LoginUserNameField", IsRequired = true, EmitDefaultValue = true)]
         public string LoginUserNameField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignatureHField
+        /// Signature field height.
         /// </summary>
+        /// <value>Signature field height.</value>
         [DataMember(Name = "SignatureHField", IsRequired = true, EmitDefaultValue = true)]
         public decimal SignatureHField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignatureImageField
+        /// Signature field image.
         /// </summary>
+        /// <value>Signature field image.</value>
         [DataMember(Name = "SignatureImageField", IsRequired = true, EmitDefaultValue = true)]
         public string SignatureImageField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignatureImageIncludeBorderField
+        /// Include signature border.
         /// </summary>
+        /// <value>Include signature border.</value>
         [DataMember(Name = "SignatureImageIncludeBorderField", IsRequired = true, EmitDefaultValue = true)]
         public bool SignatureImageIncludeBorderField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignatureImageIncludeReasonField
+        /// Include signature reason.
         /// </summary>
+        /// <value>Include signature reason.</value>
         [DataMember(Name = "SignatureImageIncludeReasonField", IsRequired = true, EmitDefaultValue = true)]
         public bool SignatureImageIncludeReasonField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignatureImageIncludeSignedByField
+        /// Include signature signed by information.
         /// </summary>
+        /// <value>Include signature signed by information.</value>
         [DataMember(Name = "SignatureImageIncludeSignedByField", IsRequired = true, EmitDefaultValue = true)]
         public bool SignatureImageIncludeSignedByField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignatureImageIncludeSignedDateField
+        /// Include signature date.
         /// </summary>
+        /// <value>Include signature date.</value>
         [DataMember(Name = "SignatureImageIncludeSignedDateField", IsRequired = true, EmitDefaultValue = true)]
         public bool SignatureImageIncludeSignedDateField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignatureImageTypeField
+        /// Signature image type.
         /// </summary>
+        /// <value>Signature image type.</value>
         [DataMember(Name = "SignatureImageTypeField", IsRequired = true, EmitDefaultValue = true)]
         public decimal SignatureImageTypeField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignaturePageField
+        /// The page on which the signature is on.
         /// </summary>
+        /// <value>The page on which the signature is on.</value>
         [DataMember(Name = "SignaturePageField", IsRequired = true, EmitDefaultValue = true)]
         public decimal SignaturePageField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignatureWField
+        /// Signature field width.
         /// </summary>
+        /// <value>Signature field width.</value>
         [DataMember(Name = "SignatureWField", IsRequired = true, EmitDefaultValue = true)]
         public decimal SignatureWField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignatureXField
+        /// Signature field x-coordinates.
         /// </summary>
+        /// <value>Signature field x-coordinates.</value>
         [DataMember(Name = "SignatureXField", IsRequired = true, EmitDefaultValue = true)]
         public decimal SignatureXField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignatureYField
+        /// Signature field y-coordinates.
         /// </summary>
+        /// <value>Signature field y-coordinates.</value>
         [DataMember(Name = "SignatureYField", IsRequired = true, EmitDefaultValue = true)]
         public decimal SignatureYField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignerEmailField
+        /// The signer&#39;s email.
         /// </summary>
+        /// <value>The signer&#39;s email.</value>
         [DataMember(Name = "SignerEmailField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerEmailField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignerFullNameField
+        /// The signer&#39;s full name.
         /// </summary>
+        /// <value>The signer&#39;s full name.</value>
         [DataMember(Name = "SignerFullNameField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerFullNameField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignerIdentificationNumberField
+        /// The signer&#39;s ID number.
         /// </summary>
+        /// <value>The signer&#39;s ID number.</value>
         [DataMember(Name = "SignerIdentificationNumberField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerIdentificationNumberField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignerLocationField
+        /// The signer&#39;s GPS location.
         /// </summary>
+        /// <value>The signer&#39;s GPS location.</value>
         [DataMember(Name = "SignerLocationField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerLocationField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignerMobileNumberField
+        /// The signer&#39;s mobile number.
         /// </summary>
+        /// <value>The signer&#39;s mobile number.</value>
         [DataMember(Name = "SignerMobileNumberField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerMobileNumberField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignerReasonField
+        /// The signer&#39;s reason for signing.
         /// </summary>
+        /// <value>The signer&#39;s reason for signing.</value>
         [DataMember(Name = "SignerReasonField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerReasonField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignerTrustOriginField
+        /// This field is used to define the source of the Audit keep by the user calling the Signing Ceremony.
         /// </summary>
+        /// <value>This field is used to define the source of the Audit keep by the user calling the Signing Ceremony.</value>
         [DataMember(Name = "SignerTrustOriginField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerTrustOriginField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignerTrustReferenceField
+        /// A unique identifier that links back to an audit stored by the user calling the Signing Ceremony.
         /// </summary>
+        /// <value>A unique identifier that links back to an audit stored by the user calling the Signing Ceremony.</value>
         [DataMember(Name = "SignerTrustReferenceField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerTrustReferenceField { get; set; }
 
         /// <summary>
-        /// Gets or Sets TextFieldsListField
+        /// The list of text fields.
         /// </summary>
+        /// <value>The list of text fields.</value>
         [DataMember(Name = "TextFieldsListField", IsRequired = true, EmitDefaultValue = true)]
-        public List<Object> TextFieldsListField { get; set; }
+        public List<SigningCeremonyV2RequestTextFieldsListField> TextFieldsListField { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

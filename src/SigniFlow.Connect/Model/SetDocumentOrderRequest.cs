@@ -47,8 +47,8 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SetDocumentOrderRequest" /> class.
         /// </summary>
-        /// <param name="docIDField">docIDField (required).</param>
-        /// <param name="documentOrderField">documentOrderField (required).</param>
+        /// <param name="docIDField">Document ID (required).</param>
+        /// <param name="documentOrderField">Specifies which order the documents appear in, in a portfolio. (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
         public SetDocumentOrderRequest(string docIDField = default(string), string documentOrderField = default(string), TokenField tokenField = default(TokenField))
         {
@@ -61,14 +61,16 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets DocIDField
+        /// Document ID
         /// </summary>
+        /// <value>Document ID</value>
         [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocIDField { get; set; }
 
         /// <summary>
-        /// Gets or Sets DocumentOrderField
+        /// Specifies which order the documents appear in, in a portfolio.
         /// </summary>
+        /// <value>Specifies which order the documents appear in, in a portfolio.</value>
         [DataMember(Name = "DocumentOrderField", IsRequired = true, EmitDefaultValue = true)]
         public string DocumentOrderField { get; set; }
 

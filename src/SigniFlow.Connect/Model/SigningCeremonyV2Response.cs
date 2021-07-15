@@ -47,9 +47,9 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SigningCeremonyV2Response" /> class.
         /// </summary>
-        /// <param name="ceremonyIDField">ceremonyIDField (required).</param>
+        /// <param name="ceremonyIDField">The unique identifier for the current SigningCeremony. (required).</param>
         /// <param name="resultField">Displays the result of the call. (required).</param>
-        /// <param name="signedDocumentField">signedDocumentField (required).</param>
+        /// <param name="signedDocumentField">The base64 string for the Signed pdf document. (required).</param>
         public SigningCeremonyV2Response(decimal ceremonyIDField = default(decimal), string resultField = default(string), string signedDocumentField = default(string))
         {
             this.CeremonyIDField = ceremonyIDField;
@@ -60,8 +60,9 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// Gets or Sets CeremonyIDField
+        /// The unique identifier for the current SigningCeremony.
         /// </summary>
+        /// <value>The unique identifier for the current SigningCeremony.</value>
         [DataMember(Name = "CeremonyIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal CeremonyIDField { get; set; }
 
@@ -73,8 +74,9 @@ namespace SigniFlow.Connect.Model
         public string ResultField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignedDocumentField
+        /// The base64 string for the Signed pdf document.
         /// </summary>
+        /// <value>The base64 string for the Signed pdf document.</value>
         [DataMember(Name = "SignedDocumentField", IsRequired = true, EmitDefaultValue = true)]
         public string SignedDocumentField { get; set; }
 

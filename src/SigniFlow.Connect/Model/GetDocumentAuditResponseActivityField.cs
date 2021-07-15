@@ -48,7 +48,7 @@ namespace SigniFlow.Connect.Model
         /// Initializes a new instance of the <see cref="GetDocumentAuditResponseActivityField" /> class.
         /// </summary>
         /// <param name="actionOrderField">The order in which action will be taken. (required).</param>
-        /// <param name="additionalField">additionalField (required).</param>
+        /// <param name="additionalField">Returns the additional information about the audit (i.e. IP Address and browser that was used/ Reason for rejection or expiration) (required).</param>
         /// <param name="docIDField">Document ID (required).</param>
         /// <param name="emailField">The user&#39;s email address. (required).</param>
         /// <param name="eventDateField">The date of the event. (required).</param>
@@ -92,8 +92,9 @@ namespace SigniFlow.Connect.Model
         public string ActionOrderField { get; set; }
 
         /// <summary>
-        /// Gets or Sets AdditionalField
+        /// Returns the additional information about the audit (i.e. IP Address and browser that was used/ Reason for rejection or expiration)
         /// </summary>
+        /// <value>Returns the additional information about the audit (i.e. IP Address and browser that was used/ Reason for rejection or expiration)</value>
         [DataMember(Name = "AdditionalField", IsRequired = true, EmitDefaultValue = true)]
         public string AdditionalField { get; set; }
 

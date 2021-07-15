@@ -48,7 +48,7 @@ namespace SigniFlow.Connect.Model
         /// Initializes a new instance of the <see cref="GetDocumentTagFieldBoxPositionRequest" /> class.
         /// </summary>
         /// <param name="docIDField">Document ID (required).</param>
-        /// <param name="tagNameField">Document field tag name (required).</param>
+        /// <param name="tagNameField">The white text on the document that the API needs to identify. (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
         public GetDocumentTagFieldBoxPositionRequest(decimal docIDField = default(decimal), string tagNameField = default(string), TokenField tokenField = default(TokenField))
         {
@@ -67,9 +67,9 @@ namespace SigniFlow.Connect.Model
         public decimal DocIDField { get; set; }
 
         /// <summary>
-        /// Document field tag name
+        /// The white text on the document that the API needs to identify.
         /// </summary>
-        /// <value>Document field tag name</value>
+        /// <value>The white text on the document that the API needs to identify.</value>
         [DataMember(Name = "TagNameField", IsRequired = true, EmitDefaultValue = true)]
         public string TagNameField { get; set; }
 

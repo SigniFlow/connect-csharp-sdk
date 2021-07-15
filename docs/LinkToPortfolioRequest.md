@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DocIDField** | **string** | The document ID. | 
+**DocIDField** | **string** | Document ID. | 
 **DocumentNameField** | **string** | Document name. | 
 **PortfolioIDField** | **string** | The portfolio ID. | 
 **TokenField** | [**TokenField**](TokenField.md) |  | 

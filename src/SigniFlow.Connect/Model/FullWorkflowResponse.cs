@@ -33,70 +33,56 @@ namespace SigniFlow.Connect.Model
     public partial class FullWorkflowResponse : IEquatable<FullWorkflowResponse>, IValidatableObject
     {
 //    
-//    
-//        /// <summary>
-//        /// Initializes a new instance of the <see cref="FullWorkflowResponse" /> class.
-//        /// </summary>
-//        [JsonConstructorAttribute]
-//        
-//        protected FullWorkflowResponse() { }
-//        
-//        
-//    
-//    
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowResponse" /> class.
         /// </summary>
-        /// <param name="docField">The document that has completed the workflow process. (required).</param>
-        /// <param name="docIDField">Document ID (required).</param>
-        /// <param name="portfolioIDField">Portfolio ID (required).</param>
-        /// <param name="resultField">Displays the result of the call. (required).</param>
-        /// <param name="statusField">Document status that gets returned. (required).</param>
+        /// <param name="docField">The document that has completed the workflow process..</param>
+        /// <param name="docIDField">Document ID.</param>
+        /// <param name="portfolioIDField">Portfolio ID.</param>
+        /// <param name="resultField">Displays the result of the call..</param>
+        /// <param name="statusField">Document status that gets returned..</param>
         public FullWorkflowResponse(string docField = default(string), decimal docIDField = default(decimal), decimal portfolioIDField = default(decimal), string resultField = default(string), string statusField = default(string))
         {
-            // to ensure "docField" is required (not null)
-            this.DocField = docField ?? throw new ArgumentNullException("docField is a required property for FullWorkflowResponse and cannot be null");
+            this.DocField = docField;
             this.DocIDField = docIDField;
             this.PortfolioIDField = portfolioIDField;
-            // to ensure "resultField" is required (not null)
-            this.ResultField = resultField ?? throw new ArgumentNullException("resultField is a required property for FullWorkflowResponse and cannot be null");
-            // to ensure "statusField" is required (not null)
-            this.StatusField = statusField ?? throw new ArgumentNullException("statusField is a required property for FullWorkflowResponse and cannot be null");
+            this.ResultField = resultField;
+            this.StatusField = statusField;
         }
 
         /// <summary>
         /// The document that has completed the workflow process.
         /// </summary>
         /// <value>The document that has completed the workflow process.</value>
-        [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "DocField", EmitDefaultValue = true)]
         public string DocField { get; set; }
 
         /// <summary>
         /// Document ID
         /// </summary>
         /// <value>Document ID</value>
-        [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "DocIDField", EmitDefaultValue = true)]
         public decimal DocIDField { get; set; }
 
         /// <summary>
         /// Portfolio ID
         /// </summary>
         /// <value>Portfolio ID</value>
-        [DataMember(Name = "PortfolioIDField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "PortfolioIDField", EmitDefaultValue = true)]
         public decimal PortfolioIDField { get; set; }
 
         /// <summary>
         /// Displays the result of the call.
         /// </summary>
         /// <value>Displays the result of the call.</value>
-        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "ResultField", EmitDefaultValue = true)]
         public string ResultField { get; set; }
 
         /// <summary>
         /// Document status that gets returned.
         /// </summary>
         /// <value>Document status that gets returned.</value>
-        [DataMember(Name = "StatusField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "StatusField", EmitDefaultValue = true)]
         public string StatusField { get; set; }
 
         /// <summary>

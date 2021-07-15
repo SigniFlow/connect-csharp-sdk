@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ActionOrderField** | **string** | The order in which action will be taken. | 
-**AdditionalField** | **string** |  | 
+**AdditionalField** | **string** | Returns the additional information about the audit (i.e. IP Address and browser that was used/ Reason for rejection or expiration) | 
 **DocIDField** | **string** | Document ID | 
 **EmailField** | **string** | The user&#39;s email address. | 
 **EventDateField** | **string** | The date of the event. | 

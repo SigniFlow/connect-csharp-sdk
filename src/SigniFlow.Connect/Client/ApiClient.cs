@@ -44,6 +44,7 @@ namespace SigniFlow.Connect.Client
         {
             // OpenAPI generated types generally hide default constructors.
             ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor,
+            DateFormatHandling = DateFormatHandling.MicrosoftDateFormat,
             ContractResolver = new DefaultContractResolver
             {
                 NamingStrategy = new CamelCaseNamingStrategy

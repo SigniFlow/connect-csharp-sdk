@@ -47,7 +47,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkToPortfolioRequest" /> class.
         /// </summary>
-        /// <param name="docIDField">The document ID. (required).</param>
+        /// <param name="docIDField">Document ID. (required).</param>
         /// <param name="documentNameField">Document name. (required).</param>
         /// <param name="portfolioIDField">The portfolio ID. (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
@@ -64,9 +64,9 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// The document ID.
+        /// Document ID.
         /// </summary>
-        /// <value>The document ID.</value>
+        /// <value>Document ID.</value>
         [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocIDField { get; set; }
 

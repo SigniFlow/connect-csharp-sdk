@@ -49,16 +49,14 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         /// <param name="createPortfolioField">Create a new portfolio. (required).</param>
         /// <param name="linkToPortfolioField">Link document to Portfolio link. (required).</param>
-        /// <param name="portfolioIDField">Portfolio ID. (required).</param>
-        /// <param name="portfolioNameField">Portfolio name. (required).</param>
+        /// <param name="portfolioIDField">Portfolio ID..</param>
+        /// <param name="portfolioNameField">Portfolio name..</param>
         public FullWorkflowRequestPortfolioInformationField(bool createPortfolioField = default(bool), bool linkToPortfolioField = default(bool), decimal? portfolioIDField = default(decimal?), string portfolioNameField = default(string))
         {
             this.CreatePortfolioField = createPortfolioField;
             this.LinkToPortfolioField = linkToPortfolioField;
-            // to ensure "portfolioIDField" is required (not null)
-            this.PortfolioIDField = portfolioIDField ?? throw new ArgumentNullException("portfolioIDField is a required property for FullWorkflowRequestPortfolioInformationField and cannot be null");
-            // to ensure "portfolioNameField" is required (not null)
-            this.PortfolioNameField = portfolioNameField ?? throw new ArgumentNullException("portfolioNameField is a required property for FullWorkflowRequestPortfolioInformationField and cannot be null");
+            this.PortfolioIDField = portfolioIDField;
+            this.PortfolioNameField = portfolioNameField;
         }
 
         /// <summary>
@@ -79,14 +77,14 @@ namespace SigniFlow.Connect.Model
         /// Portfolio ID.
         /// </summary>
         /// <value>Portfolio ID.</value>
-        [DataMember(Name = "PortfolioIDField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "PortfolioIDField", EmitDefaultValue = true)]
         public decimal? PortfolioIDField { get; set; }
 
         /// <summary>
         /// Portfolio name.
         /// </summary>
         /// <value>Portfolio name.</value>
-        [DataMember(Name = "PortfolioNameField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "PortfolioNameField", EmitDefaultValue = true)]
         public string PortfolioNameField { get; set; }
 
         /// <summary>

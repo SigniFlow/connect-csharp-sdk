@@ -47,7 +47,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InitiateFlowNoInitialEmailResponse" /> class.
         /// </summary>
-        /// <param name="docIDField">The document ID. (required).</param>
+        /// <param name="docIDField">Document ID. (required).</param>
         /// <param name="resultField">Displays the result of the call. (required).</param>
         public InitiateFlowNoInitialEmailResponse(decimal docIDField = default(decimal), string resultField = default(string))
         {
@@ -57,9 +57,9 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// The document ID.
+        /// Document ID.
         /// </summary>
-        /// <value>The document ID.</value>
+        /// <value>Document ID.</value>
         [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public decimal DocIDField { get; set; }
 

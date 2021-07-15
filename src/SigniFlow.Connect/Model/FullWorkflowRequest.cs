@@ -67,7 +67,7 @@ namespace SigniFlow.Connect.Model
         /// <param name="customMessageField">Custom message. (required).</param>
         /// <param name="docField">Document field. (required).</param>
         /// <param name="docNameField">Document name. (required).</param>
-        /// <param name="dueDateField">Document due date. (required).</param>
+        /// <param name="dueDateField">Document due date..</param>
         /// <param name="extensionField">extensionField (required).</param>
         /// <param name="flattenDocumentField">Flatten document. (required).</param>
         /// <param name="keepContentSecurityField">Keep content security. (required).</param>
@@ -75,12 +75,12 @@ namespace SigniFlow.Connect.Model
         /// <param name="keepXMPMetadataField">Keep XMP meta data. (required).</param>
         /// <param name="portfolioInformationField">portfolioInformationField (required).</param>
         /// <param name="priorityField">priorityField (required).</param>
-        /// <param name="sLAField">SLA (required).</param>
+        /// <param name="sLAField">This field has been deprecated, the default value is 0. (required).</param>
         /// <param name="sendFirstEmailField">Confirm first user email notification will or will not be sent. (required).</param>
         /// <param name="sendWorkflowEmailsField">Confirm that workflow emails will or will not be sent. (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
         /// <param name="workflowUsersListField">List of users in the workflow. (required).</param>
-        public FullWorkflowRequest(string additionalDataField = default(string), AutoRemind autoRemindField = default(AutoRemind), string customMessageField = default(string), string docField = default(string), string docNameField = default(string), string dueDateField = default(string), DocExtension extensionField = default(DocExtension), bool flattenDocumentField = default(bool), bool keepContentSecurityField = default(bool), bool keepCustomPropertiesField = default(bool), bool keepXMPMetadataField = default(bool), FullWorkflowRequestPortfolioInformationField portfolioInformationField = default(FullWorkflowRequestPortfolioInformationField), Priority priorityField = default(Priority), decimal sLAField = default(decimal), bool sendFirstEmailField = default(bool), bool sendWorkflowEmailsField = default(bool), TokenField tokenField = default(TokenField), List<FullWorkflowRequestWorkflowUsersListField> workflowUsersListField = default(List<FullWorkflowRequestWorkflowUsersListField>))
+        public FullWorkflowRequest(string additionalDataField = default(string), AutoRemind autoRemindField = default(AutoRemind), string customMessageField = default(string), string docField = default(string), string docNameField = default(string), DateTime? dueDateField = default(DateTime?), DocExtension extensionField = default(DocExtension), bool flattenDocumentField = default(bool), bool keepContentSecurityField = default(bool), bool keepCustomPropertiesField = default(bool), bool keepXMPMetadataField = default(bool), FullWorkflowRequestPortfolioInformationField portfolioInformationField = default(FullWorkflowRequestPortfolioInformationField), Priority priorityField = default(Priority), decimal sLAField = default(decimal), bool sendFirstEmailField = default(bool), bool sendWorkflowEmailsField = default(bool), TokenField tokenField = default(TokenField), List<FullWorkflowRequestWorkflowUsersListField> workflowUsersListField = default(List<FullWorkflowRequestWorkflowUsersListField>))
         {
             // to ensure "additionalDataField" is required (not null)
             this.AdditionalDataField = additionalDataField ?? throw new ArgumentNullException("additionalDataField is a required property for FullWorkflowRequest and cannot be null");
@@ -91,8 +91,6 @@ namespace SigniFlow.Connect.Model
             this.DocField = docField ?? throw new ArgumentNullException("docField is a required property for FullWorkflowRequest and cannot be null");
             // to ensure "docNameField" is required (not null)
             this.DocNameField = docNameField ?? throw new ArgumentNullException("docNameField is a required property for FullWorkflowRequest and cannot be null");
-            // to ensure "dueDateField" is required (not null)
-            this.DueDateField = dueDateField ?? throw new ArgumentNullException("dueDateField is a required property for FullWorkflowRequest and cannot be null");
             this.ExtensionField = extensionField;
             this.FlattenDocumentField = flattenDocumentField;
             this.KeepContentSecurityField = keepContentSecurityField;
@@ -108,6 +106,7 @@ namespace SigniFlow.Connect.Model
             this.TokenField = tokenField ?? throw new ArgumentNullException("tokenField is a required property for FullWorkflowRequest and cannot be null");
             // to ensure "workflowUsersListField" is required (not null)
             this.WorkflowUsersListField = workflowUsersListField ?? throw new ArgumentNullException("workflowUsersListField is a required property for FullWorkflowRequest and cannot be null");
+            this.DueDateField = dueDateField;
         }
 
         /// <summary>
@@ -142,8 +141,9 @@ namespace SigniFlow.Connect.Model
         /// Document due date.
         /// </summary>
         /// <value>Document due date.</value>
-        [DataMember(Name = "DueDateField", IsRequired = true, EmitDefaultValue = true)]
-        public string DueDateField { get; set; }
+        [DataMember(Name = "DueDateField", EmitDefaultValue = true)]
+        [JsonConverter(typeof(OpenAPIDateConverter))]
+        public DateTime? DueDateField { get; set; }
 
         /// <summary>
         /// Flatten document.
@@ -180,9 +180,9 @@ namespace SigniFlow.Connect.Model
         public FullWorkflowRequestPortfolioInformationField PortfolioInformationField { get; set; }
 
         /// <summary>
-        /// SLA
+        /// This field has been deprecated, the default value is 0.
         /// </summary>
-        /// <value>SLA</value>
+        /// <value>This field has been deprecated, the default value is 0.</value>
         [DataMember(Name = "SLAField", IsRequired = true, EmitDefaultValue = true)]
         public decimal SLAField { get; set; }
 
@@ -424,12 +424,6 @@ namespace SigniFlow.Connect.Model
             if(this.DocNameField != null && this.DocNameField.Length < 1)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DocNameField, length must be greater than 1.", new [] { "DocNameField" });
-            }
-
-            // DueDateField (string) minLength
-            if(this.DueDateField != null && this.DueDateField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DueDateField, length must be greater than 1.", new [] { "DueDateField" });
             }
 
             // SLAField (decimal) maximum

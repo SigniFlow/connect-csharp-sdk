@@ -48,8 +48,8 @@ namespace SigniFlow.Connect.Model
         /// Initializes a new instance of the <see cref="GetDocumentTagFieldPositionResponseDocumentTagFieldsPositionField" /> class.
         /// </summary>
         /// <param name="pageNumberField">The page number where the field is. (required).</param>
-        /// <param name="xCoordinateField">The y coordinates of the field. (required).</param>
-        /// <param name="yCoordinateField">The x coordinates of the field. (required).</param>
+        /// <param name="xCoordinateField">The x-coordinates of the field. (required).</param>
+        /// <param name="yCoordinateField">The y-coordinates of the field. (required).</param>
         public GetDocumentTagFieldPositionResponseDocumentTagFieldsPositionField(decimal pageNumberField = default(decimal), string xCoordinateField = default(string), string yCoordinateField = default(string))
         {
             this.PageNumberField = pageNumberField;
@@ -67,16 +67,16 @@ namespace SigniFlow.Connect.Model
         public decimal PageNumberField { get; set; }
 
         /// <summary>
-        /// The y coordinates of the field.
+        /// The x-coordinates of the field.
         /// </summary>
-        /// <value>The y coordinates of the field.</value>
+        /// <value>The x-coordinates of the field.</value>
         [DataMember(Name = "XCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public string XCoordinateField { get; set; }
 
         /// <summary>
-        /// The x coordinates of the field.
+        /// The y-coordinates of the field.
         /// </summary>
-        /// <value>The x coordinates of the field.</value>
+        /// <value>The y-coordinates of the field.</value>
         [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public string YCoordinateField { get; set; }
 

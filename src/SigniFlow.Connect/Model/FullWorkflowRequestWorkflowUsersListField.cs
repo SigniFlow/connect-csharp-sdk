@@ -63,12 +63,12 @@ namespace SigniFlow.Connect.Model
         /// <param name="emailAddressField">Workflow user&#39;s email addresses. (required).</param>
         /// <param name="groupStepField">groupStepField.</param>
         /// <param name="languageCodeField">#### Sets the display language for the user ##### ISO 2 Digit Code  &#x60;en &#x3D; English es &#x3D; Spanish fr &#x3D; French&#x60;  (required).</param>
-        /// <param name="latitudeField">GPS location latitude. (required).</param>
-        /// <param name="longitudeField">GPS location longtitude. (required).</param>
+        /// <param name="latitudeField">The current GPS lattitude location where the signing is taking place from. Needs to be paired with the longitude field..</param>
+        /// <param name="longitudeField">The current GPS longitudelocation where the signing is taking place from. Needs to be paired with the lattitude field..</param>
         /// <param name="mobileNumberField">Group user&#39;s mobile number. (required).</param>
         /// <param name="preloadedFaceToFaceSignersField">Preloaded user&#39;s who will be using the face to face signature field..</param>
-        /// <param name="signReasonField">Reason for signature. (required).</param>
-        /// <param name="signerPasswordField">Face to face user&#39;s password. (required).</param>
+        /// <param name="signReasonField">Reason for signature..</param>
+        /// <param name="signerPasswordField">Face to face user&#39;s password..</param>
         /// <param name="userFirstNameField">Face to face user&#39;s first name. (required).</param>
         /// <param name="userFullNameField">Face to face user&#39;s full name. (required).</param>
         /// <param name="userLastNameField">Face to face user&#39;s last name. (required).</param>
@@ -82,16 +82,8 @@ namespace SigniFlow.Connect.Model
             this.EmailAddressField = emailAddressField ?? throw new ArgumentNullException("emailAddressField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
             // to ensure "languageCodeField" is required (not null)
             this.LanguageCodeField = languageCodeField ?? throw new ArgumentNullException("languageCodeField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
-            // to ensure "latitudeField" is required (not null)
-            this.LatitudeField = latitudeField ?? throw new ArgumentNullException("latitudeField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
-            // to ensure "longitudeField" is required (not null)
-            this.LongitudeField = longitudeField ?? throw new ArgumentNullException("longitudeField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
             // to ensure "mobileNumberField" is required (not null)
             this.MobileNumberField = mobileNumberField ?? throw new ArgumentNullException("mobileNumberField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
-            // to ensure "signReasonField" is required (not null)
-            this.SignReasonField = signReasonField ?? throw new ArgumentNullException("signReasonField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
-            // to ensure "signerPasswordField" is required (not null)
-            this.SignerPasswordField = signerPasswordField ?? throw new ArgumentNullException("signerPasswordField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
             // to ensure "userFirstNameField" is required (not null)
             this.UserFirstNameField = userFirstNameField ?? throw new ArgumentNullException("userFirstNameField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
             // to ensure "userFullNameField" is required (not null)
@@ -99,7 +91,11 @@ namespace SigniFlow.Connect.Model
             // to ensure "userLastNameField" is required (not null)
             this.UserLastNameField = userLastNameField ?? throw new ArgumentNullException("userLastNameField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
             this.GroupStepField = groupStepField;
+            this.LatitudeField = latitudeField;
+            this.LongitudeField = longitudeField;
             this.PreloadedFaceToFaceSignersField = preloadedFaceToFaceSignersField;
+            this.SignReasonField = signReasonField;
+            this.SignerPasswordField = signerPasswordField;
             this.WorkflowUserFieldsField = workflowUserFieldsField;
         }
 
@@ -131,17 +127,17 @@ namespace SigniFlow.Connect.Model
         public string LanguageCodeField { get; set; }
 
         /// <summary>
-        /// GPS location latitude.
+        /// The current GPS lattitude location where the signing is taking place from. Needs to be paired with the longitude field.
         /// </summary>
-        /// <value>GPS location latitude.</value>
-        [DataMember(Name = "LatitudeField", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>The current GPS lattitude location where the signing is taking place from. Needs to be paired with the longitude field.</value>
+        [DataMember(Name = "LatitudeField", EmitDefaultValue = true)]
         public string LatitudeField { get; set; }
 
         /// <summary>
-        /// GPS location longtitude.
+        /// The current GPS longitudelocation where the signing is taking place from. Needs to be paired with the lattitude field.
         /// </summary>
-        /// <value>GPS location longtitude.</value>
-        [DataMember(Name = "LongitudeField", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>The current GPS longitudelocation where the signing is taking place from. Needs to be paired with the lattitude field.</value>
+        [DataMember(Name = "LongitudeField", EmitDefaultValue = true)]
         public string LongitudeField { get; set; }
 
         /// <summary>
@@ -162,14 +158,14 @@ namespace SigniFlow.Connect.Model
         /// Reason for signature.
         /// </summary>
         /// <value>Reason for signature.</value>
-        [DataMember(Name = "SignReasonField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "SignReasonField", EmitDefaultValue = true)]
         public string SignReasonField { get; set; }
 
         /// <summary>
         /// Face to face user&#39;s password.
         /// </summary>
         /// <value>Face to face user&#39;s password.</value>
-        [DataMember(Name = "SignerPasswordField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "SignerPasswordField", EmitDefaultValue = true)]
         public string SignerPasswordField { get; set; }
 
         /// <summary>

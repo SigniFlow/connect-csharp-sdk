@@ -90,6 +90,9 @@ docs/SharePortfolioRequest.md
 docs/SharePortfolioResponse.md
 docs/SigningCeremonyApi.md
 docs/SigningCeremonyV2Request.md
+docs/SigningCeremonyV2RequestCheckboxFieldsListField.md
+docs/SigningCeremonyV2RequestInitialFieldsListField.md
+docs/SigningCeremonyV2RequestTextFieldsListField.md
 docs/SigningCeremonyV2Response.md
 docs/TemplatesApi.md
 docs/TokenExtendRequest.md
@@ -211,6 +214,9 @@ src/SigniFlow.Connect/Model/SharePortfolioNoEmailResponse.cs
 src/SigniFlow.Connect/Model/SharePortfolioRequest.cs
 src/SigniFlow.Connect/Model/SharePortfolioResponse.cs
 src/SigniFlow.Connect/Model/SigningCeremonyV2Request.cs
+src/SigniFlow.Connect/Model/SigningCeremonyV2RequestCheckboxFieldsListField.cs
+src/SigniFlow.Connect/Model/SigningCeremonyV2RequestInitialFieldsListField.cs
+src/SigniFlow.Connect/Model/SigningCeremonyV2RequestTextFieldsListField.cs
 src/SigniFlow.Connect/Model/SigningCeremonyV2Response.cs
 src/SigniFlow.Connect/Model/TokenExtendRequest.cs
 src/SigniFlow.Connect/Model/TokenExtendResponse.cs

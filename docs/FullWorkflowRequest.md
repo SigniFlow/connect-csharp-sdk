@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **CustomMessageField** | **string** | Custom message. | 
 **DocField** | **string** | Document field. | 
 **DocNameField** | **string** | Document name. | 
-**DueDateField** | **string** | Document due date. | 
+**DueDateField** | **DateTime?** | Document due date. | [optional] 
 **ExtensionField** | **DocExtension** |  | 
 **FlattenDocumentField** | **bool** | Flatten document. | 
 **KeepContentSecurityField** | **bool** | Keep content security. | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **KeepXMPMetadataField** | **bool** | Keep XMP meta data. | 
 **PortfolioInformationField** | [**FullWorkflowRequestPortfolioInformationField**](FullWorkflowRequestPortfolioInformationField.md) |  | 
 **PriorityField** | **Priority** |  | 
-**SLAField** | **decimal** | SLA | 
+**SLAField** | **decimal** | This field has been deprecated, the default value is 0. | 
 **SendFirstEmailField** | **bool** | Confirm first user email notification will or will not be sent. | 
 **SendWorkflowEmailsField** | **bool** | Confirm that workflow emails will or will not be sent. | 
 **TokenField** | [**TokenField**](TokenField.md) |  | 

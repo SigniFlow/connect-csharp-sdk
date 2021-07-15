@@ -48,12 +48,12 @@ namespace SigniFlow.Connect.Model
         /// Initializes a new instance of the <see cref="WorkflowSignRequest" /> class.
         /// </summary>
         /// <param name="docIDField">Document ID (required).</param>
-        /// <param name="latitudeField">latitudeField (required).</param>
-        /// <param name="loginPasswordField">loginPasswordField (required).</param>
-        /// <param name="loginUserNameField">loginUserNameField (required).</param>
-        /// <param name="longitudeField">longitudeField (required).</param>
+        /// <param name="latitudeField">The current GPS lattitude location where the signing is taking place from.  Needs to be paired with the longitude Field. (required).</param>
+        /// <param name="loginPasswordField">User password. (required).</param>
+        /// <param name="loginUserNameField">User&#39;s username. (required).</param>
+        /// <param name="longitudeField">The current GPS longitude location where the signing is taking place from.  Needs to be paired with the lattitude field. (required).</param>
         /// <param name="signReasonField">Reason for signature. (required).</param>
-        /// <param name="timeZoneOffsetField">timeZoneOffsetField (required).</param>
+        /// <param name="timeZoneOffsetField">The user&#39;s timezone offste. (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
         public WorkflowSignRequest(string docIDField = default(string), string latitudeField = default(string), string loginPasswordField = default(string), string loginUserNameField = default(string), string longitudeField = default(string), string signReasonField = default(string), decimal timeZoneOffsetField = default(decimal), TokenField tokenField = default(TokenField))
         {
@@ -82,26 +82,30 @@ namespace SigniFlow.Connect.Model
         public string DocIDField { get; set; }
 
         /// <summary>
-        /// Gets or Sets LatitudeField
+        /// The current GPS lattitude location where the signing is taking place from.  Needs to be paired with the longitude Field.
         /// </summary>
+        /// <value>The current GPS lattitude location where the signing is taking place from.  Needs to be paired with the longitude Field.</value>
         [DataMember(Name = "LatitudeField", IsRequired = true, EmitDefaultValue = true)]
         public string LatitudeField { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoginPasswordField
+        /// User password.
         /// </summary>
+        /// <value>User password.</value>
         [DataMember(Name = "LoginPasswordField", IsRequired = true, EmitDefaultValue = true)]
         public string LoginPasswordField { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoginUserNameField
+        /// User&#39;s username.
         /// </summary>
+        /// <value>User&#39;s username.</value>
         [DataMember(Name = "LoginUserNameField", IsRequired = true, EmitDefaultValue = true)]
         public string LoginUserNameField { get; set; }
 
         /// <summary>
-        /// Gets or Sets LongitudeField
+        /// The current GPS longitude location where the signing is taking place from.  Needs to be paired with the lattitude field.
         /// </summary>
+        /// <value>The current GPS longitude location where the signing is taking place from.  Needs to be paired with the lattitude field.</value>
         [DataMember(Name = "LongitudeField", IsRequired = true, EmitDefaultValue = true)]
         public string LongitudeField { get; set; }
 
@@ -113,8 +117,9 @@ namespace SigniFlow.Connect.Model
         public string SignReasonField { get; set; }
 
         /// <summary>
-        /// Gets or Sets TimeZoneOffsetField
+        /// The user&#39;s timezone offste.
         /// </summary>
+        /// <value>The user&#39;s timezone offste.</value>
         [DataMember(Name = "TimeZoneOffsetField", IsRequired = true, EmitDefaultValue = true)]
         public decimal TimeZoneOffsetField { get; set; }
 
