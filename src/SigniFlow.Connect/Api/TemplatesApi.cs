@@ -31,11 +31,11 @@ namespace SigniFlow.Connect.Api
         /// Apply a Prepper template
         /// </summary>
         /// <remarks>
-        /// #### Used when applying a templaet to a document.
+        /// #### Used when applying a template to a document.
         /// </remarks>
         /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contentType"></param>
-        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model (optional)</param>
+        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model. (optional)</param>
         /// <returns>ApplyPrepperTemplateResponse</returns>
         ApplyPrepperTemplateResponse PostApplyPrepperTemplate(string contentType, ApplyPrepperTemplateRequest applyPrepperTemplateRequest = default(ApplyPrepperTemplateRequest));
 
@@ -43,11 +43,11 @@ namespace SigniFlow.Connect.Api
         /// Apply a Prepper template
         /// </summary>
         /// <remarks>
-        /// #### Used when applying a templaet to a document.
+        /// #### Used when applying a template to a document.
         /// </remarks>
         /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contentType"></param>
-        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model (optional)</param>
+        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model. (optional)</param>
         /// <returns>ApiResponse of ApplyPrepperTemplateResponse</returns>
         ApiResponse<ApplyPrepperTemplateResponse> PostApplyPrepperTemplateWithHttpInfo(string contentType, ApplyPrepperTemplateRequest applyPrepperTemplateRequest = default(ApplyPrepperTemplateRequest));
         /// <summary>
@@ -155,11 +155,11 @@ namespace SigniFlow.Connect.Api
         /// Apply a Prepper template
         /// </summary>
         /// <remarks>
-        /// #### Used when applying a templaet to a document.
+        /// #### Used when applying a template to a document.
         /// </remarks>
         /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contentType"></param>
-        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model (optional)</param>
+        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplyPrepperTemplateResponse</returns>
         System.Threading.Tasks.Task<ApplyPrepperTemplateResponse> PostApplyPrepperTemplateAsync(string contentType, ApplyPrepperTemplateRequest applyPrepperTemplateRequest = default(ApplyPrepperTemplateRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -168,11 +168,11 @@ namespace SigniFlow.Connect.Api
         /// Apply a Prepper template
         /// </summary>
         /// <remarks>
-        /// #### Used when applying a templaet to a document.
+        /// #### Used when applying a template to a document.
         /// </remarks>
         /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contentType"></param>
-        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model (optional)</param>
+        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplyPrepperTemplateResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ApplyPrepperTemplateResponse>> PostApplyPrepperTemplateWithHttpInfoAsync(string contentType, ApplyPrepperTemplateRequest applyPrepperTemplateRequest = default(ApplyPrepperTemplateRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -397,11 +397,11 @@ namespace SigniFlow.Connect.Api
         }
 
         /// <summary>
-        /// Apply a Prepper template #### Used when applying a templaet to a document.
+        /// Apply a Prepper template #### Used when applying a template to a document.
         /// </summary>
         /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contentType"></param>
-        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model (optional)</param>
+        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model. (optional)</param>
         /// <returns>ApplyPrepperTemplateResponse</returns>
         public ApplyPrepperTemplateResponse PostApplyPrepperTemplate(string contentType, ApplyPrepperTemplateRequest applyPrepperTemplateRequest = default(ApplyPrepperTemplateRequest))
         {
@@ -410,11 +410,11 @@ namespace SigniFlow.Connect.Api
         }
 
         /// <summary>
-        /// Apply a Prepper template #### Used when applying a templaet to a document.
+        /// Apply a Prepper template #### Used when applying a template to a document.
         /// </summary>
         /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contentType"></param>
-        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model (optional)</param>
+        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model. (optional)</param>
         /// <returns>ApiResponse of ApplyPrepperTemplateResponse</returns>
         public SigniFlow.Connect.Client.ApiResponse<ApplyPrepperTemplateResponse> PostApplyPrepperTemplateWithHttpInfo(string contentType, ApplyPrepperTemplateRequest applyPrepperTemplateRequest = default(ApplyPrepperTemplateRequest))
         {
@@ -456,11 +456,11 @@ namespace SigniFlow.Connect.Api
         }
 
         /// <summary>
-        /// Apply a Prepper template #### Used when applying a templaet to a document.
+        /// Apply a Prepper template #### Used when applying a template to a document.
         /// </summary>
         /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contentType"></param>
-        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model (optional)</param>
+        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApplyPrepperTemplateResponse</returns>
         public async System.Threading.Tasks.Task<ApplyPrepperTemplateResponse> PostApplyPrepperTemplateAsync(string contentType, ApplyPrepperTemplateRequest applyPrepperTemplateRequest = default(ApplyPrepperTemplateRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
@@ -470,11 +470,11 @@ namespace SigniFlow.Connect.Api
         }
 
         /// <summary>
-        /// Apply a Prepper template #### Used when applying a templaet to a document.
+        /// Apply a Prepper template #### Used when applying a template to a document.
         /// </summary>
         /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contentType"></param>
-        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model (optional)</param>
+        /// <param name="applyPrepperTemplateRequest">##### Apply A Prepper Template Request Model. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ApplyPrepperTemplateResponse)</returns>
         public async System.Threading.Tasks.Task<SigniFlow.Connect.Client.ApiResponse<ApplyPrepperTemplateResponse>> PostApplyPrepperTemplateWithHttpInfoAsync(string contentType, ApplyPrepperTemplateRequest applyPrepperTemplateRequest = default(ApplyPrepperTemplateRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))

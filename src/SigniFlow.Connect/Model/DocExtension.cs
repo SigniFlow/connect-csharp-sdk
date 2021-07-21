@@ -39,62 +39,62 @@ namespace SigniFlow.Connect.Model
         /// Enum pdf for value: 0
         /// </summary>
         [EnumMember(Value = "0")]
-        pdf = 1,
-
+        pdf = 0,
+        
         /// <summary>
         /// Enum xls for value: 1
         /// </summary>
         [EnumMember(Value = "1")]
-        xls = 2,
-
+        xls = 1,
+        
         /// <summary>
         /// Enum txt for value: 2
         /// </summary>
         [EnumMember(Value = "2")]
-        txt = 3,
-
+        txt = 2,
+        
         /// <summary>
         /// Enum xlsx for value: 3
         /// </summary>
         [EnumMember(Value = "3")]
-        xlsx = 4,
-
+        xlsx = 3,
+        
         /// <summary>
         /// Enum docx for value: 4
         /// </summary>
         [EnumMember(Value = "4")]
-        docx = 5,
-
+        docx = 4,
+        
         /// <summary>
         /// Enum doc for value: 5
         /// </summary>
         [EnumMember(Value = "5")]
-        doc = 6,
-
+        doc = 5,
+        
         /// <summary>
         /// Enum xml for value: 6
         /// </summary>
         [EnumMember(Value = "6")]
-        xml = 7,
-
+        xml = 6,
+        
         /// <summary>
         /// Enum png for value: 7
         /// </summary>
         [EnumMember(Value = "7")]
-        png = 8,
-
+        png = 7,
+        
         /// <summary>
         /// Enum jpg for value: 8
         /// </summary>
         [EnumMember(Value = "8")]
-        jpg = 9,
-
+        jpg = 8,
+        
         /// <summary>
         /// Enum gif for value: 9
         /// </summary>
         [EnumMember(Value = "9")]
-        gif = 10
-
+        gif = 9
+        
     }
 
 }

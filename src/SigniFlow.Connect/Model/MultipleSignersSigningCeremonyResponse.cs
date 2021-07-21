@@ -49,7 +49,7 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         /// <param name="ceremonyIDField">Signing ceremony ID (required).</param>
         /// <param name="resultField">Displays the result of the call. (required).</param>
-        /// <param name="signedDocumentField">signedDocumentField (required).</param>
+        /// <param name="signedDocumentField">The base64 string for the Signed pdf document. (required).</param>
         public MultipleSignersSigningCeremonyResponse(decimal ceremonyIDField = default(decimal), string resultField = default(string), string signedDocumentField = default(string))
         {
             this.CeremonyIDField = ceremonyIDField;
@@ -74,8 +74,9 @@ namespace SigniFlow.Connect.Model
         public string ResultField { get; set; }
 
         /// <summary>
-        /// Gets or Sets SignedDocumentField
+        /// The base64 string for the Signed pdf document.
         /// </summary>
+        /// <value>The base64 string for the Signed pdf document.</value>
         [DataMember(Name = "SignedDocumentField", IsRequired = true, EmitDefaultValue = true)]
         public string SignedDocumentField { get; set; }
 

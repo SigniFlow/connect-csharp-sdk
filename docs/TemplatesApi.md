@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Apply a Prepper template
 
-#### Used when applying a templaet to a document.
+#### Used when applying a template to a document.
 
 ### Example
 ```csharp
@@ -37,7 +37,7 @@ namespace Example
             config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
             var apiInstance = new TemplatesApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
-            var applyPrepperTemplateRequest = new ApplyPrepperTemplateRequest(); // ApplyPrepperTemplateRequest | ##### Apply A Prepper Template Request Model (optional) 
+            var applyPrepperTemplateRequest = new ApplyPrepperTemplateRequest(); // ApplyPrepperTemplateRequest | ##### Apply A Prepper Template Request Model. (optional) 
 
             try
             {
@@ -61,7 +61,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **contentType** | **string**|  | [default to &quot;application/json&quot;]
- **applyPrepperTemplateRequest** | [**ApplyPrepperTemplateRequest**](ApplyPrepperTemplateRequest.md)| ##### Apply A Prepper Template Request Model | [optional] 
+ **applyPrepperTemplateRequest** | [**ApplyPrepperTemplateRequest**](ApplyPrepperTemplateRequest.md)| ##### Apply A Prepper Template Request Model. | [optional] 
 
 ### Return type
 
@@ -80,7 +80,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | ##### Apply A Prepper Template Response Model |  * Content-Type -  <br>  |
+| **200** | ##### Apply A Prepper Template Response Model. |  * Content-Type -  <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

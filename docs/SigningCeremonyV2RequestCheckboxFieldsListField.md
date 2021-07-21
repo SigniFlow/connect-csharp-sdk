@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **CheckboxWField** | **decimal** | Checkbox field width. | 
 **CheckboxXField** | **decimal** | Checkbox field x-coordinates. | 
 **CheckboxYField** | **decimal** | Checkbox field y-coordinates. | 
-**IsCheckedField** | **bool** | Is the checkbos field checked. | 
+**IsCheckedField** | **bool** | Is the checkbox field checked. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

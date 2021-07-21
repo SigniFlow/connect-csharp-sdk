@@ -39,20 +39,20 @@ namespace SigniFlow.Connect.Model
         /// Enum SignDocument for value: 0
         /// </summary>
         [EnumMember(Value = "0")]
-        SignDocument = 1,
-
+        SignDocument = 0,
+        
         /// <summary>
         /// Enum ViewDocument for value: 1
         /// </summary>
         [EnumMember(Value = "1")]
-        ViewDocument = 2,
-
+        ViewDocument = 1,
+        
         /// <summary>
         /// Enum ApproveDocument for value: 2
         /// </summary>
         [EnumMember(Value = "2")]
-        ApproveDocument = 3
-
+        ApproveDocument = 2
+        
     }
 
 }

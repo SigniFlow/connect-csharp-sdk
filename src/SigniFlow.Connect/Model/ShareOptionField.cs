@@ -27,25 +27,37 @@ using OpenAPIDateConverter = SigniFlow.Connect.Client.OpenAPIDateConverter;
 namespace SigniFlow.Connect.Model
 {
     /// <summary>
-    /// #### Sets an Auto Expire that will expire the document if not completed by the Due Date.  &#x60;0 &#x3D; No 1 &#x3D; Yes&#x60; 
+    /// #### Share Portfolio Option Field Types &#x60; 0 &#x3D; Business    // Share with an entire business 1 &#x3D; Department  // Share with a specific department 2 &#x3D; Team        // Share with a specific team 3 &#x3D; User        // Share with a specific user &#x60;
     /// </summary>
-    /// <value>#### Sets an Auto Expire that will expire the document if not completed by the Due Date.  &#x60;0 &#x3D; No 1 &#x3D; Yes&#x60; </value>
+    /// <value>#### Share Portfolio Option Field Types &#x60; 0 &#x3D; Business    // Share with an entire business 1 &#x3D; Department  // Share with a specific department 2 &#x3D; Team        // Share with a specific team 3 &#x3D; User        // Share with a specific user &#x60;</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum AutoExpire
+    public enum ShareOptionField
     {
         /// <summary>
-        /// Enum No for value: 0
+        /// Enum Business for value: 0
         /// </summary>
         [EnumMember(Value = "0")]
-        No = 0,
+        Business = 0,
         
         /// <summary>
-        /// Enum Yes for value: 1
+        /// Enum Department for value: 1
         /// </summary>
         [EnumMember(Value = "1")]
-        Yes = 1
+        Department = 1,
+        
+        /// <summary>
+        /// Enum Team for value: 2
+        /// </summary>
+        [EnumMember(Value = "2")]
+        Team = 2,
+        
+        /// <summary>
+        /// Enum User for value: 3
+        /// </summary>
+        [EnumMember(Value = "3")]
+        User = 3
         
     }
 

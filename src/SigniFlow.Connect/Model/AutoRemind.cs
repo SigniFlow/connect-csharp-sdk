@@ -39,14 +39,14 @@ namespace SigniFlow.Connect.Model
         /// Enum No for value: 0
         /// </summary>
         [EnumMember(Value = "0")]
-        No = 1,
-
+        No = 0,
+        
         /// <summary>
         /// Enum Yes for value: 1
         /// </summary>
         [EnumMember(Value = "1")]
-        Yes = 2
-
+        Yes = 1
+        
     }
 
 }

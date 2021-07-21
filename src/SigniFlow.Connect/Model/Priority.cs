@@ -39,20 +39,20 @@ namespace SigniFlow.Connect.Model
         /// Enum Low for value: 0
         /// </summary>
         [EnumMember(Value = "0")]
-        Low = 1,
-
+        Low = 0,
+        
         /// <summary>
         /// Enum Normal for value: 1
         /// </summary>
         [EnumMember(Value = "1")]
-        Normal = 2,
-
+        Normal = 1,
+        
         /// <summary>
         /// Enum High for value: 2
         /// </summary>
         [EnumMember(Value = "2")]
-        High = 3
-
+        High = 2
+        
     }
 
 }

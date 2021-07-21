@@ -39,62 +39,62 @@ namespace SigniFlow.Connect.Model
         /// Enum DropDown for value: 0
         /// </summary>
         [EnumMember(Value = "0")]
-        DropDown = 1,
-
+        DropDown = 0,
+        
         /// <summary>
         /// Enum CheckBoxGroup for value: 1
         /// </summary>
         [EnumMember(Value = "1")]
-        CheckBoxGroup = 2,
-
+        CheckBoxGroup = 1,
+        
         /// <summary>
         /// Enum OptionalDropDown for value: 2
         /// </summary>
         [EnumMember(Value = "2")]
-        OptionalDropDown = 3,
-
+        OptionalDropDown = 2,
+        
         /// <summary>
         /// Enum RadioGroup for value: 3
         /// </summary>
         [EnumMember(Value = "3")]
-        RadioGroup = 4,
-
+        RadioGroup = 3,
+        
         /// <summary>
         /// Enum DateMand for value: 4
         /// </summary>
         [EnumMember(Value = "4")]
-        DateMand = 5,
-
+        DateMand = 4,
+        
         /// <summary>
         /// Enum DateOpt for value: 5
         /// </summary>
         [EnumMember(Value = "5")]
-        DateOpt = 6,
-
+        DateOpt = 5,
+        
         /// <summary>
         /// Enum DropDownCountry for value: 6
         /// </summary>
         [EnumMember(Value = "6")]
-        DropDownCountry = 7,
-
+        DropDownCountry = 6,
+        
         /// <summary>
         /// Enum OptionalDropDownCountry for value: 7
         /// </summary>
         [EnumMember(Value = "7")]
-        OptionalDropDownCountry = 8,
-
+        OptionalDropDownCountry = 7,
+        
         /// <summary>
         /// Enum DropDownMobilePrefix for value: 8
         /// </summary>
         [EnumMember(Value = "8")]
-        DropDownMobilePrefix = 9,
-
+        DropDownMobilePrefix = 8,
+        
         /// <summary>
         /// Enum OptionalDropDownMobilePrefix for value: 9
         /// </summary>
         [EnumMember(Value = "9")]
-        OptionalDropDownMobilePrefix = 10
-
+        OptionalDropDownMobilePrefix = 9
+        
     }
 
 }

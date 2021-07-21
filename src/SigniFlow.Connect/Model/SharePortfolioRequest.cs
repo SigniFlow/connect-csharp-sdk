@@ -32,6 +32,16 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "SharePortfolioRequest")]
     public partial class SharePortfolioRequest : IEquatable<SharePortfolioRequest>, IValidatableObject
     {
+        /// <summary>
+        /// Gets or Sets AccessLevelField
+        /// </summary>
+        [DataMember(Name = "AccessLevelField", IsRequired = true, EmitDefaultValue = true)]
+        public AccessLevelField AccessLevelField { get; set; }
+        /// <summary>
+        /// Gets or Sets ShareOptionField
+        /// </summary>
+        [DataMember(Name = "ShareOptionField", IsRequired = true, EmitDefaultValue = true)]
+        public ShareOptionField ShareOptionField { get; set; }
 //    
 //    
 //        /// <summary>
@@ -47,12 +57,12 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SharePortfolioRequest" /> class.
         /// </summary>
-        /// <param name="accessLevelField">User&#39;s level of access. (required).</param>
+        /// <param name="accessLevelField">accessLevelField (required).</param>
         /// <param name="portfolioIDField">Portfolio ID (required).</param>
-        /// <param name="shareOptionField">Who to share the portfolio with. (required).</param>
+        /// <param name="shareOptionField">shareOptionField (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
-        /// <param name="uniqueIDField">Portfolio unique ID (required).</param>
-        public SharePortfolioRequest(decimal accessLevelField = default(decimal), string portfolioIDField = default(string), decimal shareOptionField = default(decimal), TokenField tokenField = default(TokenField), string uniqueIDField = default(string))
+        /// <param name="uniqueIDField">Based upon ShareOption, use either a team Id, Department Id, Business Id, or User ID \\ Email (required).</param>
+        public SharePortfolioRequest(AccessLevelField accessLevelField = default(AccessLevelField), string portfolioIDField = default(string), ShareOptionField shareOptionField = default(ShareOptionField), TokenField tokenField = default(TokenField), string uniqueIDField = default(string))
         {
             this.AccessLevelField = accessLevelField;
             // to ensure "portfolioIDField" is required (not null)
@@ -65,25 +75,11 @@ namespace SigniFlow.Connect.Model
         }
 
         /// <summary>
-        /// User&#39;s level of access.
-        /// </summary>
-        /// <value>User&#39;s level of access.</value>
-        [DataMember(Name = "AccessLevelField", IsRequired = true, EmitDefaultValue = true)]
-        public decimal AccessLevelField { get; set; }
-
-        /// <summary>
         /// Portfolio ID
         /// </summary>
         /// <value>Portfolio ID</value>
         [DataMember(Name = "PortfolioIDField", IsRequired = true, EmitDefaultValue = true)]
         public string PortfolioIDField { get; set; }
-
-        /// <summary>
-        /// Who to share the portfolio with.
-        /// </summary>
-        /// <value>Who to share the portfolio with.</value>
-        [DataMember(Name = "ShareOptionField", IsRequired = true, EmitDefaultValue = true)]
-        public decimal ShareOptionField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
@@ -92,9 +88,9 @@ namespace SigniFlow.Connect.Model
         public TokenField TokenField { get; set; }
 
         /// <summary>
-        /// Portfolio unique ID
+        /// Based upon ShareOption, use either a team Id, Department Id, Business Id, or User ID \\ Email
         /// </summary>
-        /// <value>Portfolio unique ID</value>
+        /// <value>Based upon ShareOption, use either a team Id, Department Id, Business Id, or User ID \\ Email</value>
         [DataMember(Name = "UniqueIDField", IsRequired = true, EmitDefaultValue = true)]
         public string UniqueIDField { get; set; }
 

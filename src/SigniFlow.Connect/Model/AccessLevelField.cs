@@ -27,25 +27,31 @@ using OpenAPIDateConverter = SigniFlow.Connect.Client.OpenAPIDateConverter;
 namespace SigniFlow.Connect.Model
 {
     /// <summary>
-    /// #### Sets an Auto Expire that will expire the document if not completed by the Due Date.  &#x60;0 &#x3D; No 1 &#x3D; Yes&#x60; 
+    /// #### Access Level Field Types  &#x60; 0 &#x3D; Viewer         // Has access to view documents in the portfolio 1 &#x3D; Contributor    // Can upload documents to placeholders 2 &#x3D; Owner          // Has full control over the portfolio &#x60;
     /// </summary>
-    /// <value>#### Sets an Auto Expire that will expire the document if not completed by the Due Date.  &#x60;0 &#x3D; No 1 &#x3D; Yes&#x60; </value>
+    /// <value>#### Access Level Field Types  &#x60; 0 &#x3D; Viewer         // Has access to view documents in the portfolio 1 &#x3D; Contributor    // Can upload documents to placeholders 2 &#x3D; Owner          // Has full control over the portfolio &#x60;</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum AutoExpire
+    public enum AccessLevelField
     {
         /// <summary>
-        /// Enum No for value: 0
+        /// Enum Viewer for value: 0
         /// </summary>
         [EnumMember(Value = "0")]
-        No = 0,
+        Viewer = 0,
         
         /// <summary>
-        /// Enum Yes for value: 1
+        /// Enum Contributor for value: 1
         /// </summary>
         [EnumMember(Value = "1")]
-        Yes = 1
+        Contributor = 1,
+        
+        /// <summary>
+        /// Enum Owner for value: 2
+        /// </summary>
+        [EnumMember(Value = "2")]
+        Owner = 2
         
     }
 

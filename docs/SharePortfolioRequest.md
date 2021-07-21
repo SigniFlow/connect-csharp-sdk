@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccessLevelField** | **decimal** | User&#39;s level of access. | 
+**AccessLevelField** | **AccessLevelField** |  | 
 **PortfolioIDField** | **string** | Portfolio ID | 
-**ShareOptionField** | **decimal** | Who to share the portfolio with. | 
+**ShareOptionField** | **ShareOptionField** |  | 
 **TokenField** | [**TokenField**](TokenField.md) |  | 
-**UniqueIDField** | **string** | Portfolio unique ID | 
+**UniqueIDField** | **string** | Based upon ShareOption, use either a team Id, Department Id, Business Id, or User ID \\ Email | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

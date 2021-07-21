@@ -33,32 +33,20 @@ namespace SigniFlow.Connect.Model
     public partial class SharePortfolioResponse : IEquatable<SharePortfolioResponse>, IValidatableObject
     {
 //    
-//    
-//        /// <summary>
-//        /// Initializes a new instance of the <see cref="SharePortfolioResponse" /> class.
-//        /// </summary>
-//        [JsonConstructorAttribute]
-//        
-//        protected SharePortfolioResponse() { }
-//        
-//        
-//    
-//    
         /// <summary>
         /// Initializes a new instance of the <see cref="SharePortfolioResponse" /> class.
         /// </summary>
-        /// <param name="resultField">Displays the result of the call. (required).</param>
+        /// <param name="resultField">Displays the result of the call..</param>
         public SharePortfolioResponse(string resultField = default(string))
         {
-            // to ensure "resultField" is required (not null)
-            this.ResultField = resultField ?? throw new ArgumentNullException("resultField is a required property for SharePortfolioResponse and cannot be null");
+            this.ResultField = resultField;
         }
 
         /// <summary>
         /// Displays the result of the call.
         /// </summary>
         /// <value>Displays the result of the call.</value>
-        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "ResultField", EmitDefaultValue = true)]
         public string ResultField { get; set; }
 
         /// <summary>

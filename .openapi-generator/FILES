@@ -2,6 +2,7 @@
 README.md
 SigniFlow.Connect.sln
 appveyor.yml
+docs/AccessLevelField.md
 docs/ActionField.md
 docs/AddWokflowStepV2Response.md
 docs/AddWokflowStepV2ResponseFlowStepsField.md
@@ -84,6 +85,7 @@ docs/Priority.md
 docs/ProxyAllowedField.md
 docs/SetDocumentOrderRequest.md
 docs/SetDocumentOrderResponse.md
+docs/ShareOptionField.md
 docs/SharePortfolioNoEmailRequest.md
 docs/SharePortfolioNoEmailResponse.md
 docs/SharePortfolioRequest.md
@@ -130,6 +132,7 @@ src/SigniFlow.Connect/Client/OpenAPIDateConverter.cs
 src/SigniFlow.Connect/Client/RequestOptions.cs
 src/SigniFlow.Connect/Client/RetryConfiguration.cs
 src/SigniFlow.Connect/Model/AbstractOpenAPISchema.cs
+src/SigniFlow.Connect/Model/AccessLevelField.cs
 src/SigniFlow.Connect/Model/ActionField.cs
 src/SigniFlow.Connect/Model/AddWokflowStepV2Response.cs
 src/SigniFlow.Connect/Model/AddWokflowStepV2ResponseFlowStepsField.cs
@@ -209,6 +212,7 @@ src/SigniFlow.Connect/Model/Priority.cs
 src/SigniFlow.Connect/Model/ProxyAllowedField.cs
 src/SigniFlow.Connect/Model/SetDocumentOrderRequest.cs
 src/SigniFlow.Connect/Model/SetDocumentOrderResponse.cs
+src/SigniFlow.Connect/Model/ShareOptionField.cs
 src/SigniFlow.Connect/Model/SharePortfolioNoEmailRequest.cs
 src/SigniFlow.Connect/Model/SharePortfolioNoEmailResponse.cs
 src/SigniFlow.Connect/Model/SharePortfolioRequest.cs

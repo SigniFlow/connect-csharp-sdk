@@ -33,32 +33,20 @@ namespace SigniFlow.Connect.Model
     public partial class SetDocumentOrderResponse : IEquatable<SetDocumentOrderResponse>, IValidatableObject
     {
 //    
-//    
-//        /// <summary>
-//        /// Initializes a new instance of the <see cref="SetDocumentOrderResponse" /> class.
-//        /// </summary>
-//        [JsonConstructorAttribute]
-//        
-//        protected SetDocumentOrderResponse() { }
-//        
-//        
-//    
-//    
         /// <summary>
         /// Initializes a new instance of the <see cref="SetDocumentOrderResponse" /> class.
         /// </summary>
-        /// <param name="resultField">Displays the result of the call. (required).</param>
+        /// <param name="resultField">Displays the result of the call..</param>
         public SetDocumentOrderResponse(string resultField = default(string))
         {
-            // to ensure "resultField" is required (not null)
-            this.ResultField = resultField ?? throw new ArgumentNullException("resultField is a required property for SetDocumentOrderResponse and cannot be null");
+            this.ResultField = resultField;
         }
 
         /// <summary>
         /// Displays the result of the call.
         /// </summary>
         /// <value>Displays the result of the call.</value>
-        [DataMember(Name = "ResultField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "ResultField", EmitDefaultValue = true)]
         public string ResultField { get; set; }
 
         /// <summary>

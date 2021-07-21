@@ -52,7 +52,7 @@ namespace SigniFlow.Connect.Model
         /// <param name="checkboxWField">Checkbox field width. (required).</param>
         /// <param name="checkboxXField">Checkbox field x-coordinates. (required).</param>
         /// <param name="checkboxYField">Checkbox field y-coordinates. (required).</param>
-        /// <param name="isCheckedField">Is the checkbos field checked. (required).</param>
+        /// <param name="isCheckedField">Is the checkbox field checked. (required).</param>
         public SigningCeremonyV2RequestCheckboxFieldsListField(decimal checkboxHField = default(decimal), decimal checkboxPageField = default(decimal), decimal checkboxWField = default(decimal), decimal checkboxXField = default(decimal), decimal checkboxYField = default(decimal), bool isCheckedField = default(bool))
         {
             this.CheckboxHField = checkboxHField;
@@ -99,9 +99,9 @@ namespace SigniFlow.Connect.Model
         public decimal CheckboxYField { get; set; }
 
         /// <summary>
-        /// Is the checkbos field checked.
+        /// Is the checkbox field checked.
         /// </summary>
-        /// <value>Is the checkbos field checked.</value>
+        /// <value>Is the checkbox field checked.</value>
         [DataMember(Name = "IsCheckedField", IsRequired = true, EmitDefaultValue = true)]
         public bool IsCheckedField { get; set; }
 
