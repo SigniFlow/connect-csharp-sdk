@@ -142,7 +142,6 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         /// <value>Document due date.</value>
         [DataMember(Name = "DueDateField", EmitDefaultValue = true)]
-        [JsonConverter(typeof(OpenAPIDateConverter))]
         public DateTime? DueDateField { get; set; }
 
         /// <summary>
