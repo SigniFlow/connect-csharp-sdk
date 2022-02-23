@@ -1,5 +1,5 @@
 /*
- * SigniFlow OpenAPI Spec v1
+ * WorkFlow API
  *
  * ## SigniFlow API used to automate esignature workflow creation and management. 
  *
@@ -9,10 +9,7 @@
  */
 
 
-using System;
 using System.Collections.Generic;
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
 
 namespace SigniFlow.Connect.Client
 {
@@ -55,14 +52,7 @@ namespace SigniFlow.Connect.Client
         /// Gets the default header.
         /// </summary>
         /// <value>Default header.</value>
-        [Obsolete("Use DefaultHeaders instead.")]
         IDictionary<string, string> DefaultHeader { get; }
-
-        /// <summary>
-        /// Gets the default headers.
-        /// </summary>
-        /// <value>Default headers.</value>
-        IDictionary<string, string> DefaultHeaders { get; }
 
         /// <summary>
         /// Gets the temp folder path.
@@ -75,12 +65,6 @@ namespace SigniFlow.Connect.Client
         /// </summary>
         /// <value>HTTP connection timeout.</value>
         int Timeout { get; }
-
-        /// <summary>
-        /// Gets the proxy.
-        /// </summary>
-        /// <value>Proxy.</value>
-        WebProxy Proxy { get; }
 
         /// <summary>
         /// Gets the user agent.
@@ -106,11 +90,5 @@ namespace SigniFlow.Connect.Client
         /// <param name="apiKeyIdentifier">API key identifier (authentication scheme).</param>
         /// <returns>API key with prefix.</returns>
         string GetApiKeyWithPrefix(string apiKeyIdentifier);
-
-        /// <summary>
-        /// Gets certificate collection to be sent with requests.
-        /// </summary>
-        /// <value>X509 Certificate collection.</value>
-        X509CertificateCollection ClientCertificates { get; }
     }
 }

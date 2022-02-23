@@ -1,6 +1,6 @@
 # SigniFlow.Connect.Api.AuthenticationApi
 
-All URIs are relative to *https://server-url/API/SignFlowAPIServiceRest.svc*
+All URIs are relative to *https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,15 +10,17 @@ Method | HTTP request | Description
 [**PostTokenValidate**](AuthenticationApi.md#posttokenvalidate) | **POST** /TokenValidate | Token Validate
 
 
-<a name="login"></a>
-# **Login**
+
+## Login
+
 > LoginResponse Login (string contentType, LoginRequest loginRequest)
 
 Login
 
-#### Generates a API Token for the User
+#### Generates an API Token to allow the user to login.
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -32,9 +34,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new AuthenticationApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new AuthenticationApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var loginRequest = new LoginRequest(); // LoginRequest | ##### Login Request Model
 
@@ -44,7 +45,7 @@ namespace Example
                 LoginResponse result = apiInstance.Login(contentType, loginRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling AuthenticationApi.Login: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -56,6 +57,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -72,8 +74,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -81,17 +83,22 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Login Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-<a name="postlogout"></a>
-# **PostLogout**
+
+## PostLogout
+
 > LogoutResponse PostLogout (string contentType, LogoutRequest logoutRequest = null)
 
 Logout
 
-#### Used to log out a user from SigniFlow.
+#### Used to log a user out of SigniFlow.
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -105,9 +112,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new AuthenticationApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new AuthenticationApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var logoutRequest = new LogoutRequest(); // LogoutRequest | ##### Logout Request Model (optional) 
 
@@ -117,7 +123,7 @@ namespace Example
                 LogoutResponse result = apiInstance.PostLogout(contentType, logoutRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling AuthenticationApi.PostLogout: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -129,6 +135,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -145,8 +152,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -154,10 +161,14 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Logout Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-<a name="posttokenextend"></a>
-# **PostTokenExtend**
+
+## PostTokenExtend
+
 > TokenExtendResponse PostTokenExtend (string contentType, TokenExtendRequest tokenExtendRequest = null)
 
 Token Extend
@@ -165,6 +176,7 @@ Token Extend
 #### Used to extend the period of time in which the session token is valid.
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -178,9 +190,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new AuthenticationApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new AuthenticationApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var tokenExtendRequest = new TokenExtendRequest(); // TokenExtendRequest | ##### Token Extend Request Model (optional) 
 
@@ -190,7 +201,7 @@ namespace Example
                 TokenExtendResponse result = apiInstance.PostTokenExtend(contentType, tokenExtendRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling AuthenticationApi.PostTokenExtend: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -202,6 +213,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -218,8 +230,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -227,10 +239,14 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Token Extend Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-<a name="posttokenvalidate"></a>
-# **PostTokenValidate**
+
+## PostTokenValidate
+
 > TokenValidateResponse PostTokenValidate (string contentType, TokenValidateRequest tokenValidateRequest = null)
 
 Token Validate
@@ -238,6 +254,7 @@ Token Validate
 #### Used to validate the user's session token.
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -251,9 +268,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new AuthenticationApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new AuthenticationApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var tokenValidateRequest = new TokenValidateRequest(); // TokenValidateRequest | ##### Token Validate Request Model (optional) 
 
@@ -263,7 +279,7 @@ namespace Example
                 TokenValidateResponse result = apiInstance.PostTokenValidate(contentType, tokenValidateRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling AuthenticationApi.PostTokenValidate: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -275,6 +291,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -291,8 +308,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -300,5 +317,8 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Token Validate Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

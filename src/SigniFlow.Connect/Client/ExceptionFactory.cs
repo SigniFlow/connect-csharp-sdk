@@ -1,5 +1,5 @@
 /*
- * SigniFlow OpenAPI Spec v1
+ * WorkFlow API
  *
  * ## SigniFlow API used to automate esignature workflow creation and management. 
  *
@@ -10,6 +10,7 @@
 
 
 using System;
+using RestSharp;
 
 namespace SigniFlow.Connect.Client
 {
@@ -19,5 +20,5 @@ namespace SigniFlow.Connect.Client
     /// <param name="methodName">Method name</param>
     /// <param name="response">Response</param>
     /// <returns>Exceptions</returns>
-    public delegate Exception ExceptionFactory(string methodName, IApiResponse response);
+    public delegate Exception ExceptionFactory(string methodName, IRestResponse response);
 }

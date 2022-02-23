@@ -1,6 +1,6 @@
 # SigniFlow.Connect.Api.PortfoliosApi
 
-All URIs are relative to *https://server-url/API/SignFlowAPIServiceRest.svc*
+All URIs are relative to *https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,15 +12,17 @@ Method | HTTP request | Description
 [**PostSharePortfolioNoEmail**](PortfoliosApi.md#postshareportfolionoemail) | **POST** /SharePortfolio_No_Email | Share Portfolio No Email
 
 
-<a name="postcreateportfolio"></a>
-# **PostCreatePortfolio**
+
+## PostCreatePortfolio
+
 > CreatePortfolioResponse PostCreatePortfolio (string contentType, CreatePortfolioRequest createPortfolioRequest = null)
 
 Create Portfolio
 
-#### Used to create a portfolio to group documents.
+#### The API call used to group documents by creating a portfolio to store them in.
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -34,9 +36,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new PortfoliosApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new PortfoliosApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var createPortfolioRequest = new CreatePortfolioRequest(); // CreatePortfolioRequest | ##### Create Portfolio Request Model (optional) 
 
@@ -46,7 +47,7 @@ namespace Example
                 CreatePortfolioResponse result = apiInstance.PostCreatePortfolio(contentType, createPortfolioRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling PortfoliosApi.PostCreatePortfolio: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -58,6 +59,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -74,8 +76,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -83,17 +85,22 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Create Portfolio Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-<a name="postdownloadportfolio"></a>
-# **PostDownloadPortfolio**
+
+## PostDownloadPortfolio
+
 > DownloadPortfolioResponse PostDownloadPortfolio (string contentType, DownloadPortfolioRequest downloadPortfolioRequest = null)
 
 Download Portfolio
 
-#### Used to return a string that is then used to download a portfolio.
+#### The API call used to return a string that is then used to download a portfolio.
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -107,9 +114,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new PortfoliosApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new PortfoliosApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var downloadPortfolioRequest = new DownloadPortfolioRequest(); // DownloadPortfolioRequest | ##### Download Portfolio Request Model (optional) 
 
@@ -119,7 +125,7 @@ namespace Example
                 DownloadPortfolioResponse result = apiInstance.PostDownloadPortfolio(contentType, downloadPortfolioRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling PortfoliosApi.PostDownloadPortfolio: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -131,6 +137,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -147,8 +154,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -156,17 +163,22 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Download Portfolio Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-<a name="postlinktoportfolio"></a>
-# **PostLinkToPortfolio**
+
+## PostLinkToPortfolio
+
 > LinkToPortfolioResponse PostLinkToPortfolio (string contentType, LinkToPortfolioRequest linkToPortfolioRequest = null)
 
 Link To Portfolio
 
-#### Used to get the url link to a portfolio.
+#### Used to get the url link to a portfolio in order to link a document to a portfolio.
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -180,9 +192,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new PortfoliosApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new PortfoliosApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var linkToPortfolioRequest = new LinkToPortfolioRequest(); // LinkToPortfolioRequest | ##### Link To Portfolio Request Model (optional) 
 
@@ -192,7 +203,7 @@ namespace Example
                 LinkToPortfolioResponse result = apiInstance.PostLinkToPortfolio(contentType, linkToPortfolioRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling PortfoliosApi.PostLinkToPortfolio: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -204,6 +215,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -220,8 +232,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -229,10 +241,14 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Link To Portfolio Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-<a name="postsetdocumentorder"></a>
-# **PostSetDocumentOrder**
+
+## PostSetDocumentOrder
+
 > SetDocumentOrderResponse PostSetDocumentOrder (string contentType, SetDocumentOrderRequest setDocumentOrderRequest = null)
 
 Set Document Order
@@ -240,6 +256,7 @@ Set Document Order
 #### Used to set the order of documents that needs to be signed.
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -253,9 +270,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new PortfoliosApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new PortfoliosApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var setDocumentOrderRequest = new SetDocumentOrderRequest(); // SetDocumentOrderRequest | ##### Set Document Order Request Model (optional) 
 
@@ -265,7 +281,7 @@ namespace Example
                 SetDocumentOrderResponse result = apiInstance.PostSetDocumentOrder(contentType, setDocumentOrderRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling PortfoliosApi.PostSetDocumentOrder: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -277,6 +293,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -293,8 +310,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -302,17 +319,22 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Set Document Order Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-<a name="postshareportfolio"></a>
-# **PostSharePortfolio**
+
+## PostSharePortfolio
+
 > SharePortfolioResponse PostSharePortfolio (string contentType, SharePortfolioRequest sharePortfolioRequest = null)
 
 Share Portfolio
 
-#### Used when a user wants to share a portfolio with someone else.
+#### Used when a user wants to share a portfolio with someone else.  Enumerations used in this API Call include: | Enumeration    | Values          | | - -- -- -- -- -- -- - |:- -- -- -- -- -- -- --:| | **AccessLevelField** | 0 = Viewer *(User has access to view documents in the portfolio)*, 1 = Contributor *(User can upload documents to placeholders)*, 2 = Owner *(User has full control over the portfolio)* | | **ShareOptionField** | 0 = Business *(Share with an entire business)*, 1 = Department *(Share with a specific department)*, 2 = Team *(Share with a specific team)*, 3 = User *(Share with a specific user)* |
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -326,9 +348,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new PortfoliosApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new PortfoliosApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var sharePortfolioRequest = new SharePortfolioRequest(); // SharePortfolioRequest | ##### Share Portfolio Request Model (optional) 
 
@@ -338,7 +359,7 @@ namespace Example
                 SharePortfolioResponse result = apiInstance.PostSharePortfolio(contentType, sharePortfolioRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling PortfoliosApi.PostSharePortfolio: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -350,6 +371,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -366,8 +388,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -375,17 +397,22 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Share Portfolio Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-<a name="postshareportfolionoemail"></a>
-# **PostSharePortfolioNoEmail**
+
+## PostSharePortfolioNoEmail
+
 > SharePortfolioNoEmailResponse PostSharePortfolioNoEmail (string contentType, SharePortfolioNoEmailRequest sharePortfolioNoEmailRequest = null)
 
 Share Portfolio No Email
 
-#### Used when a user wants to share a portfolio without sending out an email.
+#### Used when a user wants to share a portfolio without sending out an email.  Enumerations used in this API Call include: | Enumeration    | Values          | | - -- -- -- -- -- -- - |:- -- -- -- -- -- -- --:| | **AccessLevelField** | 0 = Viewer *(User has access to view documents in the portfolio)*, 1 = Contributor *(User can upload documents to placeholders)*, 2 = Owner *(User has full control over the portfolio)* | | **ShareOptionField** | 0 = Business *(Share with an entire business)*, 1 = Department *(Share with a specific department)*, 2 = Team *(Share with a specific team)*, 3 = User *(Share with a specific user)* |
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -399,9 +426,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new PortfoliosApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new PortfoliosApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var sharePortfolioNoEmailRequest = new SharePortfolioNoEmailRequest(); // SharePortfolioNoEmailRequest | ##### Share Portfolio No Email Request Model (optional) 
 
@@ -411,7 +437,7 @@ namespace Example
                 SharePortfolioNoEmailResponse result = apiInstance.PostSharePortfolioNoEmail(contentType, sharePortfolioNoEmailRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling PortfoliosApi.PostSharePortfolioNoEmail: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -423,6 +449,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -439,8 +466,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -448,5 +475,8 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Share Portfolio No Email Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

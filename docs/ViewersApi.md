@@ -1,6 +1,6 @@
 # SigniFlow.Connect.Api.ViewersApi
 
-All URIs are relative to *https://server-url/API/SignFlowAPIServiceRest.svc*
+All URIs are relative to *https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,8 +8,9 @@ Method | HTTP request | Description
 [**PostGetDocumentPrepperLink**](ViewersApi.md#postgetdocumentprepperlink) | **POST** /GetDocumentPrepperLink | Get Document Prepper Link
 
 
-<a name="postgetdoclink"></a>
-# **PostGetDocLink**
+
+## PostGetDocLink
+
 > GetDocLinkResponse PostGetDocLink (string contentType, GetDocLinkRequest getDocLinkRequest = null)
 
 Get Document Link
@@ -17,6 +18,7 @@ Get Document Link
 #### Used to get the document link that will be used to sign a document.
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -30,9 +32,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new ViewersApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new ViewersApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var getDocLinkRequest = new GetDocLinkRequest(); // GetDocLinkRequest | ##### Get Document Link Request Model (optional) 
 
@@ -42,7 +43,7 @@ namespace Example
                 GetDocLinkResponse result = apiInstance.PostGetDocLink(contentType, getDocLinkRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling ViewersApi.PostGetDocLink: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -54,6 +55,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -70,8 +72,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -79,17 +81,22 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Get Document Link Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-<a name="postgetdocumentprepperlink"></a>
-# **PostGetDocumentPrepperLink**
+
+## PostGetDocumentPrepperLink
+
 > GetDocumentPrepperLinkResponse PostGetDocumentPrepperLink (string contentType, GetDocumentPrepperLinkRequest getDocumentPrepperLinkRequest = null)
 
 Get Document Prepper Link
 
-#### Used to get a document prepper link (url).
+#### Used to get a document prepper link (url).  Enumerations used in this API Call include: | Enumeration    | Values          | | - -- -- -- -- -- -- - |:- -- -- -- -- -- -- --:| | **EmailSettingsField**| 0 = SendAll, 1 = SkipAll, 2 = SkipFirst |
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -103,9 +110,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new ViewersApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new ViewersApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var getDocumentPrepperLinkRequest = new GetDocumentPrepperLinkRequest(); // GetDocumentPrepperLinkRequest | ##### Get Document Prepper Link Request Model (optional) 
 
@@ -115,7 +121,7 @@ namespace Example
                 GetDocumentPrepperLinkResponse result = apiInstance.PostGetDocumentPrepperLink(contentType, getDocumentPrepperLinkRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling ViewersApi.PostGetDocumentPrepperLink: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -127,6 +133,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -143,8 +150,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -152,5 +159,8 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Get Document Prepper Link Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

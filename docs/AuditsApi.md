@@ -1,6 +1,6 @@
 # SigniFlow.Connect.Api.AuditsApi
 
-All URIs are relative to *https://server-url/API/SignFlowAPIServiceRest.svc*
+All URIs are relative to *https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,8 +8,9 @@ Method | HTTP request | Description
 [**PostGetDocumentAudit**](AuditsApi.md#postgetdocumentaudit) | **POST** /GetDocumentAudit | Get Document Audit
 
 
-<a name="postgetauditdocument"></a>
-# **PostGetAuditDocument**
+
+## PostGetAuditDocument
+
 > GetAuditDocumentResponse PostGetAuditDocument (string contentType, GetAuditDocumentRequest getAuditDocumentRequest = null)
 
 Get Audit Document
@@ -17,6 +18,7 @@ Get Audit Document
 #### Used to get an audit document.
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -30,9 +32,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new AuditsApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new AuditsApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var getAuditDocumentRequest = new GetAuditDocumentRequest(); // GetAuditDocumentRequest | ##### Get Audit Document Request Model (optional) 
 
@@ -42,7 +43,7 @@ namespace Example
                 GetAuditDocumentResponse result = apiInstance.PostGetAuditDocument(contentType, getAuditDocumentRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling AuditsApi.PostGetAuditDocument: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -54,6 +55,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -70,8 +72,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -79,10 +81,14 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Get Audit Document Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-<a name="postgetdocumentaudit"></a>
-# **PostGetDocumentAudit**
+
+## PostGetDocumentAudit
+
 > GetDocumentAuditResponse PostGetDocumentAudit (string contentType, GetDocumentAuditRequest getDocumentAuditRequest = null)
 
 Get Document Audit
@@ -90,6 +96,7 @@ Get Document Audit
 #### Used to get the audit information from a document.
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -103,9 +110,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new AuditsApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new AuditsApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var getDocumentAuditRequest = new GetDocumentAuditRequest(); // GetDocumentAuditRequest | ##### Get Document Audit Request Model (optional) 
 
@@ -115,7 +121,7 @@ namespace Example
                 GetDocumentAuditResponse result = apiInstance.PostGetDocumentAudit(contentType, getDocumentAuditRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling AuditsApi.PostGetDocumentAudit: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -127,6 +133,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -143,8 +150,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -152,5 +159,8 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Get Document Audit Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

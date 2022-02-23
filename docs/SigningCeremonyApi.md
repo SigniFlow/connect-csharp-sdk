@@ -1,6 +1,6 @@
 # SigniFlow.Connect.Api.SigningCeremonyApi
 
-All URIs are relative to *https://server-url/API/SignFlowAPIServiceRest.svc*
+All URIs are relative to *https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,8 +8,9 @@ Method | HTTP request | Description
 [**PostSigningCeremonyV2**](SigningCeremonyApi.md#postsigningceremonyv2) | **POST** /SigningCeremonyV2 | Signing Ceremony V2
 
 
-<a name="postmultiplesignerssigningceremony"></a>
-# **PostMultipleSignersSigningCeremony**
+
+## PostMultipleSignersSigningCeremony
+
 > MultipleSignersSigningCeremonyResponse PostMultipleSignersSigningCeremony (string contentType, MultipleSignersSigningCeremonyRequest multipleSignersSigningCeremonyRequest = null)
 
 Multiple Signers Signing Ceremony
@@ -17,6 +18,7 @@ Multiple Signers Signing Ceremony
 #### Used when there are multiple signers on a document.
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -30,9 +32,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new SigningCeremonyApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new SigningCeremonyApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var multipleSignersSigningCeremonyRequest = new MultipleSignersSigningCeremonyRequest(); // MultipleSignersSigningCeremonyRequest | ##### Multiple Signers Signing Ceremony Request Model (optional) 
 
@@ -42,7 +43,7 @@ namespace Example
                 MultipleSignersSigningCeremonyResponse result = apiInstance.PostMultipleSignersSigningCeremony(contentType, multipleSignersSigningCeremonyRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling SigningCeremonyApi.PostMultipleSignersSigningCeremony: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -54,6 +55,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -70,8 +72,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -79,10 +81,14 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Multiple Signers Signing Ceremony Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
-<a name="postsigningceremonyv2"></a>
-# **PostSigningCeremonyV2**
+
+## PostSigningCeremonyV2
+
 > SigningCeremonyV2Response PostSigningCeremonyV2 (string contentType, SigningCeremonyV2Request signingCeremonyV2Request = null)
 
 Signing Ceremony V2
@@ -90,6 +96,7 @@ Signing Ceremony V2
 #### Used to initiate the signing process of a document.
 
 ### Example
+
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -103,9 +110,8 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration config = new Configuration();
-            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new SigningCeremonyApi(config);
+            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new SigningCeremonyApi(Configuration.Default);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var signingCeremonyV2Request = new SigningCeremonyV2Request(); // SigningCeremonyV2Request | ##### Signing Ceremony V2 Request Model (optional) 
 
@@ -115,7 +121,7 @@ namespace Example
                 SigningCeremonyV2Response result = apiInstance.PostSigningCeremonyV2(contentType, signingCeremonyV2Request);
                 Debug.WriteLine(result);
             }
-            catch (ApiException  e)
+            catch (ApiException e)
             {
                 Debug.Print("Exception when calling SigningCeremonyApi.PostSigningCeremonyV2: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -127,6 +133,7 @@ namespace Example
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -143,8 +150,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ### HTTP response details
@@ -152,5 +159,8 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Signing Ceremony V2 Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 

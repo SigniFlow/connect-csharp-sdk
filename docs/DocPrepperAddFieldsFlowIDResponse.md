@@ -1,5 +1,5 @@
+
 # SigniFlow.Connect.Model.DocPrepperAddFieldsFlowIDResponse
-#### The response retuenrd when fields are added to a document using a FlowID.
 
 ## Properties
 
@@ -16,5 +16,7 @@ Name | Type | Description | Notes
 **XCoordinateField** | **string** | X-coordinates of the field. | 
 **YCoordinateField** | **string** | Y-coordinates of the field. | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)
 

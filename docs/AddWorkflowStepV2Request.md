@@ -1,12 +1,12 @@
+
 # SigniFlow.Connect.Model.AddWorkflowStepV2Request
-#### Add a step to the Workflow request.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ActionField** | **ActionField** |  | 
-**CellField** | **string** | Mobile number of participant | 
+**CellField** | **string** | Mobile number of participant | [optional] 
 **DocIDField** | **string** | Document ID field. | 
 **EmailField** | **string** | Participant email address. | 
 **FirstNameField** | **string** | Participant firstname. | 
@@ -15,5 +15,7 @@ Name | Type | Description | Notes
 **ProxyAllowedField** | **ProxyAllowedField** |  | 
 **TokenField** | [**TokenField**](TokenField.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to README]](../README.md)
 

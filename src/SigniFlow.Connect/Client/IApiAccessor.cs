@@ -1,5 +1,5 @@
 /*
- * SigniFlow OpenAPI Spec v1
+ * WorkFlow API
  *
  * ## SigniFlow API used to automate esignature workflow creation and management. 
  *
@@ -10,6 +10,10 @@
 
 
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using RestSharp;
 
 namespace SigniFlow.Connect.Client
 {
@@ -22,7 +26,7 @@ namespace SigniFlow.Connect.Client
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        IReadableConfiguration Configuration { get; set; }
+        Configuration Configuration {get; set;}
 
         /// <summary>
         /// Gets the base path of the API client.
