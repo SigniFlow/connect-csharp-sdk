@@ -1,4 +1,3 @@
-
 # SigniFlow.Connect.Model.MultipleSignersSigningCeremonyRequestSignerListField
 
 ## Properties
@@ -25,7 +24,5 @@ Name | Type | Description | Notes
 **SignerTrustOriginField** | **string** | This field is used to define the source of the Audit keep by the user calling the Signing Ceremony. | 
 **SignerTrustReferenceField** | **string** | A unique identifier that links back to an audit stored by the user calling the Signing Ceremony. | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

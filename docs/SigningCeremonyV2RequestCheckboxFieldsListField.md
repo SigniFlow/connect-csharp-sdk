@@ -1,4 +1,3 @@
-
 # SigniFlow.Connect.Model.SigningCeremonyV2RequestCheckboxFieldsListField
 
 ## Properties
@@ -12,7 +11,5 @@ Name | Type | Description | Notes
 **CheckboxYField** | **decimal** | Checkbox field y-coordinates. | [optional] 
 **IsCheckedField** | **bool** | Is the checkbox field checked. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

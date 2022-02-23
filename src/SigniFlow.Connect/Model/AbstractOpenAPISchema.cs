@@ -1,5 +1,5 @@
 /*
- * SigniFlow OpenAPI Spec v1
+ * WorkFlow API
  *
  * ## SigniFlow API used to automate esignature workflow creation and management. 
  *

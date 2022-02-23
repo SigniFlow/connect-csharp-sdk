@@ -1,6 +1,6 @@
 # SigniFlow.Connect.Api.TemplatesApi
 
-All URIs are relative to *https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc*
+All URIs are relative to *https://server-url/API/SignFlowAPIServiceRest.svc*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,9 +11,8 @@ Method | HTTP request | Description
 [**PostGetPrepperTemplateList**](TemplatesApi.md#postgetpreppertemplatelist) | **POST** /GetPrepperTemplateList | Get Prepper Template List
 
 
-
-## PostApplyPrepperTemplate
-
+<a name="postapplypreppertemplate"></a>
+# **PostApplyPrepperTemplate**
 > ApplyPrepperTemplateResponse PostApplyPrepperTemplate (string contentType, ApplyPrepperTemplateRequest applyPrepperTemplateRequest = null)
 
 Apply a Prepper template
@@ -21,7 +20,6 @@ Apply a Prepper template
 #### The API call used when applying a template to a document.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -35,8 +33,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new TemplatesApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new TemplatesApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var applyPrepperTemplateRequest = new ApplyPrepperTemplateRequest(); // ApplyPrepperTemplateRequest | ##### Apply A Prepper Template Request Model. (optional) 
 
@@ -46,7 +45,7 @@ namespace Example
                 ApplyPrepperTemplateResponse result = apiInstance.PostApplyPrepperTemplate(contentType, applyPrepperTemplateRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling TemplatesApi.PostApplyPrepperTemplate: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -58,7 +57,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -75,8 +73,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -84,14 +82,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Apply A Prepper Template Response Model. |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostGetDocumentTagFieldBoxPosition
-
+<a name="postgetdocumenttagfieldboxposition"></a>
+# **PostGetDocumentTagFieldBoxPosition**
 > GetDocumentTagFieldBoxPositionResponse PostGetDocumentTagFieldBoxPosition (string contentType, GetDocumentTagFieldBoxPositionRequest getDocumentTagFieldBoxPositionRequest = null)
 
 Get Document Tag Field Box Position
@@ -99,7 +93,6 @@ Get Document Tag Field Box Position
 #### Used to get the tag field box position on a document.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -113,8 +106,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new TemplatesApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new TemplatesApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var getDocumentTagFieldBoxPositionRequest = new GetDocumentTagFieldBoxPositionRequest(); // GetDocumentTagFieldBoxPositionRequest | ##### Get Document Tag Field Box Position Request Model (optional) 
 
@@ -124,7 +118,7 @@ namespace Example
                 GetDocumentTagFieldBoxPositionResponse result = apiInstance.PostGetDocumentTagFieldBoxPosition(contentType, getDocumentTagFieldBoxPositionRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling TemplatesApi.PostGetDocumentTagFieldBoxPosition: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -136,7 +130,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -153,8 +146,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -162,14 +155,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Get Document Tag Field Box Position Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostGetDocumentTagFieldPosition
-
+<a name="postgetdocumenttagfieldposition"></a>
+# **PostGetDocumentTagFieldPosition**
 > GetDocumentTagFieldPositionResponse PostGetDocumentTagFieldPosition (string contentType, GetDocumentTagFieldPositionRequest getDocumentTagFieldPositionRequest = null)
 
 Get Document Tag Field Position
@@ -177,7 +166,6 @@ Get Document Tag Field Position
 #### Used to get the tag position on a document.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -191,8 +179,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new TemplatesApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new TemplatesApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var getDocumentTagFieldPositionRequest = new GetDocumentTagFieldPositionRequest(); // GetDocumentTagFieldPositionRequest | ##### Get Document Tag Field Position Request Model (optional) 
 
@@ -202,7 +191,7 @@ namespace Example
                 GetDocumentTagFieldPositionResponse result = apiInstance.PostGetDocumentTagFieldPosition(contentType, getDocumentTagFieldPositionRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling TemplatesApi.PostGetDocumentTagFieldPosition: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -214,7 +203,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -231,8 +219,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -240,14 +228,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Get Document Tag Field Position Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostGetPrepperTemplate
-
+<a name="postgetpreppertemplate"></a>
+# **PostGetPrepperTemplate**
 > GetPrepperTemplateResponse PostGetPrepperTemplate (string contentType, GetPrepperTemplateRequest getPrepperTemplateRequest = null)
 
 Get Prepper Template
@@ -255,7 +239,6 @@ Get Prepper Template
 #### Used to get a document template.  Enumerations used in this API Call include: | Enumeration    | Values          | | - -- -- -- -- -- -- - |:- -- -- -- -- -- -- --:| | **FieldTypeField** | 0  = Signature, 1  = NameText, 2  = DateText, 3  = EmailAddressText, 4  = ContactNumberText, 5  = PlainText, 6  = PlainTextOptional, 7  = FaceToface, 8  = Initial, 9  = CheckBox, 10 = F2FInitial, 11 = AddressText, 12 = CompanyNameText, 13 = OptionalCurrencyText, 14 = MandatoryCurrencyText, 15 = ReadOnlyText, 16 = NumericFieldOpt, 17 = NumericFieldMand, 18 = EmailInputOptional, 19 = EmailInput |
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -269,8 +252,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new TemplatesApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new TemplatesApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var getPrepperTemplateRequest = new GetPrepperTemplateRequest(); // GetPrepperTemplateRequest | ##### Get Prepper Template Request Model (optional) 
 
@@ -280,7 +264,7 @@ namespace Example
                 GetPrepperTemplateResponse result = apiInstance.PostGetPrepperTemplate(contentType, getPrepperTemplateRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling TemplatesApi.PostGetPrepperTemplate: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -292,7 +276,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -309,8 +292,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -318,14 +301,10 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Get Prepper Template Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## PostGetPrepperTemplateList
-
+<a name="postgetpreppertemplatelist"></a>
+# **PostGetPrepperTemplateList**
 > GetPrepperTemplateListResponse PostGetPrepperTemplateList (string contentType, GetPrepperTemplateListRequest getPrepperTemplateListRequest = null)
 
 Get Prepper Template List
@@ -333,7 +312,6 @@ Get Prepper Template List
 #### Used to get a list of document templates.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -347,8 +325,9 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://clientname.signiflow.com/API/SignFlowAPIServiceRest.svc";
-            var apiInstance = new TemplatesApi(Configuration.Default);
+            Configuration config = new Configuration();
+            config.BasePath = "https://server-url/API/SignFlowAPIServiceRest.svc";
+            var apiInstance = new TemplatesApi(config);
             var contentType = contentType_example;  // string |  (default to "application/json")
             var getPrepperTemplateListRequest = new GetPrepperTemplateListRequest(); // GetPrepperTemplateListRequest | ##### Get Prepper Template List Request Model (optional) 
 
@@ -358,7 +337,7 @@ namespace Example
                 GetPrepperTemplateListResponse result = apiInstance.PostGetPrepperTemplateList(contentType, getPrepperTemplateListRequest);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling TemplatesApi.PostGetPrepperTemplateList: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -370,7 +349,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -387,8 +365,8 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -396,8 +374,5 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | ##### Get Prepper Template List Response Model |  * Content-Type -  <br>  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

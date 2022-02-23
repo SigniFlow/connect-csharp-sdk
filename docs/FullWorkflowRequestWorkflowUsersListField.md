@@ -1,4 +1,3 @@
-
 # SigniFlow.Connect.Model.FullWorkflowRequestWorkflowUsersListField
 
 ## Properties
@@ -22,7 +21,5 @@ Name | Type | Description | Notes
 **UserLastNameField** | **string** | Face to face user&#39;s last name. | 
 **WorkflowUserFieldsField** | [**List&lt;FullWorkflowRequestWorkflowUserFieldsField&gt;**](FullWorkflowRequestWorkflowUserFieldsField.md) | The list of the workflowed documents field. | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

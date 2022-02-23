@@ -1,5 +1,5 @@
-
 # SigniFlow.Connect.Model.FullWorkflowRequest
+#### Request a fullworkflow of a document. 
 
 ## Properties
 
@@ -24,7 +24,5 @@ Name | Type | Description | Notes
 **TokenField** | [**TokenField**](TokenField.md) |  | 
 **WorkflowUsersListField** | [**List&lt;FullWorkflowRequestWorkflowUsersListField&gt;**](FullWorkflowRequestWorkflowUsersListField.md) | List of users in the workflow. | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

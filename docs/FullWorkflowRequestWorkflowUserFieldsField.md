@@ -1,4 +1,3 @@
-
 # SigniFlow.Connect.Model.FullWorkflowRequestWorkflowUserFieldsField
 
 ## Properties
@@ -20,7 +19,5 @@ Name | Type | Description | Notes
 **YCoordinateField** | **string** | The fields y-coordinates. | 
 **YOffsetField** | **decimal?** | The fields y-coordinates offset. | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

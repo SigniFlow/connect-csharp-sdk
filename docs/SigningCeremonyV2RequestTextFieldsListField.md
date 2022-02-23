@@ -1,4 +1,3 @@
-
 # SigniFlow.Connect.Model.SigningCeremonyV2RequestTextFieldsListField
 
 ## Properties
@@ -12,7 +11,5 @@ Name | Type | Description | Notes
 **TextFieldXField** | **decimal** | Text field x-coordinates. | [optional] 
 **TextFieldYField** | **decimal** | Text field y-coordinates. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,4 +1,3 @@
-
 # SigniFlow.Connect.Model.SigningCeremonyV2RequestInitialFieldsListField
 
 ## Properties
@@ -13,7 +12,5 @@ Name | Type | Description | Notes
 **InitialXField** | **decimal** | Initial field x-coordinates. | [optional] 
 **InitialYField** | **decimal** | Initial field y-coordinates. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,5 +1,5 @@
-
 # SigniFlow.Connect.Model.SharePortfolioNoEmailRequest
+#### The request sent when a user wants to share a portfolio but does not want an email to be sent.
 
 ## Properties
 
@@ -11,7 +11,5 @@ Name | Type | Description | Notes
 **TokenField** | [**TokenField**](TokenField.md) |  | 
 **UniqueIDField** | **string** | Based upon ShareOption, use either a team Id, Department Id, Business Id, or User ID \\ Email | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

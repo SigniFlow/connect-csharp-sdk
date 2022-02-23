@@ -1,5 +1,5 @@
-
 # SigniFlow.Connect.Model.SigningCeremonyV2Request
+#### The request sent to start the signing process of a document.
 
 ## Properties
 
@@ -32,7 +32,5 @@ Name | Type | Description | Notes
 **SignerTrustReferenceField** | **string** | A unique identifier that links back to an audit stored by the user calling the Signing Ceremony. | 
 **TextFieldsListField** | [**List&lt;SigningCeremonyV2RequestTextFieldsListField&gt;**](SigningCeremonyV2RequestTextFieldsListField.md) | The list of text fields. This is array is only required if you add text fields to your document. | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
