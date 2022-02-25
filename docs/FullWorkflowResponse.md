@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DocField** | **string** | The document that has completed the workflow process. | 
+**DocField** | **string** | The document that has completed the workflow process. | [optional] 
 **DocIDField** | **decimal** | Document ID | 
 **PortfolioIDField** | **decimal** | Portfolio ID | 
 **ResultField** | **string** | Displays the result of the call. | 

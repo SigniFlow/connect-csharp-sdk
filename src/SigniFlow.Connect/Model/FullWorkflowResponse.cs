@@ -47,28 +47,27 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowResponse" /> class.
         /// </summary>
-        /// <param name="docField">The document that has completed the workflow process. (required).</param>
+        /// <param name="docField">The document that has completed the workflow process..</param>
         /// <param name="docIDField">Document ID (required).</param>
         /// <param name="portfolioIDField">Portfolio ID (required).</param>
         /// <param name="resultField">Displays the result of the call. (required).</param>
         /// <param name="statusField">Document status that gets returned. (required).</param>
         public FullWorkflowResponse(string docField = default(string), decimal docIDField = default(decimal), decimal portfolioIDField = default(decimal), string resultField = default(string), string statusField = default(string))
         {
-            // to ensure "docField" is required (not null)
-            this.DocField = docField ?? throw new ArgumentNullException("docField is a required property for FullWorkflowResponse and cannot be null");
             this.DocIDField = docIDField;
             this.PortfolioIDField = portfolioIDField;
             // to ensure "resultField" is required (not null)
             this.ResultField = resultField ?? throw new ArgumentNullException("resultField is a required property for FullWorkflowResponse and cannot be null");
             // to ensure "statusField" is required (not null)
             this.StatusField = statusField ?? throw new ArgumentNullException("statusField is a required property for FullWorkflowResponse and cannot be null");
+            this.DocField = docField;
         }
 
         /// <summary>
         /// The document that has completed the workflow process.
         /// </summary>
         /// <value>The document that has completed the workflow process.</value>
-        [DataMember(Name = "DocField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "DocField", EmitDefaultValue = true)]
         public string DocField { get; set; }
 
         /// <summary>
