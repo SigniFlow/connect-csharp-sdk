@@ -55,40 +55,37 @@ namespace SigniFlow.Connect.Model
         /// <param name="fieldTypeField">fieldTypeField (required).</param>
         /// <param name="fontFamilyField">The font family of the fields text..</param>
         /// <param name="fontSizeField">The font size of the fields text..</param>
-        /// <param name="groupUserNumberField">The users in the group&#39;s user number. (required).</param>
+        /// <param name="groupUserNumberField">The users in the group&#39;s user number..</param>
         /// <param name="heightField">Field height. (required).</param>
-        /// <param name="isInvisibleField">Is the field visible. (required).</param>
+        /// <param name="isInvisibleField">Is the field visible..</param>
         /// <param name="pageNumberField">Field page number. (required).</param>
         /// <param name="tagNameField">Field tag name. Not required if the fields are defined..</param>
         /// <param name="valueField">Field value..</param>
         /// <param name="widthField">Field width. (required).</param>
         /// <param name="xCoordinateField">The fields x-coordinates. (required).</param>
-        /// <param name="xOffsetField">The fields x-coordinates offset. (required).</param>
+        /// <param name="xOffsetField">The fields x-coordinates offset..</param>
         /// <param name="yCoordinateField">The fields y-coordinates. (required).</param>
-        /// <param name="yOffsetField">The fields y-coordinates offset. (required).</param>
-        public FullWorkflowRequestWorkflowUserFieldsField(FieldType fieldTypeField = default(FieldType), string fontFamilyField = default(string), decimal? fontSizeField = default(decimal?), decimal? groupUserNumberField = default(decimal?), string heightField = default(string), bool isInvisibleField = default(bool), decimal pageNumberField = default(decimal), string tagNameField = default(string), string valueField = default(string), string widthField = default(string), string xCoordinateField = default(string), decimal? xOffsetField = default(decimal?), string yCoordinateField = default(string), decimal? yOffsetField = default(decimal?))
+        /// <param name="yOffsetField">The fields y-coordinates offset..</param>
+        public FullWorkflowRequestWorkflowUserFieldsField(FieldType fieldTypeField = default(FieldType), string fontFamilyField = default(string), decimal? fontSizeField = default(decimal?), decimal? groupUserNumberField = default(decimal?), string heightField = default(string), bool? isInvisibleField = default(bool?), decimal pageNumberField = default(decimal), string tagNameField = default(string), string valueField = default(string), string widthField = default(string), string xCoordinateField = default(string), decimal? xOffsetField = default(decimal?), string yCoordinateField = default(string), decimal? yOffsetField = default(decimal?))
         {
             this.FieldTypeField = fieldTypeField;
-            // to ensure "groupUserNumberField" is required (not null)
-            this.GroupUserNumberField = groupUserNumberField ?? throw new ArgumentNullException("groupUserNumberField is a required property for FullWorkflowRequestWorkflowUserFieldsField and cannot be null");
             // to ensure "heightField" is required (not null)
             this.HeightField = heightField ?? throw new ArgumentNullException("heightField is a required property for FullWorkflowRequestWorkflowUserFieldsField and cannot be null");
-            this.IsInvisibleField = isInvisibleField;
             this.PageNumberField = pageNumberField;
             // to ensure "widthField" is required (not null)
             this.WidthField = widthField ?? throw new ArgumentNullException("widthField is a required property for FullWorkflowRequestWorkflowUserFieldsField and cannot be null");
             // to ensure "xCoordinateField" is required (not null)
             this.XCoordinateField = xCoordinateField ?? throw new ArgumentNullException("xCoordinateField is a required property for FullWorkflowRequestWorkflowUserFieldsField and cannot be null");
-            // to ensure "xOffsetField" is required (not null)
-            this.XOffsetField = xOffsetField ?? throw new ArgumentNullException("xOffsetField is a required property for FullWorkflowRequestWorkflowUserFieldsField and cannot be null");
             // to ensure "yCoordinateField" is required (not null)
             this.YCoordinateField = yCoordinateField ?? throw new ArgumentNullException("yCoordinateField is a required property for FullWorkflowRequestWorkflowUserFieldsField and cannot be null");
-            // to ensure "yOffsetField" is required (not null)
-            this.YOffsetField = yOffsetField ?? throw new ArgumentNullException("yOffsetField is a required property for FullWorkflowRequestWorkflowUserFieldsField and cannot be null");
             this.FontFamilyField = fontFamilyField;
             this.FontSizeField = fontSizeField;
+            this.GroupUserNumberField = groupUserNumberField;
+            this.IsInvisibleField = isInvisibleField;
             this.TagNameField = tagNameField;
             this.ValueField = valueField;
+            this.XOffsetField = xOffsetField;
+            this.YOffsetField = yOffsetField;
         }
 
         /// <summary>
@@ -109,7 +106,7 @@ namespace SigniFlow.Connect.Model
         /// The users in the group&#39;s user number.
         /// </summary>
         /// <value>The users in the group&#39;s user number.</value>
-        [DataMember(Name = "GroupUserNumberField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "GroupUserNumberField", EmitDefaultValue = true)]
         public decimal? GroupUserNumberField { get; set; }
 
         /// <summary>
@@ -123,8 +120,8 @@ namespace SigniFlow.Connect.Model
         /// Is the field visible.
         /// </summary>
         /// <value>Is the field visible.</value>
-        [DataMember(Name = "IsInvisibleField", IsRequired = true, EmitDefaultValue = true)]
-        public bool IsInvisibleField { get; set; }
+        [DataMember(Name = "IsInvisibleField", EmitDefaultValue = true)]
+        public bool? IsInvisibleField { get; set; }
 
         /// <summary>
         /// Field page number.
@@ -165,7 +162,7 @@ namespace SigniFlow.Connect.Model
         /// The fields x-coordinates offset.
         /// </summary>
         /// <value>The fields x-coordinates offset.</value>
-        [DataMember(Name = "XOffsetField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "XOffsetField", EmitDefaultValue = true)]
         public decimal? XOffsetField { get; set; }
 
         /// <summary>
@@ -179,7 +176,7 @@ namespace SigniFlow.Connect.Model
         /// The fields y-coordinates offset.
         /// </summary>
         /// <value>The fields y-coordinates offset.</value>
-        [DataMember(Name = "YOffsetField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "YOffsetField", EmitDefaultValue = true)]
         public decimal? YOffsetField { get; set; }
 
         /// <summary>
@@ -264,7 +261,8 @@ namespace SigniFlow.Connect.Model
                 ) && 
                 (
                     this.IsInvisibleField == input.IsInvisibleField ||
-                    this.IsInvisibleField.Equals(input.IsInvisibleField)
+                    (this.IsInvisibleField != null &&
+                    this.IsInvisibleField.Equals(input.IsInvisibleField))
                 ) && 
                 (
                     this.PageNumberField == input.PageNumberField ||
@@ -325,7 +323,8 @@ namespace SigniFlow.Connect.Model
                     hashCode = hashCode * 59 + this.GroupUserNumberField.GetHashCode();
                 if (this.HeightField != null)
                     hashCode = hashCode * 59 + this.HeightField.GetHashCode();
-                hashCode = hashCode * 59 + this.IsInvisibleField.GetHashCode();
+                if (this.IsInvisibleField != null)
+                    hashCode = hashCode * 59 + this.IsInvisibleField.GetHashCode();
                 hashCode = hashCode * 59 + this.PageNumberField.GetHashCode();
                 if (this.TagNameField != null)
                     hashCode = hashCode * 59 + this.TagNameField.GetHashCode();
@@ -352,28 +351,10 @@ namespace SigniFlow.Connect.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // FontFamilyField (string) minLength
-            if(this.FontFamilyField != null && this.FontFamilyField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FontFamilyField, length must be greater than 1.", new [] { "FontFamilyField" });
-            }
-
             // HeightField (string) minLength
             if(this.HeightField != null && this.HeightField.Length < 1)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for HeightField, length must be greater than 1.", new [] { "HeightField" });
-            }
-
-            // TagNameField (string) minLength
-            if(this.TagNameField != null && this.TagNameField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TagNameField, length must be greater than 1.", new [] { "TagNameField" });
-            }
-
-            // ValueField (string) minLength
-            if(this.ValueField != null && this.ValueField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ValueField, length must be greater than 1.", new [] { "ValueField" });
             }
 
             // WidthField (string) minLength

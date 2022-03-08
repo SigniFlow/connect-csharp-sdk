@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LanguageCodeField** | **string** |  | 
+**LanguageCodeField** | **string** |  | [optional] 
 **UserEmailField** | **string** |  | 
 **UserFullNameField** | **string** |  | 
 **UserMobileNumberField** | **string** |  | 

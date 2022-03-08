@@ -69,18 +69,18 @@ namespace SigniFlow.Connect.Model
         /// <param name="docNameField">Document name. (required).</param>
         /// <param name="dueDateField">Document due date..</param>
         /// <param name="extensionField">extensionField (required).</param>
-        /// <param name="flattenDocumentField">Flatten document. (required).</param>
-        /// <param name="keepContentSecurityField">Keep content security. (required).</param>
-        /// <param name="keepCustomPropertiesField">Keep custom properties. (required).</param>
-        /// <param name="keepXMPMetadataField">Keep XMP meta data. (required).</param>
-        /// <param name="portfolioInformationField">portfolioInformationField (required).</param>
+        /// <param name="flattenDocumentField">Flatten document..</param>
+        /// <param name="keepContentSecurityField">Keep content security..</param>
+        /// <param name="keepCustomPropertiesField">Keep custom properties..</param>
+        /// <param name="keepXMPMetadataField">Keep XMP meta data..</param>
+        /// <param name="portfolioInformationField">portfolioInformationField.</param>
         /// <param name="priorityField">priorityField.</param>
         /// <param name="sLAField">This field has been deprecated, the default value is 0..</param>
         /// <param name="sendFirstEmailField">Confirm first user email notification will or will not be sent. (required).</param>
         /// <param name="sendWorkflowEmailsField">Confirm that workflow emails will or will not be sent. (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
         /// <param name="workflowUsersListField">List of users in the workflow. (required).</param>
-        public FullWorkflowRequest(string additionalDataField = default(string), AutoRemind autoRemindField = default(AutoRemind), string customMessageField = default(string), string docField = default(string), string docNameField = default(string), DateTime? dueDateField = default(DateTime?), DocExtension extensionField = default(DocExtension), bool flattenDocumentField = default(bool), bool keepContentSecurityField = default(bool), bool keepCustomPropertiesField = default(bool), bool keepXMPMetadataField = default(bool), FullWorkflowRequestPortfolioInformationField portfolioInformationField = default(FullWorkflowRequestPortfolioInformationField), Priority? priorityField = default(Priority?), decimal sLAField = default(decimal), bool sendFirstEmailField = default(bool), bool sendWorkflowEmailsField = default(bool), TokenField tokenField = default(TokenField), List<FullWorkflowRequestWorkflowUsersListField> workflowUsersListField = default(List<FullWorkflowRequestWorkflowUsersListField>))
+        public FullWorkflowRequest(string additionalDataField = default(string), AutoRemind autoRemindField = default(AutoRemind), string customMessageField = default(string), string docField = default(string), string docNameField = default(string), DateTime? dueDateField = default(DateTime?), DocExtension extensionField = default(DocExtension), bool? flattenDocumentField = default(bool?), bool? keepContentSecurityField = default(bool?), bool? keepCustomPropertiesField = default(bool?), bool? keepXMPMetadataField = default(bool?), FullWorkflowRequestPortfolioInformationField portfolioInformationField = default(FullWorkflowRequestPortfolioInformationField), Priority? priorityField = default(Priority?), decimal sLAField = default(decimal), bool sendFirstEmailField = default(bool), bool sendWorkflowEmailsField = default(bool), TokenField tokenField = default(TokenField), List<FullWorkflowRequestWorkflowUsersListField> workflowUsersListField = default(List<FullWorkflowRequestWorkflowUsersListField>))
         {
             this.AutoRemindField = autoRemindField;
             // to ensure "docField" is required (not null)
@@ -88,12 +88,6 @@ namespace SigniFlow.Connect.Model
             // to ensure "docNameField" is required (not null)
             this.DocNameField = docNameField ?? throw new ArgumentNullException("docNameField is a required property for FullWorkflowRequest and cannot be null");
             this.ExtensionField = extensionField;
-            this.FlattenDocumentField = flattenDocumentField;
-            this.KeepContentSecurityField = keepContentSecurityField;
-            this.KeepCustomPropertiesField = keepCustomPropertiesField;
-            this.KeepXMPMetadataField = keepXMPMetadataField;
-            // to ensure "portfolioInformationField" is required (not null)
-            this.PortfolioInformationField = portfolioInformationField ?? throw new ArgumentNullException("portfolioInformationField is a required property for FullWorkflowRequest and cannot be null");
             this.SendFirstEmailField = sendFirstEmailField;
             this.SendWorkflowEmailsField = sendWorkflowEmailsField;
             // to ensure "tokenField" is required (not null)
@@ -103,6 +97,11 @@ namespace SigniFlow.Connect.Model
             this.AdditionalDataField = additionalDataField;
             this.CustomMessageField = customMessageField;
             this.DueDateField = dueDateField;
+            this.FlattenDocumentField = flattenDocumentField;
+            this.KeepContentSecurityField = keepContentSecurityField;
+            this.KeepCustomPropertiesField = keepCustomPropertiesField;
+            this.KeepXMPMetadataField = keepXMPMetadataField;
+            this.PortfolioInformationField = portfolioInformationField;
             this.PriorityField = priorityField;
             this.SLAField = sLAField;
         }
@@ -147,34 +146,34 @@ namespace SigniFlow.Connect.Model
         /// Flatten document.
         /// </summary>
         /// <value>Flatten document.</value>
-        [DataMember(Name = "FlattenDocumentField", IsRequired = true, EmitDefaultValue = true)]
-        public bool FlattenDocumentField { get; set; }
+        [DataMember(Name = "FlattenDocumentField", EmitDefaultValue = true)]
+        public bool? FlattenDocumentField { get; set; }
 
         /// <summary>
         /// Keep content security.
         /// </summary>
         /// <value>Keep content security.</value>
-        [DataMember(Name = "KeepContentSecurityField", IsRequired = true, EmitDefaultValue = true)]
-        public bool KeepContentSecurityField { get; set; }
+        [DataMember(Name = "KeepContentSecurityField", EmitDefaultValue = true)]
+        public bool? KeepContentSecurityField { get; set; }
 
         /// <summary>
         /// Keep custom properties.
         /// </summary>
         /// <value>Keep custom properties.</value>
-        [DataMember(Name = "KeepCustomPropertiesField", IsRequired = true, EmitDefaultValue = true)]
-        public bool KeepCustomPropertiesField { get; set; }
+        [DataMember(Name = "KeepCustomPropertiesField", EmitDefaultValue = true)]
+        public bool? KeepCustomPropertiesField { get; set; }
 
         /// <summary>
         /// Keep XMP meta data.
         /// </summary>
         /// <value>Keep XMP meta data.</value>
-        [DataMember(Name = "KeepXMPMetadataField", IsRequired = true, EmitDefaultValue = true)]
-        public bool KeepXMPMetadataField { get; set; }
+        [DataMember(Name = "KeepXMPMetadataField", EmitDefaultValue = true)]
+        public bool? KeepXMPMetadataField { get; set; }
 
         /// <summary>
         /// Gets or Sets PortfolioInformationField
         /// </summary>
-        [DataMember(Name = "PortfolioInformationField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "PortfolioInformationField", EmitDefaultValue = true)]
         public FullWorkflowRequestPortfolioInformationField PortfolioInformationField { get; set; }
 
         /// <summary>
@@ -306,19 +305,23 @@ namespace SigniFlow.Connect.Model
                 ) && 
                 (
                     this.FlattenDocumentField == input.FlattenDocumentField ||
-                    this.FlattenDocumentField.Equals(input.FlattenDocumentField)
+                    (this.FlattenDocumentField != null &&
+                    this.FlattenDocumentField.Equals(input.FlattenDocumentField))
                 ) && 
                 (
                     this.KeepContentSecurityField == input.KeepContentSecurityField ||
-                    this.KeepContentSecurityField.Equals(input.KeepContentSecurityField)
+                    (this.KeepContentSecurityField != null &&
+                    this.KeepContentSecurityField.Equals(input.KeepContentSecurityField))
                 ) && 
                 (
                     this.KeepCustomPropertiesField == input.KeepCustomPropertiesField ||
-                    this.KeepCustomPropertiesField.Equals(input.KeepCustomPropertiesField)
+                    (this.KeepCustomPropertiesField != null &&
+                    this.KeepCustomPropertiesField.Equals(input.KeepCustomPropertiesField))
                 ) && 
                 (
                     this.KeepXMPMetadataField == input.KeepXMPMetadataField ||
-                    this.KeepXMPMetadataField.Equals(input.KeepXMPMetadataField)
+                    (this.KeepXMPMetadataField != null &&
+                    this.KeepXMPMetadataField.Equals(input.KeepXMPMetadataField))
                 ) && 
                 (
                     this.PortfolioInformationField == input.PortfolioInformationField ||
@@ -375,10 +378,14 @@ namespace SigniFlow.Connect.Model
                 if (this.DueDateField != null)
                     hashCode = hashCode * 59 + this.DueDateField.GetHashCode();
                 hashCode = hashCode * 59 + this.ExtensionField.GetHashCode();
-                hashCode = hashCode * 59 + this.FlattenDocumentField.GetHashCode();
-                hashCode = hashCode * 59 + this.KeepContentSecurityField.GetHashCode();
-                hashCode = hashCode * 59 + this.KeepCustomPropertiesField.GetHashCode();
-                hashCode = hashCode * 59 + this.KeepXMPMetadataField.GetHashCode();
+                if (this.FlattenDocumentField != null)
+                    hashCode = hashCode * 59 + this.FlattenDocumentField.GetHashCode();
+                if (this.KeepContentSecurityField != null)
+                    hashCode = hashCode * 59 + this.KeepContentSecurityField.GetHashCode();
+                if (this.KeepCustomPropertiesField != null)
+                    hashCode = hashCode * 59 + this.KeepCustomPropertiesField.GetHashCode();
+                if (this.KeepXMPMetadataField != null)
+                    hashCode = hashCode * 59 + this.KeepXMPMetadataField.GetHashCode();
                 if (this.PortfolioInformationField != null)
                     hashCode = hashCode * 59 + this.PortfolioInformationField.GetHashCode();
                 hashCode = hashCode * 59 + this.PriorityField.GetHashCode();
@@ -400,18 +407,6 @@ namespace SigniFlow.Connect.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // AdditionalDataField (string) minLength
-            if(this.AdditionalDataField != null && this.AdditionalDataField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AdditionalDataField, length must be greater than 1.", new [] { "AdditionalDataField" });
-            }
-
-            // CustomMessageField (string) minLength
-            if(this.CustomMessageField != null && this.CustomMessageField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CustomMessageField, length must be greater than 1.", new [] { "CustomMessageField" });
-            }
-
             // DocField (string) minLength
             if(this.DocField != null && this.DocField.Length < 1)
             {

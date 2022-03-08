@@ -47,26 +47,25 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowRequestGroupStepFieldGroupMembersField" /> class.
         /// </summary>
-        /// <param name="languageCodeField">languageCodeField (required).</param>
+        /// <param name="languageCodeField">languageCodeField.</param>
         /// <param name="userEmailField">userEmailField (required).</param>
         /// <param name="userFullNameField">userFullNameField (required).</param>
         /// <param name="userMobileNumberField">userMobileNumberField (required).</param>
         public FullWorkflowRequestGroupStepFieldGroupMembersField(string languageCodeField = default(string), string userEmailField = default(string), string userFullNameField = default(string), string userMobileNumberField = default(string))
         {
-            // to ensure "languageCodeField" is required (not null)
-            this.LanguageCodeField = languageCodeField ?? throw new ArgumentNullException("languageCodeField is a required property for FullWorkflowRequestGroupStepFieldGroupMembersField and cannot be null");
             // to ensure "userEmailField" is required (not null)
             this.UserEmailField = userEmailField ?? throw new ArgumentNullException("userEmailField is a required property for FullWorkflowRequestGroupStepFieldGroupMembersField and cannot be null");
             // to ensure "userFullNameField" is required (not null)
             this.UserFullNameField = userFullNameField ?? throw new ArgumentNullException("userFullNameField is a required property for FullWorkflowRequestGroupStepFieldGroupMembersField and cannot be null");
             // to ensure "userMobileNumberField" is required (not null)
             this.UserMobileNumberField = userMobileNumberField ?? throw new ArgumentNullException("userMobileNumberField is a required property for FullWorkflowRequestGroupStepFieldGroupMembersField and cannot be null");
+            this.LanguageCodeField = languageCodeField;
         }
 
         /// <summary>
         /// Gets or Sets LanguageCodeField
         /// </summary>
-        [DataMember(Name = "LanguageCodeField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "LanguageCodeField", EmitDefaultValue = true)]
         public string LanguageCodeField { get; set; }
 
         /// <summary>
@@ -183,12 +182,6 @@ namespace SigniFlow.Connect.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // LanguageCodeField (string) minLength
-            if(this.LanguageCodeField != null && this.LanguageCodeField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LanguageCodeField, length must be greater than 1.", new [] { "LanguageCodeField" });
-            }
-
             // UserEmailField (string) minLength
             if(this.UserEmailField != null && this.UserEmailField.Length < 1)
             {

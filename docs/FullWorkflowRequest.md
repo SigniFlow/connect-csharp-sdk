@@ -12,11 +12,11 @@ Name | Type | Description | Notes
 **DocNameField** | **string** | Document name. | 
 **DueDateField** | **DateTime?** | Document due date. | [optional] 
 **ExtensionField** | **DocExtension** |  | 
-**FlattenDocumentField** | **bool** | Flatten document. | 
-**KeepContentSecurityField** | **bool** | Keep content security. | 
-**KeepCustomPropertiesField** | **bool** | Keep custom properties. | 
-**KeepXMPMetadataField** | **bool** | Keep XMP meta data. | 
-**PortfolioInformationField** | [**FullWorkflowRequestPortfolioInformationField**](FullWorkflowRequestPortfolioInformationField.md) |  | 
+**FlattenDocumentField** | **bool?** | Flatten document. | [optional] 
+**KeepContentSecurityField** | **bool?** | Keep content security. | [optional] 
+**KeepCustomPropertiesField** | **bool?** | Keep custom properties. | [optional] 
+**KeepXMPMetadataField** | **bool?** | Keep XMP meta data. | [optional] 
+**PortfolioInformationField** | [**FullWorkflowRequestPortfolioInformationField**](FullWorkflowRequestPortfolioInformationField.md) |  | [optional] 
 **PriorityField** | **Priority** |  | [optional] 
 **SLAField** | **decimal** | This field has been deprecated, the default value is 0. | [optional] 
 **SendFirstEmailField** | **bool** | Confirm first user email notification will or will not be sent. | 

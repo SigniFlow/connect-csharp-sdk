@@ -60,47 +60,40 @@ namespace SigniFlow.Connect.Model
         /// <param name="actionField">actionField (required).</param>
         /// <param name="allowProxyField">allowProxyField (required).</param>
         /// <param name="autoSignField">### Enable auto sign.  &#x60;True &#x3D; Signature will be applied automaticly False &#x3D; User will need to login and Sign&#x60;  (required).</param>
-        /// <param name="emailAddressField">Workflow user&#39;s email addresses. (required).</param>
+        /// <param name="emailAddressField">Workflow user&#39;s email addresses..</param>
         /// <param name="groupStepField">groupStepField.</param>
-        /// <param name="languageCodeField">#### Sets the display language for the user ##### ISO 2 Digit Code  &#x60;en &#x3D; English es &#x3D; Spanish fr &#x3D; French&#x60;  (required).</param>
+        /// <param name="languageCodeField">#### Sets the display language for the user ##### ISO 2 Digit Code  &#x60;en &#x3D; English es &#x3D; Spanish fr &#x3D; French&#x60; .</param>
         /// <param name="latitudeField">The current GPS lattitude location where the signing is taking place from. Needs to be paired with the longitude field. (required).</param>
         /// <param name="longitudeField">The current GPS longitudelocation where the signing is taking place from. Needs to be paired with the lattitude field. (required).</param>
-        /// <param name="mobileNumberField">Group user&#39;s mobile number. (required).</param>
+        /// <param name="mobileNumberField">Group user&#39;s mobile number..</param>
         /// <param name="preloadedFaceToFaceSignersField">Preloaded user&#39;s who will be using the face to face signature field..</param>
         /// <param name="signReasonField">Reason for signature..</param>
-        /// <param name="signerPasswordField">Face to face user&#39;s password. (required).</param>
-        /// <param name="userFirstNameField">Face to face user&#39;s first name. (required).</param>
-        /// <param name="userFullNameField">Face to face user&#39;s full name. (required).</param>
-        /// <param name="userLastNameField">Face to face user&#39;s last name. (required).</param>
+        /// <param name="signerPasswordField">Face to face user&#39;s password..</param>
+        /// <param name="userFirstNameField">Face to face user&#39;s first name..</param>
+        /// <param name="userFullNameField">Face to face user&#39;s full name..</param>
+        /// <param name="userLastNameField">Face to face user&#39;s last name..</param>
         /// <param name="workflowUserFieldsField">The list of the workflowed documents field. (required).</param>
         public FullWorkflowRequestWorkflowUsersListField(ActionField actionField = default(ActionField), ProxyAllowedField allowProxyField = default(ProxyAllowedField), bool autoSignField = default(bool), string emailAddressField = default(string), FullWorkflowRequestGroupStepField groupStepField = default(FullWorkflowRequestGroupStepField), string languageCodeField = default(string), string latitudeField = default(string), string longitudeField = default(string), string mobileNumberField = default(string), List<Object> preloadedFaceToFaceSignersField = default(List<Object>), string signReasonField = default(string), string signerPasswordField = default(string), string userFirstNameField = default(string), string userFullNameField = default(string), string userLastNameField = default(string), List<FullWorkflowRequestWorkflowUserFieldsField> workflowUserFieldsField = default(List<FullWorkflowRequestWorkflowUserFieldsField>))
         {
             this.ActionField = actionField;
             this.AllowProxyField = allowProxyField;
             this.AutoSignField = autoSignField;
-            // to ensure "emailAddressField" is required (not null)
-            this.EmailAddressField = emailAddressField ?? throw new ArgumentNullException("emailAddressField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
-            // to ensure "languageCodeField" is required (not null)
-            this.LanguageCodeField = languageCodeField ?? throw new ArgumentNullException("languageCodeField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
             // to ensure "latitudeField" is required (not null)
             this.LatitudeField = latitudeField ?? throw new ArgumentNullException("latitudeField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
             // to ensure "longitudeField" is required (not null)
             this.LongitudeField = longitudeField ?? throw new ArgumentNullException("longitudeField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
-            // to ensure "mobileNumberField" is required (not null)
-            this.MobileNumberField = mobileNumberField ?? throw new ArgumentNullException("mobileNumberField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
-            // to ensure "signerPasswordField" is required (not null)
-            this.SignerPasswordField = signerPasswordField ?? throw new ArgumentNullException("signerPasswordField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
-            // to ensure "userFirstNameField" is required (not null)
-            this.UserFirstNameField = userFirstNameField ?? throw new ArgumentNullException("userFirstNameField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
-            // to ensure "userFullNameField" is required (not null)
-            this.UserFullNameField = userFullNameField ?? throw new ArgumentNullException("userFullNameField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
-            // to ensure "userLastNameField" is required (not null)
-            this.UserLastNameField = userLastNameField ?? throw new ArgumentNullException("userLastNameField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
             // to ensure "workflowUserFieldsField" is required (not null)
             this.WorkflowUserFieldsField = workflowUserFieldsField ?? throw new ArgumentNullException("workflowUserFieldsField is a required property for FullWorkflowRequestWorkflowUsersListField and cannot be null");
+            this.EmailAddressField = emailAddressField;
             this.GroupStepField = groupStepField;
+            this.LanguageCodeField = languageCodeField;
+            this.MobileNumberField = mobileNumberField;
             this.PreloadedFaceToFaceSignersField = preloadedFaceToFaceSignersField;
             this.SignReasonField = signReasonField;
+            this.SignerPasswordField = signerPasswordField;
+            this.UserFirstNameField = userFirstNameField;
+            this.UserFullNameField = userFullNameField;
+            this.UserLastNameField = userLastNameField;
         }
 
         /// <summary>
@@ -114,7 +107,7 @@ namespace SigniFlow.Connect.Model
         /// Workflow user&#39;s email addresses.
         /// </summary>
         /// <value>Workflow user&#39;s email addresses.</value>
-        [DataMember(Name = "EmailAddressField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "EmailAddressField", EmitDefaultValue = true)]
         public string EmailAddressField { get; set; }
 
         /// <summary>
@@ -127,7 +120,7 @@ namespace SigniFlow.Connect.Model
         /// #### Sets the display language for the user ##### ISO 2 Digit Code  &#x60;en &#x3D; English es &#x3D; Spanish fr &#x3D; French&#x60; 
         /// </summary>
         /// <value>#### Sets the display language for the user ##### ISO 2 Digit Code  &#x60;en &#x3D; English es &#x3D; Spanish fr &#x3D; French&#x60; </value>
-        [DataMember(Name = "LanguageCodeField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "LanguageCodeField", EmitDefaultValue = true)]
         public string LanguageCodeField { get; set; }
 
         /// <summary>
@@ -148,7 +141,7 @@ namespace SigniFlow.Connect.Model
         /// Group user&#39;s mobile number.
         /// </summary>
         /// <value>Group user&#39;s mobile number.</value>
-        [DataMember(Name = "MobileNumberField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "MobileNumberField", EmitDefaultValue = true)]
         public string MobileNumberField { get; set; }
 
         /// <summary>
@@ -169,28 +162,28 @@ namespace SigniFlow.Connect.Model
         /// Face to face user&#39;s password.
         /// </summary>
         /// <value>Face to face user&#39;s password.</value>
-        [DataMember(Name = "SignerPasswordField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "SignerPasswordField", EmitDefaultValue = true)]
         public string SignerPasswordField { get; set; }
 
         /// <summary>
         /// Face to face user&#39;s first name.
         /// </summary>
         /// <value>Face to face user&#39;s first name.</value>
-        [DataMember(Name = "UserFirstNameField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "UserFirstNameField", EmitDefaultValue = true)]
         public string UserFirstNameField { get; set; }
 
         /// <summary>
         /// Face to face user&#39;s full name.
         /// </summary>
         /// <value>Face to face user&#39;s full name.</value>
-        [DataMember(Name = "UserFullNameField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "UserFullNameField", EmitDefaultValue = true)]
         public string UserFullNameField { get; set; }
 
         /// <summary>
         /// Face to face user&#39;s last name.
         /// </summary>
         /// <value>Face to face user&#39;s last name.</value>
-        [DataMember(Name = "UserLastNameField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "UserLastNameField", EmitDefaultValue = true)]
         public string UserLastNameField { get; set; }
 
         /// <summary>
@@ -388,64 +381,10 @@ namespace SigniFlow.Connect.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // EmailAddressField (string) minLength
-            if(this.EmailAddressField != null && this.EmailAddressField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EmailAddressField, length must be greater than 1.", new [] { "EmailAddressField" });
-            }
-
-            // LanguageCodeField (string) minLength
-            if(this.LanguageCodeField != null && this.LanguageCodeField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LanguageCodeField, length must be greater than 1.", new [] { "LanguageCodeField" });
-            }
-
-            // LatitudeField (string) minLength
-            if(this.LatitudeField != null && this.LatitudeField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LatitudeField, length must be greater than 1.", new [] { "LatitudeField" });
-            }
-
-            // LongitudeField (string) minLength
-            if(this.LongitudeField != null && this.LongitudeField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LongitudeField, length must be greater than 1.", new [] { "LongitudeField" });
-            }
-
-            // MobileNumberField (string) minLength
-            if(this.MobileNumberField != null && this.MobileNumberField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for MobileNumberField, length must be greater than 1.", new [] { "MobileNumberField" });
-            }
-
             // SignReasonField (string) minLength
             if(this.SignReasonField != null && this.SignReasonField.Length < 1)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SignReasonField, length must be greater than 1.", new [] { "SignReasonField" });
-            }
-
-            // SignerPasswordField (string) minLength
-            if(this.SignerPasswordField != null && this.SignerPasswordField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SignerPasswordField, length must be greater than 1.", new [] { "SignerPasswordField" });
-            }
-
-            // UserFirstNameField (string) minLength
-            if(this.UserFirstNameField != null && this.UserFirstNameField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for UserFirstNameField, length must be greater than 1.", new [] { "UserFirstNameField" });
-            }
-
-            // UserFullNameField (string) minLength
-            if(this.UserFullNameField != null && this.UserFullNameField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for UserFullNameField, length must be greater than 1.", new [] { "UserFullNameField" });
-            }
-
-            // UserLastNameField (string) minLength
-            if(this.UserLastNameField != null && this.UserLastNameField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for UserLastNameField, length must be greater than 1.", new [] { "UserLastNameField" });
             }
 
             yield break;

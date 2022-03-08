@@ -49,18 +49,17 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         /// <param name="docField">The document that has completed the workflow process..</param>
         /// <param name="docIDField">Document ID (required).</param>
-        /// <param name="portfolioIDField">Portfolio ID (required).</param>
+        /// <param name="portfolioIDField">Portfolio ID.</param>
         /// <param name="resultField">Displays the result of the call. (required).</param>
-        /// <param name="statusField">Document status that gets returned. (required).</param>
+        /// <param name="statusField">Document status that gets returned..</param>
         public FullWorkflowResponse(string docField = default(string), decimal docIDField = default(decimal), decimal portfolioIDField = default(decimal), string resultField = default(string), string statusField = default(string))
         {
             this.DocIDField = docIDField;
-            this.PortfolioIDField = portfolioIDField;
             // to ensure "resultField" is required (not null)
             this.ResultField = resultField ?? throw new ArgumentNullException("resultField is a required property for FullWorkflowResponse and cannot be null");
-            // to ensure "statusField" is required (not null)
-            this.StatusField = statusField ?? throw new ArgumentNullException("statusField is a required property for FullWorkflowResponse and cannot be null");
             this.DocField = docField;
+            this.PortfolioIDField = portfolioIDField;
+            this.StatusField = statusField;
         }
 
         /// <summary>
@@ -81,7 +80,7 @@ namespace SigniFlow.Connect.Model
         /// Portfolio ID
         /// </summary>
         /// <value>Portfolio ID</value>
-        [DataMember(Name = "PortfolioIDField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "PortfolioIDField", EmitDefaultValue = true)]
         public decimal PortfolioIDField { get; set; }
 
         /// <summary>
@@ -95,7 +94,7 @@ namespace SigniFlow.Connect.Model
         /// Document status that gets returned.
         /// </summary>
         /// <value>Document status that gets returned.</value>
-        [DataMember(Name = "StatusField", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "StatusField", EmitDefaultValue = true)]
         public string StatusField { get; set; }
 
         /// <summary>
@@ -198,22 +197,10 @@ namespace SigniFlow.Connect.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // DocField (string) minLength
-            if(this.DocField != null && this.DocField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DocField, length must be greater than 1.", new [] { "DocField" });
-            }
-
             // ResultField (string) minLength
             if(this.ResultField != null && this.ResultField.Length < 1)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ResultField, length must be greater than 1.", new [] { "ResultField" });
-            }
-
-            // StatusField (string) minLength
-            if(this.StatusField != null && this.StatusField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StatusField, length must be greater than 1.", new [] { "StatusField" });
             }
 
             yield break;
