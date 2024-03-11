@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalDataField** | **string** | Additional data. | [optional] 
 **AutoRemindField** | **AutoRemind** |  | 
+**AutoExpireField** | **AutoExpire** |  | 
 **CustomMessageField** | **string** | Custom message. | [optional] 
 **DocField** | **string** | Document field. | 
 **DocNameField** | **string** | Document name. | 
