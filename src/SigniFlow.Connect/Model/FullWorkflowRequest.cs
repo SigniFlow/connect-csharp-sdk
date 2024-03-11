@@ -38,6 +38,11 @@ namespace SigniFlow.Connect.Model
         [DataMember(Name = "AutoRemindField", IsRequired = true, EmitDefaultValue = true)]
         public AutoRemind AutoRemindField { get; set; }
         /// <summary>
+        /// Gets or Sets AutoExpireField
+        /// </summary>
+        [DataMember(Name = "AutoExpireField", IsRequired = true, EmitDefaultValue = true)]
+        public AutoExpire AutoExpireField { get; set; }
+        /// <summary>
         /// Gets or Sets ExtensionField
         /// </summary>
         [DataMember(Name = "ExtensionField", IsRequired = true, EmitDefaultValue = true)]
@@ -47,18 +52,18 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         [DataMember(Name = "PriorityField", EmitDefaultValue = true)]
         public Priority? PriorityField { get; set; }
-//    
-//    
-//        /// <summary>
-//        /// Initializes a new instance of the <see cref="FullWorkflowRequest" /> class.
-//        /// </summary>
-//        [JsonConstructorAttribute]
-//        
-//        protected FullWorkflowRequest() { }
-//        
-//        
-//    
-//    
+        //    
+        //    
+        //        /// <summary>
+        //        /// Initializes a new instance of the <see cref="FullWorkflowRequest" /> class.
+        //        /// </summary>
+        //        [JsonConstructorAttribute]
+        //        
+        //        protected FullWorkflowRequest() { }
+        //        
+        //        
+        //    
+        //    
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowRequest" /> class.
         /// </summary>
@@ -80,7 +85,17 @@ namespace SigniFlow.Connect.Model
         /// <param name="sendWorkflowEmailsField">Confirm that workflow emails will or will not be sent. (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
         /// <param name="workflowUsersListField">List of users in the workflow. (required).</param>
-        public FullWorkflowRequest(string additionalDataField = default(string), AutoRemind autoRemindField = default(AutoRemind), string customMessageField = default(string), string docField = default(string), string docNameField = default(string), DateTime? dueDateField = default(DateTime?), DocExtension extensionField = default(DocExtension), bool? flattenDocumentField = default(bool?), bool? keepContentSecurityField = default(bool?), bool? keepCustomPropertiesField = default(bool?), bool? keepXMPMetadataField = default(bool?), FullWorkflowRequestPortfolioInformationField portfolioInformationField = default(FullWorkflowRequestPortfolioInformationField), Priority? priorityField = default(Priority?), decimal sLAField = default(decimal), bool sendFirstEmailField = default(bool), bool sendWorkflowEmailsField = default(bool), TokenField tokenField = default(TokenField), List<FullWorkflowRequestWorkflowUsersListField> workflowUsersListField = default(List<FullWorkflowRequestWorkflowUsersListField>))
+        /// <param name="autoExpireField">autoExpireField (required).</param>
+        public FullWorkflowRequest(string additionalDataField = default(string), AutoRemind autoRemindField = default(AutoRemind), 
+            string customMessageField = default(string), string docField = default(string), string docNameField = default(string), 
+            DateTime? dueDateField = default(DateTime?), DocExtension extensionField = default(DocExtension), 
+            bool? flattenDocumentField = default(bool?), bool? keepContentSecurityField = default(bool?), 
+            bool? keepCustomPropertiesField = default(bool?), bool? keepXMPMetadataField = default(bool?), 
+            FullWorkflowRequestPortfolioInformationField portfolioInformationField = default(FullWorkflowRequestPortfolioInformationField), 
+            Priority? priorityField = default(Priority?), decimal sLAField = default(decimal), bool sendFirstEmailField = default(bool), 
+            bool sendWorkflowEmailsField = default(bool), TokenField tokenField = default(TokenField), 
+            List<FullWorkflowRequestWorkflowUsersListField> workflowUsersListField = default(List<FullWorkflowRequestWorkflowUsersListField>),
+            AutoExpire autoExpireField = default(AutoExpire))
         {
             this.AutoRemindField = autoRemindField;
             // to ensure "docField" is required (not null)
@@ -104,6 +119,7 @@ namespace SigniFlow.Connect.Model
             this.PortfolioInformationField = portfolioInformationField;
             this.PriorityField = priorityField;
             this.SLAField = sLAField;
+            this.AutoExpireField = autoExpireField;
         }
 
         /// <summary>
@@ -219,7 +235,7 @@ namespace SigniFlow.Connect.Model
             var sb = new StringBuilder();
             sb.Append("class FullWorkflowRequest {\n");
             sb.Append("  AdditionalDataField: ").Append(AdditionalDataField).Append("\n");
-            sb.Append("  AutoRemindField: ").Append(AutoRemindField).Append("\n");
+            sb.Append("  AutoRemindField: ").Append(AutoRemindField).Append("\n");           
             sb.Append("  CustomMessageField: ").Append(CustomMessageField).Append("\n");
             sb.Append("  DocField: ").Append(DocField).Append("\n");
             sb.Append("  DocNameField: ").Append(DocNameField).Append("\n");
@@ -236,6 +252,7 @@ namespace SigniFlow.Connect.Model
             sb.Append("  SendWorkflowEmailsField: ").Append(SendWorkflowEmailsField).Append("\n");
             sb.Append("  TokenField: ").Append(TokenField).Append("\n");
             sb.Append("  WorkflowUsersListField: ").Append(WorkflowUsersListField).Append("\n");
+            sb.Append("  AutoExpireField: ").Append(AutoExpireField).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -354,6 +371,10 @@ namespace SigniFlow.Connect.Model
                     this.WorkflowUsersListField != null &&
                     input.WorkflowUsersListField != null &&
                     this.WorkflowUsersListField.SequenceEqual(input.WorkflowUsersListField)
+                ) &&
+                (
+                    this.AutoExpireField == input.AutoExpireField ||
+                    this.AutoExpireField.Equals(input.AutoExpireField)
                 );
         }
 
@@ -396,6 +417,7 @@ namespace SigniFlow.Connect.Model
                     hashCode = hashCode * 59 + this.TokenField.GetHashCode();
                 if (this.WorkflowUsersListField != null)
                     hashCode = hashCode * 59 + this.WorkflowUsersListField.GetHashCode();
+                hashCode = hashCode * 59 + this.AutoExpireField.GetHashCode();
                 return hashCode;
             }
         }
