@@ -37,7 +37,7 @@ namespace SigniFlow.CertifyCeremonyAPI.Test.Model
         public CertifyingCeremonyRequestTests()
         {
             // TODO uncomment below to create an instance of CertifyingCeremonyRequest
-            //instance = new CertifyingCeremonyRequest();
+    
         }
 
         public void Dispose()
@@ -52,7 +52,7 @@ namespace SigniFlow.CertifyCeremonyAPI.Test.Model
         public void CertifyingCeremonyRequestInstanceTest()
         {
             // TODO uncomment below to test "IsType" CertifyingCeremonyRequest
-            //Assert.IsType<CertifyingCeremonyRequest>(instance);
+           
         }
 
         /// <summary>
