@@ -52,7 +52,7 @@ namespace SigniFlow.CertifyCeremonyAPI.Test.Api
         public void InstanceTest()
         {
             // TODO uncomment below to test 'IsType' CertifyingCeremonyApi
-            //Assert.IsType<CertifyingCeremonyApi>(instance);
+          
         }
 
         /// <summary>
@@ -62,9 +62,7 @@ namespace SigniFlow.CertifyCeremonyAPI.Test.Api
         public void CertifyingCeremonyTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //CertifyingCeremonyRequest certifyingCeremonyRequest = null;
-            //var response = instance.CertifyingCeremony(certifyingCeremonyRequest);
-            //Assert.IsType<CertifyingCeremonyResponse>(response);
+           
         }
     }
 }

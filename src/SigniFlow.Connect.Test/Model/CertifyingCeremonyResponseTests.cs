@@ -52,7 +52,7 @@ namespace SigniFlow.CertifyCeremonyAPI.Test.Model
         public void CertifyingCeremonyResponseInstanceTest()
         {
             // TODO uncomment below to test "IsType" CertifyingCeremonyResponse
-            //Assert.IsType<CertifyingCeremonyResponse>(instance);
+       
         }
 
         /// <summary>
