@@ -1,0 +1,132 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: support@signiflow.com
+    name: SigniFlow
+    url: https://localhost:44300/API/SignFlowAPIServiceRest.svc/AddDocumentWatermarkByFile
+  description: API for adding watermarks to documents
+  title: SigniFlow API
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /AddDocumentWatermarkByFile:
+    post:
+      operationId: AddDocumentWatermarkByFile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddWatermarkByFileRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddWatermarkByFileResponse'
+          description: A successful response
+      summary: Add watermark to a document by file
+      tags:
+      - WatermarkByFile
+components:
+  schemas:
+    AddWatermarkByFileRequest:
+      example:
+        FontSizeField: 6.027456183070403
+        PagesListField:
+        - 1
+        - 1
+        StrokeOpacityField: 5.962133916683182
+        BaseFileField: BaseFileField
+        FillOpacityField: 0.8008281904610115
+        TokenExpiryField: TokenExpiryField
+        TextRGBColorField:
+          BlueField: 2
+          GreenField: 7
+          RedField: 9
+        DownloadFileNameField: DownloadFileNameField
+        TokenField: TokenField
+        AllPagesField: true
+        FontNameField: FontNameField
+        TextAngleField: 5.637376656633329
+        WatermarkTextField: WatermarkTextField
+      properties:
+        AllPagesField:
+          description: Apply watermark to all pages
+          type: boolean
+        BaseFileField:
+          description: Base64 encoded file content or string content
+          type: string
+        DownloadFileNameField:
+          description: Name of the file to be downloaded
+          type: string
+        FillOpacityField:
+          description: Opacity level of the watermark fill
+          type: number
+        FontNameField:
+          description: Font name for watermark text
+          type: string
+        FontSizeField:
+          description: Font size for watermark text
+          type: number
+        PagesListField:
+          description: List of page numbers to apply the watermark to
+          items:
+            type: integer
+          type: array
+        StrokeOpacityField:
+          description: Opacity level of the watermark stroke
+          type: number
+        TextAngleField:
+          description: Angle of the watermark text
+          type: number
+        TextRGBColorField:
+          $ref: '#/components/schemas/AddWatermarkByFileRequest_TextRGBColorField'
+        TokenExpiryField:
+          description: Token expiry date in /Date() format
+          type: string
+        TokenField:
+          description: Authentication token
+          type: string
+        WatermarkTextField:
+          description: Text content for the watermark
+          type: string
+      required:
+      - BaseFileField
+      - DownloadFileNameField
+      - WatermarkTextField
+      type: object
+    AddWatermarkByFileResponse:
+      example:
+        BaseFileField: BaseFileField
+        ResultField: ResultField
+      properties:
+        BaseFileField:
+          description: The base64 encoded or string content of the watermarked file
+          type: string
+        ResultField:
+          description: The result of the watermark operation (success or error)
+          type: string
+      required:
+      - BaseFileField
+      - ResultField
+      type: object
+    AddWatermarkByFileRequest_TextRGBColorField:
+      description: RGB color values for the watermark text
+      example:
+        BlueField: 2
+        GreenField: 7
+        RedField: 9
+      properties:
+        BlueField:
+          description: Blue color value (0-255)
+          type: integer
+        GreenField:
+          description: Green color value (0-255)
+          type: integer
+        RedField:
+          description: Red color value (0-255)
+          type: integer
+      type: object
+

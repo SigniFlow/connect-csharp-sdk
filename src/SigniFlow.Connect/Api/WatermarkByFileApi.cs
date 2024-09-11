@@ -15,10 +15,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Mime;
-using SigniFlow.CertifyCeremonyAPI.Client;
-using SigniFlow.CertifyCeremonyAPI.Model;
+using SigniFlow.Connect.Client;
+using SigniFlow.Connect.Model;
 
-namespace SigniFlow.CertifyCeremonyAPI.Api
+namespace SigniFlow.Connect.Api
 {
 
     /// <summary>
@@ -30,7 +30,7 @@ namespace SigniFlow.CertifyCeremonyAPI.Api
         /// <summary>
         /// Add watermark to a document by file
         /// </summary>
-        /// <exception cref="SigniFlow.CertifyCeremonyAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addWatermarkByFileRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AddWatermarkByFileResponse</returns>
@@ -42,7 +42,7 @@ namespace SigniFlow.CertifyCeremonyAPI.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="SigniFlow.CertifyCeremonyAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addWatermarkByFileRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AddWatermarkByFileResponse</returns>
@@ -62,7 +62,7 @@ namespace SigniFlow.CertifyCeremonyAPI.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="SigniFlow.CertifyCeremonyAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addWatermarkByFileRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -75,7 +75,7 @@ namespace SigniFlow.CertifyCeremonyAPI.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="SigniFlow.CertifyCeremonyAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addWatermarkByFileRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -97,7 +97,7 @@ namespace SigniFlow.CertifyCeremonyAPI.Api
     /// </summary>
     public partial class WatermarkByFileApi : IWatermarkByFileApi
     {
-        private SigniFlow.CertifyCeremonyAPI.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private SigniFlow.Connect.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WatermarkByFileApi"/> class.
@@ -113,13 +113,13 @@ namespace SigniFlow.CertifyCeremonyAPI.Api
         /// <returns></returns>
         public WatermarkByFileApi(string basePath)
         {
-            this.Configuration = SigniFlow.CertifyCeremonyAPI.Client.Configuration.MergeConfigurations(
-                SigniFlow.CertifyCeremonyAPI.Client.GlobalConfiguration.Instance,
-                new SigniFlow.CertifyCeremonyAPI.Client.Configuration { BasePath = basePath }
+            this.Configuration = SigniFlow.Connect.Client.Configuration.MergeConfigurations(
+                SigniFlow.Connect.Client.GlobalConfiguration.Instance,
+                new SigniFlow.Connect.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new SigniFlow.CertifyCeremonyAPI.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new SigniFlow.CertifyCeremonyAPI.Client.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = SigniFlow.CertifyCeremonyAPI.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new SigniFlow.Connect.Client.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new SigniFlow.Connect.Client.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = SigniFlow.Connect.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -128,17 +128,17 @@ namespace SigniFlow.CertifyCeremonyAPI.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public WatermarkByFileApi(SigniFlow.CertifyCeremonyAPI.Client.Configuration configuration)
+        public WatermarkByFileApi(SigniFlow.Connect.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            this.Configuration = SigniFlow.CertifyCeremonyAPI.Client.Configuration.MergeConfigurations(
-                SigniFlow.CertifyCeremonyAPI.Client.GlobalConfiguration.Instance,
+            this.Configuration = SigniFlow.Connect.Client.Configuration.MergeConfigurations(
+                SigniFlow.Connect.Client.GlobalConfiguration.Instance,
                 configuration
             );
-            this.Client = new SigniFlow.CertifyCeremonyAPI.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new SigniFlow.CertifyCeremonyAPI.Client.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = SigniFlow.CertifyCeremonyAPI.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new SigniFlow.Connect.Client.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new SigniFlow.Connect.Client.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = SigniFlow.Connect.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace SigniFlow.CertifyCeremonyAPI.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public WatermarkByFileApi(SigniFlow.CertifyCeremonyAPI.Client.ISynchronousClient client, SigniFlow.CertifyCeremonyAPI.Client.IAsynchronousClient asyncClient, SigniFlow.CertifyCeremonyAPI.Client.IReadableConfiguration configuration)
+        public WatermarkByFileApi(SigniFlow.Connect.Client.ISynchronousClient client, SigniFlow.Connect.Client.IAsynchronousClient asyncClient, SigniFlow.Connect.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -157,18 +157,18 @@ namespace SigniFlow.CertifyCeremonyAPI.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = SigniFlow.CertifyCeremonyAPI.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = SigniFlow.Connect.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public SigniFlow.CertifyCeremonyAPI.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public SigniFlow.Connect.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public SigniFlow.CertifyCeremonyAPI.Client.ISynchronousClient Client { get; set; }
+        public SigniFlow.Connect.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -183,12 +183,12 @@ namespace SigniFlow.CertifyCeremonyAPI.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public SigniFlow.CertifyCeremonyAPI.Client.IReadableConfiguration Configuration { get; set; }
+        public SigniFlow.Connect.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public SigniFlow.CertifyCeremonyAPI.Client.ExceptionFactory ExceptionFactory
+        public SigniFlow.Connect.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -204,32 +204,32 @@ namespace SigniFlow.CertifyCeremonyAPI.Api
         /// <summary>
         /// Add watermark to a document by file 
         /// </summary>
-        /// <exception cref="SigniFlow.CertifyCeremonyAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addWatermarkByFileRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AddWatermarkByFileResponse</returns>
         public AddWatermarkByFileResponse AddDocumentWatermarkByFile(AddWatermarkByFileRequest addWatermarkByFileRequest, int operationIndex = 0)
         {
-            SigniFlow.CertifyCeremonyAPI.Client.ApiResponse<AddWatermarkByFileResponse> localVarResponse = AddDocumentWatermarkByFileWithHttpInfo(addWatermarkByFileRequest);
+            SigniFlow.Connect.Client.ApiResponse<AddWatermarkByFileResponse> localVarResponse = AddDocumentWatermarkByFileWithHttpInfo(addWatermarkByFileRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Add watermark to a document by file 
         /// </summary>
-        /// <exception cref="SigniFlow.CertifyCeremonyAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addWatermarkByFileRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AddWatermarkByFileResponse</returns>
-        public SigniFlow.CertifyCeremonyAPI.Client.ApiResponse<AddWatermarkByFileResponse> AddDocumentWatermarkByFileWithHttpInfo(AddWatermarkByFileRequest addWatermarkByFileRequest, int operationIndex = 0)
+        public SigniFlow.Connect.Client.ApiResponse<AddWatermarkByFileResponse> AddDocumentWatermarkByFileWithHttpInfo(AddWatermarkByFileRequest addWatermarkByFileRequest, int operationIndex = 0)
         {
             // verify the required parameter 'addWatermarkByFileRequest' is set
             if (addWatermarkByFileRequest == null)
             {
-                throw new SigniFlow.CertifyCeremonyAPI.Client.ApiException(400, "Missing required parameter 'addWatermarkByFileRequest' when calling WatermarkByFileApi->AddDocumentWatermarkByFile");
+                throw new SigniFlow.Connect.Client.ApiException(400, "Missing required parameter 'addWatermarkByFileRequest' when calling WatermarkByFileApi->AddDocumentWatermarkByFile");
             }
 
-            SigniFlow.CertifyCeremonyAPI.Client.RequestOptions localVarRequestOptions = new SigniFlow.CertifyCeremonyAPI.Client.RequestOptions();
+            SigniFlow.Connect.Client.RequestOptions localVarRequestOptions = new SigniFlow.Connect.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -240,13 +240,13 @@ namespace SigniFlow.CertifyCeremonyAPI.Api
                 "application/json"
             };
 
-            var localVarContentType = SigniFlow.CertifyCeremonyAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = SigniFlow.Connect.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = SigniFlow.CertifyCeremonyAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = SigniFlow.Connect.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
@@ -275,35 +275,35 @@ namespace SigniFlow.CertifyCeremonyAPI.Api
         /// <summary>
         /// Add watermark to a document by file 
         /// </summary>
-        /// <exception cref="SigniFlow.CertifyCeremonyAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addWatermarkByFileRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddWatermarkByFileResponse</returns>
         public async System.Threading.Tasks.Task<AddWatermarkByFileResponse> AddDocumentWatermarkByFileAsync(AddWatermarkByFileRequest addWatermarkByFileRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            SigniFlow.CertifyCeremonyAPI.Client.ApiResponse<AddWatermarkByFileResponse> localVarResponse = await AddDocumentWatermarkByFileWithHttpInfoAsync(addWatermarkByFileRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            SigniFlow.Connect.Client.ApiResponse<AddWatermarkByFileResponse> localVarResponse = await AddDocumentWatermarkByFileWithHttpInfoAsync(addWatermarkByFileRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Add watermark to a document by file 
         /// </summary>
-        /// <exception cref="SigniFlow.CertifyCeremonyAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addWatermarkByFileRequest"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddWatermarkByFileResponse)</returns>
-        public async System.Threading.Tasks.Task<SigniFlow.CertifyCeremonyAPI.Client.ApiResponse<AddWatermarkByFileResponse>> AddDocumentWatermarkByFileWithHttpInfoAsync(AddWatermarkByFileRequest addWatermarkByFileRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SigniFlow.Connect.Client.ApiResponse<AddWatermarkByFileResponse>> AddDocumentWatermarkByFileWithHttpInfoAsync(AddWatermarkByFileRequest addWatermarkByFileRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'addWatermarkByFileRequest' is set
             if (addWatermarkByFileRequest == null)
             {
-                throw new SigniFlow.CertifyCeremonyAPI.Client.ApiException(400, "Missing required parameter 'addWatermarkByFileRequest' when calling WatermarkByFileApi->AddDocumentWatermarkByFile");
+                throw new SigniFlow.Connect.Client.ApiException(400, "Missing required parameter 'addWatermarkByFileRequest' when calling WatermarkByFileApi->AddDocumentWatermarkByFile");
             }
 
 
-            SigniFlow.CertifyCeremonyAPI.Client.RequestOptions localVarRequestOptions = new SigniFlow.CertifyCeremonyAPI.Client.RequestOptions();
+            SigniFlow.Connect.Client.RequestOptions localVarRequestOptions = new SigniFlow.Connect.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
                 "application/json"
@@ -314,13 +314,13 @@ namespace SigniFlow.CertifyCeremonyAPI.Api
                 "application/json"
             };
 
-            var localVarContentType = SigniFlow.CertifyCeremonyAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = SigniFlow.Connect.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
             }
 
-            var localVarAccept = SigniFlow.CertifyCeremonyAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = SigniFlow.Connect.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
