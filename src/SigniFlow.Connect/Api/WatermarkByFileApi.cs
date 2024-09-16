@@ -10,10 +10,11 @@
 
 
 
-using SigniFlow.CertifyCeremonyAPI.Model;
+using SigniFlow.Connect.Model;
 
 using SigniFlow.Connect.Client;
 using SigniFlow.Connect.Model;
+using System;
 
 namespace SigniFlow.Connect.Api
 {
