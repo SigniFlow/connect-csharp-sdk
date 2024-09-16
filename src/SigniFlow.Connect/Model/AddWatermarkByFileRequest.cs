@@ -22,7 +22,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = SigniFlow.CertifyCeremonyAPI.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = SigniFlow.Connect.Client.OpenAPIDateConverter;
 
 namespace SigniFlow.CertifyCeremonyAPI.Model
 {

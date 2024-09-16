@@ -1,0 +1,127 @@
+openapi: 3.0.0
+info:
+  title: Certify Ceremony API
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /CertifyCeremonyWithToken:
+    post:
+      operationId: CertifyCeremonyWithToken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CertifyCeremonyWithTokenRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CertifyCeremonyWithTokenResponse'
+          description: A successful response
+        "400":
+          description: Bad request
+        "500":
+          description: Internal server error
+      summary: Certify a ceremony
+      tags:
+      - Ceremony
+components:
+  schemas:
+    CertifyCeremonyWithTokenRequest:
+      example:
+        SignerReasonField: SignerReasonField
+        SignerFullNameField: SignerFullNameField
+        TokenField:
+          TokenField: TokenField
+          TokenExpiryField: 2000-01-23T04:56:07.000+00:00
+        SignerLocationField: SignerLocationField
+        SignerTrustReferenceField: SignerTrustReferenceField
+        DocField: DocField
+        SignerIdentificationNumberField: SignerIdentificationNumberField
+        SignerEmailField: SignerEmailField
+        SignerMobileNumberField: SignerMobileNumberField
+        DocNameField: DocNameField
+        SignerTrustOriginField: SignerTrustOriginField
+      properties:
+        DocField:
+          description: Document content
+          type: string
+        DocNameField:
+          description: Document name
+          type: string
+        SignerEmailField:
+          description: Signer's email
+          type: string
+        SignerFullNameField:
+          description: Signer's full name
+          type: string
+        SignerIdentificationNumberField:
+          description: Signer's identification number
+          type: string
+        SignerLocationField:
+          description: Signer's location
+          type: string
+        SignerMobileNumberField:
+          description: Signer's mobile number
+          type: string
+        SignerReasonField:
+          description: Reason for signing
+          type: string
+        SignerTrustOriginField:
+          description: Trust origin of the signer
+          type: string
+        SignerTrustReferenceField:
+          description: Trust reference of the signer
+          type: string
+        TokenField:
+          $ref: '#/components/schemas/TokenField'
+      required:
+      - DocField
+      - DocNameField
+      - SignerEmailField
+      - SignerFullNameField
+      - SignerIdentificationNumberField
+      - SignerLocationField
+      - SignerMobileNumberField
+      - SignerReasonField
+      - SignerTrustOriginField
+      - SignerTrustReferenceField
+      - TokenField
+      type: object
+    TokenField:
+      example:
+        TokenField: TokenField
+        TokenExpiryField: 2000-01-23T04:56:07.000+00:00
+      properties:
+        TokenExpiryField:
+          description: Expiry date of the token
+          format: date-time
+          type: string
+        TokenField:
+          description: The user API token
+          type: string
+      required:
+      - TokenExpiryField
+      - TokenField
+      type: object
+    CertifyCeremonyWithTokenResponse:
+      example:
+        CeremonyIDField: 2147483647
+        SignedDocumentField: SignedDocumentField
+        ResultField: ResultField
+      properties:
+        CeremonyIDField:
+          description: Ceremony ID
+          example: 2147483647
+          type: integer
+        ResultField:
+          description: Result of the ceremony
+          type: string
+        SignedDocumentField:
+          description: Signed document content
+          type: string
+      type: object
+
