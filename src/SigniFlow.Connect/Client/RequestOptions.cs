@@ -58,8 +58,11 @@ namespace SigniFlow.Connect.Client
         /// Any data associated with a request body.
         /// </summary>
         public Object Data { get; set; }
-        public string Operation { get; internal set; }
+
+
         public int OperationIndex { get; internal set; }
+        public string Operation { get; internal set; }
+
 
         /// <summary>
         /// Constructs a new instance of <see cref="RequestOptions"/>

@@ -4,13 +4,15 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CertifyCeremony**](CeremonyApi.md#certifyceremony) | **POST** /certifyCeremony | Certify a ceremony |
 
-<a id="certifyceremony"></a>
-# **CertifyCeremony**
-> CertifyingCeremonyResponse CertifyCeremony (CertifyingCeremonyRequest certifyingCeremonyRequest)
+| [**CertifyCeremonyWithToken**](CeremonyApi.md#certifyceremonywithtoken) | **POST** /CertifyCeremonyWithToken | Certify a ceremony |
 
-Certify a ceremony
+<a id="certifyceremonywithtoken"></a>
+# **CertifyCeremonyWithToken**
+> CertifyCeremonyWithTokenResponse CertifyCeremonyWithToken (CertifyCeremonyWithTokenRequest certifyCeremonyWithTokenRequest)
+
+
+
 
 ### Example
 ```csharp
@@ -22,47 +24,59 @@ using SigniFlow.Connect.Model;
 
 namespace Example
 {
-    public class CertifyCeremonyExample
+
+    public class CertifyCeremonyWithTokenExample
+
     {
         public static void Main()
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost";
             var apiInstance = new CeremonyApi(config);
-            var certifyingCeremonyRequest = new CertifyingCeremonyRequest(); // CertifyingCeremonyRequest | 
+
+            var certifyCeremonyWithTokenRequest = new CertifyCeremonyWithTokenRequest(); // CertifyCeremonyWithTokenRequest | 
+
 
             try
             {
-                // Certify a ceremony
-                CertifyingCeremonyResponse result = apiInstance.CertifyCeremony(certifyingCeremonyRequest);
+
+                CertifyCeremonyWithTokenResponse result = apiInstance.CertifyCeremonyWithToken(certifyCeremonyWithTokenRequest);
+
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CeremonyApi.CertifyCeremony: " + e.Message);
+
+                Debug.Print("Exception when calling CeremonyApi.CertifyCeremonyWithToken: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
     }
 }
-```
 
-#### Using the CertifyCeremonyWithHttpInfo variant
+
+
+#### Using the CertifyCeremonyWithTokenWithHttpInfo variant
+
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // Certify a ceremony
-    ApiResponse<CertifyingCeremonyResponse> response = apiInstance.CertifyCeremonyWithHttpInfo(certifyingCeremonyRequest);
+
+    ApiResponse<CertifyCeremonyWithTokenResponse> response = apiInstance.CertifyCeremonyWithTokenWithHttpInfo(certifyCeremonyWithTokenRequest);
+
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling CeremonyApi.CertifyCeremonyWithHttpInfo: " + e.Message);
+
+    Debug.Print("Exception when calling CeremonyApi.CertifyCeremonyWithTokenWithHttpInfo: " + e.Message);
+
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -72,11 +86,14 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **certifyingCeremonyRequest** | [**CertifyingCeremonyRequest**](CertifyingCeremonyRequest.md) |  |  |
+
+=======
+| **certifyCeremonyWithTokenRequest** | [**CertifyCeremonyWithTokenRequest**](CertifyCeremonyWithTokenRequest.md) |  |  |
 
 ### Return type
 
-[**CertifyingCeremonyResponse**](CertifyingCeremonyResponse.md)
+[**CertifyCeremonyWithTokenResponse**](CertifyCeremonyWithTokenResponse.md)
+
 
 ### Authorization
 
