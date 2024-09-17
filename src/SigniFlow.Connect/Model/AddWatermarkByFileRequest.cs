@@ -53,7 +53,7 @@ namespace SigniFlow.Connect.Model
         /// <param name="tokenExpiryField">Token expiry date in /Date() format.</param>
         /// <param name="tokenField">Authentication token.</param>
         /// <param name="watermarkTextField">Text content for the watermark (required).</param>
-        public AddWatermarkByFileRequest(bool allPagesField = default(bool), string baseFileField = default(string), string downloadFileNameField = default(string), decimal fillOpacityField = default(decimal), string fontNameField = default(string), decimal fontSizeField = default(decimal), List<int> pagesListField = default(List<int>), decimal strokeOpacityField = default(decimal), decimal textAngleField = default(decimal), AddWatermarkByFileRequestTextRGBColorField textRGBColorField = default(AddWatermarkByFileRequestTextRGBColorField), string tokenExpiryField = default(string), string tokenField = default(string), string watermarkTextField = default(string))
+        public AddWatermarkByFileRequest(bool allPagesField = default(bool), string baseFileField = default(string), string downloadFileNameField = default(string), decimal fillOpacityField = default(decimal), string fontNameField = default(string), decimal fontSizeField = default(decimal), List<int> pagesListField = default(List<int>), decimal strokeOpacityField = default(decimal), decimal textAngleField = default(decimal), AddWatermarkByFileRequestTextRGBColorField textRGBColorField = default(AddWatermarkByFileRequestTextRGBColorField), TokenField tokenField = default(TokenField), string watermarkTextField = default(string))
         {
             // to ensure "baseFileField" is required (not null)
             if (baseFileField == null)
@@ -81,7 +81,10 @@ namespace SigniFlow.Connect.Model
             this.StrokeOpacityField = strokeOpacityField;
             this.TextAngleField = textAngleField;
             this.TextRGBColorField = textRGBColorField;
-            this.TokenExpiryField = tokenExpiryField;
+            if (tokenField == null)
+            {
+                throw new ArgumentNullException("tokenField is a required property for AddWatermarkByFileRequest and cannot be null");
+            }
             this.TokenField = tokenField;
         }
 
@@ -155,18 +158,11 @@ namespace SigniFlow.Connect.Model
         public AddWatermarkByFileRequestTextRGBColorField TextRGBColorField { get; set; }
 
         /// <summary>
-        /// Token expiry date in /Date() format
-        /// </summary>
-        /// <value>Token expiry date in /Date() format</value>
-        [DataMember(Name = "TokenExpiryField", EmitDefaultValue = true)]
-        public string TokenExpiryField { get; set; }
-
-        /// <summary>
         /// Authentication token
         /// </summary>
         /// <value>Authentication token</value>
-        [DataMember(Name = "TokenField", EmitDefaultValue = true)]
-        public string TokenField { get; set; }
+        [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
+        public TokenField TokenField { get; set; }
 
         /// <summary>
         /// Text content for the watermark
@@ -193,7 +189,6 @@ namespace SigniFlow.Connect.Model
             sb.Append("  StrokeOpacityField: ").Append(StrokeOpacityField).Append("\n");
             sb.Append("  TextAngleField: ").Append(TextAngleField).Append("\n");
             sb.Append("  TextRGBColorField: ").Append(TextRGBColorField).Append("\n");
-            sb.Append("  TokenExpiryField: ").Append(TokenExpiryField).Append("\n");
             sb.Append("  TokenField: ").Append(TokenField).Append("\n");
             sb.Append("  WatermarkTextField: ").Append(WatermarkTextField).Append("\n");
             sb.Append("}\n");
