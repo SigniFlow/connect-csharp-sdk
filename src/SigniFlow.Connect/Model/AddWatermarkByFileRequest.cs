@@ -50,7 +50,6 @@ namespace SigniFlow.Connect.Model
         /// <param name="strokeOpacityField">Opacity level of the watermark stroke.</param>
         /// <param name="textAngleField">Angle of the watermark text.</param>
         /// <param name="textRGBColorField">textRGBColorField.</param>
-        /// <param name="tokenExpiryField">Token expiry date in /Date() format.</param>
         /// <param name="tokenField">Authentication token.</param>
         /// <param name="watermarkTextField">Text content for the watermark (required).</param>
         public AddWatermarkByFileRequest(bool allPagesField = default(bool), string baseFileField = default(string), string downloadFileNameField = default(string), decimal fillOpacityField = default(decimal), string fontNameField = default(string), decimal fontSizeField = default(decimal), List<int> pagesListField = default(List<int>), decimal strokeOpacityField = default(decimal), decimal textAngleField = default(decimal), AddWatermarkByFileRequestTextRGBColorField textRGBColorField = default(AddWatermarkByFileRequestTextRGBColorField), TokenField tokenField = default(TokenField), string watermarkTextField = default(string))
