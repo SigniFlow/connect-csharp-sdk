@@ -27,6 +27,28 @@ namespace SigniFlow.Connect.Api
     public interface ISigningCeremonyApiSync : IApiAccessor
     {
         #region Synchronous Operations
+        
+        /// <summary>
+        /// Sign a ceremony with a token
+        /// </summary>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="signingCeremonyWithTokenRequest"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SigningCeremonyWithTokenResponse</returns>
+        SigningCeremonyWithTokenResponse SigningCeremonyWithToken(SigningCeremonyWithTokenRequest signingCeremonyWithTokenRequest, int operationIndex = 0);
+
+        /// <summary>
+        /// Sign a ceremony with a token
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="signingCeremonyWithTokenRequest"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SigningCeremonyWithTokenResponse</returns>
+        ApiResponse<SigningCeremonyWithTokenResponse> SigningCeremonyWithTokenWithHttpInfo(SigningCeremonyWithTokenRequest signingCeremonyWithTokenRequest, int operationIndex = 0);
+      
         /// <summary>
         /// Multiple Signers Signing Ceremony
         /// </summary>
@@ -81,6 +103,33 @@ namespace SigniFlow.Connect.Api
     /// </summary>
     public interface ISigningCeremonyApiAsync : IApiAccessor
     {
+        #region Asynchronous Operations
+        /// <summary>
+        /// Sign a ceremony with a token
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="signingCeremonyWithTokenRequest"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SigningCeremonyWithTokenResponse</returns>
+        System.Threading.Tasks.Task<SigningCeremonyWithTokenResponse> SigningCeremonyWithTokenAsync(SigningCeremonyWithTokenRequest signingCeremonyWithTokenRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Sign a ceremony with a token
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="signingCeremonyWithTokenRequest"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SigningCeremonyWithTokenResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SigningCeremonyWithTokenResponse>> SigningCeremonyWithTokenWithHttpInfoAsync(SigningCeremonyWithTokenRequest signingCeremonyWithTokenRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        #endregion Asynchronous Operations
         #region Asynchronous Operations
         /// <summary>
         /// Multiple Signers Signing Ceremony
@@ -497,6 +546,156 @@ namespace SigniFlow.Connect.Api
 
             return localVarResponse;
         }
+
+
+
+
+        /// <summary>
+        /// Sign a ceremony with a token 
+        /// </summary>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="signingCeremonyWithTokenRequest"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>SigningCeremonyWithTokenResponse</returns>
+        public SigningCeremonyWithTokenResponse SigningCeremonyWithToken(SigningCeremonyWithTokenRequest signingCeremonyWithTokenRequest, int operationIndex = 0)
+        {
+            SigniFlow.Connect.Client.ApiResponse<SigningCeremonyWithTokenResponse> localVarResponse = SigningCeremonyWithTokenWithHttpInfo(signingCeremonyWithTokenRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Sign a ceremony with a token 
+        /// </summary>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="signingCeremonyWithTokenRequest"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of SigningCeremonyWithTokenResponse</returns>
+        public SigniFlow.Connect.Client.ApiResponse<SigningCeremonyWithTokenResponse> SigningCeremonyWithTokenWithHttpInfo(SigningCeremonyWithTokenRequest signingCeremonyWithTokenRequest, int operationIndex = 0)
+        {
+            // verify the required parameter 'signingCeremonyWithTokenRequest' is set
+            if (signingCeremonyWithTokenRequest == null)
+            {
+                throw new SigniFlow.Connect.Client.ApiException(400, "Missing required parameter 'signingCeremonyWithTokenRequest' when calling SigningCeremonyApi->SigningCeremonyWithToken");
+            }
+
+            SigniFlow.Connect.Client.RequestOptions localVarRequestOptions = new SigniFlow.Connect.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = SigniFlow.Connect.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = SigniFlow.Connect.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = signingCeremonyWithTokenRequest;
+
+            localVarRequestOptions.Operation = "SigningCeremonyApi.SigningCeremonyWithToken";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<SigningCeremonyWithTokenResponse>("/SigningCeremonyWithToken", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SigningCeremonyWithToken", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Sign a ceremony with a token 
+        /// </summary>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="signingCeremonyWithTokenRequest"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SigningCeremonyWithTokenResponse</returns>
+        public async System.Threading.Tasks.Task<SigningCeremonyWithTokenResponse> SigningCeremonyWithTokenAsync(SigningCeremonyWithTokenRequest signingCeremonyWithTokenRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            SigniFlow.Connect.Client.ApiResponse<SigningCeremonyWithTokenResponse> localVarResponse = await SigningCeremonyWithTokenWithHttpInfoAsync(signingCeremonyWithTokenRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Sign a ceremony with a token 
+        /// </summary>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="signingCeremonyWithTokenRequest"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SigningCeremonyWithTokenResponse)</returns>
+        public async System.Threading.Tasks.Task<SigniFlow.Connect.Client.ApiResponse<SigningCeremonyWithTokenResponse>> SigningCeremonyWithTokenWithHttpInfoAsync(SigningCeremonyWithTokenRequest signingCeremonyWithTokenRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'signingCeremonyWithTokenRequest' is set
+            if (signingCeremonyWithTokenRequest == null)
+            {
+                throw new SigniFlow.Connect.Client.ApiException(400, "Missing required parameter 'signingCeremonyWithTokenRequest' when calling SigningCeremonyApi->SigningCeremonyWithToken");
+            }
+
+
+            SigniFlow.Connect.Client.RequestOptions localVarRequestOptions = new SigniFlow.Connect.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = SigniFlow.Connect.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = SigniFlow.Connect.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = signingCeremonyWithTokenRequest;
+
+            localVarRequestOptions.Operation = "SigningCeremonyApi.SigningCeremonyWithToken";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SigningCeremonyWithTokenResponse>("/SigningCeremonyWithToken", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SigningCeremonyWithToken", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
 
     }
 }
