@@ -50,109 +50,75 @@ namespace SigniFlow.Connect.Model
         /// <param name="signerTrustOriginField">Trust origin of the signer (required).</param>
         /// <param name="signerTrustReferenceField">Trust reference of the signer (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
-        /// <param name="signaturePageField"></param>
-        /// <param name="signatureXField"></param>
-        /// <param name="signatureYField"></param>
-        /// <param name="signatureWField"></param>
-        /// <param name="signatureHField"></param>
-        /// <param name="signatureImageField"></param>
-        /// <param name="signatureImageIncludeBorderField"></param>
-        /// <param name="signatureImageIncludeReasonField"></param>
-        /// <param name="signatureImageIncludeSignedByField"></param>
-        /// <param name="signatureImageIncludeSignedDateField"></param>
-        public CertifyCeremonyWithTokenRequest(string docField = default(string),string docNameField = default(string),string signerEmailField = default(string),string signerFullNameField = default(string), string signerIdentificationNumberField = default(string), string signerLocationField = default(string),string signerMobileNumberField = default(string),
-    string signerReasonField = default(string),string signerTrustOriginField = default(string),
-    string signerTrustReferenceField = default(string),TokenField tokenField = default(TokenField),int signaturePageField = default(int), int signatureXField = default(int),int signatureYField = default(int),int signatureWField = default(int),int signatureHField = default(int),
-    string signatureImageField = default(string),bool signatureImageIncludeBorderField = default(bool),
-    bool signatureImageIncludeReasonField = default(bool), bool signatureImageIncludeSignedByField = default(bool),bool signatureImageIncludeSignedDateField = default(bool))
+        public CertifyCeremonyWithTokenRequest(string docField = default(string), string docNameField = default(string), string signerEmailField = default(string), string signerFullNameField = default(string), string signerIdentificationNumberField = default(string), string signerLocationField = default(string), string signerMobileNumberField = default(string), string signerReasonField = default(string), string signerTrustOriginField = default(string), string signerTrustReferenceField = default(string), TokenField tokenField = default(TokenField))
         {
-            // Ensure "docField" is required (not null)
+            // to ensure "docField" is required (not null)
             if (docField == null)
             {
                 throw new ArgumentNullException("docField is a required property for CertifyCeremonyWithTokenRequest and cannot be null");
             }
             this.DocField = docField;
-
-            // Ensure "docNameField" is required (not null)
+            // to ensure "docNameField" is required (not null)
             if (docNameField == null)
             {
                 throw new ArgumentNullException("docNameField is a required property for CertifyCeremonyWithTokenRequest and cannot be null");
             }
             this.DocNameField = docNameField;
-
-            // Ensure "signerEmailField" is required (not null)
+            // to ensure "signerEmailField" is required (not null)
             if (signerEmailField == null)
             {
                 throw new ArgumentNullException("signerEmailField is a required property for CertifyCeremonyWithTokenRequest and cannot be null");
             }
             this.SignerEmailField = signerEmailField;
-
-            // Ensure "signerFullNameField" is required (not null)
+            // to ensure "signerFullNameField" is required (not null)
             if (signerFullNameField == null)
             {
                 throw new ArgumentNullException("signerFullNameField is a required property for CertifyCeremonyWithTokenRequest and cannot be null");
             }
             this.SignerFullNameField = signerFullNameField;
-
-            // Ensure "signerIdentificationNumberField" is required (not null)
+            // to ensure "signerIdentificationNumberField" is required (not null)
             if (signerIdentificationNumberField == null)
             {
                 throw new ArgumentNullException("signerIdentificationNumberField is a required property for CertifyCeremonyWithTokenRequest and cannot be null");
             }
             this.SignerIdentificationNumberField = signerIdentificationNumberField;
-
-            // Ensure "signerLocationField" is required (not null)
+            // to ensure "signerLocationField" is required (not null)
             if (signerLocationField == null)
             {
                 throw new ArgumentNullException("signerLocationField is a required property for CertifyCeremonyWithTokenRequest and cannot be null");
             }
             this.SignerLocationField = signerLocationField;
-
-            // Ensure "signerMobileNumberField" is required (not null)
+            // to ensure "signerMobileNumberField" is required (not null)
             if (signerMobileNumberField == null)
             {
                 throw new ArgumentNullException("signerMobileNumberField is a required property for CertifyCeremonyWithTokenRequest and cannot be null");
             }
             this.SignerMobileNumberField = signerMobileNumberField;
-
-            // Ensure "signerReasonField" is required (not null)
+            // to ensure "signerReasonField" is required (not null)
             if (signerReasonField == null)
             {
                 throw new ArgumentNullException("signerReasonField is a required property for CertifyCeremonyWithTokenRequest and cannot be null");
             }
             this.SignerReasonField = signerReasonField;
-
-            // Ensure "signerTrustOriginField" is required (not null)
+            // to ensure "signerTrustOriginField" is required (not null)
             if (signerTrustOriginField == null)
             {
                 throw new ArgumentNullException("signerTrustOriginField is a required property for CertifyCeremonyWithTokenRequest and cannot be null");
             }
             this.SignerTrustOriginField = signerTrustOriginField;
-
-            // Ensure "signerTrustReferenceField" is required (not null)
+            // to ensure "signerTrustReferenceField" is required (not null)
             if (signerTrustReferenceField == null)
             {
                 throw new ArgumentNullException("signerTrustReferenceField is a required property for CertifyCeremonyWithTokenRequest and cannot be null");
             }
             this.SignerTrustReferenceField = signerTrustReferenceField;
-
-            // Ensure "tokenField" is required (not null)
+            // to ensure "tokenField" is required (not null)
             if (tokenField == null)
             {
                 throw new ArgumentNullException("tokenField is a required property for CertifyCeremonyWithTokenRequest and cannot be null");
             }
             this.TokenField = tokenField;
-            this.SignatureXField = signatureXField;
-            this.SignatureYField = signatureYField;
-            this.SignatureWField = signatureWField;
-            this.SignatureHField = signatureHField;
-            this.SignatureImageField = signatureImageField;
-            this.SignatureImageIncludeBorderField = signatureImageIncludeBorderField;
-            this.SignatureImageIncludeReasonField = signatureImageIncludeReasonField;
-            this.SignatureImageIncludeSignedByField = signatureImageIncludeSignedByField;
-            this.SignatureImageIncludeSignedDateField = signatureImageIncludeSignedDateField;
         }
-
 
         /// <summary>
         /// Document content
@@ -174,12 +140,6 @@ namespace SigniFlow.Connect.Model
         /// <value>Signer&#39;s email</value>
         [DataMember(Name = "SignerEmailField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerEmailField { get; set; }
-        /// <summary>
-        /// User Name of the creator
-        /// </summary>
-        /// <value>User Name of the creator</value>
-        [DataMember(Name = "UserNameField", IsRequired = true, EmitDefaultValue = true)]
-        public string UserNameField { get; set; }
 
         /// <summary>
         /// Signer&#39;s full name
@@ -230,82 +190,9 @@ namespace SigniFlow.Connect.Model
         [DataMember(Name = "SignerTrustReferenceField", IsRequired = true, EmitDefaultValue = true)]
         public string SignerTrustReferenceField { get; set; }
 
-
-        /// <summary>
-        /// Signature Page for the signature
-        /// </summary>
-        /// <value>Signature Page </value>
-        [DataMember(Name = "SignaturePageField", IsRequired = true, EmitDefaultValue = true)]
-        public int SignaturePageField { get; set; }
-
-
-        // Updated properties with correct DataMember attributes and descriptions
-        /// <summary>
-        /// Width of the signature image field
-        /// </summary>
-        /// <value>Width of the signature image field</value>
-        [DataMember(Name = "SignatureWField", IsRequired = true, EmitDefaultValue = true)]
-        public int SignatureWField { get; set; }
-
-        /// <summary>
-        /// X position of the signature image field
-        /// </summary>
-        /// <value>X position of the signature image field</value>
-        [DataMember(Name = "SignatureXField", IsRequired = true, EmitDefaultValue = true)]
-        public int SignatureXField { get; set; }
-
-        /// <summary>
-        /// Y position of the signature image field
-        /// </summary>
-        /// <value>Y position of the signature image field</value>
-        [DataMember(Name = "SignatureYField", IsRequired = true, EmitDefaultValue = true)]
-        public int SignatureYField { get; set; }
-
-        /// <summary>
-        /// Base64 of signature image field
-        /// </summary>
-        /// <value>Base64 of signature image field</value>
-        [DataMember(Name = "SignatureImageField", IsRequired = true, EmitDefaultValue = true)]
-        public string SignatureImageField { get; set; }
-
-
-        /// <summary>
-        /// Signature Image Include the Border
-        /// </summary>
-        /// <value>Signature Image Include the Border</value>
-        [DataMember(Name = "SignatureImageIncludeBorderField", IsRequired = true, EmitDefaultValue = true)]
-        public bool SignatureImageIncludeBorderField { get; set; }
-
-        /// <summary>
-        /// Signature Image Include the Reason
-        /// </summary>
-        /// <value>Signature Image Include the Reason</value>
-        [DataMember(Name = "SignatureImageIncludeReasonField", IsRequired = true, EmitDefaultValue = true)]
-        public bool SignatureImageIncludeReasonField { get; set; }
-        /// <summary>
-        /// Signature Image Include the Border
-        /// </summary>
-        /// <value>Signature Image Include the Border</value>
-        [DataMember(Name = "SignatureImageIncludeSignedByField", IsRequired = true, EmitDefaultValue = true)]
-        public bool SignatureImageIncludeSignedByField { get; set; }
-
-        /// <summary>
-        /// Signature Image Include the Signed Date
-        /// </summary>
-        /// <value>Signature Image Include the Signed Date</value>
-        [DataMember(Name = "SignatureImageIncludeSignedDateField", IsRequired = true, EmitDefaultValue = true)]
-        public bool SignatureImageIncludeSignedDateField { get; set; }
-
-        /// <summary>
-        /// H position of the signature image field
-        /// </summary>
-        /// <value>H position of the signature image field</value>
-        [DataMember(Name = "SignatureHField", IsRequired = true, EmitDefaultValue = true)]
-        public int SignatureHField { get; set; }
         /// <summary>
         /// Gets or Sets TokenField
         /// </summary>
-        /// <value>TokenField information</value>
         [DataMember(Name = "TokenField", IsRequired = true, EmitDefaultValue = true)]
         public TokenField TokenField { get; set; }
 
@@ -319,7 +206,6 @@ namespace SigniFlow.Connect.Model
             sb.Append("class CertifyCeremonyWithTokenRequest {\n");
             sb.Append("  DocField: ").Append(DocField).Append("\n");
             sb.Append("  DocNameField: ").Append(DocNameField).Append("\n");
-            sb.Append("  UserNameField: ").Append(UserNameField).Append("\n");
             sb.Append("  SignerEmailField: ").Append(SignerEmailField).Append("\n");
             sb.Append("  SignerFullNameField: ").Append(SignerFullNameField).Append("\n");
             sb.Append("  SignerIdentificationNumberField: ").Append(SignerIdentificationNumberField).Append("\n");
@@ -328,16 +214,6 @@ namespace SigniFlow.Connect.Model
             sb.Append("  SignerReasonField: ").Append(SignerReasonField).Append("\n");
             sb.Append("  SignerTrustOriginField: ").Append(SignerTrustOriginField).Append("\n");
             sb.Append("  SignerTrustReferenceField: ").Append(SignerTrustReferenceField).Append("\n");
-            sb.Append("  SignaturePageField: ").Append(SignaturePageField).Append("\n");
-            sb.Append("  SignatureXField: ").Append(SignatureXField).Append("\n");
-            sb.Append("  SignatureYField: ").Append(SignatureYField).Append("\n");
-            sb.Append("  SignatureWField: ").Append(SignatureWField).Append("\n");
-            sb.Append("  SignatureHField: ").Append(SignatureHField).Append("\n");
-            sb.Append("  SignatureImageField: ").Append(SignatureImageField).Append("\n");
-            sb.Append("  SignatureImageIncludeBorderField: ").Append(SignatureImageIncludeBorderField).Append("\n");
-            sb.Append("  SignatureImageIncludeReasonField: ").Append(SignatureImageIncludeReasonField).Append("\n");
-            sb.Append("  SignatureImageIncludeSignedByField: ").Append(SignatureImageIncludeSignedByField).Append("\n");
-            sb.Append("  SignatureImageIncludeSignedDateField: ").Append(SignatureImageIncludeSignedDateField).Append("\n");
             sb.Append("  TokenField: ").Append(TokenField).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
