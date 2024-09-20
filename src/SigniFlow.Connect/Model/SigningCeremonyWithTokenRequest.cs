@@ -46,7 +46,6 @@ namespace SigniFlow.Connect.Model
         /// <param name="signerFullNameField">Full name of the signer (required).</param>
         /// <param name="signerIdentificationNumberField">Identification number of the signer.</param>
         /// <param name="signerLocationField">Location of the signer (required).</param>
-        /// <param name="userName">Email of the creator (required).</param>
         /// <param name="signerMobileNumberField">Mobile number of the signer (required).</param>
         /// <param name="signerReasonField">Reason for the signer’s certification (required).</param>
         /// <param name="signerTrustOriginField">The origin of trust for the signer (required).</param>
@@ -62,7 +61,7 @@ namespace SigniFlow.Connect.Model
         /// <param name="signatureImageIncludeReasonField"></param>
         /// <param name="signatureImageIncludeSignedByField"></param>
         /// <param name="signatureImageIncludeSignedDateField"></param>
-        public SigningCeremonyWithTokenRequest(string docField = default(string), string docNameField = default(string), decimal signatureImageTypeField = default(decimal),string signerEmailField = default(string), string signerFullNameField = default(string), string signerIdentificationNumberField = default(string), string signerLocationField = default(string), string signerMobileNumberField = default(string), string signerReasonField = default(string), string signerTrustOriginField = default(string), string signerTrustReferenceField = default(string), string userName = default(string), TokenField tokenField = default(TokenField), int signaturePageField = default(int), int signatureXField = default(int), int signatureYField = default(int), int signatureWField = default(int), int signatureHField = default(int),string signatureImageField = default(string), bool signatureImageIncludeBorderField = default(bool), bool signatureImageIncludeReasonField = default(bool), bool signatureImageIncludeSignedByField = default(bool), bool signatureImageIncludeSignedDateField = default(bool))
+        public SigningCeremonyWithTokenRequest(string docField = default(string), string docNameField = default(string), decimal signatureImageTypeField = default(decimal),string signerEmailField = default(string), string signerFullNameField = default(string), string signerIdentificationNumberField = default(string), string signerLocationField = default(string), string signerMobileNumberField = default(string), string signerReasonField = default(string), string signerTrustOriginField = default(string), string signerTrustReferenceField = default(string), TokenField tokenField = default(TokenField), int signaturePageField = default(int), int signatureXField = default(int), int signatureYField = default(int), int signatureWField = default(int), int signatureHField = default(int),string signatureImageField = default(string), bool signatureImageIncludeBorderField = default(bool), bool signatureImageIncludeReasonField = default(bool), bool signatureImageIncludeSignedByField = default(bool), bool signatureImageIncludeSignedDateField = default(bool))
         {
             // to ensure "docField" is required (not null)
             if (docField == null)
@@ -82,13 +81,11 @@ namespace SigniFlow.Connect.Model
                 throw new ArgumentNullException("signerEmailField is a required property for SigningCeremonyWithTokenRequest and cannot be null");
             }
             this.SignerEmailField = signerEmailField;
-            // to ensure "userName" is required (not null)
-            if (userName == null)
+            if (signerEmailField == null)
             {
-                throw new ArgumentNullException("docField is a required property for SigningCeremonyWithTokenRequest and cannot be null");
+                throw new ArgumentNullException("signerLocationField is a required property for SigningCeremonyWithTokenRequest and cannot be null");
             }
-            this.UserNameField = userName;
-            this.SignerFullNameField = signerFullNameField;
+            this.SignerFullNameField = signerEmailField;
             // to ensure "signerLocationField" is required (not null)
             if (signerLocationField == null)
             {
@@ -125,11 +122,19 @@ namespace SigniFlow.Connect.Model
                 throw new ArgumentNullException("tokenField is a required property for SigningCeremonyWithTokenRequest and cannot be null");
             }
             this.TokenField = tokenField;
+            // to ensure "tokenField" is required (not null)
+            if (signaturePageField < 0)
+            {
+                throw new ArgumentOutOfRangeException("signaturePageField", "signaturePageField must be a non-negative number for SigningCeremonyWithTokenRequest.");
+            }
+
+            this.SignaturePageField = signaturePageField;
             this.SignatureXField = signatureXField;
             this.SignatureYField = signatureYField;
             this.SignatureWField = signatureWField;
             this.SignatureHField = signatureHField;
-            this.SignatureImageField = signatureImageField;
+            this.SignatureImageField = signatureImageField; 
+            this.SignerIdentificationNumberField = signerIdentificationNumberField;
             this.SignatureImageIncludeBorderField = signatureImageIncludeBorderField;
             this.SignatureImageIncludeReasonField = signatureImageIncludeReasonField;
             this.SignatureImageIncludeSignedByField = signatureImageIncludeSignedByField;
@@ -170,13 +175,6 @@ namespace SigniFlow.Connect.Model
         /// <value>Identification number of the signer</value>
         [DataMember(Name = "SignerIdentificationNumberField", EmitDefaultValue = true)]
         public string SignerIdentificationNumberField { get; set; }
-
-        /// <summary>
-        /// value>Email Of the creator
-        /// </summary>
-        /// <value>Email Of the creator</value>
-        [DataMember(Name = "UserNameField", EmitDefaultValue = true)]
-        public string UserNameField { get; set; }
 
         /// <summary>
         /// Location of the signer
@@ -308,7 +306,6 @@ namespace SigniFlow.Connect.Model
             sb.Append("class SigningCeremonyWithTokenRequest {\n");
             sb.Append("  DocField: ").Append(DocField).Append("\n");
             sb.Append("  DocNameField: ").Append(DocNameField).Append("\n");
-            sb.Append("  UserNameField: ").Append(UserNameField).Append("\n");
             sb.Append("  SignerEmailField: ").Append(SignerEmailField).Append("\n");
             sb.Append("  SignerFullNameField: ").Append(SignerFullNameField).Append("\n");
             sb.Append("  SignerIdentificationNumberField: ").Append(SignerIdentificationNumberField).Append("\n");
