@@ -7,15 +7,11 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: ubuntu-22.04
 
 name: $(Year:yyyy).$(Month).$(DayOfMonth).$(Rev:.r)
 
 steps:
-- task: NuGetAuthenticate@1
-  inputs:
-    forceReinstallCredentialProvider: true
-    nuGetServiceConnections: 'NuGet.Org'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
@@ -31,9 +27,9 @@ steps:
     command: 'pack'
     packagesToPack: './src/SigniFlow.Connect/SigniFlow.Connect.csproj'
     versioningScheme: 'byBuildNumber'
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'NuGet.Org'
