@@ -12,6 +12,10 @@ pool:
 name: $(Year:yyyy).$(Month).$(DayOfMonth).$(Rev:.r)
 
 steps:
+- task: NuGetAuthenticate@1
+  inputs:
+    forceReinstallCredentialProvider: true
+    nuGetServiceConnections: 'NuGet.Org'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
