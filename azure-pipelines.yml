@@ -9,6 +9,8 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+name: $(Year:yyyy).$(Month).$(DayOfMonth).$(Rev:.r)
+
 steps:
 - task: DotNetCoreCLI@2
   inputs:
