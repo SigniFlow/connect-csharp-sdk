@@ -22,6 +22,7 @@ public class Tests
     }
 
     [Test(Description = "Send a delete document request and expect a File Deleted response on success")]
+    [Ignore("Requires valid document ID and user credentials to run")]
     public void DeleteDocument_ReturnsDeleteDocumentResponse_OnHttpRequest()
     {
         try
@@ -39,6 +40,15 @@ public class Tests
             Assert.That(response, Is.Not.Null);
             Assert.That(response.ResultField, Is.Not.Null);
             Assert.That(response.ResultField, Is.EqualTo("File Deleted"));
+            
+            TokenField GetTokenField()
+            {
+                var loginRequest = new LoginRequest("example@signiflow.com", "password");
+        
+                var loginResponse = _authenticationApi.Login("application/json", loginRequest);
+        
+                return loginResponse.TokenField;
+            }
         }
         catch (Exception e)
         {
@@ -58,15 +68,5 @@ public class Tests
                 It.IsAny<DeleteDocRequest>())
             )
             .Returns(new DeleteDocResponse("File Deleted"));
-    }
-    
-
-    private TokenField GetTokenField()
-    {
-        var loginRequest = new LoginRequest("example@signiflow.com", "password");
-        
-        var loginResponse = _authenticationApi.Login("application/json", loginRequest);
-        
-        return loginResponse.TokenField;
     }
 }
