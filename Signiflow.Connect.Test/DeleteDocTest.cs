@@ -22,8 +22,8 @@ public class Tests
     {
         try
         {
-            var tokenField = new TokenField(tokenExpiryField: DateTime.Parse("2026-01-27T09:11:36.3140177+02:00"),
-                tokenField: "atnint");
+            var tokenField = new TokenField(tokenExpiryField: DateTime.Parse(""),
+                tokenField: "");
             // Arrange
             var request = new DeleteDocRequest(docIDField:23979, tokenField: tokenField);
         
