@@ -1,5 +1,5 @@
+using System.Net;
 using Polly;
-using RestSharp;
 
 namespace SigniFlow.Connect.Client
 {
@@ -11,11 +11,11 @@ namespace SigniFlow.Connect.Client
         /// <summary>
         /// Retry policy
         /// </summary>
-        public static Policy<IRestResponse> RetryPolicy { get; set; }
+        public static Policy<HttpWebResponse> RetryPolicy { get; set; }
 
         /// <summary>
         /// Async retry policy
         /// </summary>
-        public static AsyncPolicy<IRestResponse> AsyncRetryPolicy { get; set; }
+        public static AsyncPolicy<HttpWebResponse> AsyncRetryPolicy { get; set; }
     }
 }
