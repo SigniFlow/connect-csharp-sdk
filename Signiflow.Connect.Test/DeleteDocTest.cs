@@ -22,7 +22,7 @@ public class Tests
     }
 
     [Test(Description = "Send a delete document request and expect a File Deleted response on success")]
-    public void DeleteDocument_ReturnsDeleteDocumentResponse_OnHttpSuccess()
+    public void DeleteDocument_ReturnsDeleteDocumentResponse_OnHttpRequest()
     {
         try
         {
