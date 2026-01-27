@@ -1,11 +1,13 @@
-﻿using SigniFlow.Connect.Api;
+﻿using Moq;
+using SigniFlow.Connect.Api;
 using SigniFlow.Connect.Model;
 
 namespace Signiflow.Connect.Test;
 
+[TestFixture]
 public class Tests
 {
-    private WorkFlowApi _workflowApi;
+    private IWorkFlowApi _workflowApi;
     private AuthenticationApi _authenticationApi;
     
     [SetUp]
@@ -19,12 +21,13 @@ public class Tests
         _authenticationApi = new AuthenticationApi(config);
     }
 
-    [Test]
-    public void DeleteDocument_ShouldReturnDeleteDeleteDocResponse()
+    [Test(Description = "Send a delete document request and expect a File Deleted response on success")]
+    public void DeleteDocument_ReturnsDeleteDocumentResponse_OnHttpSuccess()
     {
         try
         {
             var tokenField = GetTokenField();
+            
             // Arrange
             var request = new DeleteDocRequest(docIDField:23979, tokenField: tokenField);
         
@@ -33,7 +36,9 @@ public class Tests
             var response = _workflowApi.PostDeleteDoc(requestContentType, request);
         
             // Assert
-            Assert.That(response, Is.InstanceOf<DeleteDocResponse>());
+            Assert.That(response, Is.Not.Null);
+            Assert.That(response.ResultField, Is.Not.Null);
+            Assert.That(response.ResultField, Is.EqualTo("File Deleted"));
         }
         catch (Exception e)
         {
@@ -42,9 +47,23 @@ public class Tests
         
     }
 
+    [Test(Description = "Mock Delete Document Request to return a Delete Document Response")]
+    public void DeleteDocument_ReturnDeleteDocumentResponse()
+    {
+        var deleteDocRequestMock = new Mock<IWorkFlowApiSync>();
+
+        deleteDocRequestMock
+            .Setup(m => m.PostDeleteDoc(
+                It.IsAny<string>(),
+                It.IsAny<DeleteDocRequest>())
+            )
+            .Returns(new DeleteDocResponse("File Deleted"));
+    }
+    
+
     private TokenField GetTokenField()
     {
-        var loginRequest = new LoginRequest("eample@signiflow.com", "password");
+        var loginRequest = new LoginRequest("example@signiflow.com", "password");
         
         var loginResponse = _authenticationApi.Login("application/json", loginRequest);
         
