@@ -6,6 +6,7 @@ namespace Signiflow.Connect.Test;
 public class Tests
 {
     private WorkFlowApi _workflowApi;
+    private AuthenticationApi _authenticationApi;
     
     [SetUp]
     public void Setup()
@@ -15,6 +16,7 @@ public class Tests
             BasePath = "https://dev.signiflow.com/API/SignFlowAPIServiceRest.svc"
         };
         _workflowApi = new WorkFlowApi(config);
+        _authenticationApi = new AuthenticationApi(config);
     }
 
     [Test]
@@ -22,8 +24,7 @@ public class Tests
     {
         try
         {
-            var tokenField = new TokenField(tokenExpiryField: DateTime.Parse(""),
-                tokenField: "");
+            var tokenField = GetTokenField();
             // Arrange
             var request = new DeleteDocRequest(docIDField:23979, tokenField: tokenField);
         
@@ -39,5 +40,14 @@ public class Tests
             Assert.Fail($"API call failed with exception: {e.Message}");
         }
         
+    }
+
+    private TokenField GetTokenField()
+    {
+        var loginRequest = new LoginRequest("eample@signiflow.com", "password");
+        
+        var loginResponse = _authenticationApi.Login("application/json", loginRequest);
+        
+        return loginResponse.TokenField;
     }
 }
