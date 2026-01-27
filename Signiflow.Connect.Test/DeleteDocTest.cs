@@ -18,7 +18,7 @@ public class Tests
     }
 
     [Test]
-    public void DeleteDocument_ShouldReturnSuccess()
+    public void DeleteDocument_ShouldReturnDeleteDeleteDocResponse()
     {
         try
         {
