@@ -494,10 +494,6 @@ namespace SigniFlow.Connect.Client
             }
 
             InterceptResponse(req, responseMessage);
-
-            // Cookies handling (if needed)
-            // Not directly available from HttpResponseMessage, would need to extract from headers if required
-
             return apiResponse;
         }
 
