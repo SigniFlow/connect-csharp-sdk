@@ -16,6 +16,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters;
@@ -26,9 +27,6 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using ErrorEventArgs = Newtonsoft.Json.Serialization.ErrorEventArgs;
-using RestSharp;
-using RestSharp.Deserializers;
-using RestSharpMethod = RestSharp.Method;
 using Polly;
 
 namespace SigniFlow.Connect.Client
@@ -36,7 +34,7 @@ namespace SigniFlow.Connect.Client
     /// <summary>
     /// Allows RestSharp to Serialize/Deserialize JSON using our custom logic, but only when ContentType is JSON.
     /// </summary>
-    internal class CustomJsonCodec : RestSharp.Serializers.ISerializer, RestSharp.Deserializers.IDeserializer
+    internal class CustomJsonCodec
     {
         private readonly IReadableConfiguration _configuration;
         private static readonly string _contentType = "application/json";
@@ -83,7 +81,7 @@ namespace SigniFlow.Connect.Client
             }
         }
 
-        public T Deserialize<T>(IRestResponse response)
+        public T Deserialize<T>(HttpWebResponse response)
         {
             var result = (T)Deserialize(response, typeof(T));
             return result;
@@ -95,56 +93,48 @@ namespace SigniFlow.Connect.Client
         /// <param name="response">The HTTP response.</param>
         /// <param name="type">Object type.</param>
         /// <returns>Object representation of the JSON string.</returns>
-        internal object Deserialize(IRestResponse response, Type type)
+        internal object Deserialize(HttpWebResponse response, Type type)
         {
             if (type == typeof(byte[])) // return byte array
             {
-                return response.RawBytes;
+                using (var ms = new MemoryStream())
+                {
+                    response.GetResponseStream()?.CopyTo(ms);
+                    return ms.ToArray();
+                }
             }
 
-            // TODO: ? if (type.IsAssignableFrom(typeof(Stream)))
             if (type == typeof(Stream))
             {
-                var bytes = response.RawBytes;
-                if (response.Headers != null)
+                var ms = new MemoryStream();
+                response.GetResponseStream()?.CopyTo(ms);
+                ms.Position = 0;
+                return ms;
+            }
+
+            using (var reader = new StreamReader(response.GetResponseStream()))
+            {
+                var content = reader.ReadToEnd();
+
+                if (type.Name.StartsWith("System.Nullable`1[[System.DateTime")) // return a datetime object
                 {
-                    var filePath = String.IsNullOrEmpty(_configuration.TempFolderPath)
-                        ? Path.GetTempPath()
-                        : _configuration.TempFolderPath;
-                    var regex = new Regex(@"Content-Disposition=.*filename=['""]?([^'""\s]+)['""]?$");
-                    foreach (var header in response.Headers)
-                    {
-                        var match = regex.Match(header.ToString());
-                        if (match.Success)
-                        {
-                            string fileName = filePath + ClientUtils.SanitizeFilename(match.Groups[1].Value.Replace("\"", "").Replace("'", ""));
-                            File.WriteAllBytes(fileName, bytes);
-                            return new FileStream(fileName, FileMode.Open);
-                        }
-                    }
+                    return DateTime.Parse(content, null, System.Globalization.DateTimeStyles.RoundtripKind);
                 }
-                var stream = new MemoryStream(bytes);
-                return stream;
-            }
 
-            if (type.Name.StartsWith("System.Nullable`1[[System.DateTime")) // return a datetime object
-            {
-                return DateTime.Parse(response.Content, null, System.Globalization.DateTimeStyles.RoundtripKind);
-            }
+                if (type == typeof(String) || type.Name.StartsWith("System.Nullable")) // return primitive type
+                {
+                    return Convert.ChangeType(content, type);
+                }
 
-            if (type == typeof(String) || type.Name.StartsWith("System.Nullable")) // return primitive type
-            {
-                return Convert.ChangeType(response.Content, type);
-            }
-
-            // at this point, it must be a model (json)
-            try
-            {
-                return JsonConvert.DeserializeObject(response.Content, type, _serializerSettings);
-            }
-            catch (Exception e)
-            {
-                throw new ApiException(500, e.Message);
+                // at this point, it must be a model (json)
+                try
+                {
+                    return JsonConvert.DeserializeObject(content, type, _serializerSettings);
+                }
+                catch (Exception e)
+                {
+                    throw new ApiException(500, e.Message);
+                }
             }
         }
 
@@ -188,14 +178,14 @@ namespace SigniFlow.Connect.Client
         /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
         /// </summary>
         /// <param name="request">The RestSharp request object</param>
-        partial void InterceptRequest(IRestRequest request);
+        partial void InterceptRequest(HttpRequestMessage request);
 
         /// <summary>
         /// Allows for extending response processing for <see cref="ApiClient"/> generated code.
         /// </summary>
         /// <param name="request">The RestSharp request object</param>
         /// <param name="response">The RestSharp response object</param>
-        partial void InterceptResponse(IRestRequest request, IRestResponse response);
+        partial void InterceptResponse(HttpRequestMessage request, HttpResponseMessage response);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" />, defaulting to the global configurations' base url.
@@ -219,45 +209,6 @@ namespace SigniFlow.Connect.Client
         }
 
         /// <summary>
-        /// Constructs the RestSharp version of an http method
-        /// </summary>
-        /// <param name="method">Swagger Client Custom HttpMethod</param>
-        /// <returns>RestSharp's HttpMethod instance.</returns>
-        /// <exception cref="ArgumentOutOfRangeException"></exception>
-        private RestSharpMethod Method(HttpMethod method)
-        {
-            RestSharpMethod other;
-            switch (method)
-            {
-                case HttpMethod.Get:
-                    other = RestSharpMethod.GET;
-                    break;
-                case HttpMethod.Post:
-                    other = RestSharpMethod.POST;
-                    break;
-                case HttpMethod.Put:
-                    other = RestSharpMethod.PUT;
-                    break;
-                case HttpMethod.Delete:
-                    other = RestSharpMethod.DELETE;
-                    break;
-                case HttpMethod.Head:
-                    other = RestSharpMethod.HEAD;
-                    break;
-                case HttpMethod.Options:
-                    other = RestSharpMethod.OPTIONS;
-                    break;
-                case HttpMethod.Patch:
-                    other = RestSharpMethod.PATCH;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException("method", method, null);
-            }
-
-            return other;
-        }
-
-        /// <summary>
         /// Provides all logic for constructing a new RestSharp <see cref="RestRequest"/>.
         /// At this point, all information for querying the service is known. Here, it is simply
         /// mapped into the RestSharp request.
@@ -269,7 +220,7 @@ namespace SigniFlow.Connect.Client
         /// GlobalConfiguration has been done before calling this method.</param>
         /// <returns>[private] A new RestRequest instance.</returns>
         /// <exception cref="ArgumentNullException"></exception>
-        private RestRequest NewRequest(
+        private HttpRequestMessage NewRequest(
             HttpMethod method,
             String path,
             RequestOptions options,
@@ -279,36 +230,33 @@ namespace SigniFlow.Connect.Client
             if (options == null) throw new ArgumentNullException("options");
             if (configuration == null) throw new ArgumentNullException("configuration");
 
-            RestRequest request = new RestRequest(Method(method))
-            {
-                Resource = path,
-                JsonSerializer = new CustomJsonCodec(SerializerSettings, configuration)
-            };
+            var uriBuilder = new UriBuilder(new Uri(configuration.BasePath));
+            
+            uriBuilder.Path += path;
 
-            if (options.PathParameters != null)
+            // Add query parameters
+            if (options.QueryParameters != null && options.QueryParameters.Count > 0)
             {
-                foreach (var pathParam in options.PathParameters)
-                {
-                    request.AddParameter(pathParam.Key, pathParam.Value, ParameterType.UrlSegment);
-                }
-            }
-
-            if (options.QueryParameters != null)
-            {
+                var query = System.Web.HttpUtility.ParseQueryString(uriBuilder.Query);
                 foreach (var queryParam in options.QueryParameters)
                 {
                     foreach (var value in queryParam.Value)
                     {
-                        request.AddQueryParameter(queryParam.Key, value);
+                        query.Add(queryParam.Key, value);
                     }
                 }
+
+                uriBuilder.Query = query.ToString();
             }
 
+            var request = new HttpRequestMessage(new System.Net.Http.HttpMethod(method.ToString()), uriBuilder.Uri);
+
+            // Add headers
             if (configuration.DefaultHeaders != null)
             {
                 foreach (var headerParam in configuration.DefaultHeaders)
                 {
-                    request.AddHeader(headerParam.Key, headerParam.Value);
+                    request.Headers.TryAddWithoutValidation(headerParam.Key, headerParam.Value);
                 }
             }
 
@@ -318,339 +266,317 @@ namespace SigniFlow.Connect.Client
                 {
                     foreach (var value in headerParam.Value)
                     {
-                        request.AddHeader(headerParam.Key, value);
+                        request.Headers.TryAddWithoutValidation(headerParam.Key, value);
                     }
                 }
             }
 
-            if (options.FormParameters != null)
+            // Add cookies
+            if (options.Cookies != null && options.Cookies.Count > 0)
             {
-                foreach (var formParam in options.FormParameters)
-                {
-                    request.AddParameter(formParam.Key, formParam.Value);
-                }
+                var cookieHeader = string.Join("; ", options.Cookies.Select(c => $"{c.Name}={c.Value}"));
+                request.Headers.TryAddWithoutValidation("Cookie", cookieHeader);
             }
 
+            // Add body
             if (options.Data != null)
             {
                 if (options.Data is Stream stream)
                 {
                     var contentType = "application/octet-stream";
-                    if (options.HeaderParameters != null)
+                    if (options.HeaderParameters != null && options.HeaderParameters.ContainsKey("Content-Type"))
                     {
                         var contentTypes = options.HeaderParameters["Content-Type"];
                         contentType = contentTypes[0];
                     }
 
                     var bytes = ClientUtils.ReadAsBytes(stream);
-                    request.AddParameter(contentType, bytes, ParameterType.RequestBody);
+                    request.Content = new ByteArrayContent(bytes);
+                    request.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(contentType);
                 }
                 else
                 {
-                    if (options.HeaderParameters != null)
+                    string contentType = "application/json";
+                    if (options.HeaderParameters != null && options.HeaderParameters.ContainsKey("Content-Type"))
                     {
                         var contentTypes = options.HeaderParameters["Content-Type"];
-                        if (contentTypes == null || contentTypes.Any(header => header.Contains("application/json")))
-                        {
-                            request.RequestFormat = DataFormat.Json;
-                        }
-                        else
-                        {
-                            // TODO: Generated client user should add additional handlers. RestSharp only supports XML and JSON, with XML as default.
-                        }
-                    }
-                    else
-                    {
-                        // Here, we'll assume JSON APIs are more common. XML can be forced by adding produces/consumes to openapi spec explicitly.
-                        request.RequestFormat = DataFormat.Json;
+                        contentType = contentTypes[0];
                     }
 
-                    request.AddJsonBody(options.Data);
+                    var json = JsonConvert.SerializeObject(options.Data, SerializerSettings);
+                    request.Content = new StringContent(json, Encoding.UTF8, contentType);
                 }
             }
-
-            if (options.FileParameters != null)
+            else if (options.FormParameters != null && options.FormParameters.Count > 0)
             {
+                var formContent = new FormUrlEncodedContent(options.FormParameters.Select(kvp =>
+                    new KeyValuePair<string, string>(kvp.Key, kvp.Value.ToString())));
+                request.Content = formContent;
+            }
+            else if (options.FileParameters != null && options.FileParameters.Count > 0)
+            {
+                var multiContent = new MultipartFormDataContent();
                 foreach (var fileParam in options.FileParameters)
                 {
                     var bytes = ClientUtils.ReadAsBytes(fileParam.Value);
                     var fileStream = fileParam.Value as FileStream;
-                    if (fileStream != null)
-                        request.Files.Add(FileParameter.Create(fileParam.Key, bytes, System.IO.Path.GetFileName(fileStream.Name)));
-                    else
-                        request.Files.Add(FileParameter.Create(fileParam.Key, bytes, "no_file_name_provided"));
+                    var fileName = fileStream != null ? Path.GetFileName(fileStream.Name) : "no_file_name_provided";
+                    var fileContent = new ByteArrayContent(bytes);
+                    multiContent.Add(fileContent, fileParam.Key, fileName);
                 }
+
+                request.Content = multiContent;
             }
 
-            if (options.Cookies != null && options.Cookies.Count > 0)
-            {
-                foreach (var cookie in options.Cookies)
-                {
-                    request.AddCookie(cookie.Name, cookie.Value);
-                }
-            }
+            InterceptRequest(request);
 
             return request;
         }
 
-        private ApiResponse<T> ToApiResponse<T>(IRestResponse<T> response)
+        private ApiResponse<T> ToApiResponse<T>(HttpWebResponse response)
         {
-            T result = response.Data;
-            string rawContent = response.Content;
+            // Read status code
+            var statusCode = response.StatusCode;
 
-            var transformed = new ApiResponse<T>(response.StatusCode, new Multimap<string, string>(), result, rawContent)
+            // Read headers
+            var headers = new Multimap<string, string>();
+            foreach (string headerName in response.Headers)
             {
-                ErrorText = response.ErrorMessage,
-                Cookies = new List<Cookie>()
-            };
-
-            if (response.Headers != null)
-            {
-                foreach (var responseHeader in response.Headers)
-                {
-                    transformed.Headers.Add(responseHeader.Name, ClientUtils.ParameterToString(responseHeader.Value));
-                }
+                headers.Add(headerName, response.Headers[headerName]);
             }
 
+            // Read cookies
+            var cookies = new List<Cookie>();
             if (response.Cookies != null)
             {
-                foreach (var responseCookies in response.Cookies)
+                foreach (Cookie cookie in response.Cookies)
                 {
-                    transformed.Cookies.Add(
-                        new Cookie(
-                            responseCookies.Name,
-                            responseCookies.Value,
-                            responseCookies.Path,
-                            responseCookies.Domain)
-                        );
+                    cookies.Add(cookie);
                 }
             }
 
-            return transformed;
-        }
-
-        private ApiResponse<T> Exec<T>(RestRequest req, IReadableConfiguration configuration)
-        {
-            RestClient client = new RestClient(_baseUrl);
-
-            client.ClearHandlers();
-            var existingDeserializer = req.JsonSerializer as IDeserializer;
-            if (existingDeserializer != null)
+            // Read content
+            string rawContent;
+            using (var reader = new StreamReader(response.GetResponseStream()))
             {
-                client.AddHandler("application/json", () => existingDeserializer);
-                client.AddHandler("text/json", () => existingDeserializer);
-                client.AddHandler("text/x-json", () => existingDeserializer);
-                client.AddHandler("text/javascript", () => existingDeserializer);
-                client.AddHandler("*+json", () => existingDeserializer);
+                rawContent = reader.ReadToEnd();
+            }
+
+            // Deserialize data
+            T result = default(T);
+            if (typeof(T) == typeof(Stream))
+            {
+                var ms = new MemoryStream();
+                var responseStream = response.GetResponseStream();
+                responseStream?.CopyTo(ms);
+                ms.Position = 0;
+                result = (T)(object)ms;
+            }
+            else if (typeof(SigniFlow.Connect.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
+            {
+                result = (T)typeof(T).GetMethod("FromJson").Invoke(null, new object[] { rawContent });
             }
             else
             {
-                var customDeserializer = new CustomJsonCodec(SerializerSettings, configuration);
-                client.AddHandler("application/json", () => customDeserializer);
-                client.AddHandler("text/json", () => customDeserializer);
-                client.AddHandler("text/x-json", () => customDeserializer);
-                client.AddHandler("text/javascript", () => customDeserializer);
-                client.AddHandler("*+json", () => customDeserializer);
+                result = JsonConvert.DeserializeObject<T>(rawContent, SerializerSettings);
             }
 
-            var xmlDeserializer = new XmlDeserializer();
-            client.AddHandler("application/xml", () => xmlDeserializer);
-            client.AddHandler("text/xml", () => xmlDeserializer);
-            client.AddHandler("*+xml", () => xmlDeserializer);
-            client.AddHandler("*", () => xmlDeserializer);
+            // Error text
+            string errorText = null;
+            if ((int)statusCode >= 400)
+            {
+                errorText = rawContent;
+            }
 
-            client.Timeout = configuration.Timeout;
+            return new ApiResponse<T>(statusCode, headers, result, rawContent)
+            {
+                ErrorText = errorText,
+                Cookies = cookies
+            };
+        }
 
+        private ApiResponse<T> Exec<T>(HttpRequestMessage req, IReadableConfiguration configuration)
+        {
+            var httpClient = new HttpClient();
+
+            // Set timeout
+            if (configuration.Timeout > 0)
+                httpClient.Timeout = TimeSpan.FromMilliseconds(configuration.Timeout);
+
+            // Set proxy (not directly supported by HttpClient, requires handler)
             if (configuration.Proxy != null)
             {
-                client.Proxy = configuration.Proxy;
+                var handler = new HttpClientHandler
+                {
+                    Proxy = configuration.Proxy,
+                    UseProxy = true
+                };
+                httpClient.Dispose();
+                // Recreate httpClient with handler
+                httpClient = new HttpClient(handler);
             }
 
-            if (configuration.UserAgent != null)
+            // Set user agent
+            if (!string.IsNullOrEmpty(configuration.UserAgent))
             {
-                client.UserAgent = configuration.UserAgent;
+                httpClient.DefaultRequestHeaders.UserAgent.ParseAdd(configuration.UserAgent);
             }
 
+            // Set client certificates (not directly supported by HttpClient, requires handler)
             if (configuration.ClientCertificates != null)
             {
-                client.ClientCertificates = configuration.ClientCertificates;
+                var handler = new HttpClientHandler();
+                foreach (var cert in configuration.ClientCertificates)
+                {
+                    handler.ClientCertificates.Add(cert);
+                }
+
+                httpClient.Dispose();
+                httpClient = new HttpClient(handler);
+            }
+
+            // Set default headers
+            if (configuration.DefaultHeaders != null)
+            {
+                foreach (var header in configuration.DefaultHeaders)
+                {
+                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation(header.Key, header.Value);
+                }
             }
 
             InterceptRequest(req);
 
-            IRestResponse<T> response;
-            if (RetryConfiguration.RetryPolicy != null)
+            HttpResponseMessage responseMessage;
+            try
             {
-                var policy = RetryConfiguration.RetryPolicy;
-                var policyResult = policy.ExecuteAndCapture(() => client.Execute(req));
-                response = (policyResult.Outcome == OutcomeType.Successful) ? client.Deserialize<T>(policyResult.Result) : new RestResponse<T>
+                responseMessage = httpClient.SendAsync(req).GetAwaiter().GetResult();
+            }
+            catch (Exception ex)
+            {
+                return new ApiResponse<T>(0, new Multimap<string, string>(), default(T), null)
                 {
-                    Request = req,
-                    ErrorException = policyResult.FinalException
+                    ErrorText = ex.Message
                 };
+            }
+
+            string content = responseMessage.Content != null
+                ? responseMessage.Content.ReadAsStringAsync().GetAwaiter().GetResult()
+                : null;
+
+            T data = default(T);
+            if (typeof(T) == typeof(Stream))
+            {
+                var stream = responseMessage.Content.ReadAsStreamAsync().GetAwaiter().GetResult();
+                data = (T)(object)stream;
+            }
+            else if (typeof(SigniFlow.Connect.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
+            {
+                data = (T)typeof(T).GetMethod("FromJson").Invoke(null, new object[] { content });
             }
             else
             {
-                response = client.Execute<T>(req);
+                data = JsonConvert.DeserializeObject<T>(content, SerializerSettings);
             }
 
-            // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-            if (typeof(SigniFlow.Connect.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
-            {
-                response.Data = (T) typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
-            }
-            else if (typeof(T).Name == "Stream") // for binary response
-            {
-                response.Data = (T)(object)new MemoryStream(response.RawBytes);
-            }
+            var apiResponse = new ApiResponse<T>(
+                responseMessage.StatusCode,
+                new Multimap<string, string>(),
+                data,
+                content
+            );
 
-            InterceptResponse(req, response);
-
-            var result = ToApiResponse(response);
-            if (response.ErrorMessage != null)
+            foreach (var header in responseMessage.Headers)
             {
-                result.ErrorText = response.ErrorMessage;
-            }
-
-            if (response.Cookies != null && response.Cookies.Count > 0)
-            {
-                if (result.Cookies == null) result.Cookies = new List<Cookie>();
-                foreach (var restResponseCookie in response.Cookies)
+                foreach (var value in header.Value)
                 {
-                    var cookie = new Cookie(
-                        restResponseCookie.Name,
-                        restResponseCookie.Value,
-                        restResponseCookie.Path,
-                        restResponseCookie.Domain
-                    )
-                    {
-                        Comment = restResponseCookie.Comment,
-                        CommentUri = restResponseCookie.CommentUri,
-                        Discard = restResponseCookie.Discard,
-                        Expired = restResponseCookie.Expired,
-                        Expires = restResponseCookie.Expires,
-                        HttpOnly = restResponseCookie.HttpOnly,
-                        Port = restResponseCookie.Port,
-                        Secure = restResponseCookie.Secure,
-                        Version = restResponseCookie.Version
-                    };
-
-                    result.Cookies.Add(cookie);
+                    apiResponse.Headers.Add(header.Key, value);
                 }
             }
-            return result;
+
+            InterceptResponse(req, responseMessage);
+            return apiResponse;
         }
 
-        private async Task<ApiResponse<T>> ExecAsync<T>(RestRequest req, IReadableConfiguration configuration, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        private async Task<ApiResponse<T>> ExecAsync<T>(HttpRequestMessage req, IReadableConfiguration configuration, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            RestClient client = new RestClient(_baseUrl);
-
-            client.ClearHandlers();
-            var existingDeserializer = req.JsonSerializer as IDeserializer;
-            if (existingDeserializer != null)
+            using (var httpClient = new HttpClient())
             {
-                client.AddHandler("application/json", () => existingDeserializer);
-                client.AddHandler("text/json", () => existingDeserializer);
-                client.AddHandler("text/x-json", () => existingDeserializer);
-                client.AddHandler("text/javascript", () => existingDeserializer);
-                client.AddHandler("*+json", () => existingDeserializer);
-            }
-            else
-            {
-                var customDeserializer = new CustomJsonCodec(SerializerSettings, configuration);
-                client.AddHandler("application/json", () => customDeserializer);
-                client.AddHandler("text/json", () => customDeserializer);
-                client.AddHandler("text/x-json", () => customDeserializer);
-                client.AddHandler("text/javascript", () => customDeserializer);
-                client.AddHandler("*+json", () => customDeserializer);
-            }
+                httpClient.Timeout = TimeSpan.FromMilliseconds(configuration.Timeout);
 
-            var xmlDeserializer = new XmlDeserializer();
-            client.AddHandler("application/xml", () => xmlDeserializer);
-            client.AddHandler("text/xml", () => xmlDeserializer);
-            client.AddHandler("*+xml", () => xmlDeserializer);
-            client.AddHandler("*", () => xmlDeserializer);
-
-            client.Timeout = configuration.Timeout;
-
-            if (configuration.Proxy != null)
-            {
-                client.Proxy = configuration.Proxy;
-            }
-
-            if (configuration.UserAgent != null)
-            {
-                client.UserAgent = configuration.UserAgent;
-            }
-
-            if (configuration.ClientCertificates != null)
-            {
-                client.ClientCertificates = configuration.ClientCertificates;
-            }
-
-            InterceptRequest(req);
-
-            IRestResponse<T> response;
-            if (RetryConfiguration.AsyncRetryPolicy != null)
-            {
-                var policy = RetryConfiguration.AsyncRetryPolicy;
-                var policyResult = await policy.ExecuteAndCaptureAsync(() => client.ExecuteAsync(req, cancellationToken)).ConfigureAwait(false);
-                response = (policyResult.Outcome == OutcomeType.Successful) ? client.Deserialize<T>(policyResult.Result) : new RestResponse<T>
+                if (configuration.Proxy != null)
                 {
-                    Request = req,
-                    ErrorException = policyResult.FinalException
-                };
-            }
-            else
-            {
-                response = await client.ExecuteAsync<T>(req, cancellationToken).ConfigureAwait(false);
-            }
-
-            // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-            if (typeof(SigniFlow.Connect.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
-            {
-                response.Data = (T) typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
-            }
-            else if (typeof(T).Name == "Stream") // for binary response
-            {
-                response.Data = (T)(object)new MemoryStream(response.RawBytes);
-            }
-
-            InterceptResponse(req, response);
-
-            var result = ToApiResponse(response);
-            if (response.ErrorMessage != null)
-            {
-                result.ErrorText = response.ErrorMessage;
-            }
-
-            if (response.Cookies != null && response.Cookies.Count > 0)
-            {
-                if (result.Cookies == null) result.Cookies = new List<Cookie>();
-                foreach (var restResponseCookie in response.Cookies)
-                {
-                    var cookie = new Cookie(
-                        restResponseCookie.Name,
-                        restResponseCookie.Value,
-                        restResponseCookie.Path,
-                        restResponseCookie.Domain
-                    )
+                    var handler = new HttpClientHandler
                     {
-                        Comment = restResponseCookie.Comment,
-                        CommentUri = restResponseCookie.CommentUri,
-                        Discard = restResponseCookie.Discard,
-                        Expired = restResponseCookie.Expired,
-                        Expires = restResponseCookie.Expires,
-                        HttpOnly = restResponseCookie.HttpOnly,
-                        Port = restResponseCookie.Port,
-                        Secure = restResponseCookie.Secure,
-                        Version = restResponseCookie.Version
+                        Proxy = configuration.Proxy,
+                        UseProxy = true
                     };
-
-                    result.Cookies.Add(cookie);
+                    httpClient.DefaultRequestHeaders.Clear();
                 }
+
+                if (!string.IsNullOrEmpty(configuration.UserAgent))
+                {
+                    httpClient.DefaultRequestHeaders.UserAgent.ParseAdd(configuration.UserAgent);
+                }
+
+                if (configuration.DefaultHeaders != null)
+                {
+                    foreach (var header in configuration.DefaultHeaders)
+                    {
+                        httpClient.DefaultRequestHeaders.TryAddWithoutValidation(header.Key, header.Value);
+                    }
+                }
+
+                InterceptRequest(req);
+
+                HttpResponseMessage responseMessage;
+                try
+                {
+                    responseMessage = await httpClient.SendAsync(req, cancellationToken).ConfigureAwait(false);
+                }
+                catch (Exception ex)
+                {
+                    return new ApiResponse<T>(0, new Multimap<string, string>(), default(T), null)
+                    {
+                        ErrorText = ex.Message
+                    };
+                }
+
+                string content = await responseMessage.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+                T data = default(T);
+                if (typeof(T) == typeof(Stream))
+                {
+                    var stream = await responseMessage.Content.ReadAsStreamAsync().ConfigureAwait(false);
+                    data = (T)(object)stream;
+                }
+                else if (typeof(SigniFlow.Connect.Model.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
+                {
+                    data = (T)typeof(T).GetMethod("FromJson").Invoke(null, new object[] { content });
+                }
+                else
+                {
+                    data = JsonConvert.DeserializeObject<T>(content, SerializerSettings);
+                }
+
+                var apiResponse = new ApiResponse<T>(
+                    responseMessage.StatusCode,
+                    new Multimap<string, string>(),
+                    data,
+                    content
+                );
+
+                foreach (var header in responseMessage.Headers)
+                {
+                    foreach (var value in header.Value)
+                    {
+                        apiResponse.Headers.Add(header.Key, value);
+                    }
+                }
+
+                InterceptResponse(req, responseMessage);
+
+                return apiResponse;
             }
-            return result;
         }
 
         #region IAsynchronousClient
