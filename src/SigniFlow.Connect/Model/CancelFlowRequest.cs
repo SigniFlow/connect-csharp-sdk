@@ -1,7 +1,7 @@
 /*
  * WorkFlow API
  *
- * ## SigniFlow API used to automate esignature workflow creation and management. 
+ * ## SigniFlow API used to automate esignature workflow creation and management.
  *
  * The version of the OpenAPI document: 1.0
  * Contact: support@signiflow.com
@@ -32,29 +32,25 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "CancelFlowRequest")]
     public partial class CancelFlowRequest : IEquatable<CancelFlowRequest>, IValidatableObject
     {
-//    
-//    
-//        /// <summary>
-//        /// Initializes a new instance of the <see cref="CancelFlowRequest" /> class.
-//        /// </summary>
-//        [JsonConstructorAttribute]
-//        
-//        protected CancelFlowRequest() { }
-//        
-//        
-//    
-//    
         /// <summary>
         /// Initializes a new instance of the <see cref="CancelFlowRequest" /> class.
         /// </summary>
         /// <param name="docIDField">Document ID field. (required).</param>
         /// <param name="tokenField">tokenField (required).</param>
-        public CancelFlowRequest(string docIDField = default(string), TokenField tokenField = default(TokenField))
+        public CancelFlowRequest(string docIDField = default(string), string reasonField = default(string),
+            TokenField tokenField = default(TokenField))
         {
             // to ensure "docIDField" is required (not null)
-            this.DocIDField = docIDField ?? throw new ArgumentNullException("docIDField is a required property for CancelFlowRequest and cannot be null");
+            this.DocIDField = docIDField ??
+                              throw new ArgumentNullException(
+                                  "docIDField is a required property for CancelFlowRequest and cannot be null");
+
+            this.ReasonField = reasonField;
+
             // to ensure "tokenField" is required (not null)
-            this.TokenField = tokenField ?? throw new ArgumentNullException("tokenField is a required property for CancelFlowRequest and cannot be null");
+            this.TokenField = tokenField ??
+                              throw new ArgumentNullException(
+                                  "tokenField is a required property for CancelFlowRequest and cannot be null");
         }
 
         /// <summary>
@@ -63,6 +59,12 @@ namespace SigniFlow.Connect.Model
         /// <value>Document ID field.</value>
         [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocIDField { get; set; }
+
+        /// <summary>
+        /// Reason for cancelling the workflow.
+        /// </summary>
+        [DataMember(Name = "ReasonField", EmitDefaultValue = false)]
+        public string ReasonField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
@@ -79,6 +81,7 @@ namespace SigniFlow.Connect.Model
             var sb = new StringBuilder();
             sb.Append("class CancelFlowRequest {\n");
             sb.Append("  DocIDField: ").Append(DocIDField).Append("\n");
+            sb.Append(" ReasonField: ").Append(ReasonField).Append("\n");
             sb.Append("  TokenField: ").Append(TokenField).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -113,16 +116,21 @@ namespace SigniFlow.Connect.Model
             if (input == null)
                 return false;
 
-            return 
+            return
                 (
                     this.DocIDField == input.DocIDField ||
                     (this.DocIDField != null &&
-                    this.DocIDField.Equals(input.DocIDField))
-                ) && 
+                     this.DocIDField.Equals(input.DocIDField))
+                ) &&
+                (
+                    this.ReasonField == input.ReasonField ||
+                    (this.ReasonField != null &&
+                     this.ReasonField.Equals(input.ReasonField))
+                ) &&
                 (
                     this.TokenField == input.TokenField ||
                     (this.TokenField != null &&
-                    this.TokenField.Equals(input.TokenField))
+                     this.TokenField.Equals(input.TokenField))
                 );
         }
 
@@ -137,6 +145,8 @@ namespace SigniFlow.Connect.Model
                 int hashCode = 41;
                 if (this.DocIDField != null)
                     hashCode = hashCode * 59 + this.DocIDField.GetHashCode();
+                if (this.ReasonField != null)
+                    hashCode = hashCode * 59 + this.ReasonField.GetHashCode();
                 if (this.TokenField != null)
                     hashCode = hashCode * 59 + this.TokenField.GetHashCode();
                 return hashCode;
@@ -148,16 +158,17 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(
+            ValidationContext validationContext)
         {
             // DocIDField (string) minLength
-            if(this.DocIDField != null && this.DocIDField.Length < 1)
+            if (this.DocIDField != null && this.DocIDField.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DocIDField, length must be greater than 1.", new [] { "DocIDField" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult(
+                    "Invalid value for DocIDField, length must be greater than 1.", new[] { "DocIDField" });
             }
 
             yield break;
         }
     }
-
 }
