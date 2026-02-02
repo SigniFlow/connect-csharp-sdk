@@ -52,18 +52,7 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         [DataMember(Name = "PriorityField", EmitDefaultValue = true)]
         public Priority? PriorityField { get; set; }
-        //    
-        //    
-        //        /// <summary>
-        //        /// Initializes a new instance of the <see cref="FullWorkflowRequest" /> class.
-        //        /// </summary>
-        //        [JsonConstructorAttribute]
-        //        
-        //        protected FullWorkflowRequest() { }
-        //        
-        //        
-        //    
-        //    
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowRequest" /> class.
         /// </summary>
