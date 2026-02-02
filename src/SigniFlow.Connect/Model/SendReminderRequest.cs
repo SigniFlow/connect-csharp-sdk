@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 namespace SigniFlow.Connect.Model
 {
     [DataContract(Name = "SendReminderRequest")]
-    public partial class SendReminderRequest : IValidatableObject
+    public partial class SendReminderRequest : IEquatable<SendReminderRequest>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SendReminderRequest" /> class.

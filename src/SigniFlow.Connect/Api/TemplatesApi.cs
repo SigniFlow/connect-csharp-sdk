@@ -15,6 +15,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Mime;
+using System.Threading;
+using System.Threading.Tasks;
 using SigniFlow.Connect.Client;
 using SigniFlow.Connect.Model;
 
@@ -142,6 +144,30 @@ namespace SigniFlow.Connect.Api
         /// <param name="getPrepperTemplateListRequest">##### Get Prepper Template List Request Model (optional)</param>
         /// <returns>ApiResponse of GetPrepperTemplateListResponse</returns>
         ApiResponse<GetPrepperTemplateListResponse> PostGetPrepperTemplateListWithHttpInfo(string contentType, GetPrepperTemplateListRequest getPrepperTemplateListRequest = default(GetPrepperTemplateListRequest));
+        
+        /// <summary>
+        /// Doc Prepper Get All Fields
+        /// </summary>
+        /// <remarks>
+        /// #### Used to get all the fields on a document.
+        /// </remarks>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException"></exception>
+        /// <param name="contentType"></param>
+        /// <param name="docPrepperGetAllFieldsRequest"></param>
+        /// <returns>DocPrepperGetAllFieldsResponse</returns>
+        DocPrepperGetAllFieldsResponse PostDocPrepperGetAllFields(string contentType, DocPrepperGetAllFieldsRequest docPrepperGetAllFieldsRequest = default(DocPrepperGetAllFieldsRequest));
+        
+        /// <summary>
+        /// Doc Prepper Get All Fields
+        /// </summary>
+        /// <remarks>
+        /// #### Used to get all the fields on a document.
+        /// </remarks>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException"></exception>
+        /// <param name="contentType"></param>
+        /// <param name="docPrepperGetAllFieldsRequest"></param>
+        /// <returns>ApiResponse of DocPrepperGetAllFieldsResponse</returns>
+        ApiResponse<DocPrepperGetAllFieldsResponse> PostDocPrepperGetAllFieldsWithHttpInfo(string contentType, DocPrepperGetAllFieldsRequest docPrepperGetAllFieldsRequest = default(DocPrepperGetAllFieldsRequest));
         #endregion Synchronous Operations
     }
 
@@ -276,6 +302,31 @@ namespace SigniFlow.Connect.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPrepperTemplateListResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetPrepperTemplateListResponse>> PostGetPrepperTemplateListWithHttpInfoAsync(string contentType, GetPrepperTemplateListRequest getPrepperTemplateListRequest = default(GetPrepperTemplateListRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        
+        /// <summary>
+        /// Doc Prepper Get All Fields
+        /// </summary>
+        /// <remarks>
+        /// #### Used to get all the fields on a document.
+        /// </remarks>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException"></exception>
+        /// <param name="contentType"></param>
+        /// <param name="docPrepperGetAllFieldsRequest"></param>
+        /// <returns>Task of DocPrepperGetAllFieldsResponse</returns>
+        Task<DocPrepperGetAllFieldsResponse> PostDocPrepperGetAllFieldsAsync(string contentType, DocPrepperGetAllFieldsRequest docPrepperGetAllFieldsRequest = default(DocPrepperGetAllFieldsRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        
+        /// <summary>
+        /// Doc Prepper Get All Fields
+        /// </summary>
+        /// <remarks>
+        /// #### Used to get all the fields on a document.
+        /// </remarks>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException"></exception>
+        /// <param name="contentType"></param>
+        /// <param name="docPrepperGetAllFieldsRequest"></param>
+        /// <returns>Task of ApiResponse(DocPrepperGetAllFieldsResponse)</returns>
+        Task<ApiResponse<DocPrepperGetAllFieldsResponse>> PostDocPrepperGetAllFieldsWithHttpInfoAsync(string contentType, DocPrepperGetAllFieldsRequest docPrepperGetAllFieldsRequest = default(DocPrepperGetAllFieldsRequest),  System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        
         #endregion Asynchronous Operations
     }
 
@@ -1010,6 +1061,97 @@ namespace SigniFlow.Connect.Api
 
             return localVarResponse;
         }
+        
+        public DocPrepperGetAllFieldsResponse PostDocPrepperGetAllFields(string contentType,
+            DocPrepperGetAllFieldsRequest docPrepperGetAllFieldsRequest = default(DocPrepperGetAllFieldsRequest))
+        {
+            var localVarResponse = PostDocPrepperGetAllFieldsWithHttpInfo(contentType, docPrepperGetAllFieldsRequest);
+            return localVarResponse.Data;
+        }
 
+        public ApiResponse<DocPrepperGetAllFieldsResponse> PostDocPrepperGetAllFieldsWithHttpInfo(string contentType,
+            DocPrepperGetAllFieldsRequest docPrepperGetAllFieldsRequest = default(DocPrepperGetAllFieldsRequest))
+        {
+            if (contentType == null)
+                throw new ApiException(400, "Missing required parameter 'contentType' when calling TemplatesApi->PostDocPrepperGetAllFields");
+            
+            RequestOptions localVarRequestOptions = new RequestOptions();
+            
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+            
+            // to determine the Accept header
+            String[] _accepts = new String[]
+            {
+                "application/json"
+            };
+            
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept",localVarAccept);
+            
+            localVarRequestOptions.HeaderParameters.Add("Content-Type", ClientUtils.ParameterToString(contentType)); // header parameter
+            localVarRequestOptions.Data = docPrepperGetAllFieldsRequest;
+            
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<DocPrepperGetAllFieldsResponse>("/DocPrepperGetAllFields", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PostDocPrepperGetAllFields", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+            
+            return localVarResponse;
+        }
+
+        public async Task<DocPrepperGetAllFieldsResponse> PostDocPrepperGetAllFieldsAsync(string contentType,
+            DocPrepperGetAllFieldsRequest docPrepperGetAllFieldsRequest = default(DocPrepperGetAllFieldsRequest),
+            CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var localVarResponse = await PostDocPrepperGetAllFieldsWithHttpInfoAsync(contentType, docPrepperGetAllFieldsRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        public async Task<ApiResponse<DocPrepperGetAllFieldsResponse>> PostDocPrepperGetAllFieldsWithHttpInfoAsync(string contentType,
+            DocPrepperGetAllFieldsRequest docPrepperGetAllFieldsRequest = default(DocPrepperGetAllFieldsRequest),
+            CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (contentType == null)
+                throw new ApiException(400, "Missing required parameter 'contentType' when calling TemplatesApi->PostDocPrepperGetAllFields");
+            
+            RequestOptions localVarRequestOptions = new RequestOptions();
+            
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+            
+            // to determine the Accept header
+            String[] _accepts = new String[]
+            {
+                "application/json"
+            };
+            
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            
+            localVarRequestOptions.HeaderParameters.Add("Content-Type", ClientUtils.ParameterToString(contentType)); // header parameter
+            localVarRequestOptions.Data = docPrepperGetAllFieldsRequest;
+            
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<DocPrepperGetAllFieldsResponse>("/DocPrepperGetAllFields", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PostDocPrepperGetAllFields", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+            
+            return localVarResponse;
+        }
     }
 }
