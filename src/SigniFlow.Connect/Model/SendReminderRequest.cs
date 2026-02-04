@@ -28,9 +28,9 @@ namespace SigniFlow.Connect.Model
             DateTime dueDateField = default(DateTime),
             TokenField tokenField = default(TokenField))
             {
-                this.AwaitingFromEmailField = awaitingFromEmailField;
-                this.AwaitingFromIdField = awaitingFromIdField;
-                this.AwaitingFromNameField = awaitingFromNameField;
+                this.AwaintingFromEmailField = awaitingFromEmailField;
+                this.AwaintingFromIdField = awaitingFromIdField;
+                this.AwaintingFromNameField = awaitingFromNameField;
                 this.DateRequestedField = dateRequestedField;
                 this.DocIDField = docIDField;
                 this.DocNameField = docNameField;
@@ -41,43 +41,43 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Awaiting From Email Field
         /// </summary>
-        [DataMember(Name = "AwaitingFromEmailField", EmitDefaultValue = false)]
-        public string AwaitingFromEmailField { get; set; }
+        [DataMember(Name = "AwaintingFromEmailField")]
+        public string AwaintingFromEmailField { get; set; }
         
         /// <summary>
         /// Awaiting From User Id Field
         /// </summary>
-        [DataMember(Name = "AwaitingFromIdField", EmitDefaultValue = false)]
-        public string AwaitingFromIdField { get; set; }
+        [DataMember(Name = "AwaintingFromIDField")]
+        public string AwaintingFromIdField { get; set; }
         
         /// <summary>
         /// Awaiting From Full Name Field
         /// </summary>
-        [DataMember(Name = "AwaitingFromNameField", EmitDefaultValue = false)]
-        public string AwaitingFromNameField { get; set; }
+        [DataMember(Name = "AwaintingFromNameField")]
+        public string AwaintingFromNameField { get; set; }
         
         /// <summary>
         /// Date Requested Field
         /// </summary>
-        [DataMember(Name = "DateRequestedField", EmitDefaultValue = false)]
+        [DataMember(Name = "DateRequestedField")]
         public DateTime DateRequestedField { get; set; }
         
         /// <summary>
         /// Document ID Field
         /// </summary>
-        [DataMember(Name = "DocIDField", EmitDefaultValue = false)]
+        [DataMember(Name = "DocIDField")]
         public int DocIDField { get; set; }
         
         /// <summary>
         /// Document Name Field
         /// </summary>
-        [DataMember(Name = "DocNameField", EmitDefaultValue = false)]
+        [DataMember(Name = "DocNameField")]
         public string DocNameField { get; set; }
         
         /// <summary>
         ///  Document Due Date Field
         /// </summary>
-        [DataMember(Name = "DueDateField", EmitDefaultValue = false)]
+        [DataMember(Name = "DueDateField")]
         public DateTime DueDateField { get; set; }
         
         /// <summary>
@@ -94,9 +94,9 @@ namespace SigniFlow.Connect.Model
         {
             var sb = new System.Text.StringBuilder();
             sb.Append("class SendReminderRequest {\n");
-            sb.Append("  AwaitingFromEmailField: ").Append(AwaitingFromEmailField).Append("\n");
-            sb.Append("  AwaitingFromIdField: ").Append(AwaitingFromIdField).Append("\n");
-            sb.Append("  AwaitingFromNameField: ").Append(AwaitingFromNameField).Append("\n");
+            sb.Append("  AwaitingFromEmailField: ").Append(AwaintingFromEmailField).Append("\n");
+            sb.Append("  AwaitingFromIdField: ").Append(AwaintingFromIdField).Append("\n");
+            sb.Append("  AwaitingFromNameField: ").Append(AwaintingFromNameField).Append("\n");
             sb.Append("  DateRequestedField: ").Append(DateRequestedField).Append("\n");
             sb.Append("  DocIDField: ").Append(DocIDField).Append("\n");
             sb.Append("  DocNameField: ").Append(DocNameField).Append("\n");
@@ -132,19 +132,19 @@ namespace SigniFlow.Connect.Model
 
             return
                 (
-                    this.AwaitingFromEmailField == input.AwaitingFromEmailField ||
-                    (this.AwaitingFromEmailField != null &&
-                     this.AwaitingFromEmailField.Equals(input.AwaitingFromEmailField))
+                    this.AwaintingFromEmailField == input.AwaintingFromEmailField ||
+                    (this.AwaintingFromEmailField != null &&
+                     this.AwaintingFromEmailField.Equals(input.AwaintingFromEmailField))
                 ) &&
                 (
-                    this.AwaitingFromIdField == input.AwaitingFromIdField ||
-                    (this.AwaitingFromIdField != null &&
-                     this.AwaitingFromIdField.Equals(input.AwaitingFromIdField))
+                    this.AwaintingFromIdField == input.AwaintingFromIdField ||
+                    (this.AwaintingFromIdField != null &&
+                     this.AwaintingFromIdField.Equals(input.AwaintingFromIdField))
                 ) &&
                 (
-                    this.AwaitingFromNameField == input.AwaitingFromNameField ||
-                    (this.AwaitingFromNameField != null &&
-                     this.AwaitingFromNameField.Equals(input.AwaitingFromNameField))
+                    this.AwaintingFromNameField == input.AwaintingFromNameField ||
+                    (this.AwaintingFromNameField != null &&
+                     this.AwaintingFromNameField.Equals(input.AwaintingFromNameField))
                 ) &&
                 (
                     this.DateRequestedField == input.DateRequestedField ||
@@ -181,12 +181,12 @@ namespace SigniFlow.Connect.Model
             unchecked
             {
                 int hashCode = 41;
-                if (this.AwaitingFromEmailField != null)
-                    hashCode = hashCode * 59 + this.AwaitingFromEmailField.GetHashCode();
-                if (this.AwaitingFromIdField != null)
-                    hashCode = hashCode * 59 + this.AwaitingFromIdField.GetHashCode();
-                if (this.AwaitingFromNameField != null)
-                    hashCode = hashCode * 59 + this.AwaitingFromNameField.GetHashCode();
+                if (this.AwaintingFromEmailField != null)
+                    hashCode = hashCode * 59 + this.AwaintingFromEmailField.GetHashCode();
+                if (this.AwaintingFromIdField != null)
+                    hashCode = hashCode * 59 + this.AwaintingFromIdField.GetHashCode();
+                if (this.AwaintingFromNameField != null)
+                    hashCode = hashCode * 59 + this.AwaintingFromNameField.GetHashCode();
                 if (this.DateRequestedField != null)
                     hashCode = hashCode * 59 + this.DateRequestedField.GetHashCode();
                 hashCode = hashCode * 59 + this.DocIDField.GetHashCode();

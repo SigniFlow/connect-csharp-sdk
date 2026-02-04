@@ -63,7 +63,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Reason for cancelling the workflow.
         /// </summary>
-        [DataMember(Name = "ReasonField", EmitDefaultValue = false)]
+        [DataMember(Name = "ReasonField", EmitDefaultValue = true)]
         public string ReasonField { get; set; }
 
         /// <summary>

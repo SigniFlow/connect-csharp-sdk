@@ -52,6 +52,7 @@ namespace SigniFlow.Connect.Model
         public GetDocumentRequest(decimal docIDField = default(decimal), bool includeWatermarkField = default(bool) ,TokenField tokenField = default(TokenField))
         {
             this.DocIDField = docIDField;
+            this.IncludeWatermarkField = includeWatermarkField;
             // to ensure "tokenField" is required (not null)
             this.TokenField = tokenField ?? throw new ArgumentNullException("tokenField is a required property for GetDocumentRequest and cannot be null");
         }
@@ -66,7 +67,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Include the watermark on the document
         /// </summary>
-        [DataMember(Name = "IncludeWatermarkField", EmitDefaultValue = false)]
+        [DataMember(Name = "IncludeWatermarkField", EmitDefaultValue = true)]
         public bool IncludeWatermarkField { get; set; }
 
         /// <summary>
