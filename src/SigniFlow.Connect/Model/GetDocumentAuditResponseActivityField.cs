@@ -60,8 +60,6 @@ namespace SigniFlow.Connect.Model
         /// <param name="userFullNameField">User&#39;s full name. (required).</param>
         public GetDocumentAuditResponseActivityField(string actionOrderField = default(string), string additionalField = default(string), string docIDField = default(string), string emailField = default(string), string eventDateField = default(string), string eventField = default(string), string eventStatusField = default(string), string locationField = default(string), string orderDateField = default(string), string pageField = default(string), string userFullNameField = default(string))
         {
-            // to ensure "actionOrderField" is required (not null)
-            this.ActionOrderField = actionOrderField ?? throw new ArgumentNullException("actionOrderField is a required property for GetDocumentAuditResponseActivityField and cannot be null");
             // to ensure "docIDField" is required (not null)
             this.DocIDField = docIDField ?? throw new ArgumentNullException("docIDField is a required property for GetDocumentAuditResponseActivityField and cannot be null");
             // to ensure "emailField" is required (not null)
@@ -82,13 +80,6 @@ namespace SigniFlow.Connect.Model
             this.UserFullNameField = userFullNameField ?? throw new ArgumentNullException("userFullNameField is a required property for GetDocumentAuditResponseActivityField and cannot be null");
             this.AdditionalField = additionalField;
         }
-
-        /// <summary>
-        /// The order in which action will be taken.
-        /// </summary>
-        /// <value>The order in which action will be taken.</value>
-        [DataMember(Name = "ActionOrderField", IsRequired = true, EmitDefaultValue = true)]
-        public string ActionOrderField { get; set; }
 
         /// <summary>
         /// Returns the additional information about the audit (i.e. IP Address and browser that was used/ Reason for rejection or expiration).
@@ -168,7 +159,6 @@ namespace SigniFlow.Connect.Model
         {
             var sb = new StringBuilder();
             sb.Append("class GetDocumentAuditResponseActivityField {\n");
-            sb.Append("  ActionOrderField: ").Append(ActionOrderField).Append("\n");
             sb.Append("  AdditionalField: ").Append(AdditionalField).Append("\n");
             sb.Append("  DocIDField: ").Append(DocIDField).Append("\n");
             sb.Append("  EmailField: ").Append(EmailField).Append("\n");
@@ -213,11 +203,6 @@ namespace SigniFlow.Connect.Model
                 return false;
 
             return 
-                (
-                    this.ActionOrderField == input.ActionOrderField ||
-                    (this.ActionOrderField != null &&
-                    this.ActionOrderField.Equals(input.ActionOrderField))
-                ) && 
                 (
                     this.AdditionalField == input.AdditionalField ||
                     (this.AdditionalField != null &&
@@ -279,8 +264,6 @@ namespace SigniFlow.Connect.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ActionOrderField != null)
-                    hashCode = hashCode * 59 + this.ActionOrderField.GetHashCode();
                 if (this.AdditionalField != null)
                     hashCode = hashCode * 59 + this.AdditionalField.GetHashCode();
                 if (this.DocIDField != null)
@@ -312,12 +295,6 @@ namespace SigniFlow.Connect.Model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // ActionOrderField (string) minLength
-            if(this.ActionOrderField != null && this.ActionOrderField.Length < 1)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ActionOrderField, length must be greater than 1.", new [] { "ActionOrderField" });
-            }
-
             // AdditionalField (string) minLength
             if(this.AdditionalField != null && this.AdditionalField.Length < 1)
             {
