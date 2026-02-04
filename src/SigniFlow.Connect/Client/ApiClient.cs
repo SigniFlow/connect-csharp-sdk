@@ -171,7 +171,8 @@ namespace SigniFlow.Connect.Client
                 {
                     OverrideSpecifiedNames = false
                 }
-            }
+            },
+            DefaultValueHandling = DefaultValueHandling.Include,
         };
 
         /// <summary>
