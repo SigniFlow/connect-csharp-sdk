@@ -52,7 +52,7 @@ namespace SigniFlow.Connect.Model
         public GetDocumentRequest(decimal docIDField = default(decimal), bool includeWatermarkField = default(bool) ,TokenField tokenField = default(TokenField))
         {
             this.DocIDField = docIDField;
-            this.IncludeWatermarkField = includeWatermarkField;
+            this.IncludeStatusWatermarkField = includeWatermarkField;
             // to ensure "tokenField" is required (not null)
             this.TokenField = tokenField ?? throw new ArgumentNullException("tokenField is a required property for GetDocumentRequest and cannot be null");
         }
@@ -65,10 +65,10 @@ namespace SigniFlow.Connect.Model
         public decimal DocIDField { get; set; }
         
         /// <summary>
-        /// Include the watermark on the document
+        /// Include the status watermark on the document
         /// </summary>
-        [DataMember(Name = "IncludeWatermarkField", EmitDefaultValue = true)]
-        public bool IncludeWatermarkField { get; set; }
+        [DataMember(Name = "IncludeStatusWatermarkField", EmitDefaultValue = true)]
+        public bool IncludeStatusWatermarkField { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
@@ -85,7 +85,7 @@ namespace SigniFlow.Connect.Model
             var sb = new StringBuilder();
             sb.Append("class GetDocumentRequest {\n");
             sb.Append("  DocIDField: ").Append(DocIDField).Append("\n");
-            sb.Append(" IncludeWatermarkField: ").Append(IncludeWatermarkField).Append("\n");
+            sb.Append(" IncludeWatermarkField: ").Append(IncludeStatusWatermarkField).Append("\n");
             sb.Append("  TokenField: ").Append(TokenField).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -126,8 +126,8 @@ namespace SigniFlow.Connect.Model
                     this.DocIDField.Equals(input.DocIDField)
                 ) &&
                 (
-                    this.IncludeWatermarkField == input.IncludeWatermarkField ||
-                    this.IncludeWatermarkField.Equals(input.IncludeWatermarkField)
+                    this.IncludeStatusWatermarkField == input.IncludeStatusWatermarkField ||
+                    this.IncludeStatusWatermarkField.Equals(input.IncludeStatusWatermarkField)
                 ) &&
                 (
                     this.TokenField == input.TokenField ||
@@ -146,8 +146,8 @@ namespace SigniFlow.Connect.Model
             {
                 int hashCode = 41;
                 hashCode = hashCode * 59 + this.DocIDField.GetHashCode();
-                if (this.IncludeWatermarkField != null)
-                    hashCode = hashCode * 59 + this.IncludeWatermarkField.GetHashCode();
+                if (this.IncludeStatusWatermarkField != null)
+                    hashCode = hashCode * 59 + this.IncludeStatusWatermarkField.GetHashCode();
                 if (this.TokenField != null)
                     hashCode = hashCode * 59 + this.TokenField.GetHashCode();
                 return hashCode;
