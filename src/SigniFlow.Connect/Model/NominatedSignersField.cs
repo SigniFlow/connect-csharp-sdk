@@ -21,7 +21,7 @@ namespace SigniFlow.Connect.Model
         /// <param name="sendCompletedEmailField"></param>
         /// <param name="signerNicknameField"></param>
         public NominatedSignersField(List<UserField> userFields = default(List<UserField>),
-            PhotoAtSigning photoAtSigningField = default(PhotoAtSigning), 
+            PhotoAtSigning? photoAtSigningField = null, 
             int sendCompletedEmailField = default(int),
             string signerNicknameField = default(string))
         {
@@ -35,7 +35,7 @@ namespace SigniFlow.Connect.Model
         public List<UserField> UserFieldListUserField { get; set; }
         
         [DataMember(Name = "PhotoAtSigningField", EmitDefaultValue = false)]
-        public PhotoAtSigning PhotoAtSigningField { get; set; }
+        public PhotoAtSigning? PhotoAtSigningField { get; set; }
         
         [DataMember(Name = "SendCompletedEmailField", EmitDefaultValue = false)]
         public int SendCompletedEmailField { get; set; }

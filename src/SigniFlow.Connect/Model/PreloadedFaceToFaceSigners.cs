@@ -31,7 +31,7 @@ namespace SigniFlow.Connect.Model
             List<UserField> fieldsListField = default(List<UserField>),
             IDType iDTypeField = default(IDType),
             string iDentificationNumberField = default(string),
-            int photoAtSigningField = default(int),
+            PhotoAtSigning? photoAtSigningField = null,
             int sendCompletedEmailField = default(int),
             int sendOTPField = default(int),
             string signerEmailField = default(string),
@@ -80,7 +80,7 @@ namespace SigniFlow.Connect.Model
         /// Photo at signing option
         /// </summary>
         [DataMember(Name = "PhotoAtSigningField", EmitDefaultValue = false)]
-        public int PhotoAtSigningField { get; set; }
+        public PhotoAtSigning? PhotoAtSigningField { get; set; }
         
         /// <summary>
         /// Sned Completed Email
