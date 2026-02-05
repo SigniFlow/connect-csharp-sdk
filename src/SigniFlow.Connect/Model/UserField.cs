@@ -26,7 +26,8 @@ namespace SigniFlow.Connect.Model
             string nameField = default(string),
             int validationIDField = default(int),
             int combinedCharacterAmountField = default(int),
-            string valueField = default(string))
+            string valueField = default(string),
+            bool isInvisibleField = default(bool))
         {
             this.DocFieldTypeField = docFieldTypeField;
             this.FontFamilyField = fontFamilyField;
@@ -42,6 +43,7 @@ namespace SigniFlow.Connect.Model
             this.ValidationIDField = validationIDField;
             this.CombinedCharacterAmountField = combinedCharacterAmountField;
             this.ValueField = valueField;
+            this.IsInvisibleField = isInvisibleField;
         }
         
         [DataMember(Name = "DocFieldTypeField", EmitDefaultValue = true)]
@@ -85,6 +87,9 @@ namespace SigniFlow.Connect.Model
         
         [DataMember(Name = "ValueField", EmitDefaultValue = true)]
         public string ValueField { get; set; }
+        
+        [DataMember(Name = "IsInvisibleField", EmitDefaultValue = true)]
+        public bool IsInvisibleField { get; set; }
 
         public override string ToString()
         {
@@ -104,6 +109,7 @@ namespace SigniFlow.Connect.Model
             sb.Append("  ValidationIDField: ").Append(ValidationIDField).Append("\n");
             sb.Append("  CombinedCharacterAmountField: ").Append(CombinedCharacterAmountField).Append("\n");
             sb.Append("  ValueField: ").Append(ValueField).Append("\n");
+            sb.Append(" IsInvisibleField: ").Append(IsInvisibleField).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -180,6 +186,10 @@ namespace SigniFlow.Connect.Model
                     this.ValueField == input.ValueField ||
                     (this.ValueField != null &&
                      this.ValueField.Equals(input.ValueField))
+                )&&
+                (
+                    this.IsInvisibleField == input.IsInvisibleField||
+                    this.IsInvisibleField.Equals(input.IsInvisibleField)
                 );
         }
         
