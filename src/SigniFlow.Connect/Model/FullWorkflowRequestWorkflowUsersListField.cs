@@ -13,6 +13,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.IO;
 using System.Runtime.Serialization;
@@ -73,7 +74,7 @@ namespace SigniFlow.Connect.Model
         /// <param name="userFullNameField">Face to face user&#39;s full name..</param>
         /// <param name="userLastNameField">Face to face user&#39;s last name..</param>
         /// <param name="workflowUserFieldsField">The list of the workflowed documents field. (required).</param>
-        public FullWorkflowRequestWorkflowUsersListField(ActionField actionField = default(ActionField), ProxyAllowedField allowProxyField = default(ProxyAllowedField), bool autoSignField = default(bool), string emailAddressField = default(string), FullWorkflowRequestGroupStepField groupStepField = default(FullWorkflowRequestGroupStepField), string languageCodeField = default(string), string latitudeField = default(string), string longitudeField = default(string), string mobileNumberField = default(string), List<Object> preloadedFaceToFaceSignersField = default(List<Object>), string signReasonField = default(string), string signerPasswordField = default(string), string userFirstNameField = default(string), string userFullNameField = default(string), string userLastNameField = default(string), List<FullWorkflowRequestWorkflowUserFieldsField> workflowUserFieldsField = default(List<FullWorkflowRequestWorkflowUserFieldsField>))
+        public FullWorkflowRequestWorkflowUsersListField(ActionField actionField = default(ActionField), ProxyAllowedField allowProxyField = default(ProxyAllowedField), bool autoSignField = default(bool), string emailAddressField = default(string), FullWorkflowRequestGroupStepField groupStepField = default(FullWorkflowRequestGroupStepField), string languageCodeField = default(string), string latitudeField = default(string), string longitudeField = default(string), string mobileNumberField = default(string), List<Object> preloadedFaceToFaceSignersField = default(List<Object>), string signReasonField = default(string), string signerPasswordField = default(string), string userFirstNameField = default(string), string userFullNameField = default(string), string userLastNameField = default(string), List<FullWorkflowRequestWorkflowUserFieldsField> workflowUserFieldsField = default(List<FullWorkflowRequestWorkflowUserFieldsField>), List<NominatedSignersField> nominatedSignersField = default(List<NominatedSignersField>))
         {
             this.ActionField = actionField;
             this.AllowProxyField = allowProxyField;
@@ -94,6 +95,7 @@ namespace SigniFlow.Connect.Model
             this.UserFirstNameField = userFirstNameField;
             this.UserFullNameField = userFullNameField;
             this.UserLastNameField = userLastNameField;
+            this.NominatedSignersField = nominatedSignersField;
         }
 
         /// <summary>
@@ -192,6 +194,18 @@ namespace SigniFlow.Connect.Model
         /// <value>The list of the workflowed documents field.</value>
         [DataMember(Name = "WorkflowUserFieldsField", IsRequired = true, EmitDefaultValue = true)]
         public List<FullWorkflowRequestWorkflowUserFieldsField> WorkflowUserFieldsField { get; set; }
+        
+        /// <summary>
+        /// List of the nominated signers
+        /// </summary>
+        [DataMember(Name = "NominatedSignersField", EmitDefaultValue = true)]
+        public List<NominatedSignersField> NominatedSignersField { get; set; }
+
+        /// <summary>
+        /// Photo at signing field, Value must not be included because if it is there will trigger the photo at signing code 
+        /// </summary>
+        [DataMember(Name = "PhotoAtSigningField", EmitDefaultValue = true)]
+        public PhotoAtSigning? PhotoAtSigningField { get; set; } = null;
 
         /// <summary>
         /// Returns the string presentation of the object
