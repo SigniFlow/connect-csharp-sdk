@@ -52,18 +52,7 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         [DataMember(Name = "PriorityField", EmitDefaultValue = true)]
         public Priority? PriorityField { get; set; }
-        //    
-        //    
-        //        /// <summary>
-        //        /// Initializes a new instance of the <see cref="FullWorkflowRequest" /> class.
-        //        /// </summary>
-        //        [JsonConstructorAttribute]
-        //        
-        //        protected FullWorkflowRequest() { }
-        //        
-        //        
-        //    
-        //    
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowRequest" /> class.
         /// </summary>
@@ -95,7 +84,9 @@ namespace SigniFlow.Connect.Model
             Priority? priorityField = default(Priority?), decimal sLAField = default(decimal), bool sendFirstEmailField = default(bool), 
             bool sendWorkflowEmailsField = default(bool), TokenField tokenField = default(TokenField), 
             List<FullWorkflowRequestWorkflowUsersListField> workflowUsersListField = default(List<FullWorkflowRequestWorkflowUsersListField>),
-            AutoExpire autoExpireField = default(AutoExpire))
+            AutoExpire autoExpireField = default(AutoExpire), 
+            List<AdhocPreloadedFaceToFaceUsersField> adhocPreloadedFaceToFaceUsersField = default(List<AdhocPreloadedFaceToFaceUsersField>),
+            string sharedKeyField = default(string), bool useAutoTagsField = default(bool))
         {
             this.AutoRemindField = autoRemindField;
             // to ensure "docField" is required (not null)
@@ -120,6 +111,9 @@ namespace SigniFlow.Connect.Model
             this.PriorityField = priorityField;
             this.SLAField = sLAField;
             this.AutoExpireField = autoExpireField;
+            this.AdhocPreloadedFaceToFaceUsersField = adhocPreloadedFaceToFaceUsersField;
+            this.SharedKeyField = sharedKeyField;
+            this.UseAutoTagsField = useAutoTagsField;
         }
 
         /// <summary>
@@ -225,6 +219,24 @@ namespace SigniFlow.Connect.Model
         /// <value>List of users in the workflow.</value>
         [DataMember(Name = "WorkflowUsersListField", IsRequired = true, EmitDefaultValue = true)]
         public List<FullWorkflowRequestWorkflowUsersListField> WorkflowUsersListField { get; set; }
+        
+        /// <summary>
+        /// List of face to face users in the workflow.
+        /// </summary>
+        [DataMember(Name = "AdhocPreloadedFaceToFaceUsersField", EmitDefaultValue = true)]
+        public List<AdhocPreloadedFaceToFaceUsersField> AdhocPreloadedFaceToFaceUsersField { get; set; }
+        
+        /// <summary>
+        /// Shared Keys
+        /// </summary>
+        [DataMember(Name = "SharedKeyField", EmitDefaultValue = true)]
+        public string SharedKeyField { get; set; }
+        
+        /// <summary>
+        /// Create fields automatically from tags in the document
+        /// </summary>
+        [DataMember(Name = "UseAutoTagsField", EmitDefaultValue = true)]
+        public bool UseAutoTagsField { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -375,6 +387,20 @@ namespace SigniFlow.Connect.Model
                 (
                     this.AutoExpireField == input.AutoExpireField ||
                     this.AutoExpireField.Equals(input.AutoExpireField)
+                )&&
+                (
+                    this.AdhocPreloadedFaceToFaceUsersField == input.AdhocPreloadedFaceToFaceUsersField ||
+                    (this.AdhocPreloadedFaceToFaceUsersField != null &&
+                    this.AdhocPreloadedFaceToFaceUsersField.Equals(input.AdhocPreloadedFaceToFaceUsersField))
+                ) &&
+                (
+                    this.SharedKeyField == input.SharedKeyField ||
+                    (this.SharedKeyField != null &&
+                    this.SharedKeyField.Equals(input.SharedKeyField))
+                ) &&
+                (
+                    this.UseAutoTagsField == input.UseAutoTagsField ||
+                    this.UseAutoTagsField.Equals(input.UseAutoTagsField)
                 );
         }
 
@@ -418,6 +444,11 @@ namespace SigniFlow.Connect.Model
                 if (this.WorkflowUsersListField != null)
                     hashCode = hashCode * 59 + this.WorkflowUsersListField.GetHashCode();
                 hashCode = hashCode * 59 + this.AutoExpireField.GetHashCode();
+                if (this.AdhocPreloadedFaceToFaceUsersField != null)
+                    hashCode = hashCode * 59 + this.AdhocPreloadedFaceToFaceUsersField.GetHashCode();
+                if (this.SharedKeyField != null)
+                    hashCode = hashCode * 59 + this.SharedKeyField.GetHashCode();
+                hashCode = hashCode * 59 + this.UseAutoTagsField.GetHashCode();
                 return hashCode;
             }
         }

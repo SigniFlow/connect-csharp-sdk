@@ -15,6 +15,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Mime;
+using System.Threading;
+using System.Threading.Tasks;
 using SigniFlow.Connect.Client;
 using SigniFlow.Connect.Model;
 
@@ -326,6 +328,30 @@ namespace SigniFlow.Connect.Api
         /// <param name="workflowSignRequest">##### Workflow Sign Request Model (optional)</param>
         /// <returns>ApiResponse of WorkflowSignResponse</returns>
         ApiResponse<WorkflowSignResponse> PostWorkflowSignWithHttpInfo(string contentType, WorkflowSignRequest workflowSignRequest = default(WorkflowSignRequest));
+        
+        /// <summary>
+        /// Send Reminder
+        /// </summary>
+        /// <remarks>
+        /// #### Used to send a reminder to a recipient in a document workflow.
+        /// </remarks>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException"></exception>
+        /// <param name="contentType"></param>
+        /// <param name="sendReminderRequest"></param>
+        /// <returns>SendReminderResponse</returns>
+        SendReminderResponse PostSendReminder(string contentType, SendReminderRequest sendReminderRequest = default(SendReminderRequest));
+        
+        /// <summary>
+        /// Send Reminder
+        /// </summary>
+        /// <remarks>
+        /// #### Used to send a reminder to a recipient in a document workflow.
+        /// </remarks>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException"></exception>
+        /// <param name="contentType"></param>
+        /// <param name="sendReminderRequest"></param>
+        /// <returns>ApiResponse of SendReminderResponse</returns>
+        ApiResponse<SendReminderResponse> PostSendReminderWithHttpInfo(string contentType, SendReminderRequest sendReminderRequest = default(SendReminderRequest));
         #endregion Synchronous Operations
     }
 
@@ -660,6 +686,33 @@ namespace SigniFlow.Connect.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkflowSignResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<WorkflowSignResponse>> PostWorkflowSignWithHttpInfoAsync(string contentType, WorkflowSignRequest workflowSignRequest = default(WorkflowSignRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        
+        /// <summary>
+        /// Send Reminder
+        /// </summary>
+        /// <remarks>
+        /// #### Used to send a reminder to a user to sign a document.
+        /// </remarks>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="contentType"></param>
+        /// <param name="sendReminderRequest"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>Task of SendReminderResponse</returns>
+        Task<SendReminderResponse> PostSendReminderAsync(string contentType, SendReminderRequest sendReminderRequest = default(SendReminderRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        
+        
+        /// <summary>
+        /// Send Reminder
+        /// </summary>
+        /// <remarks>
+        /// #### Used to send a reminder to a user to sign a document.
+        /// </remarks>
+        /// <exception cref="SigniFlow.Connect.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="contentType"></param>
+        /// <param name="sendReminderRequest"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>Task of ApiResponse SendReminderResponse</returns>
+        Task<ApiResponse<SendReminderResponse>> PostSendReminderWithHttpInfoAsync(string contentType, SendReminderRequest sendReminderRequest = default(SendReminderRequest), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -2322,6 +2375,7 @@ namespace SigniFlow.Connect.Api
 
             return localVarResponse;
         }
+        
 
         /// <summary>
         /// Workflow Sign #### Used to send a request to a user to sign a document workflow.
@@ -2386,6 +2440,128 @@ namespace SigniFlow.Connect.Api
 
             return localVarResponse;
         }
+
+        /// <summary>
+        /// Send Reminder #### Used to send a reminder to a user to sign a document workflow.
+        /// </summary>
+        /// <param name="contentType"></param>
+        /// <param name="sendReminderRequest"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>SendReminderResponse</returns>
+        public async Task<SendReminderResponse> PostSendReminderAsync(string contentType, SendReminderRequest sendReminderRequest = default(SendReminderRequest),
+            CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var localVarResponse = await PostSendReminderWithHttpInfoAsync(contentType, sendReminderRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+        
+        /// <summary>
+        /// Send Reminder #### Used to send a reminder to a user to sign a document workflow.
+        /// </summary>
+        /// <param name="contentType"></param>
+        /// <param name="sendReminderRequest"></param>
+        /// <returns>SendReminderResponse</returns>
+        public SendReminderResponse PostSendReminder(string contentType,
+            SendReminderRequest sendReminderRequest = default(SendReminderRequest))
+        {
+            ApiResponse<SendReminderResponse> localVarResponse = PostSendReminderWithHttpInfo(contentType, sendReminderRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Send Reminder #### Used to send a reminder to a user to sign a document workflow.
+        /// </summary>
+        /// <param name="contentType"></param>
+        /// <param name="sendReminderRequest"></param>
+        /// <returns>ApiResponse of SendReminderResponse </returns>
+        /// <exception cref="ApiException"></exception>
+        /// <exception cref="Exception"></exception>
+        public ApiResponse<SendReminderResponse> PostSendReminderWithHttpInfo(string contentType,
+            SendReminderRequest sendReminderRequest = default(SendReminderRequest))
+        {
+            if(contentType == null)
+                throw new ApiException(400, "Missing required parameter 'contentType' when calling WorkFlowApi->PostSendReminder");
+            
+            RequestOptions localVarRequestOptions = new RequestOptions();
+            
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+            
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            
+            localVarRequestOptions.HeaderParameters.Add("Content-Type", ClientUtils.ParameterToString(contentType)); // header parameter
+            localVarRequestOptions.Data = sendReminderRequest;
+            
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<SendReminderResponse>("/SendReminder", localVarRequestOptions, this.Configuration);
+            
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PostSendReminder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+            
+            return localVarResponse;
+        }
+        
+        /// <summary>
+        ///  Send Reminder #### Used to send a reminder to a user to sign a document workflow.
+        /// </summary>
+        /// <param name="contentType"></param>
+        /// <param name="sendReminderRequest"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>ApiResponse of SendReminderResponse</returns>
+        /// <exception cref="ApiException"></exception>
+        /// <exception cref="Exception"></exception>
+        public async Task<ApiResponse<SendReminderResponse>> PostSendReminderWithHttpInfoAsync(string contentType,
+            SendReminderRequest sendReminderRequest = default(SendReminderRequest),
+            CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if(contentType == null)
+                throw new ApiException(400, "Missing required parameter 'contentType' when calling WorkFlowApi->PostSendReminder");
+            
+            RequestOptions localVarRequestOptions = new RequestOptions();
+            
+            String[] _contentTypes = new String[] {
+                "application/json"
+            };
+            
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "application/json"
+            };
+            
+            var localVarContentType = ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            
+            var localVarAccept = ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            
+            localVarRequestOptions.HeaderParameters.Add("Content-Type", ClientUtils.ParameterToString(contentType)); // header parameter
+            localVarRequestOptions.Data = sendReminderRequest;
+            
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SendReminderResponse>("/SendReminder", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PostSendReminder", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+            
+            return localVarResponse;
+        }
+
 
     }
 }
