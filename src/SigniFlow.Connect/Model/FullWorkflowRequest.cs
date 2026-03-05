@@ -484,6 +484,28 @@ namespace SigniFlow.Connect.Model
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SLAField, must be a value greater than or equal to 0.", new [] { "SLAField" });
             }
 
+            // Validate that every signer has at least one signature field,
+            // unless auto-tags are enabled (fields come from the document).
+            if (!this.UseAutoTagsField && this.WorkflowUsersListField != null)
+            {
+                for (int i = 0; i < this.WorkflowUsersListField.Count; i++)
+                {
+                    var user = this.WorkflowUsersListField[i];
+                    if (user != null && user.ActionField == ActionField.SignDocument)
+                    {
+                        bool hasSignatureField = user.WorkflowUserFieldsField != null &&
+                            user.WorkflowUserFieldsField.Any(f => f.FieldTypeField == FieldType.Signature);
+
+                        if (!hasSignatureField)
+                        {
+                            yield return new System.ComponentModel.DataAnnotations.ValidationResult(
+                                $"Signer at index {i} ('{user.EmailAddressField}') must have at least one signature field (FieldType.Signature).",
+                                new[] { "WorkflowUsersListField" });
+                        }
+                    }
+                }
+            }
+
             yield break;
         }
     }
