@@ -51,7 +51,7 @@ namespace SigniFlow.Connect.Model
         /// <param name="linkToPortfolioField">Link document to Portfolio link. (required).</param>
         /// <param name="portfolioIDField">Portfolio ID..</param>
         /// <param name="portfolioNameField">Portfolio name..</param>
-        public FullWorkflowRequestPortfolioInformationField(bool createPortfolioField = default(bool), bool linkToPortfolioField = default(bool), decimal? portfolioIDField = default(decimal?), string portfolioNameField = default(string))
+        public FullWorkflowRequestPortfolioInformationField(bool createPortfolioField = default(bool), bool linkToPortfolioField = default(bool), decimal? portfolioIDField = default(decimal?), string portfolioNameField = default(string), bool sendPortfolioCompleteEmailField = default(bool))
         {
             this.CreatePortfolioField = createPortfolioField;
             this.LinkToPortfolioField = linkToPortfolioField;
@@ -86,6 +86,12 @@ namespace SigniFlow.Connect.Model
         /// <value>Portfolio name.</value>
         [DataMember(Name = "PortfolioNameField", EmitDefaultValue = true)]
         public string PortfolioNameField { get; set; }
+        
+        /// <summary>
+        /// Send email when portfolio is completed.
+        /// </summary>
+        [DataMember(Name = "SendPortfolioCompleteEmailField", EmitDefaultValue = true)]
+        public bool SendPortfolioCompleteEmailField { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -99,6 +105,7 @@ namespace SigniFlow.Connect.Model
             sb.Append("  LinkToPortfolioField: ").Append(LinkToPortfolioField).Append("\n");
             sb.Append("  PortfolioIDField: ").Append(PortfolioIDField).Append("\n");
             sb.Append("  PortfolioNameField: ").Append(PortfolioNameField).Append("\n");
+            sb.Append("  SendPortfolioCompleteEmailField: ").Append(SendPortfolioCompleteEmailField).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -150,6 +157,10 @@ namespace SigniFlow.Connect.Model
                     this.PortfolioNameField == input.PortfolioNameField ||
                     (this.PortfolioNameField != null &&
                     this.PortfolioNameField.Equals(input.PortfolioNameField))
+                )&&
+                (
+                    this.SendPortfolioCompleteEmailField == input.SendPortfolioCompleteEmailField ||
+                    this.SendPortfolioCompleteEmailField.Equals(input.SendPortfolioCompleteEmailField)
                 );
         }
 
@@ -168,6 +179,7 @@ namespace SigniFlow.Connect.Model
                     hashCode = hashCode * 59 + this.PortfolioIDField.GetHashCode();
                 if (this.PortfolioNameField != null)
                     hashCode = hashCode * 59 + this.PortfolioNameField.GetHashCode();
+                hashCode = hashCode * 59 + this.SendPortfolioCompleteEmailField.GetHashCode();
                 return hashCode;
             }
         }
