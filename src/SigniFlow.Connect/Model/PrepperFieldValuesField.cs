@@ -23,6 +23,7 @@ namespace SigniFlow.Connect.Model
         /// <param name="widthField"></param>
         /// <param name="xCoordinateField"></param>
         /// <param name="yCoordinateField"></param>
+        /// <param name="dateTimeField"></param>
         public PrepperFieldValuesField(int docIDField = default(int), 
             string fieldNameField = default(string),
             string fieldTypeField = default(string),
@@ -34,7 +35,8 @@ namespace SigniFlow.Connect.Model
             int userIDField = default(int),
             string widthField = default(string),
             string xCoordinateField = default(string),
-            string yCoordinateField = default(string))
+            string yCoordinateField = default(string),
+            DateTime dateTimeField = default(DateTime))
         {
             this.DocIDField = docIDField;
             this.FieldNameField = fieldNameField;
@@ -48,6 +50,7 @@ namespace SigniFlow.Connect.Model
             this.WidthField = widthField;
             this.XCoordinateField = xCoordinateField;
             this.YCoordinateField = yCoordinateField;
+            this.DateTimeField = dateTimeField;
         }
         
         /// <summary>
@@ -121,7 +124,13 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         [DataMember(Name = "YCoordinateField", IsRequired = true, EmitDefaultValue = true)]
         public string YCoordinateField { get; set; }
-        
+
+        /// <summary>
+        /// Date and time field.
+        /// </summary>
+        [DataMember(Name = "DateTimeField", IsRequired = true, EmitDefaultValue = true)]
+        public DateTime DateTimeField { get; set; }
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -142,6 +151,7 @@ namespace SigniFlow.Connect.Model
             sb.Append("  WidthField: ").Append(WidthField).Append("\n");
             sb.Append("  XCoordinateField: ").Append(XCoordinateField).Append("\n");
             sb.Append("  YCoordinateField: ").Append(YCoordinateField).Append("\n");
+            sb.Append("  DateTimeField: ").Append(DateTimeField).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -232,6 +242,11 @@ namespace SigniFlow.Connect.Model
                     this.YCoordinateField == other.YCoordinateField ||
                     (this.YCoordinateField != null &&
                     this.YCoordinateField.Equals(other.YCoordinateField))
+                ) &&
+                (
+                    this.DateTimeField == other.DateTimeField ||
+                    (this.DateTimeField != null &&
+                    this.DateTimeField.Equals(other.DateTimeField))
                 );
         }
         
@@ -268,6 +283,8 @@ namespace SigniFlow.Connect.Model
                     hashCode = hashCode * 59 + this.XCoordinateField.GetHashCode();
                 if (this.YCoordinateField != null)
                     hashCode = hashCode * 59 + this.YCoordinateField.GetHashCode();
+                if (this.DateTimeField != null)
+                    hashCode = hashCode * 59 + this.DateTimeField.GetHashCode();
                 return hashCode;
             }
         }
