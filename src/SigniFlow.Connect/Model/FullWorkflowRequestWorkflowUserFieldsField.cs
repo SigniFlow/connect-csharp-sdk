@@ -67,9 +67,29 @@ namespace SigniFlow.Connect.Model
         /// <param name="yCoordinateField">The fields y-coordinates. (required).</param>
         /// <param name="yOffsetField">The fields y-coordinates offset.</param>
         /// <param name="nameField">The fields name.</param>
-        public FullWorkflowRequestWorkflowUserFieldsField(FieldType fieldTypeField = default(FieldType), string fontFamilyField = default(string), decimal? fontSizeField = default(decimal?), decimal? groupUserNumberField = default(decimal?), string heightField = default(string), bool? isInvisibleField = default(bool?), decimal pageNumberField = default(decimal), string tagNameField = default(string), string valueField = default(string), string widthField = default(string), string xCoordinateField = default(string), decimal? xOffsetField = default(decimal?), string yCoordinateField = default(string), decimal? yOffsetField = default(decimal?),
-          string nameField = default(string))
+        /// <param name="validationIdField"></param>
+        /// <param name="dateFormatField">The date format for the field.</param>
+        public FullWorkflowRequestWorkflowUserFieldsField(
+            FieldType fieldTypeField = default, 
+            string fontFamilyField = null, 
+            decimal? fontSizeField = null, 
+            decimal? groupUserNumberField = null, 
+            string heightField = null, 
+            bool? isInvisibleField = null, 
+            decimal pageNumberField = 0, 
+            string tagNameField = null, 
+            string valueField = null, 
+            string widthField = null, 
+            string xCoordinateField = null, 
+            decimal? xOffsetField = null,
+            string yCoordinateField = null,
+            decimal? yOffsetField = null,
+            string nameField = null,
+            int validationIdField = 0,
+            DateFormatField dateFormatField = null
+            )
         {
+            this.ValidationIDField = validationIdField;
             this.FieldTypeField = fieldTypeField;
             // to ensure "heightField" is required (not null)
             this.HeightField = heightField ?? throw new ArgumentNullException("heightField is a required property for FullWorkflowRequestWorkflowUserFieldsField and cannot be null");
@@ -89,7 +109,14 @@ namespace SigniFlow.Connect.Model
             this.XOffsetField = xOffsetField;
             this.YOffsetField = yOffsetField;
             this.NameField = nameField;
+            this.DateFormatField = dateFormatField;
         }
+
+        [DataMember(Name = "DateFormatField")]
+        public DateFormatField DateFormatField { get; set; }
+        
+        [DataMember(Name = "ValidationIDField", EmitDefaultValue = true)]
+        public int ValidationIDField { get; set; }
 
         /// <summary>
         /// The font family of the fields text.
@@ -212,6 +239,8 @@ namespace SigniFlow.Connect.Model
             sb.Append("  XOffsetField: ").Append(XOffsetField).Append("\n");
             sb.Append("  YCoordinateField: ").Append(YCoordinateField).Append("\n");
             sb.Append("  YOffsetField: ").Append(YOffsetField).Append("\n");
+            sb.Append("  ValidationIDField: ").Append(ValidationIDField).Append("\n");
+            sb.Append("  DateFormatField:  ").Append(JsonConvert.SerializeObject(this.DateFormatField)).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -318,7 +347,13 @@ namespace SigniFlow.Connect.Model
                     this.NameField == input.NameField ||
                     (this.NameField != null &&
                     this.NameField.Equals(input.NameField))
-                );
+                ) &&
+                (
+                    this.DateFormatField != null &&
+                    this.DateFormatField.Equals(input.DateFormatField)
+                )
+                    
+                && (this.ValidationIDField == input.ValidationIDField);
         }
 
         /// <summary>
@@ -330,6 +365,7 @@ namespace SigniFlow.Connect.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+
                 hashCode = hashCode * 59 + this.FieldTypeField.GetHashCode();
                 if (this.FontFamilyField != null)
                     hashCode = hashCode * 59 + this.FontFamilyField.GetHashCode();
@@ -358,6 +394,10 @@ namespace SigniFlow.Connect.Model
                     hashCode = hashCode * 59 + this.YOffsetField.GetHashCode();
                 if (this.NameField != null)
                     hashCode = hashCode * 59 + this.NameField.GetHashCode();
+                if(this.DateFormatField != null)
+                    hashCode = hashCode * 59 + this.DateFormatField.GetHashCode();
+                
+                hashCode = hashCode * 59 + this.ValidationIDField.GetHashCode();
                 return hashCode;
             }
         }

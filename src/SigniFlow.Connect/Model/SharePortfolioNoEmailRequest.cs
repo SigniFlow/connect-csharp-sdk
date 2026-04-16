@@ -42,18 +42,7 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         [DataMember(Name = "ShareOptionField", IsRequired = true, EmitDefaultValue = true)]
         public ShareOptionField ShareOptionField { get; set; }
-//    
-//    
-//        /// <summary>
-//        /// Initializes a new instance of the <see cref="SharePortfolioNoEmailRequest" /> class.
-//        /// </summary>
-//        [JsonConstructorAttribute]
-//        
-//        protected SharePortfolioNoEmailRequest() { }
-//        
-//        
-//    
-//    
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="SharePortfolioNoEmailRequest" /> class.
         /// </summary>
