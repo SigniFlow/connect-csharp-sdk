@@ -68,17 +68,29 @@ namespace SigniFlow.Connect.Model
 
     public enum CustomDateFieldValues
     {
-        DAY_OF_MONTH_NO_LEAD_0,      // 0  d
-        DAY_OF_MONTH_TWO_DIGIT,      // 1  dd
-        DAY_NAME_SHORT,              // 4  D
-        DAY_NAME_LONG,               // 5  DD
-        MONTH_OF_YEAR_NO_LEAD_0,     // 6  m
-        MONTH_OF_YEAR_TWO_DIGIT,     // 7  mm
-        MONTH_NAME_SHORT,            // 8  M
-        MONTH_NAME_LONG,             // 9  MM
-        YEAR_TWO_DIGIT,              // 10 yy
-        YEAR_FOUR_DIGIT,             // 11 yyyy
-        UNIX_TIMESTAMP,              // 12 @
-        WINDOWS_TICKS,               // 13 !
+        [EnumMember(Value = "0")]
+        DAY_OF_MONTH_NO_LEAD_0,      // d
+        [EnumMember(Value = "1")]
+        DAY_OF_MONTH_TWO_DIGIT,      // dd
+        [EnumMember(Value = "2")]
+        DAY_NAME_SHORT,              // D
+        [EnumMember(Value = "3")]
+        DAY_NAME_LONG,               // DD
+        [EnumMember(Value = "4")]
+        MONTH_OF_YEAR_NO_LEAD_0,     // m
+        [EnumMember(Value = "5")]
+        MONTH_OF_YEAR_TWO_DIGIT,     // mm
+        [EnumMember(Value = "6")]
+        MONTH_NAME_SHORT,            // M
+        [EnumMember(Value = "7")]
+        MONTH_NAME_LONG,             // MM
+        [EnumMember(Value = "8")]
+        YEAR_TWO_DIGIT,              // yy
+        [EnumMember(Value = "9")]
+        YEAR_FOUR_DIGIT,             // yyyy
+        [EnumMember(Value = "10")]
+        UNIX_TIMESTAMP,              // @
+        [EnumMember(Value = "11")]
+        WINDOWS_TICKS,               // !
     }
 }
