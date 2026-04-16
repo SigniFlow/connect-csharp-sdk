@@ -86,11 +86,13 @@ namespace SigniFlow.Connect.Model
             decimal? yOffsetField = null,
             string nameField = null,
             int validationIdField = 0,
+            int combCharacterAmountField = 0,
             DateFormatField dateFormatField = null
             )
         {
             this.ValidationIDField = validationIdField;
             this.FieldTypeField = fieldTypeField;
+            this.CombCharacterAmountField = combCharacterAmountField;
             // to ensure "heightField" is required (not null)
             this.HeightField = heightField ?? throw new ArgumentNullException("heightField is a required property for FullWorkflowRequestWorkflowUserFieldsField and cannot be null");
             this.PageNumberField = pageNumberField;
@@ -111,6 +113,9 @@ namespace SigniFlow.Connect.Model
             this.NameField = nameField;
             this.DateFormatField = dateFormatField;
         }
+
+        [DataMember(Name = "CombCharacterAmountField")]
+        public int CombCharacterAmountField { get; set; }
 
         [DataMember(Name = "DateFormatField")]
         public DateFormatField DateFormatField { get; set; }
@@ -240,6 +245,7 @@ namespace SigniFlow.Connect.Model
             sb.Append("  YCoordinateField: ").Append(YCoordinateField).Append("\n");
             sb.Append("  YOffsetField: ").Append(YOffsetField).Append("\n");
             sb.Append("  ValidationIDField: ").Append(ValidationIDField).Append("\n");
+            sb.Append("  CombCharacterAmountField: ").Append(CombCharacterAmountField).Append("\n");
             sb.Append("  DateFormatField:  ").Append(JsonConvert.SerializeObject(this.DateFormatField)).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -398,6 +404,7 @@ namespace SigniFlow.Connect.Model
                     hashCode = hashCode * 59 + this.DateFormatField.GetHashCode();
                 
                 hashCode = hashCode * 59 + this.ValidationIDField.GetHashCode();
+                hashCode = hashCode * 59 + this.CombCharacterAmountField.GetHashCode();
                 return hashCode;
             }
         }
