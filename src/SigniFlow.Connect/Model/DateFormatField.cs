@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace SigniFlow.Connect.Model
@@ -6,7 +7,7 @@ namespace SigniFlow.Connect.Model
     public class DateFormatField
     {
         [DataMember(Name = "CustomDateValuesField")]
-        public CustomDateField CustomDateValuesField { get; set; }
+        public List<CustomDateField> CustomDateValuesField { get; set; }
         
         [DataMember(Name = "FormatField")]
         public DateFieldFormat FormatField { get; set; }
