@@ -34,7 +34,8 @@ namespace SigniFlow.Connect.Model
             string signerEmailField = default(string),
             string signerFirstNameField = default(string),
             string signerLastNameField = default(string),
-            string signerMobileField = default(string))
+            string signerMobileField = default(string),
+            bool requireOtpField = default(bool))
         {
             this.CountryIDField = countryIdField;
             this.IDTypeField = IDTypeField;
@@ -43,6 +44,7 @@ namespace SigniFlow.Connect.Model
             this.SignerFirstNameField = signerFirstNameField;
             this.SignerLastNameField = signerLastNameField;
             this.SignerMobileField = signerMobileField;
+            this.RequireOtpField = requireOtpField;
         }
 
         /// <summary>
@@ -72,7 +74,7 @@ namespace SigniFlow.Connect.Model
         /// <summary>
         /// Gets or sets the signer last name field.
         /// </summary>
-        [DataMember(Name = "SignerLastNameField")]
+        [DataMember(Name = "SignerFirstNameField")]
         public string SignerFirstNameField { get; set; }
 
         /// <summary>
@@ -86,5 +88,8 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         [DataMember(Name = "SignerMobileField")]
         public string SignerMobileField { get; set; }
+        
+        [DataMember(Name = "RequireOtpField" )]
+        public bool RequireOtpField { get; set; }
     }
 }

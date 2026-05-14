@@ -10,19 +10,11 @@
 
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
-using System.Text.RegularExpressions;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = SigniFlow.Connect.Client.OpenAPIDateConverter;
 
 namespace SigniFlow.Connect.Model
 {
@@ -85,7 +77,7 @@ namespace SigniFlow.Connect.Model
             bool sendWorkflowEmailsField = default(bool), TokenField tokenField = default(TokenField), 
             List<FullWorkflowRequestWorkflowUsersListField> workflowUsersListField = default(List<FullWorkflowRequestWorkflowUsersListField>),
             AutoExpire autoExpireField = default(AutoExpire), 
-            List<AdhocPreloadedFaceToFaceUsersField> adhocPreloadedFaceToFaceUsersField = default(List<AdhocPreloadedFaceToFaceUsersField>),
+            List<AdhocPreloadedFaceToFaceUsersField>? adhocPreloadedFaceToFaceUsersField = default(List<AdhocPreloadedFaceToFaceUsersField>),
             string sharedKeyField = default(string), bool useAutoTagsField = default(bool))
         {
             this.AutoRemindField = autoRemindField;

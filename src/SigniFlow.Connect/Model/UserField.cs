@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace SigniFlow.Connect.Model
 {
@@ -25,9 +26,11 @@ namespace SigniFlow.Connect.Model
             int pageNumberField = default(int),
             string nameField = default(string),
             int validationIDField = default(int),
-            int combinedCharacterAmountField = default(int),
+            int combCharacterAmountField = default(int),
             string valueField = default(string),
-            bool isInvisibleField = default(bool))
+            bool isInvisibleField = default(bool),
+            DateFormatField dateFormatField = default(DateFormatField)
+            )
         {
             this.DocFieldTypeField = docFieldTypeField;
             this.FontFamilyField = fontFamilyField;
@@ -41,11 +44,15 @@ namespace SigniFlow.Connect.Model
             this.PageNumberField = pageNumberField;
             this.NameField = nameField;
             this.ValidationIDField = validationIDField;
-            this.CombinedCharacterAmountField = combinedCharacterAmountField;
+            this.CombCharacterAmountField = combCharacterAmountField;
             this.ValueField = valueField;
             this.IsInvisibleField = isInvisibleField;
+            this.DateFormatField = dateFormatField;
         }
-        
+
+        [DataMember(Name = "DateFormatField", EmitDefaultValue = true)]
+        public DateFormatField DateFormatField { get; set; }
+
         [DataMember(Name = "DocFieldTypeField", EmitDefaultValue = true)]
         public FieldType DocFieldTypeField { get; set; }
         
@@ -82,8 +89,8 @@ namespace SigniFlow.Connect.Model
         [DataMember(Name = "ValidationIDField", EmitDefaultValue = true)]
         public int ValidationIDField { get; set; }
         
-        [DataMember(Name = "CombinedCharacterAmountField", EmitDefaultValue = true)]
-        public int CombinedCharacterAmountField { get; set; }
+        [DataMember(Name = "CombCharacterAmountField", EmitDefaultValue = true)]
+        public int CombCharacterAmountField { get; set; }
         
         [DataMember(Name = "ValueField", EmitDefaultValue = true)]
         public string ValueField { get; set; }
@@ -107,9 +114,10 @@ namespace SigniFlow.Connect.Model
             sb.Append("  PageNumberField: ").Append(PageNumberField).Append("\n");
             sb.Append("  NameField: ").Append(NameField).Append("\n");
             sb.Append("  ValidationIDField: ").Append(ValidationIDField).Append("\n");
-            sb.Append("  CombinedCharacterAmountField: ").Append(CombinedCharacterAmountField).Append("\n");
+            sb.Append("  CombCharacterAmountField: ").Append(CombCharacterAmountField).Append("\n");
             sb.Append("  ValueField: ").Append(ValueField).Append("\n");
-            sb.Append(" IsInvisibleField: ").Append(IsInvisibleField).Append("\n");
+            sb.Append("  IsInvisibleField: ").Append(IsInvisibleField).Append("\n");
+            sb.Append("  DateFormatField: ").Append(DateFormatField != null ? JsonConvert.SerializeObject(DateFormatField) : "null").Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -179,8 +187,8 @@ namespace SigniFlow.Connect.Model
                     this.ValidationIDField.Equals(input.ValidationIDField)
                 ) &&
                 (
-                    this.CombinedCharacterAmountField == input.CombinedCharacterAmountField ||
-                    this.CombinedCharacterAmountField.Equals(input.CombinedCharacterAmountField)
+                    this.CombCharacterAmountField == input.CombCharacterAmountField ||
+                    this.CombCharacterAmountField.Equals(input.CombCharacterAmountField)
                 ) &&
                 (
                     this.ValueField == input.ValueField ||
@@ -190,7 +198,8 @@ namespace SigniFlow.Connect.Model
                 (
                     this.IsInvisibleField == input.IsInvisibleField||
                     this.IsInvisibleField.Equals(input.IsInvisibleField)
-                );
+                )
+                && (this.DateFormatField.Equals(input.DateFormatField));
         }
         
         public override int GetHashCode()
@@ -215,7 +224,7 @@ namespace SigniFlow.Connect.Model
                 if (this.NameField != null)
                     hashCode = hashCode * 59 + this.NameField.GetHashCode();
                 hashCode = hashCode * 59 + this.ValidationIDField.GetHashCode();
-                hashCode = hashCode * 59 + this.CombinedCharacterAmountField.GetHashCode();
+                hashCode = hashCode * 59 + this.CombCharacterAmountField.GetHashCode();
                 if (this.ValueField != null)
                     hashCode = hashCode * 59 + this.ValueField.GetHashCode();
                 return hashCode;

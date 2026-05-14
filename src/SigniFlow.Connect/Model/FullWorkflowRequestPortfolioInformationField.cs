@@ -10,19 +10,11 @@
 
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.IO;
 using System.Runtime.Serialization;
 using System.Text;
-using System.Text.RegularExpressions;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = SigniFlow.Connect.Client.OpenAPIDateConverter;
 
 namespace SigniFlow.Connect.Model
 {
@@ -32,18 +24,7 @@ namespace SigniFlow.Connect.Model
     [DataContract(Name = "FullWorkflowRequest_PortfolioInformationField")]
     public partial class FullWorkflowRequestPortfolioInformationField : IEquatable<FullWorkflowRequestPortfolioInformationField>, IValidatableObject
     {
-//    
-//    
-//        /// <summary>
-//        /// Initializes a new instance of the <see cref="FullWorkflowRequestPortfolioInformationField" /> class.
-//        /// </summary>
-//        [JsonConstructorAttribute]
-//        
-//        protected FullWorkflowRequestPortfolioInformationField() { }
-//        
-//        
-//    
-//    
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="FullWorkflowRequestPortfolioInformationField" /> class.
         /// </summary>
@@ -51,14 +32,33 @@ namespace SigniFlow.Connect.Model
         /// <param name="linkToPortfolioField">Link document to Portfolio link. (required).</param>
         /// <param name="portfolioIDField">Portfolio ID..</param>
         /// <param name="portfolioNameField">Portfolio name..</param>
-        public FullWorkflowRequestPortfolioInformationField(bool createPortfolioField = default(bool), bool linkToPortfolioField = default(bool), decimal? portfolioIDField = default(decimal?), string portfolioNameField = default(string), bool sendPortfolioCompleteEmailField = default(bool))
+        public FullWorkflowRequestPortfolioInformationField(
+            bool createPortfolioField = default(bool),
+            bool linkToPortfolioField = default(bool),
+            decimal? portfolioIDField = default(decimal?),
+            string portfolioNameField = default(string),
+            bool sendPortfolioCompleteEmailField = default(bool),
+            List<FullWorkFlowRequestAccessField>? accessListField = null,
+            List<PlaceholderInfoField>? placeholderInfoListField = null)
         {
             this.CreatePortfolioField = createPortfolioField;
             this.LinkToPortfolioField = linkToPortfolioField;
             this.PortfolioIDField = portfolioIDField;
             this.PortfolioNameField = portfolioNameField;
+            this.AccessListField = accessListField;
+            this.PlaceholderInfoListField = placeholderInfoListField;
+            this.SendPortfolioCompleteEmailField = sendPortfolioCompleteEmailField;
         }
 
+        [DataMember(Name = "PlaceholderInfoListField", IsRequired = false, EmitDefaultValue = false)]
+        public List<PlaceholderInfoField> PlaceholderInfoListField { get; set; }
+
+        /// <summary>
+        /// Specifies the access level granted and to whom it is granted.
+        /// </summary>
+        [DataMember(Name = "AccessListField", IsRequired = false, EmitDefaultValue = false)]
+        public List<FullWorkFlowRequestAccessField> AccessListField { get; }
+        
         /// <summary>
         /// Create a new portfolio.
         /// </summary>
@@ -106,6 +106,8 @@ namespace SigniFlow.Connect.Model
             sb.Append("  PortfolioIDField: ").Append(PortfolioIDField).Append("\n");
             sb.Append("  PortfolioNameField: ").Append(PortfolioNameField).Append("\n");
             sb.Append("  SendPortfolioCompleteEmailField: ").Append(SendPortfolioCompleteEmailField).Append("\n");
+            sb.Append("  AccessList: ").Append(AccessListField == null ? "null": JsonConvert.SerializeObject(AccessListField)).Append("\n");
+            sb.Append("  PlaceholderInfoListField: ").Append(PlaceholderInfoListField == null ? "null" : JsonConvert.SerializeObject(this.PlaceholderInfoListField)).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -116,7 +118,7 @@ namespace SigniFlow.Connect.Model
         /// <returns>JSON string presentation of the object</returns>
         public virtual string ToJson()
         {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
         /// <summary>
@@ -157,10 +159,16 @@ namespace SigniFlow.Connect.Model
                     this.PortfolioNameField == input.PortfolioNameField ||
                     (this.PortfolioNameField != null &&
                     this.PortfolioNameField.Equals(input.PortfolioNameField))
-                )&&
+                ) &&
                 (
                     this.SendPortfolioCompleteEmailField == input.SendPortfolioCompleteEmailField ||
                     this.SendPortfolioCompleteEmailField.Equals(input.SendPortfolioCompleteEmailField)
+                ) &&
+                (
+                    this.AccessListField.Equals(input.AccessListField)
+                ) && 
+                (
+                    this.PlaceholderInfoListField.Equals(input.PlaceholderInfoListField)
                 );
         }
 
@@ -180,6 +188,23 @@ namespace SigniFlow.Connect.Model
                 if (this.PortfolioNameField != null)
                     hashCode = hashCode * 59 + this.PortfolioNameField.GetHashCode();
                 hashCode = hashCode * 59 + this.SendPortfolioCompleteEmailField.GetHashCode();
+
+                if (this.AccessListField != null)
+                {
+                    foreach (var item in this.AccessListField)
+                    {
+                        hashCode = hashCode * 59 + item.GetHashCode();
+                    }
+                }
+
+                if (this.PlaceholderInfoListField != null)
+                {
+                    foreach (var item in this.AccessListField)
+                    {
+                        hashCode = hashCode * 59 + item.GetHashCode();
+                    }
+                }
+                
                 return hashCode;
             }
         }
@@ -189,12 +214,12 @@ namespace SigniFlow.Connect.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // PortfolioNameField (string) minLength
             if(this.PortfolioNameField != null && this.PortfolioNameField.Length < 1)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PortfolioNameField, length must be greater than 1.", new [] { "PortfolioNameField" });
+                yield return new ValidationResult("Invalid value for PortfolioNameField, length must be greater than 1.", new [] { "PortfolioNameField" });
             }
 
             yield break;
