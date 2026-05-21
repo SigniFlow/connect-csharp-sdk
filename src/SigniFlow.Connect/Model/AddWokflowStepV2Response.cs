@@ -55,8 +55,7 @@ namespace SigniFlow.Connect.Model
         {
             this.DocIDField = docIDField;
             this.FlowIDField = flowIDField;
-            // to ensure "flowStepsField" is required (not null)
-            this.FlowStepsField = flowStepsField ?? throw new ArgumentNullException("flowStepsField is a required property for AddWokflowStepV2Response and cannot be null");
+            this.FlowStepsField = flowStepsField; 
             // to ensure "resultField" is required (not null)
             this.ResultField = resultField ?? throw new ArgumentNullException("resultField is a required property for AddWokflowStepV2Response and cannot be null");
         }
