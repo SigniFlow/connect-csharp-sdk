@@ -48,7 +48,7 @@ namespace SigniFlow.Connect.Model
         /// Initializes a new instance of the <see cref="GetAuditDocumentRequest" /> class.
         /// </summary>
         /// <param name="docIDField">Document ID (required).</param>
-        /// <param name="downloadType">Specifies the type of audit document download. Default to downloading the Audit.</param>
+        /// <param name="downloadType">Specifies the type of audit document download. Default to downloading only the Audit Document.</param>
         /// <param name="tokenField">tokenField (required).</param>
         public GetAuditDocumentRequest(string docIDField = default(string), AuditDownloadType downloadType = default(AuditDownloadType), TokenField tokenField = default(TokenField))
         {
