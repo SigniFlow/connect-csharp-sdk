@@ -48,13 +48,16 @@ namespace SigniFlow.Connect.Model
         /// Initializes a new instance of the <see cref="GetAuditDocumentRequest" /> class.
         /// </summary>
         /// <param name="docIDField">Document ID (required).</param>
+        /// <param name="downloadType">Specifies the type of audit document download. Default to downloading only the Audit Document.</param>
         /// <param name="tokenField">tokenField (required).</param>
-        public GetAuditDocumentRequest(string docIDField = default(string), TokenField tokenField = default(TokenField))
+        public GetAuditDocumentRequest(string docIDField = default(string), AuditDownloadType downloadType = default(AuditDownloadType), TokenField tokenField = default(TokenField))
         {
             // to ensure "docIDField" is required (not null)
             this.DocIDField = docIDField ?? throw new ArgumentNullException("docIDField is a required property for GetAuditDocumentRequest and cannot be null");
             // to ensure "tokenField" is required (not null)
             this.TokenField = tokenField ?? throw new ArgumentNullException("tokenField is a required property for GetAuditDocumentRequest and cannot be null");
+            // DownloadType is not required, if not provided will default to downloading the Audit document, so no need to check null
+            this.DownloadType = downloadType;
         }
 
         /// <summary>
@@ -63,6 +66,12 @@ namespace SigniFlow.Connect.Model
         /// <value>Document ID</value>
         [DataMember(Name = "DocIDField", IsRequired = true, EmitDefaultValue = true)]
         public string DocIDField { get; set; }
+
+        /// <summary>
+        /// Specifies the type of audit document download. Default to downloading the Audit
+        /// </summary>
+        [DataMember(Name = "DownloadTypeField", IsRequired = false, EmitDefaultValue = true)]
+        public AuditDownloadType DownloadType { get; set; }
 
         /// <summary>
         /// Gets or Sets TokenField
@@ -79,6 +88,7 @@ namespace SigniFlow.Connect.Model
             var sb = new StringBuilder();
             sb.Append("class GetAuditDocumentRequest {\n");
             sb.Append("  DocIDField: ").Append(DocIDField).Append("\n");
+            sb.Append("  DownloadTypeField: ").Append(DownloadType).Append("\n");
             sb.Append("  TokenField: ").Append(TokenField).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -118,7 +128,11 @@ namespace SigniFlow.Connect.Model
                     this.DocIDField == input.DocIDField ||
                     (this.DocIDField != null &&
                     this.DocIDField.Equals(input.DocIDField))
-                ) && 
+                ) &&
+                (
+                    this.DownloadType == input.DownloadType ||
+                    this.DownloadType.Equals(input.DownloadType)
+                ) &&
                 (
                     this.TokenField == input.TokenField ||
                     (this.TokenField != null &&
@@ -136,9 +150,18 @@ namespace SigniFlow.Connect.Model
             {
                 int hashCode = 41;
                 if (this.DocIDField != null)
+                {
                     hashCode = hashCode * 59 + this.DocIDField.GetHashCode();
+                }
+
+                //Not nullable, no need to check null
+                hashCode = hashCode * 59 + this.DownloadType.GetHashCode();
+                
                 if (this.TokenField != null)
+                {
                     hashCode = hashCode * 59 + this.TokenField.GetHashCode();
+                }
+
                 return hashCode;
             }
         }
